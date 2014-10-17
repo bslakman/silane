@@ -1,10 +1,10 @@
 # Data sources
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
-    reactionLibraries = [('Silicon_Giunta_1990', False), ('Dollet_Si2H4', False)],
+    reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies = [''],
+    kineticsFamilies = 'none',
     kineticsEstimator = 'rate rules',
 )
 

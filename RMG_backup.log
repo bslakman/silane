@@ -1,0 +1,27 @@
+Global RMG Settings:
+   database.directory   = /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Oct 17 13:58:01 2014
+
+###################################################
+# RMG-Py - Reaction Mechanism Generator in Python #
+# Version: Early 2013                             #
+# Authors: RMG Developers (rmg_dev@mit.edu)       #
+# P.I.s:   William H. Green (whgreen@mit.edu)     #
+#          Richard H. West (r.west@neu.edu)       #
+# Website: http://greengroup.github.com/RMG-Py/   #
+###################################################
+
+The current git HEAD is:
+	92fb2996f62ad40d1a142c470da6764074ac380b
+	Fri Oct 17 13:55:15 2014 -0700
+
+Reading input file "/nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-Py/examples/rmg/silane/input.py"...
+
+Loading thermodynamics library from primaryThermoLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from SiliconHydrideLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/libraries...
+Loading transport library from PrimaryTransportLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/libraries...
+Loading transport group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/groups...
+Not loading any of the kinetics families from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/kinetics/families
+Loading kinetics library Silicon_Giunta_1990 from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/kinetics/libraries/Silicon_Giunta_1990/reactions.py...
