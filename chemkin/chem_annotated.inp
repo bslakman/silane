@@ -7,9 +7,7 @@ SPECIES
     N2                  ! N2
     SiH4(1)             ! SiH4(1)
     H2(2)               ! H2(2)
-    SiH2(3)             ! SiH2(3)
-    Si2H6(4)            ! Si2H6(4)
-    SiH3SiH(5)          ! SiH3SiH(5)
+    H2Si(3)             ! [SiH4](3)
 END
 
 
@@ -54,22 +52,10 @@ H2(2)                   H 2                 G100.000   5000.000  1959.07       1
  3.40268407E-10-7.76035069E-14-1.03135984E+03-3.90841701E+00                   4
 
 ! Thermo group additivity estimation: group(si) + other(R)
-SiH2(3)                 H 2  Si1            G100.000   5000.000  963.87        1
+H2Si(3)                 H 2  Si1            G100.000   5000.000  963.87        1
  4.09418449E+00 2.59474397E-03-9.24473155E-07 1.87199213E-10-1.48131324E-14    2
  3.17530837E+04 1.65738278E-01 4.08499800E+00-4.62964993E-03 2.16205218E-05    3
 -2.32234803E-08 8.08483437E-12 3.20922126E+04 1.95974411E+00                   4
-
-! Thermo library: SiliconHydrideLibrary
-Si2H6(4)                H 6  Si2            G100.000   5000.000  1068.45       1
- 4.55086714E+00 1.51271172E-01-6.61439206E-05 1.22319775E-08-8.43975127E-13    2
--8.43392326E+02-4.23432407E+01-1.63539542E+00 9.08040107E-02 1.36151014E-04    3
--1.87247444E-07 6.29718468E-11 5.25188010E+03 1.02492043E+01                   4
-
-! Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(si) + other(R)
-SiH3SiH(5)              H 4  Si2            G100.000   5000.000  1145.47       1
- 6.28615874E+00 1.15134646E-02-5.36020106E-06 1.03687607E-09-7.32543342E-14    2
- 3.58239720E+04-6.98359441E+00 2.99777015E+00 2.29965607E-02-2.03973721E-05    3
- 9.78854257E-09-1.98331274E-12 3.65773228E+04 9.32759529E+00                   4
 
 END
 
@@ -78,23 +64,9 @@ END
 REACTIONS    KCAL/MOLE   MOLES
 
 ! Reaction index: Chemkin #1; RMG #1
-! Library reaction: Silicon_Giunta_1990
-SiH4(1)=H2(2)+SiH2(3)                               3.300e+15 -0.500    55.900   
-
-! Reaction index: Chemkin #2; RMG #2
-! Library reaction: Silicon_Giunta_1990
-Si2H6(4)=SiH4(1)+SiH2(3)                            2.500e+19 -1.000    54.900   
-
-! Reaction index: Chemkin #3; RMG #3
-! Library reaction: Silicon_Giunta_1990
-Si2H6(4)=H2(2)+SiH3SiH(5)                           2.000e+15 0.000     55.300   
-
-! Reaction index: Chemkin #4; RMG #11
-! Library reaction: DolletSi2H4
-SiH3SiH(5)(+M)=SiH2(3)+SiH2(3)(+M)                  3.100e+12 0.140     54.684   
-
-    LOW/ 8.260e+20 -1.650    56.283   /
-    TROE/ -3.811e-01 159       -4.03e+03 86.6     /
+! Template reaction: Silylene_Insertion
+! Matched reaction 1 SiH2 + H2 <=> SiH4 in Silylene_Insertion/training
+H2(2)+H2Si(3)=SiH4(1)                               1.740e-18 1.970     -1.900   
 
 END
 
