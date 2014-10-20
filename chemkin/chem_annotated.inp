@@ -5,9 +5,10 @@ SPECIES
     He                  ! He
     Ne                  ! Ne
     N2                  ! N2
-    SiH4(1)             ! SiH4(1)
+    Si2H6(1)            ! Si2H6(1)
     H2(2)               ! H2(2)
-    H2Si(3)             ! [SiH4](3)
+    H2Si(3)             ! SiH2_singlet(3)
+    H8Si3(6)            ! [SiH3][SiH2][SiH3](6)
 END
 
 
@@ -40,10 +41,10 @@ N2                      N 2                 G200.000   6000.000  1000.00       1
  2.43531000E-09-1.40881000E-12-1.04698000E+03 2.96747000E+00                   4
 
 ! Thermo library: SiliconHydrideLibrary
-SiH4(1)                 H 4  Si1            G100.000   5000.000  978.65        1
- 4.73325704E+00 7.85412548E-03-3.02423074E-06 5.93138034E-10-4.46000105E-14    2
- 2.00519660E+03-5.46225994E+00 3.89477052E+00-3.23531576E-03 3.62228582E-05    3
--4.12994693E-08 1.45289967E-11 2.86447403E+03 2.11650054E+00                   4
+Si2H6(1)                H 6  Si2            G100.000   5000.000  1068.45       1
+ 4.55086714E+00 1.51271172E-01-6.61439206E-05 1.22319775E-08-8.43975127E-13    2
+-8.43392326E+02-4.23432407E+01-1.63539542E+00 9.08040107E-02 1.36151014E-04    3
+-1.87247444E-07 6.29718468E-11 5.25188010E+03 1.02492043E+01                   4
 
 ! Thermo library: primaryThermoLibrary
 H2(2)                   H 2                 G100.000   5000.000  1959.07       1
@@ -57,16 +58,22 @@ H2Si(3)                 H 2  Si1            G100.000   5000.000  963.87        1
  3.17530837E+04 1.65738278E-01 4.08499800E+00-4.62964993E-03 2.16205218E-05    3
 -2.32234803E-08 8.08483437E-12 3.20922126E+04 1.95974411E+00                   4
 
+! Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-H3Sis) + other(R) + group(Sis-H3Sis) + other(R)
+H8Si3(6)                H 8  Si3            G100.000   5000.000  1064.46       1
+ 1.00444304E+01 2.48741599E-02-1.15913117E-05 2.24540309E-09-1.58939403E-13    2
+ 1.06544429E+04-2.61169145E+01 1.50851379E+00 5.69498847E-02-5.67908566E-05    3
+ 3.05533992E-08-6.80731369E-12 1.24716894E+04 1.55972524E+01                   4
+
 END
 
 
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #1
+! Reaction index: Chemkin #1; RMG #3
 ! Template reaction: Silylene_Insertion
-! Matched reaction 1 SiH2 + H2 <=> SiH4 in Silylene_Insertion/training
-H2(2)+H2Si(3)=SiH4(1)                               1.740e-18 1.970     -1.900   
+! Matched reaction 3 SiH2 + Si2H6 <=> Si3H8 in Silylene_Insertion/training
+Si2H6(1)+H2Si(3)=H8Si3(6)                           3.100e-10 0.000     -0.454   
 
 END
 
