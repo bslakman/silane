@@ -1,17 +1,27 @@
 ELEMENTS H C O N Ne Ar He Si S Cl END
 
 SPECIES
-    Ar                  ! Ar
     He                  ! He
+    Ar                  ! Ar
     Ne                  ! Ne
     N2                  ! N2
     SiH4(1)             ! SiH4(1)
-    H2(2)               ! H2(2)
-    H2Si(3)             ! SiH2_singlet(3)
-    Si2H6(4)            ! Si2H6(4)
-    SiH3SiH(5)          ! SiH3SiH(5)
-    H4Si2(7)            ! SiH2SiH2(7)
-    Si2H2(12)           ! Si2H2(12)
+    SiH3(2)             ! SiH3(2)
+    Si2H2(3)            ! Si2H2(3)
+    Si2H4(4)            ! Si2H4(4)
+    Si2H6(5)            ! Si2H6(5)
+    SiH3SiH(6)          ! SiH3SiH(6)
+    Si3H8(7)            ! Si3H8(7)
+    Si(8)               ! Si(8)
+    SiH(9)              ! SiH(9)
+    SiH2Si(10)          ! SiH2Si(10)
+    H2Si(11)            ! H2Si(11)
+    H6Si3(12)           ! H6Si3(12)
+    H3Si2(13)           ! H3Si2(13)
+    H2Si2(14)           ! H2Si2(14)
+    H5Si2(15)           ! H5Si2(15)
+    H8Si4(16)           ! H8Si4(16)
+    H(17)               ! H(17)
 END
 
 
@@ -20,16 +30,16 @@ THERM ALL
     300.000  1000.000  5000.000
 
 ! Thermo library: primaryThermoLibrary
-Ar                      Ar1                 G200.000   6000.000  1000.00       1
- 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
--7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
- 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
-
-! Thermo library: primaryThermoLibrary
 He                      He1                 G200.000   6000.000  1000.00       1
  2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
 -7.45375000E+02 9.28724000E-01 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
  0.00000000E+00 0.00000000E+00-7.45375000E+02 9.28724000E-01                   4
+
+! Thermo library: primaryThermoLibrary
+Ar                      Ar1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
 
 ! Thermo library: primaryThermoLibrary
 Ne                      Ne1                 G200.000   6000.000  1000.00       1
@@ -45,45 +55,105 @@ N2                      N 2                 G200.000   6000.000  1000.00       1
 
 ! Thermo library: SiliconHydrideLibrary
 SiH4(1)                 H 4  Si1            G100.000   5000.000  978.65        1
- 4.73325704E+00 7.85412548E-03-3.02423074E-06 5.93138034E-10-4.46000105E-14    2
- 2.00519660E+03-5.46225994E+00 3.89477052E+00-3.23531576E-03 3.62228582E-05    3
--4.12994693E-08 1.45289967E-11 2.86447403E+03 2.11650054E+00                   4
-
-! Thermo library: primaryThermoLibrary
-H2(2)                   H 2                 G100.000   5000.000  1959.07       1
- 2.78817422E+00 5.87630040E-04 1.59015520E-07-5.52749269E-11 4.34318450E-15    2
--5.96149220E+02 1.12682915E-01 3.43536404E+00 2.12711051E-04-2.78626624E-07    3
- 3.40268407E-10-7.76035069E-14-1.03135984E+03-3.90841701E+00                   4
-
-! Thermo group additivity estimation: group(si) + other(R)
-H2Si(3)                 H 2  Si1            G100.000   5000.000  963.87        1
- 4.09418449E+00 2.59474397E-03-9.24473155E-07 1.87199213E-10-1.48131324E-14    2
- 3.17530837E+04 1.65738278E-01 4.08499800E+00-4.62964993E-03 2.16205218E-05    3
--2.32234803E-08 8.08483437E-12 3.20922126E+04 1.95974411E+00                   4
+ 4.73328516E+00 7.85407738E-03-3.02420290E-06 5.93131437E-10-4.45994622E-14    2
+ 2.00518486E+03-5.46241810E+00 3.89476301E+00-3.23522495E-03 3.62225312E-05    3
+-4.12990336E-08 1.45288065E-11 2.86447435E+03 2.11652731E+00                   4
 
 ! Thermo library: SiliconHydrideLibrary
-Si2H6(4)                H 6  Si2            G100.000   5000.000  1068.45       1
- 4.55086714E+00 1.51271172E-01-6.61439206E-05 1.22319775E-08-8.43975127E-13    2
--8.43392326E+02-4.23432407E+01-1.63539542E+00 9.08040107E-02 1.36151014E-04    3
--1.87247444E-07 6.29718468E-11 5.25188010E+03 1.02492043E+01                   4
+SiH3(2)                 H 3  Si1            G100.000   5000.000  990.23        1
+ 4.19410121E+00 5.63586294E-03-2.23440113E-06 4.32068950E-10-3.17622360E-14    2
+ 2.13909308E+04 1.20319044E+00 3.91867795E+00-1.23256474E-03 2.02593861E-05    3
+-2.28508570E-08 7.90123511E-12 2.18367708E+04 4.50500701E+00                   4
 
-! Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(si) + other(R)
-SiH3SiH(5)              H 4  Si2            G100.000   5000.000  1145.45       1
- 6.28613907E+00 1.15135001E-02-5.36022247E-06 1.03688129E-09-7.32547774E-14    2
- 3.58239795E+04-6.98348526E+00 2.99776646E+00 2.29965967E-02-2.03974676E-05    3
- 9.78863373E-09-1.98334128E-12 3.65773230E+04 9.32760914E+00                   4
+! Thermo library: SiliconHydrideLibrary
+Si2H2(3)                H 2  Si2            G100.000   5000.000  910.25        1
+ 5.63589632E+00 5.02328882E-03-2.21942213E-06 3.87732000E-10-2.46161993E-14    2
+ 5.28912158E+04-1.63400292E+00 3.14501883E+00 2.08298398E-02-3.62768395E-05    3
+ 3.11977306E-08-1.00977652E-11 5.31433136E+04 9.04270579E+00                   4
 
 ! Thermo group additivity estimation: group(Sid-H2) + other(R) + group(Sid-H2) + other(R)
-H4Si2(7)                H 4  Si2            G100.000   5000.000  1118.29       1
- 6.88868558E+00 1.01647518E-02-4.50044123E-06 8.53965378E-10-5.98135115E-14    2
- 3.10399535E+04-1.18559548E+01 2.89952899E+00 2.44334465E-02-2.36394160E-05    3
- 1.22635695E-08-2.61048045E-12 3.19321652E+04 7.83543240E+00                   4
+Si2H4(4)                H 4  Si2            G100.000   5000.000  1118.28       1
+ 6.88867758E+00 1.01647664E-02-4.50045007E-06 8.53967541E-10-5.98136958E-14    2
+ 3.10399566E+04-1.18559105E+01 2.89952734E+00 2.44334626E-02-2.36394595E-05    3
+ 1.22636118E-08-2.61049394E-12 3.19321653E+04 7.83543854E+00                   4
 
-! Thermo group additivity estimation: group(si) + other(R) + group(si) + other(R)
-Si2H2(12)               H 2  Si2            G100.000   5000.000  848.43        1
- 4.38583263E+00 1.29737736E-02-6.54393856E-06 1.24682181E-09-8.51967832E-14    2
- 6.47677801E+04 2.15826514E+01 2.90227992E+00 2.77304131E-02-4.63567771E-05    3
- 4.33138273E-08-1.56582187E-11 6.47401403E+04 2.68496466E+01                   4
+! Thermo library: SiliconHydrideLibrary
+Si2H6(5)                H 6  Si2            G100.000   5000.000  1370.21       1
+ 9.31092505E+00 1.32863110E-02-5.65580345E-06 1.04269696E-09-7.11935358E-14    2
+ 3.89089978E+03-5.06624977E+01 2.47263094E+00 2.91331757E-02-1.84979700E-05    3
+ 5.09872775E-09-4.11249976E-13 6.15125529E+03-1.41079523E+01                   4
+
+! Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(si) + other(R)
+SiH3SiH(6)              H 4  Si2            G100.000   5000.000  1145.47       1
+ 6.28615897E+00 1.15134641E-02-5.36020081E-06 1.03687601E-09-7.32543289E-14    2
+ 3.58239719E+04-6.98359571E+00 2.99777020E+00 2.29965603E-02-2.03973710E-05    3
+ 9.78854148E-09-1.98331240E-12 3.65773228E+04 9.32759513E+00                   4
+
+! Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-H3Sis) + other(R) + group(Sis-H3Sis) + other(R)
+Si3H8(7)                H 8  Si3            G100.000   5000.000  1064.48       1
+ 1.00444575E+01 2.48741097E-02-1.15912809E-05 2.24539549E-09-1.58938752E-13    2
+ 1.06544330E+04-2.61170639E+01 1.50852044E+00 5.69498180E-02-5.67906712E-05    3
+ 3.05532125E-08-6.80725163E-12 1.24716891E+04 1.55972277E+01                   4
+
+! Thermo library: SiliconHydrideLibrary
+Si(8)                   Si1                 G100.000   5000.000  4563.27       1
+ 2.50166659E+00-1.43051434E-06 4.60249725E-10-6.57825717E-14 3.52412298E-18    2
+ 5.34657298E+04 4.91880077E+00 2.50000000E+00-1.91242771E-12 2.45328669E-15    3
+-1.02376750E-18 1.31368730E-22 5.34672824E+04 4.92940566E+00                   4
+
+! Thermo library: SiliconHydrideLibrary
+SiH(9)                  H 1  Si1            G100.000   5000.000  878.74        1
+ 2.39069887E+00 2.89537190E-03-1.43265350E-06 2.70841366E-10-1.83110422E-14    2
+ 4.45507249E+04 9.59044182E+00 3.51239531E+00 8.44030370E-04-3.14519515E-06    3
+ 5.52587312E-09-2.63877594E-12 4.42356539E+04 3.65285543E+00                   4
+
+! Thermo group additivity estimation: group(Sid-H2) + other(R) + group(Sid-H2) + other(R) + radical(CH2_triplet)
+SiH2Si(10)              H 2  Si2            G100.000   5000.000  891.09        1
+ 9.02856101E+00 2.04762560E-03-1.40660992E-06 3.00111469E-10-2.19336218E-14    2
+ 8.62496314E+04-2.18632279E+01 2.66452505E+00 3.06148059E-02-4.94942422E-05    3
+ 3.62764445E-08-1.01151983E-11 8.73838267E+04 8.10578460E+00                   4
+
+! Thermo library: SiliconHydrideLibrary
+H2Si(11)                H 2  Si1            G100.000   5000.000  1084.28       1
+ 3.31121660E+00 3.85487015E-03-1.63265905E-06 3.07139760E-10-2.14994569E-14    2
+ 4.15152998E+04 6.52051240E+00 4.02079991E+00-1.06738539E-03 8.36492544E-06    3
+-7.80003609E-09 2.29970767E-12 4.14968914E+04 3.66446037E+00                   4
+
+! Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(Sis-H3si) + other(R) + group(si) + other(R)
+H6Si3(12)               H 6  Si3            G100.000   5000.000  826.29        1
+ 8.14384751E+00 2.10444999E-02-1.01686332E-05 1.97815219E-09-1.39523037E-13    2
+ 4.00204456E+04-1.36705498E+01 1.81136527E+00 5.16991823E-02-6.58168086E-05    3
+ 4.68756894E-08-1.37234512E-11 4.10669501E+04 1.56717867E+01                   4
+
+! Thermo library: SiliconHydrideLibrary
+H3Si2(13)               H 3  Si2            G100.000   5000.000  828.38        1
+ 5.12841229E+00 1.02721319E-02-5.13592274E-06 9.90283940E-10-6.84349483E-14    2
+ 4.60208855E+04 2.60057013E+00 2.95768488E+00 2.56219256E-02-4.17455863E-05    3
+ 3.75471911E-08-1.32420330E-11 4.62134992E+04 1.16562270E+01                   4
+
+! Thermo group additivity estimation: group(Sid-H2) + other(R) + group(si) + other(R)
+H2Si2(14)               H 2  Si2            G100.000   5000.000  784.96        1
+ 5.47728134E+00 1.18459177E-02-5.66251586E-06 1.07162984E-09-7.38007720E-14    2
+ 4.79658488E+04 6.10052216E+00 2.89003910E+00 2.61637291E-02-3.51892843E-05    3
+ 2.79887333E-08-9.23258696E-12 4.83370969E+04 1.77335560E+01                   4
+
+! Thermo group additivity estimation: group(Sis-H3Sis) + other(R) + group(Sis-H3Sis) + other(R) + radical(Cs_P)
+H5Si2(15)               H 5  Si2            G100.000   5000.000  1431.81       1
+ 8.47484561E+00 1.20200394E-02-5.40673097E-06 1.02427633E-09-7.11802593E-14    2
+ 3.13288802E+04-1.94111114E+01 2.65293603E+00 2.82844455E-02-2.24456575E-05    3
+ 8.95775638E-09-1.45639309E-12 3.29960609E+04 1.07659743E+01                   4
+
+! Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-H2siSis) + other(R) + group(Sis-H3Sis) + other(R) + group(si) + other(R)
+H8Si4(16)               H 8  Si4            G100.000   5000.000  793.49        1
+ 1.13101608E+01 2.88297137E-02-1.40495611E-05 2.69394736E-09-1.86464446E-13    2
+ 4.35807066E+04-2.49575665E+01 2.62631824E-01 8.83145434E-02-1.33670819E-04    3
+ 1.09222018E-07-3.56481434E-11 4.52144877E+04 2.50322992E+01                   4
+
+! Thermo library: primaryThermoLibrary
+H(17)                   H 1                 G100.000   5000.000  4563.27       1
+ 2.50166659E+00-1.43051434E-06 4.60249725E-10-6.57825717E-14 3.52412298E-18    2
+ 2.54726651E+04-4.55577786E-01 2.50000000E+00-1.91242771E-12 2.45328669E-15    3
+-1.02376750E-18 1.31368730E-22 2.54742178E+04-4.44972898E-01                   4
 
 END
 
@@ -91,51 +161,186 @@ END
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #1
+! Reaction index: Chemkin #1; RMG #6
 ! Library reaction: Silicon_Giunta_1990
-SiH4(1)=H2(2)+H2Si(3)                               3.300e+15 -0.500    55.900   
+SiH3SiH(6)=Si2H4(4)                                 1.150e+20 -3.060    6.630    
 
-! Reaction index: Chemkin #2; RMG #2
+! Reaction index: Chemkin #2; RMG #27
+! Template reaction: H2_transfer
+! Estimated using template (R-SiH2,H3SiSiH) for rate rule (R-SiH3,H3SiSiH)
+SiH3SiH(6)+SiH3SiH(6)=Si2H2(3)+Si2H6(5)             1.038e+15 0.400     8.891    
+
+! Reaction index: Chemkin #3; RMG #5
 ! Library reaction: Silicon_Giunta_1990
-Si2H6(4)=SiH4(1)+H2Si(3)                            2.500e+19 -1.000    54.900   
+Si3H8(7)=SiH4(1)+SiH3SiH(6)                         4.800e+14 0.000     49.200   
 
-! Reaction index: Chemkin #3; RMG #3
-! Library reaction: Silicon_Giunta_1990
-Si2H6(4)=H2(2)+SiH3SiH(5)                           2.000e+15 0.000     55.300   
-
-! Reaction index: Chemkin #4; RMG #11
+! Reaction index: Chemkin #4; RMG #8
 ! Library reaction: DolletSi2H4
-SiH3SiH(5)(+M)=H2Si(3)+H2Si(3)(+M)                  3.100e+12 0.140     54.684   
+SiH3SiH(6)(+M)=SiH4(1)+Si(8)(+M)                    2.040e+17 -1.210    40.834   
 
-    LOW/ 8.260e+20 -1.650    56.283   /
-    TROE/ -3.811e-01 159       -4.03e+03 86.6     /
+    LOW/ 3.140e+23 -2.630    41.883   /
+    TROE/ -1.145e+00 625       693       421      /
 
-! Reaction index: Chemkin #5; RMG #6
-! Library reaction: Silicon_Giunta_1990
-SiH3SiH(5)=H4Si2(7)                                 1.150e+20 -3.060    6.630    
-
-! Reaction index: Chemkin #6; RMG #7
-! Library reaction: Silicon_Giunta_1990
-H2Si(3)+H2Si(3)=H4Si2(7)                            2.500e+14 0.000     0.000    
-
-! Reaction index: Chemkin #7; RMG #17
+! Reaction index: Chemkin #5; RMG #9
 ! Library reaction: DolletSi2H4
-H2(2)+Si2H2(12)(+M)=H4Si2(7)(+M)                    4.590e+14 0.000     0.000    
+SiH3SiH(6)(+M)=SiH3(2)+SiH(9)(+M)                   5.850e+19 -1.790    64.940   
 
-    LOW/ 5.960e+38 -6.320    4.165    /
-    TROE/ 3.614e+00 223       356       1.67e+03 /
+    LOW/ 3.460e+23 -2.570    65.262   /
+    TROE/ 2.232e+00 3.28e+03  5.56e+03  8.04e+03 /
 
-! Reaction index: Chemkin #8; RMG #19
+! Reaction index: Chemkin #6; RMG #12
 ! Library reaction: DolletSi2H4
-H2Si(3)+H2Si(3)(+M)=H2(2)+Si2H2(12)(+M)             5.160e+10 0.407     -0.392   
+SiH4(1)+Si(8)(+M)=SiH3SiH(6)(+M)                    2.370e+14 0.000     0.000    
 
-    LOW/ 2.800e+13 0.039     0.032    /
-    TROE/ -3.829e-01 460       316       343      /
+    LOW/ 5.940e+19 -1.190    0.630    /
+    TROE/ 2.691e+00 322       373       348      /
 
-! Reaction index: Chemkin #9; RMG #21
+! Reaction index: Chemkin #7; RMG #13
+! Library reaction: DolletSi2H4
+SiH4(1)+Si(8)(+M)=Si2H4(4)(+M)                      4.560e+09 1.070     -0.440   
+
+    LOW/ 3.800e+20 -1.360    1.036    /
+    TROE/ -2.139e-01 258       -2.06e+03 354      /
+
+! Reaction index: Chemkin #8; RMG #15
+! Library reaction: DolletSi2H4
+SiH4(1)+Si(8)(+M)=SiH3(2)+SiH(9)(+M)                4.270e+04 2.250     21.604   
+
+    LOW/ 6.190e+08 1.330     21.956   /
+    TROE/ 2.627e+00 877       1.49e+03  1.95e+03 /
+
+! Reaction index: Chemkin #9; RMG #18
+! Library reaction: DolletSi2H4
+SiH3(2)+SiH(9)(+M)=Si2H4(4)(+M)                     2.770e+09 0.849     -0.303   
+
+    LOW/ 2.460e+14 0.030     0.173    /
+    TROE/ -5.098e-01 48.3      -1.74e+04 20.6     /
+
+! Reaction index: Chemkin #10; RMG #21
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_1centerbirad) for rate rule (Si_silane,SiH2_triplet)
+SiH4(1)+H2Si(11)=SiH3(2)+SiH3(2)                    1.095e+09 1.515     5.601    
+
+! Reaction index: Chemkin #11; RMG #47
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (Xrad_H,Y_1centerbirad)
+! Ea raised from -1.9 to 86.8 kJ/mol to match endothermicity of reaction.
+SiH3(2)+Si(8)=SiH(9)+H2Si(11)                       1.442e+11 0.750     20.738   
+
+! Reaction index: Chemkin #12; RMG #51
+! Template reaction: H2_transfer
+! Exact match found for rate rule (Si2H6,Si_atom)
+Si2H6(5)+Si(8)=SiH3SiH(6)+H2Si(11)                  1.560e+16 0.000     37.353   
+
+! Reaction index: Chemkin #13; RMG #52
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (SiH2-triplet,Si-SiH)
+Si2H2(3)+H2Si(11)=SiH3SiH(6)+Si(8)                  4.120e+04 2.760     11.783   
+
+! Reaction index: Chemkin #14; RMG #38
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (R-SiH3,Si_pair)
+SiH3SiH(6)+H6Si3(12)=Si2H2(3)+Si3H8(7)              6.180e+04 2.760     11.783   
+
+! Reaction index: Chemkin #15; RMG #42
+! Template reaction: H2_transfer
+! Exact match found for rate rule (R-SiH2,H3SiSiH)
+SiH3SiH(6)+Si3H8(7)=Si2H6(5)+H6Si3(12)              3.460e+14 0.400     8.891    
+
+! Reaction index: Chemkin #16; RMG #55
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (SiH2-triplet,Si_pair)
+H2Si(11)+H6Si3(12)=Si3H8(7)+Si(8)                   2.060e+04 2.760     11.783   
+
+! Reaction index: Chemkin #17; RMG #24
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_rad) for rate rule (X_H,Si_silyl)
+SiH3(2)+Si2H4(4)=SiH4(1)+H3Si2(13)                  4.087e+05 2.382     10.534   
+
+! Reaction index: Chemkin #18; RMG #48
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (X_H,Y_1centerbirad)
+SiH(9)+H3Si2(13)=Si2H4(4)+Si(8)                     4.708e+09 1.068     5.022    
+
+! Reaction index: Chemkin #19; RMG #57
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_1centerbirad) for rate rule (Si_silane,Y_1centerbirad)
+SiH4(1)+SiH2Si(10)=SiH3(2)+H3Si2(13)                1.095e+09 1.515     5.308    
+
+! Reaction index: Chemkin #20; RMG #59
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (Xrad_H,Y_1centerbirad)
+SiH3(2)+SiH2Si(10)=H2Si(11)+H3Si2(13)               1.442e+11 0.750     -0.445   
+
+! Reaction index: Chemkin #21; RMG #61
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (X_H,Y_1centerbirad)
+Si2H4(4)+SiH2Si(10)=H3Si2(13)+H3Si2(13)             5.475e+08 1.515     5.244    
+
+! Reaction index: Chemkin #22; RMG #68
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (Xrad_H,Y_1centerbirad)
+SiH(9)+SiH2Si(10)=Si(8)+H3Si2(13)                   4.806e+10 0.750     -0.445   
+
+! Reaction index: Chemkin #23; RMG #71
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (X_H,SiH2_triplet)
+SiH3(2)+H3Si2(13)=Si2H4(4)+H2Si(11)                 1.412e+10 1.068     10.698   
+
+! Reaction index: Chemkin #24; RMG #25
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (R-SiH2,Si-SiH)
+Si2H2(3)+Si2H4(4)=SiH3SiH(6)+H2Si2(14)              8.240e+04 2.760     11.783   
+
+! Reaction index: Chemkin #25; RMG #32
+! Template reaction: H2_transfer
+! Exact match found for rate rule (R-SiH2,H3SiSiH)
+Si2H4(4)+SiH3SiH(6)=Si2H6(5)+H2Si2(14)              6.920e+14 0.400     8.891    
+
+! Reaction index: Chemkin #26; RMG #49
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (R-SiH2,Si_atom)
+Si2H4(4)+Si(8)=H2Si(11)+H2Si2(14)                   4.120e+04 2.760     11.783   
+
+! Reaction index: Chemkin #27; RMG #83
+! Template reaction: H2_transfer
+! Estimated using template (RH2,Si_pair) for rate rule (R-SiH2,Si_pair)
+Si2H4(4)+H6Si3(12)=Si3H8(7)+H2Si2(14)               4.120e+04 2.760     11.783   
+
+! Reaction index: Chemkin #28; RMG #26
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_rad) for rate rule (Si_silane,Si_rad)
+SiH4(1)+H5Si2(15)=SiH3(2)+Si2H6(5)                  8.175e+05 2.382     10.476   
+
+! Reaction index: Chemkin #29; RMG #50
+! Template reaction: H_Abstraction
+! Estimated using template (Xrad_H,Y_rad) for rate rule (Xrad_H,Si_rad)
+SiH(9)+H5Si2(15)=Si2H6(5)+Si(8)                     4.708e+09 1.068     5.022    
+
+! Reaction index: Chemkin #30; RMG #62
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_1centerbirad) for rate rule (Si_H,Y_1centerbirad)
+Si2H6(5)+SiH2Si(10)=H3Si2(13)+H5Si2(15)             1.232e+09 1.515     5.414    
+
+! Reaction index: Chemkin #31; RMG #72
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_1centerbirad) for rate rule (Si_H,SiH2_triplet)
+Si2H6(5)+H2Si(11)=SiH3(2)+H5Si2(15)                 1.232e+09 1.515     14.334   
+
+! Reaction index: Chemkin #32; RMG #92
+! Template reaction: H_Abstraction
+! Estimated using template (X_H,Y_rad) for rate rule (X_H,Si_rad)
+Si2H4(4)+H5Si2(15)=Si2H6(5)+H3Si2(13)               4.087e+05 2.382     10.390   
+
+! Reaction index: Chemkin #33; RMG #28
 ! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (Si2S_R_H,H_H)
-H2(2)+Si2H2(12)=SiH3SiH(5)                          6.960e-18 1.970     -0.454   
+! Estimated using template (Si2S_R_H,Si_H) for rate rule (Si2S_R_H,Si2H6)
+Si2H2(3)+Si2H6(5)=H8Si4(16)                         1.339e+16 0.000     -0.454   
+
+! Reaction index: Chemkin #34; RMG #34
+! Template reaction: Silylene_Insertion
+! Estimated using template (Si2S_R_H,Si_H) for rate rule (SiH3_SiH,Si_H)
+SiH3SiH(6)+SiH3SiH(6)=H8Si4(16)                     3.348e+15 0.000     -0.454   
 
 END
 

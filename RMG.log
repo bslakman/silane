@@ -1,6 +1,6 @@
 Global RMG Settings:
-   database.directory   = /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Thu Oct 23 10:45:56 2014
+   database.directory   = /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Mon Nov 10 15:00:43 2014
 
 ###################################################
 # RMG-Py - Reaction Mechanism Generator in Python #
@@ -12,89 +12,80 @@ RMG execution initiated at Thu Oct 23 10:45:56 2014
 ###################################################
 
 The current git HEAD is:
-	294343c880fcd056bbc7992301dffba2d0465b2f
-	Wed Oct 22 10:46:46 2014 -0700
+	7bbd2a304f0dc15059371d7cb98558dc2ab8c840
+	Tue Oct 28 13:40:09 2014 -0700
 
-Reading input file "/nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-Py/examples/rmg/silane/input.py"...
+Reading input file "/nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-Py/examples/rmg/silane/input.py"...
 
-Loading thermodynamics library from primaryThermoLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/libraries...
-Loading thermodynamics library from SiliconHydrideLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/libraries...
-Loading thermodynamics group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/thermo/groups...
-Loading transport library from GRI-Mech.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/libraries...
-Loading transport library from PrimaryTransportLibrary.py in /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/libraries...
-Loading transport group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/transport/groups...
-Loading the user-specified kinetics families from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/kinetics/families
-Loading kinetics library Silicon_Giunta_1990 from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/kinetics/libraries/Silicon_Giunta_1990/reactions.py...
-Loading kinetics library DolletSi2H4 from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/kinetics/libraries/DolletSi2H4/reactions.py...
-Loading frequencies group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/statmech/groups...
-Loading Platts additivity group database from /nfs/pdx/disks/dts_ptm_ipag_collab_01/rmg/mrduda/RMG/RMG-database/input/solvation/groups...
+Loading thermodynamics library from primaryThermoLibrary.py in /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from SiliconHydrideLibrary.py in /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/transport/libraries...
+Loading transport library from PrimaryTransportLibrary.py in /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/transport/libraries...
+Loading transport group database from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/transport/groups...
+Loading the user-specified kinetics families from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/kinetics/families
+Loading kinetics library Silicon_Giunta_1990 from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/kinetics/libraries/Silicon_Giunta_1990/reactions.py...
+Loading kinetics library DolletSi2H4 from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/kinetics/libraries/DolletSi2H4/reactions.py...
+Loading frequencies group database from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /nfs/site/disks/dts_ptm_ipag_rmg_01/rmg/bslakman/RMG/RMG-database/input/solvation/groups...
 Adding rate rules from training set in kinetics families...
 Filling in rate rules in kinetics families by averaging...
 Adding reaction library Silicon_Giunta_1990 to model edge...
-Found thermo for Si2H6 in thermo library
+Found thermo for SiH2 in thermo library
+Found thermo for H2 in thermo library
 
 Summary of Model Enlargement
 ----------------------------
 Added 0 new core species
-Created 4 new edge species
-    Si2H6(4)
-    SiH3SiH(5)
-    Si3H8(6)
-    SiH2SiH2(7)
+Created 2 new edge species
+    SiH2(18)
+    H2(19)
 Added 0 new core reactions
 Created 7 new edge reactions
-    SiH4(1) <=> H2(2) + SiH2_singlet(3)
-    Si2H6(4) <=> SiH4(1) + SiH2_singlet(3)
-    Si2H6(4) <=> H2(2) + SiH3SiH(5)
-    Si3H8(6) <=> SiH2_singlet(3) + Si2H6(4)
-    Si3H8(6) <=> SiH4(1) + SiH3SiH(5)
-    SiH3SiH(5) <=> SiH2SiH2(7)
-    SiH2_singlet(3) + SiH2_singlet(3) <=> SiH2SiH2(7)
+    SiH4(1) <=> SiH2(18) + H2(19)
+    Si2H6(5) <=> SiH4(1) + SiH2(18)
+    Si2H6(5) <=> SiH3SiH(6) + H2(19)
+    Si3H8(7) <=> Si2H6(5) + SiH2(18)
+    Si3H8(7) <=> SiH4(1) + SiH3SiH(6)
+    SiH3SiH(6) <=> Si2H4(4)
+    SiH2(18) + SiH2(18) <=> Si2H4(4)
 
 After model enlargement:
     The model core has 0 species and 0 reactions
-    The model edge has 4 species and 7 reactions
+    The model edge has 2 species and 7 reactions
 
 Adding reaction library DolletSi2H4 to model edge...
-This library reaction was not new: SiH3SiH(5) <=> SiH2SiH2(7)
-This library reaction was not new: SiH3SiH(5) <=> H2(2) + SiH2Si(11)
-This library reaction was not new: SiH4(1) + Si(8) <=> H2(2) + SiH2Si(11)
-This library reaction was not new: SiH2_singlet(3) + SiH2_singlet(3) <=> SiH2SiH2(7)
-Found thermo for Si in thermo library
-Found thermo for SiH3 in thermo library
-Found thermo for SiH in thermo library
+This library reaction was not new: SiH3SiH(6) <=> Si2H4(4)
+This library reaction was not new: SiH3SiH(6) <=> SiH2Si(10) + H2(19)
+This library reaction was not new: SiH4(1) + Si(8) <=> SiH2Si(10) + H2(19)
+This library reaction was not new: SiH2(18) + SiH2(18) <=> Si2H4(4)
 
 Summary of Model Enlargement
 ----------------------------
 Added 0 new core species
-Created 5 new edge species
-    Si(8)
-    SiH3(9)
-    SiH(10)
-    SiH2Si(11)
-    Si2H2(12)
+Created 0 new edge species
 Added 0 new core reactions
 Created 13 new edge reactions
-    SiH3SiH(5) <=> SiH4(1) + Si(8)
-    SiH3SiH(5) <=> SiH3(9) + SiH(10)
-    SiH3SiH(5) <=> H2(2) + SiH2Si(11)
-    SiH3SiH(5) <=> SiH2_singlet(3) + SiH2_singlet(3)
-    SiH4(1) + Si(8) <=> SiH3SiH(5)
-    SiH4(1) + Si(8) <=> SiH2SiH2(7)
-    SiH4(1) + Si(8) <=> H2(2) + SiH2Si(11)
-    SiH4(1) + Si(8) <=> SiH3(9) + SiH(10)
-    SiH4(1) + Si(8) <=> SiH2_singlet(3) + SiH2_singlet(3)
-    H2(2) + Si2H2(12) <=> SiH2SiH2(7)
-    SiH3(9) + SiH(10) <=> SiH2SiH2(7)
-    SiH2_singlet(3) + SiH2_singlet(3) <=> H2(2) + Si2H2(12)
-    SiH3(9) + SiH(10) <=> H2(2) + Si2H2(12)
+    SiH3SiH(6) <=> SiH4(1) + Si(8)
+    SiH3SiH(6) <=> SiH3(2) + SiH(9)
+    SiH3SiH(6) <=> SiH2Si(10) + H2(19)
+    SiH3SiH(6) <=> SiH2(18) + SiH2(18)
+    SiH4(1) + Si(8) <=> SiH3SiH(6)
+    SiH4(1) + Si(8) <=> Si2H4(4)
+    SiH4(1) + Si(8) <=> SiH2Si(10) + H2(19)
+    SiH4(1) + Si(8) <=> SiH3(2) + SiH(9)
+    SiH4(1) + Si(8) <=> SiH2(18) + SiH2(18)
+    Si2H2(3) + H2(19) <=> Si2H4(4)
+    SiH3(2) + SiH(9) <=> Si2H4(4)
+    SiH2(18) + SiH2(18) <=> Si2H2(3) + H2(19)
+    SiH3(2) + SiH(9) <=> Si2H2(3) + H2(19)
 
 After model enlargement:
     The model core has 0 species and 0 reactions
-    The model edge has 9 species and 20 reactions
+    The model edge has 2 species and 20 reactions
 
-NOT generating reactions for unreactive species Ar
 NOT generating reactions for unreactive species He
+NOT generating reactions for unreactive species Ar
 NOT generating reactions for unreactive species Ne
 NOT generating reactions for unreactive species N2
 Generating thermodynamics for new species...
@@ -103,8 +94,8 @@ Generating kinetics for new reactions...
 Summary of Model Enlargement
 ----------------------------
 Added 4 new core species
-    Ar
     He
+    Ar
     Ne
     N2
 Created 0 new edge species
@@ -113,281 +104,167 @@ Created 0 new edge reactions
 
 After model enlargement:
     The model core has 4 species and 0 reactions
-    The model edge has 9 species and 20 reactions
+    The model edge has 2 species and 20 reactions
 
 
 Found thermo for SiH4 in thermo library
-Found thermo for H2 in thermo library
-Found thermo for Ar in thermo library
+Found thermo for SiH3 in thermo library
+Found thermo for Si2H2 in thermo library
+Found thermo for Si2H6 in thermo library
 Found thermo for He in thermo library
+Found thermo for Si in thermo library
+Found thermo for SiH in thermo library
+Found thermo for H2Si in thermo library
+Found thermo for H3Si2 in thermo library
+Found thermo for H in thermo library
+Found thermo for Ar in thermo library
 Found thermo for Ne in thermo library
 Found thermo for N2 in thermo library
 Adding species SiH4(1) to model core
-Adding species H2(2) to model core
-Adding species SiH2_singlet(3) to model core
+Adding species SiH3(2) to model core
+Adding species Si2H2(3) to model core
+Adding species Si2H4(4) to model core
+Adding species Si2H6(5) to model core
+Adding species SiH3SiH(6) to model core
+Adding species Si3H8(7) to model core
+Adding species Si(8) to model core
+Adding species SiH(9) to model core
+Adding species SiH2Si(10) to model core
+Adding species H2Si(11) to model core
+Adding species H6Si3(12) to model core
+Adding species H3Si2(13) to model core
+Adding species H2Si2(14) to model core
+Adding species H5Si2(15) to model core
+Adding species H8Si4(16) to model core
+Adding species H(17) to model core
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
+For reaction SiH4(1) + Si(8) <=> H2Si(11) + SiH2(18), Ea raised from 49.3 to 129.8 kJ/mol to match endothermicity of reaction.
+For reaction SiH3(2) + Si(8) <=> SiH(9) + H2Si(11), Ea raised from -1.9 to 86.8 kJ/mol to match endothermicity of reaction.
+For reaction Si(8) + H5Si2(15) <=> SiH(9) + [SiH][SiH3](40), Ea raised from -1.9 to 179.0 kJ/mol to match endothermicity of reaction.
 
 Summary of Model Enlargement
 ----------------------------
-Added 3 new core species
+Added 17 new core species
     SiH4(1)
-    H2(2)
-    SiH2_singlet(3)
-Created 0 new edge species
-Added 0 new core reactions
-Created 0 new edge reactions
+    SiH3(2)
+    Si2H2(3)
+    Si2H4(4)
+    Si2H6(5)
+    SiH3SiH(6)
+    Si3H8(7)
+    Si(8)
+    SiH(9)
+    SiH2Si(10)
+    H2Si(11)
+    H6Si3(12)
+    H3Si2(13)
+    H2Si2(14)
+    H5Si2(15)
+    H8Si4(16)
+    H(17)
+Created 6 new edge species
+    [SiH3][SiH2][SiH2][SiH2][SiH2][SiH2][SiH3](54)
+    [SiH3][SiH2][SiH2][SiH2][SiH2][SiH2][SiH3](55)
+    [SiH2][SiH2][SiH2][SiH2][SiH2][SiH3](56)
+    [SiH3][SiH2][SiH2][SiH2][SiH]([SiH3])[SiH2][SiH3](57)
+    [SiH3][SiH2][SiH2][SiH2][SiH]([SiH3])[SiH2][SiH3](58)
+    [SiH3][SiH2][SiH2][SiH2][SiH2][SiH2][SiH2][SiH3](59)
+Added 34 new core reactions
+    SiH3SiH(6) <=> Si2H4(4)
+    SiH3SiH(6) + SiH3SiH(6) <=> Si2H2(3) + Si2H6(5)
+    Si3H8(7) <=> SiH4(1) + SiH3SiH(6)
+    SiH3SiH(6) <=> SiH4(1) + Si(8)
+    SiH3SiH(6) <=> SiH3(2) + SiH(9)
+    SiH4(1) + Si(8) <=> SiH3SiH(6)
+    SiH4(1) + Si(8) <=> Si2H4(4)
+    SiH4(1) + Si(8) <=> SiH3(2) + SiH(9)
+    SiH3(2) + SiH(9) <=> Si2H4(4)
+    SiH4(1) + H2Si(11) <=> SiH3(2) + SiH3(2)
+    SiH3(2) + Si(8) <=> SiH(9) + H2Si(11)
+    Si2H6(5) + Si(8) <=> SiH3SiH(6) + H2Si(11)
+    Si2H2(3) + H2Si(11) <=> SiH3SiH(6) + Si(8)
+    SiH3SiH(6) + H6Si3(12) <=> Si2H2(3) + Si3H8(7)
+    SiH3SiH(6) + Si3H8(7) <=> Si2H6(5) + H6Si3(12)
+    H2Si(11) + H6Si3(12) <=> Si3H8(7) + Si(8)
+    SiH3(2) + Si2H4(4) <=> SiH4(1) + H3Si2(13)
+    SiH(9) + H3Si2(13) <=> Si2H4(4) + Si(8)
+    SiH4(1) + SiH2Si(10) <=> SiH3(2) + H3Si2(13)
+    SiH3(2) + SiH2Si(10) <=> H2Si(11) + H3Si2(13)
+    Si2H4(4) + SiH2Si(10) <=> H3Si2(13) + H3Si2(13)
+    SiH(9) + SiH2Si(10) <=> Si(8) + H3Si2(13)
+    SiH3(2) + H3Si2(13) <=> Si2H4(4) + H2Si(11)
+    Si2H2(3) + Si2H4(4) <=> SiH3SiH(6) + H2Si2(14)
+    Si2H4(4) + SiH3SiH(6) <=> Si2H6(5) + H2Si2(14)
+    Si2H4(4) + Si(8) <=> H2Si(11) + H2Si2(14)
+    Si2H4(4) + H6Si3(12) <=> Si3H8(7) + H2Si2(14)
+    SiH4(1) + H5Si2(15) <=> SiH3(2) + Si2H6(5)
+    SiH(9) + H5Si2(15) <=> Si2H6(5) + Si(8)
+    Si2H6(5) + SiH2Si(10) <=> H3Si2(13) + H5Si2(15)
+    Si2H6(5) + H2Si(11) <=> SiH3(2) + H5Si2(15)
+    Si2H4(4) + H5Si2(15) <=> Si2H6(5) + H3Si2(13)
+    Si2H2(3) + Si2H6(5) <=> H8Si4(16)
+    SiH3SiH(6) + SiH3SiH(6) <=> H8Si4(16)
+Created 14 new edge reactions
+    H8Si4(16) + H8Si4(16) <=> [SiH3][SiH2][SiH2][SiH2][SiH2][SiH2][SiH2][SiH3](59)
+    SiH4(1) + H(17) <=> SiH3(2) + H2(19)
+    SiH3(2) + H(17) <=> H2Si(11) + H2(19)
+    Si2H4(4) + H(17) <=> H3Si2(13) + H2(19)
+    Si2H6(5) + H(17) <=> H5Si2(15) + H2(19)
+    Si3H8(7) + H(17) <=> H2(19) + [SiH3][SiH][SiH3](23)
+    Si3H8(7) + H(17) <=> H2(19) + [SiH2][SiH2][SiH3](24)
+    SiH(9) + H(17) <=> Si(8) + H2(19)
+    SiH2Si(10) + H(17) <=> H2(19) + [Si]=[SiH](29)
+    H2(19) + [SiH](31) <=> H2Si(11) + H(17)
+    H3Si2(13) + H(17) <=> H2(19) + [SiH]=[SiH](35)
+    SiH2Si(10) + H2(19) <=> H3Si2(13) + H(17)
+    H5Si2(15) + H(17) <=> H2(19) + [SiH2][SiH2](39)
+    H2(19) + [SiH][SiH3](40) <=> H5Si2(15) + H(17)
 
 After model enlargement:
-    The model core has 7 species and 0 reactions
-    The model edge has 9 species and 20 reactions
+    The model core has 21 species and 34 reactions
+    The model edge has 42 species and 165 reactions
 
 
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Saving current model core to Chemkin file...
-Chemkin file contains 0 reactions.
+Chemkin file contains 34 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 0 reactions.
+Chemkin file contains 34 reactions.
 Saving current model edge to Chemkin file...
-Chemkin file contains 0 reactions.
+Chemkin file contains 34 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 0 reactions.
-Chemkin file contains 20 reactions.
+Chemkin file contains 34 reactions.
+Chemkin file contains 165 reactions.
 Saving current edge to verbose Chemkin file...
-Chemkin file contains 20 reactions.
+Chemkin file contains 165 reactions.
 Conducting simulation of reaction system 1...
-At time 2.0000e-15 s, species Si2H6(4) exceeded the minimum rate for moving to model core
-    Characteristic rate: 0.0000e+00 mol/m^3*s
-    Si2H6(4) rate: 1.9727e+15 mol/m^3*s
+At time 1.0000e+06 s, reached target termination time.
     SiH4(1) conversion: 0         
-At time 2.0000e-15 s, species Si2H6(4) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 0.0000e+00 mol/m^3*s
-    Si2H6(4) rate: 1.9727e+15 mol/m^3*s
-    SiH4(1) conversion: 0         
-
-
-Adding species Si2H6(4) to model core
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-
-Summary of Model Enlargement
-----------------------------
-Added 1 new core species
-    Si2H6(4)
-Created 0 new edge species
-Moved 2 reactions from edge to core
-    SiH4(1) <=> H2(2) + SiH2_singlet(3)
-    Si2H6(4) <=> SiH4(1) + SiH2_singlet(3)
-Added 0 new core reactions
-Created 0 new edge reactions
-
-After model enlargement:
-    The model core has 8 species and 2 reactions
-    The model edge has 8 species and 18 reactions
-
 
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Saving current model core to Chemkin file...
-Chemkin file contains 2 reactions.
+Chemkin file contains 34 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 2 reactions.
+Chemkin file contains 34 reactions.
 Saving current model edge to Chemkin file...
-Chemkin file contains 2 reactions.
+Chemkin file contains 34 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 2 reactions.
-Chemkin file contains 18 reactions.
+Chemkin file contains 34 reactions.
+Chemkin file contains 165 reactions.
 Saving current edge to verbose Chemkin file...
-Chemkin file contains 18 reactions.
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:04
-    Memory used: 177.75 MB
-
-Conducting simulation of reaction system 1...
-At time 2.1949e-14 s, species SiH3SiH(5) exceeded the minimum rate for moving to model core
-    Characteristic rate: 2.2728e+04 mol/m^3*s
-    SiH3SiH(5) rate: 2.6117e+00 mol/m^3*s (0.0001149)
-    SiH4(1) conversion: 0.2       
-At time 2.8184e-14 s, species SiH3SiH(5) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.5937e+01 mol/m^3*s
-    SiH3SiH(5) rate: 2.6117e+00 mol/m^3*s (0.1639)
-    SiH4(1) conversion: 0.2       
-
-
-Adding species SiH3SiH(5) to model core
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-
-Summary of Model Enlargement
-----------------------------
-Added 1 new core species
-    SiH3SiH(5)
-Created 2 new edge species
-    [SiH3][SiH2][SiH2][SiH3](13)
-    [SiH3][SiH2][SiH2][SiH3](14)
-Moved 2 reactions from edge to core
-    Si2H6(4) <=> H2(2) + SiH3SiH(5)
-    SiH3SiH(5) <=> SiH2_singlet(3) + SiH2_singlet(3)
-Added 0 new core reactions
-Created 3 new edge reactions
-    H2(2) + Si2H2(12) <=> SiH3SiH(5)
-    Si2H6(4) + SiH3SiH(5) <=> [SiH3][SiH2][SiH2][SiH3](13)
-    SiH3SiH(5) + SiH3SiH(5) <=> [SiH3][SiH2][SiH2][SiH3](14)
-
-After model enlargement:
-    The model core has 9 species and 4 reactions
-    The model edge has 9 species and 19 reactions
-
-
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Saving current model core to Chemkin file...
-Chemkin file contains 4 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 4 reactions.
-Saving current model edge to Chemkin file...
-Chemkin file contains 4 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 4 reactions.
-Chemkin file contains 19 reactions.
-Saving current edge to verbose Chemkin file...
-Chemkin file contains 19 reactions.
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:04
-    Memory used: 177.82 MB
-
-Conducting simulation of reaction system 1...
-At time 7.4845e+00 s, species SiH2SiH2(7) exceeded the minimum rate for moving to model core
-    Characteristic rate: 4.0649e-01 mol/m^3*s
-    SiH2SiH2(7) rate: 4.1599e-05 mol/m^3*s (0.0001023)
-    SiH4(1) conversion: 0.6863    
-At time 1.6654e+01 s, reached target termination conversion: 0.900000 of SiH4(1)
-    SiH4(1) conversion: 0.9003    
-
-
-
-Adding species SiH2SiH2(7) to model core
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-
-Summary of Model Enlargement
-----------------------------
-Added 1 new core species
-    SiH2SiH2(7)
-Created 1 new edge species
-    [SiH2]=[SiH][SiH2][SiH3](15)
-Moved 2 reactions from edge to core
-    SiH3SiH(5) <=> SiH2SiH2(7)
-    SiH2_singlet(3) + SiH2_singlet(3) <=> SiH2SiH2(7)
-Added 0 new core reactions
-Created 1 new edge reactions
-    SiH3SiH(5) + SiH2SiH2(7) <=> [SiH2]=[SiH][SiH2][SiH3](15)
-
-After model enlargement:
-    The model core has 10 species and 6 reactions
-    The model edge has 9 species and 18 reactions
-
-
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Saving current model core to Chemkin file...
-Chemkin file contains 6 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 6 reactions.
-Saving current model edge to Chemkin file...
-Chemkin file contains 6 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 6 reactions.
-Chemkin file contains 18 reactions.
-Saving current edge to verbose Chemkin file...
-Chemkin file contains 18 reactions.
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:05
-    Memory used: 177.84 MB
-
-Conducting simulation of reaction system 1...
-At time 2.2153e-14 s, species Si2H2(12) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.7929e+04 mol/m^3*s
-    Si2H2(12) rate: 2.0553e+00 mol/m^3*s (0.0001146)
-    SiH4(1) conversion: 0.2       
-At time 2.9076e-14 s, species Si2H2(12) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 2.0309e+01 mol/m^3*s
-    Si2H2(12) rate: 2.0553e+00 mol/m^3*s (0.1012)
-    SiH4(1) conversion: 0.2       
-
-
-Adding species Si2H2(12) to model core
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-
-Summary of Model Enlargement
-----------------------------
-Added 1 new core species
-    Si2H2(12)
-Created 3 new edge species
-    [SiH3][SiH2][SiH3](16)
-    [SiH3][SiH2][SiH2][SiH3](17)
-    [SiH2]=[SiH][SiH2][SiH3](18)
-Moved 3 reactions from edge to core
-    H2(2) + Si2H2(12) <=> SiH2SiH2(7)
-    SiH2_singlet(3) + SiH2_singlet(3) <=> H2(2) + Si2H2(12)
-    H2(2) + Si2H2(12) <=> SiH3SiH(5)
-Added 0 new core reactions
-Created 4 new edge reactions
-    SiH4(1) + Si2H2(12) <=> [SiH3][SiH2][SiH3](16)
-    Si2H6(4) + Si2H2(12) <=> [SiH3][SiH2][SiH2][SiH3](14)
-    SiH3SiH(5) + Si2H2(12) <=> [SiH3][SiH2][SiH2][SiH3](17)
-    Si2H2(12) + SiH2SiH2(7) <=> [SiH2]=[SiH][SiH2][SiH3](18)
-
-After model enlargement:
-    The model core has 11 species and 9 reactions
-    The model edge has 11 species and 19 reactions
-
-
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Saving current model core to Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model edge to Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 9 reactions.
-Chemkin file contains 19 reactions.
-Saving current edge to verbose Chemkin file...
-Chemkin file contains 19 reactions.
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:06
-    Memory used: 177.84 MB
-
-Conducting simulation of reaction system 1...
-At time 1.6726e+01 s, reached target termination conversion: 0.900000 of SiH4(1)
-    SiH4(1) conversion: 0.9012    
-
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Saving current model core to Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model edge to Chemkin file...
-Chemkin file contains 9 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 9 reactions.
-Chemkin file contains 19 reactions.
-Saving current edge to verbose Chemkin file...
-Chemkin file contains 19 reactions.
+Chemkin file contains 165 reactions.
 Saving restart file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:06
-    Memory used: 177.86 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:15
+    Memory used: 177.95 MB
 
 
 MODEL GENERATION COMPLETED
 
-The final model core has 11 species and 9 reactions
-The final model edge has 11 species and 19 reactions
+The final model core has 21 species and 34 reactions
+The final model edge has 42 species and 165 reactions
 
-RMG execution terminated at Thu Oct 23 10:46:03 2014
+RMG execution terminated at Mon Nov 10 15:00:58 2014
