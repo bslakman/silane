@@ -6,12 +6,10 @@ SPECIES
     Ne                  ! Ne
     N2                  ! N2
     SiH4(1)             ! SiH4(1)
-    SiH3(2)             ! SiH3(2)
-    H(3)                ! H(3)
-    SiH2(4)             ! SiH2(4)
-    H2(5)               ! H2(5)
-    SiH3SiH(7)          ! SiH3SiH(7)
-    Si(15)              ! [SiH4](15)
+    SiH2(2)             ! SiH2(2)
+    H2(3)               ! H2(3)
+    SiH3SiH(5)          ! SiH3SiH(5)
+    Si(14)              ! [SiH4](14)
 END
 
 
@@ -50,37 +48,25 @@ SiH4(1)                 H 4  Si1            G100.000   5000.000  995.08        1
 -3.74634722E-08 1.28902858E-11 1.53598054E+03 2.01298307E+00                   4
 
 ! Thermo library: SiliconHydrideLibrary
-SiH3(2)                 H 3  Si1            G100.000   5000.000  1000.99       1
- 4.09637115E+00 5.86730569E-03-2.39262850E-06 4.64339172E-10-3.39859628E-14    2
- 2.14248805E+04 6.16020392E-01 3.91655204E+00-1.00475599E-03 1.92800535E-05    3
--2.15455854E-08 7.35513738E-12 2.18411596E+04 3.38324819E+00                   4
-
-! Thermo library: primaryThermoLibrary
-H(3)                    H 1                 G100.000   5000.000  2121.20       1
- 2.50000000E+00 3.04114587E-14-1.54210734E-17 3.31770777E-21-2.56694325E-25    2
- 2.54742178E+04-4.44972896E-01 2.50000000E+00 1.37382135E-15-2.66902032E-18    3
- 1.75563256E-21-3.60841378E-25 2.54742178E+04-4.44972896E-01                   4
-
-! Thermo library: SiliconHydrideLibrary
-SiH2(4)                 H 2  Si1            G100.000   5000.000  1086.09       1
+SiH2(2)                 H 2  Si1            G100.000   5000.000  1086.09       1
  3.20860372E+00 4.17689913E-03-1.84110831E-06 3.53872497E-10-2.50882362E-14    2
  3.04487368E+04 5.35784965E+00 4.05121062E+00-1.89758380E-03 1.06518788E-05    3
 -9.83341300E-09 2.89963945E-12 3.04409500E+04 2.02992798E+00                   4
 
 ! Thermo library: primaryThermoLibrary
-H2(5)                   H 2                 G100.000   5000.000  1959.08       1
+H2(3)                   H 2                 G100.000   5000.000  1959.08       1
  2.78814852E+00 5.87663436E-04 1.58999886E-07-5.52717891E-11 4.34295580E-15    2
 -5.96134054E+02 1.12835287E-01 3.43536428E+00 2.12708915E-04-2.78621781E-07    3
  3.40264607E-10-7.76025661E-14-1.03135985E+03-3.90841796E+00                   4
 
 ! Thermo library: SiliconHydrideLibrary
-SiH3SiH(7)              H 4  Si2            G100.000   5000.000  1208.20       1
+SiH3SiH(5)              H 4  Si2            G100.000   5000.000  1208.20       1
  6.72586267E+00 1.06939264E-02-4.92166661E-06 9.47639385E-10-6.67694606E-14    2
  3.37896131E+04-6.58397031E+00 2.96584749E+00 2.31421777E-02-2.03762877E-05    3
  9.47522051E-09-1.83128150E-12 3.46981882E+04 1.22670882E+01                   4
 
 ! Thermo group additivity estimation: group(si) + other(R)
-Si(15)                  Si1                 G100.000   5000.000  2121.20       1
+Si(14)                  Si1                 G100.000   5000.000  2121.20       1
  2.50000000E+00 3.04114587E-14-1.54210734E-17 3.31770777E-21-2.56694325E-25    2
  3.25077093E+04 1.10742124E+01 2.50000000E+00 1.37382135E-15-2.66902032E-18    3
  1.75563256E-21-3.60841378E-25 3.25077093E+04 1.10742124E+01                   4
@@ -91,53 +77,29 @@ END
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #23
-! Template reaction: R_Recombination
-! Matched reaction 10 SiH4 <=> SiH3 + H in R_Recombination/training
-! Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
-SiH4(1)=SiH3(2)+H(3)                                3.910e+15 0.000     90.978   
-DUPLICATE
-
-! Reaction index: Chemkin #2; RMG #28
-! Template reaction: R_Recombination
-! Matched reaction 10 SiH4 <=> SiH3 + H in R_Recombination/training
-! Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
-SiH4(1)=SiH3(2)+H(3)                                3.910e+15 0.000     90.978   
-DUPLICATE
-
-! Reaction index: Chemkin #3; RMG #1
+! Reaction index: Chemkin #1; RMG #1
 ! Library reaction: Silicon_Giunta_1990
-SiH4(1)=SiH2(4)+H2(5)                               3.300e+15 -0.500    55.900   
+SiH4(1)=SiH2(2)+H2(3)                               3.300e+15 -0.500    55.900   
 
-! Reaction index: Chemkin #4; RMG #26
-! Template reaction: H_Abstraction
-! Matched reaction 1011 SiH4 + H <=> H2 + SiH3 in H_Abstraction/training
-SiH4(1)+H(3)=SiH3(2)+H2(5)                          1.259e+07 2.320     2.273    
-
-! Reaction index: Chemkin #5; RMG #29
-! Template reaction: R_Recombination
-! Exact match found for rate rule (H_rad;H_rad)
-H(3)+H(3)=H2(5)                                     1.090e+11 0.000     1.500    
-
-! Reaction index: Chemkin #6; RMG #31
+! Reaction index: Chemkin #2; RMG #25
 ! Template reaction: Silylene_Insertion
 ! Exact match found for rate rule (Si2S;H_H)
 ! Multiplied by reaction path degeneracy 2
-H2(5)+Si(15)=SiH2(4)                                2.100e+06 1.970     -0.454   
+H2(3)+Si(14)=SiH2(2)                                2.100e+06 1.970     -0.454   
 
-! Reaction index: Chemkin #7; RMG #12
+! Reaction index: Chemkin #3; RMG #12
 ! Library reaction: DolletSi2H4
-SiH3SiH(7)(+M)=>SiH2(4)+SiH2(4)(+M)                 3.100e+12 0.140     54.684   
+SiH3SiH(5)(+M)=>SiH2(2)+SiH2(2)(+M)                 3.100e+12 0.140     54.684   
 
     LOW/ 8.260e+20 -1.650    56.283   /
     TROE/ -3.811e-01 159       -4.03e+03 86.6     /
 
-! Reaction index: Chemkin #8; RMG #34
+! Reaction index: Chemkin #4; RMG #27
 ! Template reaction: Silylene_Insertion
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
 ! Multiplied by reaction path degeneracy 24
 ! Ea raised from -1.9 to 5.2 kJ/mol to match endothermicity of reaction.
-SiH4(1)+Si(15)=SiH3SiH(7)                           4.464e+15 0.000     1.243    
+SiH4(1)+Si(14)=SiH3SiH(5)                           4.464e+15 0.000     1.243    
 
 END
 

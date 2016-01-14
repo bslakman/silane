@@ -17,18 +17,6 @@ species(
 )
 
 species(
-    label='SiH3',
-    reactive=True,
-    structure=SMILES("[SiH3]")
-)
-
-species(
-    label='H',
-    reactive=True,
-    structure=SMILES("[H]")
-)
-
-species(
     label='Ar',
     reactive=False,
     structure=SMILES("[Ar]")
@@ -41,8 +29,6 @@ simpleReactor(
     initialMoleFractions={
         "SiH4": 0.00016,
 	"Ar": 0.99984,
-        "SiH3": 0.0,
-        "H": 0.0
     },
     terminationConversion={
         'SiH4': 0.9,
