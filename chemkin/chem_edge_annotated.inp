@@ -22,9 +22,6 @@ SPECIES
     Si(15)              ! [SiH4](15)
     H3Si2(16)           ! [SiH2][SiH3](16)
     H3Si2(17)           ! [SiH2][SiH3](17)
-    H6Si3(18)           ! [SiH3][SiH2][SiH3](18)
-    H4Si3(19)           ! [SiH3][SiH2][SiH3](19)
-    H8Si4(20)           ! [SiH3][SiH2][SiH2][SiH3](20)
 END
 
 
@@ -158,103 +155,103 @@ H3Si2(17)               H 3  Si2            G100.000   5000.000  806.49        1
  5.64273549E+04-4.63548454E+00 2.89405649E+00 2.61931813E-02-3.99086972E-05    3
  3.29220132E-08-1.08157998E-11 5.68877444E+04 9.74670632E+00                   4
 
-! Thermo group additivity estimation: group(Sis-H2siSis) + other(R) + group(Sis-H3Sis) + other(R) + group(si) + other(R)
-H6Si3(18)               H 6  Si3            G100.000   5000.000  791.30        1
- 8.54270921E+00 2.06103985E-02-9.96515028E-06 1.92707976E-09-1.34987660E-13    2
- 3.99534064E+04-1.47793485E+01 1.64951986E+00 5.54549286E-02-7.60162850E-05    3
- 5.75742950E-08-1.77157562E-11 4.10443337E+04 1.68628309E+01                   4
-
-! Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(si) + other(R) + group(si) + other(R)
-H4Si3(19)               H 4  Si3            G100.000   5000.000  843.57        1
- 6.65294038E+00 2.17691283E-02-1.09108139E-05 2.08068724E-09-1.42357380E-13    2
- 6.88051711E+04 1.44104459E+01 1.68615033E+00 5.69073007E-02-9.39952752E-05    3
- 8.40242526E-08-2.92526022E-11 6.92308701E+04 3.50838355E+01                   4
-
-! Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-H2siSis) + other(R) + group(Sis-H3Sis) + other(R) + group(si) + other(R)
-H8Si4(20)               H 8  Si4            G100.000   5000.000  793.50        1
- 1.13101438E+01 2.88297450E-02-1.40495802E-05 2.69395204E-09-1.86464846E-13    2
- 4.35807130E+04-2.49574722E+01 2.62642542E-01 8.83144000E-02-1.33670226E-04    3
- 1.09221091E-07-3.56476617E-11 4.52144873E+04 2.50322618E+01                   4
-
 END
 
 
 
 REACTIONS    KCAL/MOLE   MOLES
 
-! Reaction index: Chemkin #1; RMG #23
-! Template reaction: R_Recombination
-! Matched reaction 10 SiH4 <=> SiH3 + H in R_Recombination/training
-! Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
-SiH4(1)=SiH3(2)+H(3)                                3.910e+15 0.000     90.978   
-DUPLICATE
+! Reaction index: Chemkin #1; RMG #32
+! PDep reaction: PDepNetwork #3
+SiH3(2)+H(3)(+M)=SiH4(1)(+M)                        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 1.128e+01    1.637e+00    -8.517e-03   -4.176e-03  /
+    CHEB/ -6.458e-01   5.711e-03    3.622e-03    1.766e-03   /
+    CHEB/ -2.283e-01   4.315e-03    2.733e-03    1.329e-03   /
+    CHEB/ -5.465e-02   3.655e-05    3.111e-05    2.211e-05   /
+    CHEB/ -3.214e-02   8.664e-05    5.767e-05    3.051e-05   /
+    CHEB/ -1.399e-02   1.676e-05    1.044e-05    4.933e-06   /
 
 ! Reaction index: Chemkin #2; RMG #28
-! Template reaction: R_Recombination
-! Matched reaction 10 SiH4 <=> SiH3 + H in R_Recombination/training
-! Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
-SiH4(1)=SiH3(2)+H(3)                                3.910e+15 0.000     90.978   
-DUPLICATE
-
-! Reaction index: Chemkin #3; RMG #1
-! Library reaction: Silicon_Giunta_1990
-SiH4(1)=SiH2(4)+H2(5)                               3.300e+15 -0.500    55.900   
-
-! Reaction index: Chemkin #4; RMG #26
 ! Template reaction: H_Abstraction
 ! Matched reaction 1011 SiH4 + H <=> H2 + SiH3 in H_Abstraction/training
 SiH4(1)+H(3)=SiH3(2)+H2(5)                          1.259e+07 2.320     2.273    
 
-! Reaction index: Chemkin #5; RMG #29
-! Template reaction: R_Recombination
-! Exact match found for rate rule (H_rad;H_rad)
-H(3)+H(3)=H2(5)                                     1.090e+11 0.000     1.500    
+! Reaction index: Chemkin #3; RMG #41
+! PDep reaction: PDepNetwork #4
+H(3)+H(3)(+M)=H2(5)(+M)                             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 8.834e+00    1.181e+00    -9.814e-02   5.244e-04   /
+    CHEB/ 3.131e-02    1.683e-01    4.456e-02    -1.392e-02  /
+    CHEB/ -8.096e-02   2.861e-02    -5.649e-03   -1.971e-03  /
+    CHEB/ -2.627e-02   3.897e-03    -1.502e-03   1.627e-03   /
+    CHEB/ -9.403e-03   5.559e-04    2.388e-04    6.509e-04   /
+    CHEB/ -3.382e-03   1.384e-04    1.980e-04    1.070e-04   /
 
-! Reaction index: Chemkin #6; RMG #31
-! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (Si2S;H_H)
-! Multiplied by reaction path degeneracy 2
-H2(5)+Si(15)=SiH2(4)                                2.100e+06 1.970     -0.454   
+! Reaction index: Chemkin #4; RMG #43
+! PDep reaction: PDepNetwork #8
+SiH2(4)+H2(5)(+M)=SiH4(1)(+M)                       1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 1.165e+01    7.245e-01    -1.967e-01   2.234e-02   /
+    CHEB/ -9.340e-01   3.229e-01    4.111e-02    -2.306e-02  /
+    CHEB/ -2.969e-01   1.825e-01    2.177e-02    -9.136e-03  /
+    CHEB/ -9.517e-02   3.597e-02    1.850e-02    1.614e-03   /
+    CHEB/ -5.103e-02   1.797e-02    4.193e-03    6.425e-04   /
+    CHEB/ -1.970e-02   6.013e-04    1.360e-03    7.805e-04   /
 
-! Reaction index: Chemkin #7; RMG #12
-! Library reaction: DolletSi2H4
-SiH3SiH(7)(+M)=>SiH2(4)+SiH2(4)(+M)                 3.100e+12 0.140     54.684   
+! Reaction index: Chemkin #5; RMG #33
+! PDep reaction: PDepNetwork #3
+SiH3(2)+H(3)(+M)=SiH2(4)+H2(5)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 1.407e+01    -1.284e-02   -8.166e-03   -4.005e-03  /
+    CHEB/ -3.451e-01   6.291e-03    3.992e-03    1.949e-03   /
+    CHEB/ -8.739e-03   4.371e-03    2.770e-03    1.349e-03   /
+    CHEB/ 7.626e-03    -7.619e-05   -3.975e-05   -1.188e-05  /
+    CHEB/ 1.786e-03    -7.613e-06   -2.188e-06   1.249e-06   /
+    CHEB/ -1.103e-03   -3.294e-05   -2.128e-05   -1.072e-05  /
 
-    LOW/ 8.260e+20 -1.650    56.283   /
-    TROE/ -3.811e-01 159       -4.03e+03 86.6     /
+! Reaction index: Chemkin #6; RMG #39
+! PDep reaction: PDepNetwork #5
+SiH2(4)(+M)=H2(5)+Si(15)(+M)                        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 7.858e+00    1.650e+00    -1.698e-04   -8.455e-05  /
+    CHEB/ 1.030e+00    2.046e-04    1.313e-04    6.540e-05   /
+    CHEB/ 2.398e-02    1.185e-05    7.599e-06    3.778e-06   /
+    CHEB/ 3.921e-02    -4.979e-05   -3.192e-05   -1.587e-05  /
+    CHEB/ -5.991e-03   4.388e-05    2.813e-05    1.399e-05   /
+    CHEB/ -4.228e-03   9.916e-06    6.357e-06    3.160e-06   /
 
-! Reaction index: Chemkin #8; RMG #34
-! Template reaction: Silylene_Insertion
-! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
-! Multiplied by reaction path degeneracy 24
-! Ea raised from -1.9 to 5.2 kJ/mol to match endothermicity of reaction.
-SiH4(1)+Si(15)=SiH3SiH(7)                           4.464e+15 0.000     1.243    
-
-! Reaction index: Chemkin #9; RMG #2
-! Library reaction: Silicon_Giunta_1990
-Si2H6(6)=SiH4(1)+SiH2(4)                            2.500e+19 -1.000    54.900   
-
-! Reaction index: Chemkin #10; RMG #3
+! Reaction index: Chemkin #7; RMG #3
 ! Library reaction: Silicon_Giunta_1990
 Si2H6(6)=H2(5)+SiH3SiH(7)                           2.000e+15 0.000     55.300   
 
-! Reaction index: Chemkin #11; RMG #4
+! Reaction index: Chemkin #8; RMG #4
 ! Library reaction: Silicon_Giunta_1990
 Si3H8(8)=SiH2(4)+Si2H6(6)                           2.600e+19 -1.000    55.500   
 
-! Reaction index: Chemkin #12; RMG #5
+! Reaction index: Chemkin #9; RMG #5
 ! Library reaction: Silicon_Giunta_1990
 Si3H8(8)=SiH4(1)+SiH3SiH(7)                         4.800e+14 0.000     49.200   
 
-! Reaction index: Chemkin #13; RMG #6
+! Reaction index: Chemkin #10; RMG #6
 ! Library reaction: Silicon_Giunta_1990
 SiH3SiH(7)=H4Si2(9)                                 1.150e+20 -3.060    6.630    
 
-! Reaction index: Chemkin #14; RMG #7
+! Reaction index: Chemkin #11; RMG #7
 ! Library reaction: Silicon_Giunta_1990
 SiH2(4)+SiH2(4)=H4Si2(9)                            2.500e+14 0.000     0.000    
 
-! Reaction index: Chemkin #15; RMG #8
+! Reaction index: Chemkin #12; RMG #8
 ! Library reaction: DolletSi2H4
 SiH3SiH(7)(+M)=>SiH4(1)+Si(10)(+M)                  2.040e+17 -1.210    40.834   
 
@@ -262,14 +259,14 @@ SiH3SiH(7)(+M)=>SiH4(1)+Si(10)(+M)                  2.040e+17 -1.210    40.834
     TROE/ -1.145e+00 625       693       421      /
 DUPLICATE
 
-! Reaction index: Chemkin #16; RMG #9
+! Reaction index: Chemkin #13; RMG #9
 ! Library reaction: DolletSi2H4
 SiH3SiH(7)(+M)=>SiH3(2)+SiH(11)(+M)                 5.850e+19 -1.790    64.940   
 
     LOW/ 3.460e+23 -2.570    65.262   /
     TROE/ 2.232e+00 3.28e+03  5.56e+03  8.04e+03 /
 
-! Reaction index: Chemkin #17; RMG #10
+! Reaction index: Chemkin #14; RMG #10
 ! Library reaction: DolletSi2H4
 SiH3SiH(7)(+M)=>H2(5)+SiH2Si(12)(+M)                2.530e+18 -1.300    41.338   
 
@@ -277,7 +274,7 @@ SiH3SiH(7)(+M)=>H2(5)+SiH2Si(12)(+M)                2.530e+18 -1.300    41.338
     TROE/ -1.097e+00 608       672       413      /
 DUPLICATE
 
-! Reaction index: Chemkin #18; RMG #11
+! Reaction index: Chemkin #15; RMG #11
 ! Library reaction: DolletSi2H4
 SiH3SiH(7)(+M)=>H2(5)+SiH2Si(12)(+M)                1.920e+07 1.500     19.974   
 
@@ -285,7 +282,14 @@ SiH3SiH(7)(+M)=>H2(5)+SiH2Si(12)(+M)                1.920e+07 1.500     19.974
     TROE/ -8.146e-01 166       -3.65e+14 132      /
 DUPLICATE
 
-! Reaction index: Chemkin #19; RMG #13
+! Reaction index: Chemkin #16; RMG #12
+! Library reaction: DolletSi2H4
+SiH3SiH(7)(+M)=>SiH2(4)+SiH2(4)(+M)                 3.100e+12 0.140     54.684   
+
+    LOW/ 8.260e+20 -1.650    56.283   /
+    TROE/ -3.811e-01 159       -4.03e+03 86.6     /
+
+! Reaction index: Chemkin #17; RMG #13
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>SiH3SiH(7)(+M)                  2.370e+14 0.000     0.000    
 
@@ -293,14 +297,14 @@ SiH4(1)+Si(10)(+M)=>SiH3SiH(7)(+M)                  2.370e+14 0.000     0.000
     TROE/ 2.691e+00 322       373       348      /
 DUPLICATE
 
-! Reaction index: Chemkin #20; RMG #14
+! Reaction index: Chemkin #18; RMG #14
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>H4Si2(9)(+M)                    4.560e+09 1.070     -0.440   
 
     LOW/ 3.800e+20 -1.360    1.036    /
     TROE/ -2.139e-01 258       -2.06e+03 354      /
 
-! Reaction index: Chemkin #21; RMG #15
+! Reaction index: Chemkin #19; RMG #15
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>H2(5)+SiH2Si(12)(+M)            3.850e-05 5.010     -0.054   
 
@@ -308,7 +312,7 @@ SiH4(1)+Si(10)(+M)=>H2(5)+SiH2Si(12)(+M)            3.850e-05 5.010     -0.054
     TROE/ -1.166e-01 1.14e+03  457       790      /
 DUPLICATE
 
-! Reaction index: Chemkin #22; RMG #16
+! Reaction index: Chemkin #20; RMG #16
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>H2(5)+SiH2Si(12)(+M)            2.620e+02 2.830     -1.547   
 
@@ -316,139 +320,149 @@ SiH4(1)+Si(10)(+M)=>H2(5)+SiH2Si(12)(+M)            2.620e+02 2.830     -1.547
     TROE/ -1.859e-01 272       -1.97e+03 400      /
 DUPLICATE
 
-! Reaction index: Chemkin #23; RMG #17
+! Reaction index: Chemkin #21; RMG #17
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>SiH3(2)+SiH(11)(+M)             4.270e+04 2.250     21.604   
 
     LOW/ 6.190e+08 1.330     21.956   /
     TROE/ 2.627e+00 877       1.49e+03  1.95e+03 /
 
-! Reaction index: Chemkin #24; RMG #18
+! Reaction index: Chemkin #22; RMG #18
 ! Library reaction: DolletSi2H4
 SiH4(1)+Si(10)(+M)=>SiH2(4)+SiH2(4)(+M)             5.950e-05 4.610     10.819   
 
     LOW/ 1.030e+04 2.760     11.784   /
     TROE/ -1.364e-01 331       -1.77e+03 482      /
 
-! Reaction index: Chemkin #25; RMG #19
+! Reaction index: Chemkin #23; RMG #19
 ! Library reaction: DolletSi2H4
 H2(5)+Si2H2(13)(+M)=>H4Si2(9)(+M)                   4.590e+14 0.000     0.000    
 
     LOW/ 5.960e+38 -6.320    4.165    /
     TROE/ 3.614e+00 223       356       1.67e+03 /
 
-! Reaction index: Chemkin #26; RMG #20
+! Reaction index: Chemkin #24; RMG #20
 ! Library reaction: DolletSi2H4
 SiH3(2)+SiH(11)(+M)=>H4Si2(9)(+M)                   2.770e+09 0.849     -0.303   
 
     LOW/ 2.460e+14 0.030     0.173    /
     TROE/ -5.098e-01 48.3      -1.74e+04 20.6     /
 
-! Reaction index: Chemkin #27; RMG #21
+! Reaction index: Chemkin #25; RMG #21
 ! Library reaction: DolletSi2H4
 SiH2(4)+SiH2(4)(+M)=>H2(5)+Si2H2(13)(+M)            5.160e+10 0.407     -0.392   
 
     LOW/ 2.800e+13 0.039     0.032    /
     TROE/ -3.829e-01 460       316       343      /
 
-! Reaction index: Chemkin #28; RMG #22
+! Reaction index: Chemkin #26; RMG #22
 ! Library reaction: DolletSi2H4
 SiH3(2)+SiH(11)(+M)=>H2(5)+Si2H2(13)(+M)            1.410e+08 0.911     -0.496   
 
     LOW/ 5.260e+13 -0.120    0.095    /
     TROE/ -5.218e-01 -0.523    16.8      36.5     /
 
-! Reaction index: Chemkin #29; RMG #24
+! Reaction index: Chemkin #27; RMG #26
 ! Template reaction: H_Abstraction
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Si_silyl)
 ! Multiplied by reaction path degeneracy 3
 SiH3(2)+SiH3(2)=SiH4(1)+H2Si(14)                    9.458e+09 1.172     4.009    
 
-! Reaction index: Chemkin #30; RMG #25
-! Template reaction: R_Recombination
-! Estimated using template (Y_rad;Y_rad) for rate rule (Si_silyl;Si_silyl)
-SiH3(2)+SiH3(2)=Si2H6(6)                            7.206e+12 0.101     -0.195   
-
-! Reaction index: Chemkin #31; RMG #27
+! Reaction index: Chemkin #28; RMG #29
 ! Template reaction: H_Abstraction
 ! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
 ! Multiplied by reaction path degeneracy 3
 SiH3(2)+H(3)=H2(5)+H2Si(14)                         1.274e+09 1.690     -1.056   
 
-! Reaction index: Chemkin #32; RMG #30
-! Template reaction: R_Recombination
-! Estimated using template (Y_rad;Y_rad) for rate rule (H_rad;Si_rad)
-H(3)+SiH(11)=SiH2(4)                                7.206e+12 0.101     -0.195   
-
-! Reaction index: Chemkin #33; RMG #32
+! Reaction index: Chemkin #29; RMG #36
 ! Template reaction: H_Abstraction
 ! Estimated using template (Sis_H;Sis_rad) for rate rule (Sis_H;Si_silyl)
 ! Multiplied by reaction path degeneracy 4
 SiH3(2)+SiH2(4)=SiH4(1)+SiH(11)                     7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #34; RMG #33
+! Reaction index: Chemkin #30; RMG #37
 ! Template reaction: H_Abstraction
 ! Estimated using an average for rate rule (Sis_H;H_rad)
 ! Multiplied by reaction path degeneracy 4
 H(3)+SiH2(4)=H2(5)+SiH(11)                          2.514e+08 2.070     0.403    
 
-! Reaction index: Chemkin #35; RMG #35
-! Template reaction: R_Recombination
-! Estimated using template (Y_rad;Y_rad) for rate rule (H_rad;Si_rad)
-H(3)+H3Si2(16)=SiH3SiH(7)                           7.206e+12 0.101     -0.195   
+! Reaction index: Chemkin #31; RMG #38
+! PDep reaction: PDepNetwork #5
+SiH2(4)(+M)=>H(3)+SiH(11)(+M)                       1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.626e+01   1.651e+00    -3.355e-07   -1.673e-07  /
+    CHEB/ 2.448e+01    4.908e-08    3.152e-08    1.571e-08   /
+    CHEB/ 6.004e-02    -9.044e-08   -5.808e-08   -2.895e-08  /
+    CHEB/ 5.317e-02    -3.879e-08   -2.491e-08   -1.242e-08  /
+    CHEB/ 1.086e-02    -1.303e-08   -8.370e-09   -4.172e-09  /
+    CHEB/ -8.678e-03   -6.268e-09   -4.025e-09   -2.007e-09  /
 
-! Reaction index: Chemkin #36; RMG #36
-! Template reaction: R_Recombination
-! Estimated using template (Y_rad;Y_rad) for rate rule (H_rad;Si_rad)
-H(3)+H3Si2(17)=SiH3SiH(7)                           7.206e+12 0.101     -0.195   
+! Reaction index: Chemkin #32; RMG #47
+! PDep reaction: PDepNetwork #10
+H2(5)+Si(15)(+M)=>H(3)+SiH(11)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.022e+01   -1.148e-07   -7.369e-08   -3.673e-08  /
+    CHEB/ 2.370e+01    -8.482e-08   -5.447e-08   -2.715e-08  /
+    CHEB/ 5.501e-03    -5.130e-08   -3.294e-08   -1.642e-08  /
+    CHEB/ 4.066e-02    -1.991e-08   -1.279e-08   -6.374e-09  /
+    CHEB/ 1.294e-02    -4.342e-09   -2.788e-09   -1.390e-09  /
+    CHEB/ -7.452e-03   1.360e-09    8.732e-10    4.353e-10   /
 
-! Reaction index: Chemkin #37; RMG #37
-! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 4
-H2(5)+Si2H2(13)=SiH3SiH(7)                          1.520e+13 0.000     0.800    
+! Reaction index: Chemkin #33; RMG #51
+! PDep reaction: PDepNetwork #9
+SiH4(1)+Si(15)(+M)=>SiH3SiH(7)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 7.455e+00    1.651e+00    -1.231e-07   -6.138e-08  /
+    CHEB/ 5.616e-01    -3.586e-08   -2.303e-08   -1.148e-08  /
+    CHEB/ 9.451e-02    -4.162e-08   -2.673e-08   -1.332e-08  /
+    CHEB/ 2.779e-02    -2.263e-08   -1.453e-08   -7.245e-09  /
+    CHEB/ 8.267e-03    -9.916e-09   -6.368e-09   -3.174e-09  /
+    CHEB/ 2.560e-03    -3.296e-09   -2.117e-09   -1.055e-09  /
 
-! Reaction index: Chemkin #38; RMG #38
-! Template reaction: H_Abstraction
-! Exact match found for rate rule (Si_silane;Sis_rad_Si_H2)
-! Multiplied by reaction path degeneracy 16
-SiH4(1)+H3Si2(16)=SiH3(2)+SiH3SiH(7)                2.024e+03 3.660     1.245    
+! Reaction index: Chemkin #34; RMG #52
+! PDep reaction: PDepNetwork #9
+SiH4(1)+Si(15)(+M)=>H(3)+H3Si2(16)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.856e+01   -1.565e-07   -1.005e-07   -5.009e-08  /
+    CHEB/ 3.051e+01    -1.325e-07   -8.511e-08   -4.243e-08  /
+    CHEB/ 1.379e-01    -5.229e-08   -3.358e-08   -1.674e-08  /
+    CHEB/ 5.183e-02    -1.915e-08   -1.229e-08   -6.129e-09  /
+    CHEB/ 8.633e-03    -6.896e-09   -4.428e-09   -2.207e-09  /
+    CHEB/ 4.621e-03    -2.694e-09   -1.730e-09   -8.625e-10  /
 
-! Reaction index: Chemkin #39; RMG #39
-! Template reaction: H_Abstraction
-! Estimated using template (Sis_H;Sis_rad) for rate rule (Si_silane;Sis_rad)
-! Multiplied by reaction path degeneracy 16
-SiH4(1)+H3Si2(17)=SiH3(2)+SiH3SiH(7)                3.117e+03 3.620     -0.129   
+! Reaction index: Chemkin #35; RMG #53
+! PDep reaction: PDepNetwork #9
+SiH4(1)+Si(15)(+M)=>H(3)+H3Si2(17)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.873e+01   -1.565e-07   -1.005e-07   -5.009e-08  /
+    CHEB/ 3.051e+01    -1.325e-07   -8.511e-08   -4.243e-08  /
+    CHEB/ 1.379e-01    -5.229e-08   -3.358e-08   -1.674e-08  /
+    CHEB/ 5.183e-02    -1.915e-08   -1.229e-08   -6.129e-09  /
+    CHEB/ 8.632e-03    -6.896e-09   -4.428e-09   -2.207e-09  /
+    CHEB/ 4.621e-03    -2.694e-09   -1.730e-09   -8.625e-10  /
 
-! Reaction index: Chemkin #40; RMG #40
-! Template reaction: H_Abstraction
-! Exact match found for rate rule (Sis_Si_H3;H_rad)
-! Multiplied by reaction path degeneracy 9
-H(3)+SiH3SiH(7)=H2(5)+H3Si2(16)                     1.130e+10 1.820     -1.467   
-
-! Reaction index: Chemkin #41; RMG #41
-! Template reaction: H_Abstraction
-! Estimated using an average for rate rule (Sis_H;H_rad)
-H(3)+SiH3SiH(7)=H2(5)+H3Si2(17)                     6.284e+07 2.070     0.403    
-
-! Reaction index: Chemkin #42; RMG #42
-! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (SiH2;SiH3_Si)
-! Multiplied by reaction path degeneracy 18
-SiH2(4)+SiH3SiH(7)=H6Si3(18)                        5.580e+14 0.000     -0.454   
-
-! Reaction index: Chemkin #43; RMG #43
-! Template reaction: Silylene_Insertion
-! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
-! Multiplied by reaction path degeneracy 18
-! Ea raised from -1.9 to 16.5 kJ/mol to match endothermicity of reaction.
-SiH3SiH(7)+Si(15)=H4Si3(19)                         3.348e+15 0.000     3.943    
-
-! Reaction index: Chemkin #44; RMG #44
-! Template reaction: Silylene_Insertion
-! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
-! Multiplied by reaction path degeneracy 18
-SiH3SiH(7)+SiH3SiH(7)=H8Si4(20)                     1.080e+11 0.000     -9.100   
+! Reaction index: Chemkin #36; RMG #54
+! PDep reaction: PDepNetwork #9
+SiH4(1)+Si(15)(+M)=>H2(5)+Si2H2(13)(+M)             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -3.546e+00   -1.398e-07   -8.977e-08   -4.475e-08  /
+    CHEB/ 1.206e+01    -1.216e-07   -7.811e-08   -3.893e-08  /
+    CHEB/ 4.933e-02    -4.960e-08   -3.185e-08   -1.588e-08  /
+    CHEB/ 1.587e-02    -1.893e-08   -1.216e-08   -6.060e-09  /
+    CHEB/ 3.986e-03    -7.116e-09   -4.570e-09   -2.278e-09  /
+    CHEB/ -2.339e-04   -2.854e-09   -1.833e-09   -9.137e-10  /
 
 END
 

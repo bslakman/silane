@@ -39,8 +39,8 @@ simpleReactor(
     temperature=(913,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.0008,
-	"Ar": 0.9992,
+        "SiH4": 0.00016,
+	"Ar": 0.99984,
     },
     terminationConversion={
         'SiH4': 0.9,
@@ -60,14 +60,14 @@ model(
     maximumEdgeSpecies=100000
 )
 
-#pressureDependence(
-#    method='modified strong collision',
-#    maximumGrainSize=(0.5,'kcal/mol'),
-#    minimumNumberOfGrains=250,
-#    temperatures=(300,2000,'K',8),
-#    pressures=(0.01,20,'bar',5),
-#    interpolation=('Chebyshev', 6, 4),
-#)
+pressureDependence(
+    method='modified strong collision',
+    maximumGrainSize=(0.5,'kcal/mol'),
+    minimumNumberOfGrains=250,
+    temperatures=(300,2000,'K',8),
+    pressures=(0.01,20,'bar',5),
+    interpolation=('Chebyshev', 6, 4),
+)
 
 options(
     units='si',
