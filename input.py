@@ -17,6 +17,18 @@ species(
 )
 
 species(
+    label='SiH3',
+    reactive=True,
+    structure=SMILES("[SiH3]")
+)
+
+species(
+    label='H',
+    reactive=True,
+    structure=SMILES("[H]")
+)
+
+species(
     label='Ar',
     reactive=False,
     structure=SMILES("[Ar]")
@@ -24,7 +36,7 @@ species(
 
 # Reaction systems
 simpleReactor(
-    temperature=(913,'K'),
+    temperature=(813,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
