@@ -39,8 +39,8 @@ simpleReactor(
     temperature=(913,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.000032,
-	"Ar": 0.999968,
+        "SiH4": 0.0008,
+	"Ar": 0.9992,
     },
     terminationConversion={
         'SiH4': 0.9,
