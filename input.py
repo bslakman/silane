@@ -36,7 +36,7 @@ species(
 
 # Reaction systems
 simpleReactor(
-    temperature=(813,'K'),
+    temperature=(1013,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
