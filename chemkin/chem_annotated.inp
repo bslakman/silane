@@ -11,11 +11,7 @@ SPECIES
     SiH2(4)             ! SiH2(4)
     H2(5)               ! H2(5)
     SiH3SiH(7)          ! SiH3SiH(7)
-    H4Si2(9)            ! SiH2SiH2(9)
     Si(15)              ! [SiH4](15)
-    H2Si2(22)           ! [SiH2]=[SiH2](22)
-    Si2(24)             ! [SiH2]=[SiH2](24)
-    H4Si3(27)           ! [SiH2]=[SiH][SiH3](27)
 END
 
 
@@ -83,35 +79,11 @@ SiH3SiH(7)              H 4  Si2            G100.000   5000.000  1208.20       1
  3.37896131E+04-6.58397031E+00 2.96584749E+00 2.31421777E-02-2.03762877E-05    3
  9.47522051E-09-1.83128150E-12 3.46981882E+04 1.22670882E+01                   4
 
-! Thermo library: SiliconHydrideLibrary
-H4Si2(9)                H 4  Si2            G100.000   5000.000  1032.63       1
- 8.37803861E+00 7.14281767E-03-2.69331225E-06 4.87896794E-10-3.40291896E-14    2
- 2.93276688E+04-1.82843819E+01 2.79401775E+00 2.34376379E-02-1.86129406E-05    3
- 5.76208590E-09-9.95632573E-14 3.07653833E+04 1.02119836E+01                   4
-
 ! Thermo group additivity estimation: group(si) + other(R)
 Si(15)                  Si1                 G100.000   5000.000  2121.20       1
  2.50000000E+00 3.04114587E-14-1.54210734E-17 3.31770777E-21-2.56694325E-25    2
  3.25077093E+04 1.10742124E+01 2.50000000E+00 1.37382135E-15-2.66902032E-18    3
  1.75563256E-21-3.60841378E-25 3.25077093E+04 1.10742124E+01                   4
-
-! Thermo group additivity estimation: group(Sid-H2) + other(R) + group(si) + other(R)
-H2Si2(22)               H 2  Si2            G100.000   5000.000  784.98        1
- 5.47727414E+00 1.18459310E-02-5.66252396E-06 1.07163183E-09-7.38009424E-14    2
- 4.79658515E+04 6.10056204E+00 2.89004385E+00 2.61636654E-02-3.51890190E-05    3
- 2.79883150E-08-9.23236755E-12 4.83370967E+04 1.77335395E+01                   4
-
-! Thermo group additivity estimation: group(si) + other(R) + group(si) + other(R)
-Si2(24)                 Si2                 G100.000   5000.000  872.99        1
- 3.86810255E+00 1.40129421E-02-7.13194751E-06 1.33583444E-09-8.96590755E-14    2
- 6.49394756E+04 2.43854460E+01 2.24271314E+00 3.22964007E-02-5.71659838E-05    3
- 5.37632131E-08-1.91751694E-11 6.48103540E+04 2.96413040E+01                   4
-
-! Thermo group additivity estimation: group(Sid-HSis) + other(R) + group(Sis-H3Sid) + other(R) + group(si) + other(R)
-H4Si3(27)               H 4  Si3            G100.000   5000.000  819.63        1
- 7.84114741E+00 2.07061671E-02-1.01152417E-05 1.92252091E-09-1.31998592E-13    2
- 5.07395430E+04-2.19756040E+00 1.62003426E+00 5.67255617E-02-8.63902133E-05    3
- 7.23860346E-08-2.41937162E-11 5.15692671E+04 2.54187873E+01                   4
 
 END
 
@@ -166,32 +138,6 @@ SiH3SiH(7)(+M)=>SiH2(4)+SiH2(4)(+M)                 3.100e+12 0.140     54.684
 ! Multiplied by reaction path degeneracy 24
 ! Ea raised from -1.9 to 5.2 kJ/mol to match endothermicity of reaction.
 SiH4(1)+Si(15)=SiH3SiH(7)                           4.464e+15 0.000     1.243    
-
-! Reaction index: Chemkin #9; RMG #6
-! Library reaction: Silicon_Giunta_1990
-SiH3SiH(7)=H4Si2(9)                                 1.150e+20 -3.060    6.630    
-
-! Reaction index: Chemkin #10; RMG #7
-! Library reaction: Silicon_Giunta_1990
-SiH2(4)+SiH2(4)=H4Si2(9)                            2.500e+14 0.000     0.000    
-
-! Reaction index: Chemkin #11; RMG #46
-! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (Si2S;H_H)
-! Multiplied by reaction path degeneracy 2
-H2(5)+H2Si2(22)=H4Si2(9)                            2.100e+06 1.970     -0.454   
-
-! Reaction index: Chemkin #12; RMG #50
-! Template reaction: Silylene_Insertion
-! Exact match found for rate rule (Si2S;H_H)
-! Multiplied by reaction path degeneracy 4
-H2(5)+Si2(24)=H2Si2(22)                             4.200e+06 1.970     -0.454   
-
-! Reaction index: Chemkin #13; RMG #55
-! Template reaction: Silylene_Insertion
-! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
-! Multiplied by reaction path degeneracy 48
-SiH4(1)+Si2(24)=H4Si3(27)                           8.928e+15 0.000     -0.454   
 
 END
 
