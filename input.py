@@ -36,7 +36,7 @@ species(
 
 # Reaction systems
 simpleReactor(
-    temperature=(1013,'K'),
+    temperature=(913,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
@@ -55,8 +55,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=0.1,
-    toleranceInterruptSimulation=0.5,
+    toleranceMoveToCore=0.001,
+    toleranceInterruptSimulation=0.005,
     maximumEdgeSpecies=100000
 )
 
