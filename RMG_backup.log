@@ -1,10 +1,10 @@
 Global RMG Settings:
    database.directory   = /Users/belinda/Code/RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Thu Jan 28 11:44:28 2016
+RMG execution initiated at Mon Feb  1 17:31:00 2016
 
 #########################################################
 # RMG-Py - Reaction Mechanism Generator in Python       #
-# Version: 1.0.1                                        #
+# Version: 1.0.2                                        #
 # Authors: RMG Developers (rmg_dev@mit.edu)             #
 # P.I.s:   William H. Green (whgreen@mit.edu)           #
 #          Richard H. West (r.west@neu.edu)             #
@@ -12,8 +12,8 @@ RMG execution initiated at Thu Jan 28 11:44:28 2016
 #########################################################
 
 The current git HEAD is:
-	9b3b231e8848d093d20d28bad141563d91fa006b
-	Thu Jan 28 11:42:45 2016 -0500
+	8a1c44160a23dcee24d066072f66e3f36a0cd5f4
+	Mon Feb 1 17:22:20 2016 -0500
 
 Reading input file "/Users/belinda/Code/RMG-Py/examples/rmg/silane/input.py"...
 # Data sources
@@ -22,7 +22,7 @@ database(
     reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction', 'H2_transfer'],
+    kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction'],
     kineticsEstimator = 'rate rules',
 )
 
@@ -299,8 +299,8 @@ Chemkin file contains 23 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:04
-    Memory used: 148.20 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:06
+    Memory used: 144.63 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-15 s, species SiH2(2) exceeded the minimum rate for moving to model core
@@ -359,8 +359,8 @@ Chemkin file contains 25 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:05
-    Memory used: 148.84 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:06
+    Memory used: 145.23 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-15 s, species H2(3) exceeded the minimum rate for moving to model core
@@ -419,8 +419,8 @@ Chemkin file contains 26 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:05
-    Memory used: 148.89 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:07
+    Memory used: 145.26 MB
 
 Conducting simulation of reaction system 1...
 At time 3.0000e-15 s, species [SiH4](14) exceeded the minimum rate for moving to model core
@@ -480,8 +480,8 @@ Chemkin file contains 27 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:05
-    Memory used: 148.91 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:07
+    Memory used: 145.29 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-07 s, species SiH3SiH(5) exceeded the minimum rate for moving to model core
@@ -527,19 +527,16 @@ Created 4 new edge species
     [SiH3][SiH2][SiH3](18)
     [SiH3][SiH2][SiH2][SiH3](19)
 Added 0 new core reactions
-Created 8 new edge reactions
+Created 5 new edge reactions
     [H](13) + [SiH2][SiH3](15) <=> SiH3SiH(5)
     H2(3) + Si2H2(12) <=> SiH3SiH(5)
-    SiH4(1) + SiH3SiH(5) <=> SiH2(2) + Si2H6(4)
-    SiH2(2) + SiH3SiH(5) <=> SiH4(1) + Si2H2(12)
     SiH2(2) + SiH3SiH(5) <=> [SiH3][SiH2][SiH3](17)
     SiH3SiH(5) + [SiH4](14) <=> [SiH3][SiH2][SiH3](18)
-    SiH3SiH(5) + SiH3SiH(5) <=> Si2H6(4) + Si2H2(12)
     SiH3SiH(5) + SiH3SiH(5) <=> [SiH3][SiH2][SiH2][SiH3](19)
 
 After model enlargement:
     The model core has 9 species and 4 reactions
-    The model edge has 13 species and 31 reactions
+    The model edge has 13 species and 28 reactions
 
 
 Saving current model core to Chemkin file...
@@ -547,14 +544,14 @@ Chemkin file contains 4 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 4 reactions.
 Saving current model core and edge to Chemkin file...
-Chemkin file contains 35 reactions.
+Chemkin file contains 32 reactions.
 Saving current core and edge to verbose Chemkin file...
-Chemkin file contains 35 reactions.
+Chemkin file contains 32 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:06
-    Memory used: 149.55 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:07
+    Memory used: 145.87 MB
 
 Conducting simulation of reaction system 1...
 At time 5.1425e-01 s, reached target termination conversion: 0.900000 of SiH4(1)
@@ -565,19 +562,19 @@ Chemkin file contains 4 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 4 reactions.
 Saving current model core and edge to Chemkin file...
-Chemkin file contains 35 reactions.
+Chemkin file contains 32 reactions.
 Saving current core and edge to verbose Chemkin file...
-Chemkin file contains 35 reactions.
+Chemkin file contains 32 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:06
-    Memory used: 149.65 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:08
+    Memory used: 145.95 MB
 
 
 MODEL GENERATION COMPLETED
 
 The final model core has 9 species and 4 reactions
-The final model edge has 13 species and 31 reactions
+The final model edge has 13 species and 28 reactions
 
-RMG execution terminated at Thu Jan 28 11:44:34 2016
+RMG execution terminated at Mon Feb  1 17:31:08 2016
