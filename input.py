@@ -2,7 +2,6 @@
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
     reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
-    #reactionLibraries = [('Silicon_Giunta_1990', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction'],
@@ -14,18 +13,6 @@ species(
     label='SiH4',
     reactive=True,
     structure=SMILES("[SiH4]")
-)
-
-species(
-    label='SiH3',
-    reactive=True,
-    structure=SMILES("[SiH3]")
-)
-
-species(
-    label='H',
-    reactive=True,
-    structure=SMILES("[H]")
 )
 
 species(
@@ -55,8 +42,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-6,
-    toleranceInterruptSimulation=5e-6,
+    toleranceMoveToCore=0.1,
+    toleranceInterruptSimulation=0.5,
     maximumEdgeSpecies=100000
 )
 
@@ -72,7 +59,7 @@ model(
 options(
     units='si',
     saveRestartPeriod=None,
-    drawMolecules=True,
+    generateOutputHTML=True,
     generatePlots=False,
     saveEdgeSpecies=True,
 )
