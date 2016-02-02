@@ -30,16 +30,16 @@ H2(3)
 Si(14)
 1 Si u0 p2 c0
 
-H(13)
-multiplicity 2
-1 H u1 p0 c0
-
 SiH3(9)
 multiplicity 2
 1 Si u1 p0 c0 {2,S} {3,S} {4,S}
 2 H  u0 p0 c0 {1,S}
 3 H  u0 p0 c0 {1,S}
 4 H  u0 p0 c0 {1,S}
+
+H(13)
+multiplicity 2
+1 H u1 p0 c0
 
 SiH3SiH(5)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
@@ -58,10 +58,10 @@ H4Si2(7)
 6 H  u0 p0 c0 {2,S}
 
 H2Si2(22)
-1 Si u0 p0 c0 {2,S} {3,D} {4,S}
+1 Si u0 p0 c0 {2,S} {3,S} {4,D}
 2 H  u0 p0 c0 {1,S}
-3 Si u0 p1 c0 {1,D}
-4 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u0 p1 c0 {1,D}
 
 Si2(24)
 1 Si u0 p1 c0 {2,D}
@@ -88,17 +88,6 @@ multiplicity 3
 5 H  u0 p0 c0 {1,S}
 6 H  u0 p0 c0 {2,S}
 7 Si u2 p0 c0 {2,D}
-
-H6Si3(25)
-1 Si u0 p0 c0 {3,S} {5,S} {6,S} {7,S}
-2 Si u0 p0 c0 {3,D} {8,S} {9,S}
-3 Si u0 p0 c0 {1,S} {2,D} {4,S}
-4 H  u0 p0 c0 {3,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {1,S}
-7 H  u0 p0 c0 {1,S}
-8 H  u0 p0 c0 {2,S}
-9 H  u0 p0 c0 {2,S}
 
 Si2H2(12)
 1 Si u0 p1 c0 {2,S} {3,S}
@@ -127,6 +116,17 @@ Si2H6(4)
 7 H  u0 p0 c0 {2,S}
 8 H  u0 p0 c0 {2,S}
 
+H6Si3(25)
+1 Si u0 p0 c0 {3,S} {5,S} {6,S} {7,S}
+2 Si u0 p0 c0 {3,D} {8,S} {9,S}
+3 Si u0 p0 c0 {1,S} {2,D} {4,S}
+4 H  u0 p0 c0 {3,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {1,S}
+8 H  u0 p0 c0 {2,S}
+9 H  u0 p0 c0 {2,S}
+
 H4Si3(19)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p1 c0 {1,S} {6,S}
@@ -138,9 +138,9 @@ H4Si3(19)
 
 HSi2(23)
 multiplicity 2
-1 Si u1 p0 c0 {2,S} {3,D}
-2 H  u0 p0 c0 {1,S}
-3 Si u0 p1 c0 {1,D}
+1 Si u1 p0 c0 {2,D} {3,S}
+2 Si u0 p1 c0 {1,D}
+3 H  u0 p0 c0 {1,S}
 
 H5Si3(36)
 multiplicity 2
@@ -160,34 +160,4 @@ multiplicity 2
 3 H  u0 p0 c0 {1,S}
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {2,S}
-
-H6Si4(37)
-multiplicity 3
-1  Si u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
-2  Si u0 p0 c0 {1,S} {3,S} {4,S} {5,S}
-3  Si u0 p0 c0 {2,S} {9,S} {10,D}
-4  H  u0 p0 c0 {2,S}
-5  H  u0 p0 c0 {2,S}
-6  H  u0 p0 c0 {1,S}
-7  H  u0 p0 c0 {1,S}
-8  H  u0 p0 c0 {1,S}
-9  H  u0 p0 c0 {3,S}
-10 Si u2 p0 c0 {3,D}
-
-H4Si4(32)
-multiplicity 3
-1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
-2 Si u0 p0 c0 {1,S} {6,S} {7,D}
-3 Si u0 p1 c0 {1,S} {8,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {2,S}
-7 Si u2 p0 c0 {2,D}
-8 H  u0 p0 c0 {3,S}
-
-H2Si(15)
-multiplicity 3
-1 Si u2 p0 c0 {2,S} {3,S}
-2 H  u0 p0 c0 {1,S}
-3 H  u0 p0 c0 {1,S}
 
