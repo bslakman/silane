@@ -16,7 +16,6 @@ SPECIES
     Si2H2(12)           ! Si2H2(12)
     H(13)               ! [H](13)
     Si(14)              ! [SiH4](14)
-    H2Si(15)            ! [SiH2](15)
     H6Si3(18)           ! [SiH3][SiH2][SiH3](18)
     H4Si3(19)           ! [SiH3][SiH2][SiH3](19)
     H3Si2(21)           ! [SiH]=[SiH2](21)
@@ -123,12 +122,6 @@ Si(14)                  Si1                 G100.000   5000.000  2121.20       1
  2.50000000E+00 3.04114587E-14-1.54210734E-17 3.31770777E-21-2.56694325E-25    2
  3.25077093E+04 1.10742124E+01 2.50000000E+00 1.37382135E-15-2.66902032E-18    3
  1.75563256E-21-3.60841378E-25 3.25077093E+04 1.10742124E+01                   4
-
-! Thermo library: SiliconHydrideLibrary
-H2Si(15)                H 2  Si1            G100.000   5000.000  1093.22       1
- 3.29750335E+00 3.87403998E-03-1.64272889E-06 3.08553872E-10-2.15527063E-14    2
- 4.15285814E+04 5.90443089E+00 4.01986241E+00-1.00059894E-03 8.10766768E-06    3
--7.50464770E-09 2.19218664E-12 4.15039943E+04 2.96498912E+00                   4
 
 ! Thermo group additivity estimation: group(Sis-H3Sis) + other(R) + group(Sis-H2siSis) + other(R) + group(si) + other(R)
 H6Si3(18)               H 6  Si3            G100.000   5000.000  791.30        1
@@ -602,59 +595,6 @@ H4Si2(7)+H5Si3(36)=H6Si3(25)+H3Si2(21)              1.558e+03 3.620     0.000
 ! Flux pairs: H3Si2(21), SiH2Si(11); H4Si3(31), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
 H3Si2(21)+H4Si3(31)=SiH2Si(11)+H5Si3(36)            4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #62; RMG #31
-! Template reaction: H_Abstraction
-! Flux pairs: H(13), H2(3); SiH3(9), H2Si(15); 
-! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
-! Multiplied by reaction path degeneracy 3
-SiH3(9)+H(13)=H2(3)+H2Si(15)                        1.274e+09 1.690     -1.056   
-
-! Reaction index: Chemkin #63; RMG #33
-! Template reaction: H_Abstraction
-! Flux pairs: SiH3(9), H2Si(15); SiH3(9), SiH4(1); 
-! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Si_silyl)
-! Multiplied by reaction path degeneracy 3
-SiH3(9)+SiH3(9)=SiH4(1)+H2Si(15)                    9.458e+09 1.172     4.009    
-
-! Reaction index: Chemkin #64; RMG #58
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H3Si2(21), SiH2Si(11); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+H3Si2(21)=SiH3(9)+SiH2Si(11)               4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #65; RMG #68
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); HSi2(23), Si2(30); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+HSi2(23)=SiH3(9)+Si2(30)                   4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #66; RMG #85
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H5Si3(36), H4Si3(31); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+H5Si3(36)=SiH3(9)+H4Si3(31)                4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #67; RMG #185
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H2Si2(22), HSi2(23); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H2Si(15)+H2Si2(22)=SiH3(9)+HSi2(23)                 1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #68; RMG #216
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H6Si3(25), H5Si3(36); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H6Si3(25)+H2Si(15)=SiH3(9)+H5Si3(36)                1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #69; RMG #253
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H4Si2(7), H3Si2(21); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 8
-H4Si2(7)+H2Si(15)=SiH3(9)+H3Si2(21)                 2.976e+08 1.617     6.531    
 
 END
 

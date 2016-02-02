@@ -161,12 +161,6 @@ multiplicity 2
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {2,S}
 
-H2Si(15)
-multiplicity 3
-1 Si u2 p0 c0 {2,S} {3,S}
-2 H  u0 p0 c0 {1,S}
-3 H  u0 p0 c0 {1,S}
-
 Si3H8(6)
 1  Si u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
 2  Si u0 p0 c0 {1,S} {3,S} {4,S} {5,S}
@@ -188,6 +182,12 @@ SiH(10)
 multiplicity 2
 1 Si u1 p1 c0 {2,S}
 2 H  u0 p0 c0 {1,S}
+
+H2Si(15)
+multiplicity 3
+1 Si u2 p0 c0 {2,S} {3,S}
+2 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
 
 H3Si2(16)
 multiplicity 2
@@ -933,9 +933,4 @@ S(109)
 14 H  u0 p0 c0 {4,S}
 15 H  u0 p0 c0 {1,S}
 16 H  u0 p0 c0 {2,S}
-
-HSi(113)
-multiplicity 4
-1 H  u0 p0 c0 {2,S}
-2 Si u3 p0 c0 {1,S}
 

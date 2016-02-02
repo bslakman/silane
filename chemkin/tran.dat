@@ -25,4 +25,3 @@ H4Si3(19)           2     237.100     5.118     0.000     0.000     0.000    ! E
 HSi2(23)            2     110.700     4.443     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 H5Si3(36)           2     237.100     5.118     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
 H3Si2(21)           2     110.700     4.443     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!
-H2Si(15)            2     148.600     3.758     0.000     0.000     0.000    ! Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!

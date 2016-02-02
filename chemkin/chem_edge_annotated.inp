@@ -86,7 +86,6 @@ SPECIES
     H6Si5(107)          ! [SiH2]=[SiH][SiH]=[SiH][SiH3](107)
     H6Si5(108)          ! [SiH]=[SiH][SiH2][SiH]=[SiH](108)
     S(109)              ! [SiH3][SiH]=[SiH][SiH]=[SiH][SiH3](109)
-    HSi(113)            ! [SiH](113)
 END
 
 
@@ -293,15 +292,15 @@ H4Si4(32)               H 4  Si4            G100.000   5000.000  872.18        1
  9.40158634E+04 5.78156126E+00 1.00788294E+00 7.55686089E-02-1.39650445E-04    3
  1.28358477E-07-4.44321139E-11 9.43841999E+04 3.30216650E+01                   4
 
-! Thermo group additivity estimation: group(Sis-H3Sid) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) + radical(Si=SiJ2_triplet) +
-! radical(SisJ_Si_H2)
-H3Si3(33)               H 3  Si3            G100.000   5000.000  884.28        1
- 6.75229162E+00 1.28004459E-02-6.49014939E-06 1.21304426E-09-8.05765645E-14    2
- 8.01701492E+04-2.22580234E+00 2.09752105E+00 4.81032275E-02-9.05413090E-05    3
- 8.27997490E-08-2.82974244E-11 8.04363417E+04 1.65086997E+01                   4
+! Thermo group additivity estimation: group(Sis-H3Sid) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) + radical(SisJ_Si_H2) +
+! radical(Si=SiJ2_triplet)
+H3Si3(33)               H 3  Si3            G100.000   5000.000  884.29        1
+ 6.75225779E+00 1.28005058E-02-6.49018497E-06 1.21305285E-09-8.05772877E-14    2
+ 8.01701627E+04-2.22561339E+00 2.09753477E+00 4.81030532E-02-9.05406380E-05    3
+ 8.27987830E-08-2.82969656E-11 8.04363411E+04 1.65086513E+01                   4
 
-! Thermo group additivity estimation: group(Sis-H3Sid) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) + radical(Si=SiJ2_triplet) +
-! radical(SidsJ_Si)
+! Thermo group additivity estimation: group(Sis-H3Sid) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) + radical(SidsJ_Si) +
+! radical(Si=SiJ2_triplet)
 H3Si3(34)               H 3  Si3            G100.000   5000.000  878.90        1
  4.90876607E+00 1.65096108E-02-8.73408285E-06 1.66361197E-09-1.11832854E-13    2
  7.73664273E+04 8.96149638E+00 2.14441284E+00 4.93979385E-02-9.95223621E-05    3
@@ -641,12 +640,6 @@ S(109)                  H 10 Si6            G100.000   5000.000  865.17        1
  1.69345893E+01 3.63692085E-02-1.83034548E-05 3.45955683E-09-2.33320653E-13    2
  3.93435281E+04-8.38299407E+01-2.28971671E+00 1.52624863E-01-2.67324468E-04    3
  2.31917461E-07-7.68165147E-11 4.16454694E+04 2.11070520E-01                   4
-
-! Thermo library: SiliconHydrideLibrary + radical(CJ3)
-HSi(113)                H 1  Si1            G100.000   5000.000  978.65        1
- 6.79259030E+00-2.74289525E-03 1.22841428E-06-1.60731126E-10 6.29138298E-15    2
- 8.10075398E+04-1.45301115E+01 3.85231294E+00-5.82041049E-04 1.30241918E-05    3
--1.84876892E-08 7.31699681E-12 8.20550632E+04 2.00317223E+00                   4
 
 END
 
@@ -1061,70 +1054,17 @@ H4Si2(7)+H5Si3(36)=H6Si3(25)+H3Si2(21)              1.558e+03 3.620     0.000
 ! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
 H3Si2(21)+H4Si3(31)=SiH2Si(11)+H5Si3(36)            4.806e+10 0.750     -0.445   
 
-! Reaction index: Chemkin #62; RMG #31
-! Template reaction: H_Abstraction
-! Flux pairs: H(13), H2(3); SiH3(9), H2Si(15); 
-! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
-! Multiplied by reaction path degeneracy 3
-SiH3(9)+H(13)=H2(3)+H2Si(15)                        1.274e+09 1.690     -1.056   
-
-! Reaction index: Chemkin #63; RMG #33
-! Template reaction: H_Abstraction
-! Flux pairs: SiH3(9), H2Si(15); SiH3(9), SiH4(1); 
-! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Si_silyl)
-! Multiplied by reaction path degeneracy 3
-SiH3(9)+SiH3(9)=SiH4(1)+H2Si(15)                    9.458e+09 1.172     4.009    
-
-! Reaction index: Chemkin #64; RMG #58
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H3Si2(21), SiH2Si(11); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+H3Si2(21)=SiH3(9)+SiH2Si(11)               4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #65; RMG #68
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); HSi2(23), Si2(30); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+HSi2(23)=SiH3(9)+Si2(30)                   4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #66; RMG #85
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H5Si3(36), H4Si3(31); 
-! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
-H2Si(15)+H5Si3(36)=SiH3(9)+H4Si3(31)                4.806e+10 0.750     -0.445   
-
-! Reaction index: Chemkin #67; RMG #185
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H2Si2(22), HSi2(23); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H2Si(15)+H2Si2(22)=SiH3(9)+HSi2(23)                 1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #68; RMG #216
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H6Si3(25), H5Si3(36); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H6Si3(25)+H2Si(15)=SiH3(9)+H5Si3(36)                1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #69; RMG #253
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si(15), SiH3(9); H4Si2(7), H3Si2(21); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 8
-H4Si2(7)+H2Si(15)=SiH3(9)+H3Si2(21)                 2.976e+08 1.617     6.531    
-
-! Reaction index: Chemkin #70; RMG #4
+! Reaction index: Chemkin #62; RMG #4
 ! Library reaction: Silicon_Giunta_1990
 ! Flux pairs: Si3H8(6), SiH2(2); Si3H8(6), Si2H6(4); 
 Si3H8(6)=SiH2(2)+Si2H6(4)                           2.600e+19 -1.000    55.500   
 
-! Reaction index: Chemkin #71; RMG #5
+! Reaction index: Chemkin #63; RMG #5
 ! Library reaction: Silicon_Giunta_1990
 ! Flux pairs: Si3H8(6), SiH4(1); Si3H8(6), SiH3SiH(5); 
 Si3H8(6)=SiH4(1)+SiH3SiH(5)                         4.800e+14 0.000     49.200   
 
-! Reaction index: Chemkin #72; RMG #8
+! Reaction index: Chemkin #64; RMG #8
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH3SiH(5), SiH4(1); SiH3SiH(5), Si(8); 
 SiH3SiH(5)(+M)=>SiH4(1)+Si(8)(+M)                   2.040e+17 -1.210    40.834   
@@ -1133,7 +1073,7 @@ SiH3SiH(5)(+M)=>SiH4(1)+Si(8)(+M)                   2.040e+17 -1.210    40.834
     TROE/ -1.145e+00 625       693       421      /
 DUPLICATE
 
-! Reaction index: Chemkin #73; RMG #9
+! Reaction index: Chemkin #65; RMG #9
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH3SiH(5), SiH3(9); SiH3SiH(5), SiH(10); 
 SiH3SiH(5)(+M)=>SiH3(9)+SiH(10)(+M)                 5.850e+19 -1.790    64.940   
@@ -1141,7 +1081,7 @@ SiH3SiH(5)(+M)=>SiH3(9)+SiH(10)(+M)                 5.850e+19 -1.790    64.940
     LOW/ 3.460e+23 -2.570    65.262   /
     TROE/ 2.232e+00 3.28e+03  5.56e+03  8.04e+03 /
 
-! Reaction index: Chemkin #74; RMG #13
+! Reaction index: Chemkin #66; RMG #13
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH4(1), SiH3SiH(5); Si(8), SiH3SiH(5); 
 SiH4(1)+Si(8)(+M)=>SiH3SiH(5)(+M)                   2.370e+14 0.000     0.000    
@@ -1150,7 +1090,7 @@ SiH4(1)+Si(8)(+M)=>SiH3SiH(5)(+M)                   2.370e+14 0.000     0.000
     TROE/ 2.691e+00 322       373       348      /
 DUPLICATE
 
-! Reaction index: Chemkin #75; RMG #14
+! Reaction index: Chemkin #67; RMG #14
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH4(1), H4Si2(7); Si(8), H4Si2(7); 
 SiH4(1)+Si(8)(+M)=>H4Si2(7)(+M)                     4.560e+09 1.070     -0.440   
@@ -1158,7 +1098,7 @@ SiH4(1)+Si(8)(+M)=>H4Si2(7)(+M)                     4.560e+09 1.070     -0.440
     LOW/ 3.800e+20 -1.360    1.036    /
     TROE/ -2.139e-01 258       -2.06e+03 354      /
 
-! Reaction index: Chemkin #76; RMG #15
+! Reaction index: Chemkin #68; RMG #15
 ! Library reaction: DolletSi2H4
 ! Flux pairs: Si(8), SiH2Si(11); SiH4(1), H2(3); 
 SiH4(1)+Si(8)(+M)=>H2(3)+SiH2Si(11)(+M)             3.850e-05 5.010     -0.054   
@@ -1167,7 +1107,7 @@ SiH4(1)+Si(8)(+M)=>H2(3)+SiH2Si(11)(+M)             3.850e-05 5.010     -0.054
     TROE/ -1.166e-01 1.14e+03  457       790      /
 DUPLICATE
 
-! Reaction index: Chemkin #77; RMG #16
+! Reaction index: Chemkin #69; RMG #16
 ! Library reaction: DolletSi2H4
 ! Flux pairs: Si(8), SiH2Si(11); SiH4(1), H2(3); 
 SiH4(1)+Si(8)(+M)=>H2(3)+SiH2Si(11)(+M)             2.620e+02 2.830     -1.547   
@@ -1176,7 +1116,7 @@ SiH4(1)+Si(8)(+M)=>H2(3)+SiH2Si(11)(+M)             2.620e+02 2.830     -1.547
     TROE/ -1.859e-01 272       -1.97e+03 400      /
 DUPLICATE
 
-! Reaction index: Chemkin #78; RMG #17
+! Reaction index: Chemkin #70; RMG #17
 ! Library reaction: DolletSi2H4
 ! Flux pairs: Si(8), SiH(10); SiH4(1), SiH3(9); 
 SiH4(1)+Si(8)(+M)=>SiH3(9)+SiH(10)(+M)              4.270e+04 2.250     21.604   
@@ -1184,7 +1124,7 @@ SiH4(1)+Si(8)(+M)=>SiH3(9)+SiH(10)(+M)              4.270e+04 2.250     21.604
     LOW/ 6.190e+08 1.330     21.956   /
     TROE/ 2.627e+00 877       1.49e+03  1.95e+03 /
 
-! Reaction index: Chemkin #79; RMG #18
+! Reaction index: Chemkin #71; RMG #18
 ! Library reaction: DolletSi2H4
 ! Flux pairs: Si(8), SiH2(2); SiH4(1), SiH2(2); 
 SiH4(1)+Si(8)(+M)=>SiH2(2)+SiH2(2)(+M)              5.950e-05 4.610     10.819   
@@ -1192,7 +1132,7 @@ SiH4(1)+Si(8)(+M)=>SiH2(2)+SiH2(2)(+M)              5.950e-05 4.610     10.819
     LOW/ 1.030e+04 2.760     11.784   /
     TROE/ -1.364e-01 331       -1.77e+03 482      /
 
-! Reaction index: Chemkin #80; RMG #20
+! Reaction index: Chemkin #72; RMG #20
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH3(9), H4Si2(7); SiH(10), H4Si2(7); 
 SiH3(9)+SiH(10)(+M)=>H4Si2(7)(+M)                   2.770e+09 0.849     -0.303   
@@ -1200,7 +1140,7 @@ SiH3(9)+SiH(10)(+M)=>H4Si2(7)(+M)                   2.770e+09 0.849     -0.303
     LOW/ 2.460e+14 0.030     0.173    /
     TROE/ -5.098e-01 48.3      -1.74e+04 20.6     /
 
-! Reaction index: Chemkin #81; RMG #22
+! Reaction index: Chemkin #73; RMG #22
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH(10), Si2H2(12); SiH3(9), H2(3); 
 SiH3(9)+SiH(10)(+M)=>H2(3)+Si2H2(12)(+M)            1.410e+08 0.911     -0.496   
@@ -1208,167 +1148,193 @@ SiH3(9)+SiH(10)(+M)=>H2(3)+Si2H2(12)(+M)            1.410e+08 0.911     -0.496
     LOW/ 5.260e+13 -0.120    0.095    /
     TROE/ -5.218e-01 -0.523    16.8      36.5     /
 
-! Reaction index: Chemkin #82; RMG #24
+! Reaction index: Chemkin #74; RMG #24
 ! Template reaction: R_Recombination
 ! Flux pairs: SiH(10), SiH2(2); H(13), SiH2(2); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 SiH(10)+H(13)=SiH2(2)                               7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #83; RMG #29
+! Reaction index: Chemkin #75; RMG #29
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2(2), SiH(10); H(13), H2(3); 
 ! Estimated using an average for rate rule (Sis_H;H_rad)
 ! Multiplied by reaction path degeneracy 4
 SiH2(2)+H(13)=H2(3)+SiH(10)                         2.514e+08 2.070     0.403    
 
-! Reaction index: Chemkin #84; RMG #30
+! Reaction index: Chemkin #76; RMG #30
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2(2), SiH(10); SiH3(9), SiH4(1); 
 ! Estimated using template (Sis_H;Sis_rad) for rate rule (Sis_H;Si_silyl)
 ! Multiplied by reaction path degeneracy 4
 SiH2(2)+SiH3(9)=SiH4(1)+SiH(10)                     7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #85; RMG #35
+! Reaction index: Chemkin #77; RMG #31
+! Template reaction: H_Abstraction
+! Flux pairs: H(13), H2(3); SiH3(9), H2Si(15); 
+! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
+! Multiplied by reaction path degeneracy 3
+SiH3(9)+H(13)=H2(3)+H2Si(15)                        1.274e+09 1.690     -1.056   
+
+! Reaction index: Chemkin #78; RMG #33
+! Template reaction: H_Abstraction
+! Flux pairs: SiH3(9), H2Si(15); SiH3(9), SiH4(1); 
+! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Si_silyl)
+! Multiplied by reaction path degeneracy 3
+SiH3(9)+SiH3(9)=SiH4(1)+H2Si(15)                    9.458e+09 1.172     4.009    
+
+! Reaction index: Chemkin #79; RMG #35
 ! Template reaction: R_Recombination
 ! Flux pairs: H3Si2(16), SiH3SiH(5); H(13), SiH3SiH(5); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+H3Si2(16)=SiH3SiH(5)                          7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #86; RMG #39
+! Reaction index: Chemkin #80; RMG #39
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); SiH3SiH(5), H3Si2(16); 
 ! Exact match found for rate rule (Sis_Si_H3;H_rad)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+H(13)=H2(3)+H3Si2(16)                    1.130e+10 1.820     -1.467   
 
-! Reaction index: Chemkin #87; RMG #40
+! Reaction index: Chemkin #81; RMG #40
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); SiH3SiH(5), H3Si2(16); 
 ! Exact match found for rate rule (Sis_Si_H3;Si_silyl)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+SiH3(9)=SiH4(1)+H3Si2(16)                2.700e+03 3.580     -1.503   
 
-! Reaction index: Chemkin #88; RMG #41
+! Reaction index: Chemkin #82; RMG #41
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H8Si4(20); SiH3SiH(5), H8Si4(20); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+SiH3SiH(5)=H8Si4(20)                     1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #89; RMG #51
+! Reaction index: Chemkin #83; RMG #51
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H6Si4(26); H2Si2(22), H6Si4(26); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+H2Si2(22)=H6Si4(26)                      3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #90; RMG #52
+! Reaction index: Chemkin #84; RMG #52
 ! Template reaction: R_Recombination
 ! Flux pairs: HSi2(29), SiH2Si(11); H(13), SiH2Si(11); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+HSi2(29)=SiH2Si(11)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #91; RMG #55
+! Reaction index: Chemkin #85; RMG #55
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH(10), SiH2(2); H3Si2(21), SiH2Si(11); 
 ! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_doublet)
 ! Multiplied by reaction path degeneracy 2
 SiH(10)+H3Si2(21)=SiH2(2)+SiH2Si(11)                1.280e+13 0.100     21.260   
 
-! Reaction index: Chemkin #92; RMG #57
+! Reaction index: Chemkin #86; RMG #57
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); SiH2Si(11), HSi2(29); 
 ! Exact match found for rate rule (Sid_Si_H2;H_rad)
 ! Multiplied by reaction path degeneracy 4
 SiH2Si(11)+H(13)=H2(3)+HSi2(29)                     7.950e+08 1.760     -0.339   
 
-! Reaction index: Chemkin #93; RMG #59
+! Reaction index: Chemkin #87; RMG #58
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); H3Si2(21), SiH2Si(11); 
+! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
+H2Si(15)+H3Si2(21)=SiH3(9)+SiH2Si(11)               4.806e+10 0.750     -0.445   
+
+! Reaction index: Chemkin #88; RMG #59
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); SiH2Si(11), HSi2(29); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Si_silyl)
 ! Multiplied by reaction path degeneracy 4
 SiH3(9)+SiH2Si(11)=SiH4(1)+HSi2(29)                 7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #94; RMG #60
+! Reaction index: Chemkin #89; RMG #60
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3SiH(5), H3Si2(16); SiH2Si(11), H3Si2(21); 
 ! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+SiH2Si(11)=H3Si2(16)+H3Si2(21)           3.349e+08 1.617     6.593    
 
-! Reaction index: Chemkin #95; RMG #63
+! Reaction index: Chemkin #90; RMG #63
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(29), SiH2Si(11); H3Si2(21), SiH2Si(11); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)
 H3Si2(21)+HSi2(29)=SiH2Si(11)+SiH2Si(11)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #96; RMG #66
+! Reaction index: Chemkin #91; RMG #66
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH(10), SiH2(2); HSi2(23), Si2(30); 
 ! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_doublet)
 ! Multiplied by reaction path degeneracy 2
 SiH(10)+HSi2(23)=SiH2(2)+Si2(30)                    1.280e+13 0.100     21.260   
 
-! Reaction index: Chemkin #97; RMG #69
+! Reaction index: Chemkin #92; RMG #68
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); HSi2(23), Si2(30); 
+! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
+H2Si(15)+HSi2(23)=SiH3(9)+Si2(30)                   4.806e+10 0.750     -0.445   
+
+! Reaction index: Chemkin #93; RMG #69
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3SiH(5), H3Si2(16); Si2(30), HSi2(23); 
 ! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+Si2(30)=H3Si2(16)+HSi2(23)               3.349e+08 1.617     6.593    
 
-! Reaction index: Chemkin #98; RMG #70
+! Reaction index: Chemkin #94; RMG #70
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H4Si4(32); Si2(30), H4Si4(32); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+Si2(30)=H4Si4(32)                        3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #99; RMG #73
+! Reaction index: Chemkin #95; RMG #73
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(29), SiH2Si(11); HSi2(23), Si2(30); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)
 HSi2(23)+HSi2(29)=SiH2Si(11)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #100; RMG #74
+! Reaction index: Chemkin #96; RMG #74
 ! Template reaction: R_Recombination
 ! Flux pairs: HSi2(29), H4Si3(31); SiH3(9), H4Si3(31); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_silyl)
 SiH3(9)+HSi2(29)=H4Si3(31)                          7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #101; RMG #75
+! Reaction index: Chemkin #97; RMG #75
 ! Template reaction: R_Recombination
 ! Flux pairs: H3Si3(33), H4Si3(31); H(13), H4Si3(31); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+H3Si3(33)=H4Si3(31)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #102; RMG #76
+! Reaction index: Chemkin #98; RMG #76
 ! Template reaction: R_Recombination
 ! Flux pairs: H3Si3(34), H4Si3(31); H(13), H4Si3(31); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+H3Si3(34)=H4Si3(31)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #103; RMG #77
+! Reaction index: Chemkin #99; RMG #77
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2(3), H4Si3(31); H2Si3(35), H4Si3(31); 
 ! Exact match found for rate rule (Si-Si-H;H_H)
 ! Multiplied by reaction path degeneracy 2
 H2(3)+H2Si3(35)=H4Si3(31)                           7.600e+12 0.000     0.800    
 
-! Reaction index: Chemkin #104; RMG #79
+! Reaction index: Chemkin #100; RMG #79
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH(10), SiH2(2); H5Si3(36), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_doublet)
 ! Multiplied by reaction path degeneracy 2
 SiH(10)+H5Si3(36)=SiH2(2)+H4Si3(31)                 1.280e+13 0.100     21.260   
 
-! Reaction index: Chemkin #105; RMG #80
+! Reaction index: Chemkin #101; RMG #80
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(2), H6Si4(37); H4Si3(31), H6Si4(37); 
 ! Exact match found for rate rule (SiH2;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH2(2)+H4Si3(31)=H6Si4(37)                         5.580e+14 0.000     -0.454   
 
-! Reaction index: Chemkin #106; RMG #82
+! Reaction index: Chemkin #102; RMG #82
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si(14), H4Si4(32); H4Si3(31), H4Si4(32); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
@@ -1376,211 +1342,217 @@ SiH2(2)+H4Si3(31)=H6Si4(37)                         5.580e+14 0.000     -0.454
 ! Ea raised from -1.9 to 1.9 kJ/mol to match endothermicity of reaction.
 Si(14)+H4Si3(31)=H4Si4(32)                          3.348e+15 0.000     0.460    
 
-! Reaction index: Chemkin #107; RMG #83
+! Reaction index: Chemkin #103; RMG #83
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H4Si3(31), H3Si3(33); 
 ! Exact match found for rate rule (Sis_Si_H3;H_rad)
 ! Multiplied by reaction path degeneracy 9
 H(13)+H4Si3(31)=H2(3)+H3Si3(33)                     1.130e+10 1.820     -1.467   
 
-! Reaction index: Chemkin #108; RMG #84
+! Reaction index: Chemkin #104; RMG #84
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H4Si3(31), H3Si3(34); 
 ! Sid_Si_H2;H_radExact match found for rate rule (Sid_H;H_rad)
 H(13)+H4Si3(31)=H2(3)+H3Si3(34)                     1.988e+08 1.760     -0.339   
 
-! Reaction index: Chemkin #109; RMG #86
+! Reaction index: Chemkin #105; RMG #85
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); H5Si3(36), H4Si3(31); 
+! Estimated using template (Xrad_H;Y_1centerbirad) for rate rule (Sirad_H;Si_triplet)
+H2Si(15)+H5Si3(36)=SiH3(9)+H4Si3(31)                4.806e+10 0.750     -0.445   
+
+! Reaction index: Chemkin #106; RMG #86
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H4Si3(31), H3Si3(33); 
 ! Exact match found for rate rule (Sis_Si_H3;Si_silyl)
 ! Multiplied by reaction path degeneracy 9
 SiH3(9)+H4Si3(31)=SiH4(1)+H3Si3(33)                 2.700e+03 3.580     -1.503   
 
-! Reaction index: Chemkin #110; RMG #87
+! Reaction index: Chemkin #107; RMG #87
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H4Si3(31), H3Si3(34); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Si_silyl)
 SiH3(9)+H4Si3(31)=SiH4(1)+H3Si3(34)                 1.948e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #111; RMG #88
+! Reaction index: Chemkin #108; RMG #88
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3SiH(5), H3Si2(16); H4Si3(31), H5Si3(36); 
 ! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+H4Si3(31)=H3Si2(16)+H5Si3(36)            3.349e+08 1.617     6.593    
 
-! Reaction index: Chemkin #112; RMG #89
+! Reaction index: Chemkin #109; RMG #89
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H8Si5(38); H4Si3(31), H8Si5(38); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+H4Si3(31)=H8Si5(38)                      1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #113; RMG #92
+! Reaction index: Chemkin #110; RMG #92
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H6Si5(39); H4Si3(31), H6Si5(39); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H2Si2(22)+H4Si3(31)=H6Si5(39)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #114; RMG #93
+! Reaction index: Chemkin #111; RMG #93
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(29), SiH2Si(11); H5Si3(36), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)
 H5Si3(36)+HSi2(29)=SiH2Si(11)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #115; RMG #94
+! Reaction index: Chemkin #112; RMG #94
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H3Si3(33), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H3Si2(21)+H3Si3(33)=SiH2Si(11)+H4Si3(31)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #116; RMG #95
+! Reaction index: Chemkin #113; RMG #95
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H3Si3(34), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H3Si2(21)+H3Si3(34)=SiH2Si(11)+H4Si3(31)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #117; RMG #96
+! Reaction index: Chemkin #114; RMG #96
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H3Si3(33), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 HSi2(23)+H3Si3(33)=Si2(30)+H4Si3(31)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #118; RMG #97
+! Reaction index: Chemkin #115; RMG #97
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H3Si3(34), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 HSi2(23)+H3Si3(34)=Si2(30)+H4Si3(31)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #119; RMG #98
+! Reaction index: Chemkin #116; RMG #98
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H4Si5(41); H4Si3(31), H4Si5(41); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 Si2(30)+H4Si3(31)=H4Si5(41)                         3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #120; RMG #99
+! Reaction index: Chemkin #117; RMG #99
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si3(33), H4Si3(31); H5Si3(36), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H5Si3(36)+H3Si3(33)=H4Si3(31)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #121; RMG #100
+! Reaction index: Chemkin #118; RMG #100
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si3(34), H4Si3(31); H5Si3(36), H4Si3(31); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H5Si3(36)+H3Si3(34)=H4Si3(31)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #122; RMG #101
+! Reaction index: Chemkin #119; RMG #101
 ! Template reaction: R_Recombination
 ! Flux pairs: SiH(10), Si2H2(12); SiH(10), Si2H2(12); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_rad)
 SiH(10)+SiH(10)=Si2H2(12)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #123; RMG #102
+! Reaction index: Chemkin #120; RMG #102
 ! Template reaction: R_Recombination
 ! Flux pairs: HSi2(42), Si2H2(12); H(13), Si2H2(12); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-HSi2(42)+H(13)=Si2H2(12)                            7.206e+12 0.101     -0.195   
+H(13)+HSi2(42)=Si2H2(12)                            7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #124; RMG #104
+! Reaction index: Chemkin #121; RMG #104
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); Si2H2(12), HSi2(42); 
 ! Estimated using an average for rate rule (Sis_H;H_rad)
 ! Multiplied by reaction path degeneracy 2
-Si2H2(12)+H(13)=HSi2(42)+H2(3)                      1.257e+08 2.070     0.403    
+Si2H2(12)+H(13)=H2(3)+HSi2(42)                      1.257e+08 2.070     0.403    
 
-! Reaction index: Chemkin #125; RMG #105
+! Reaction index: Chemkin #122; RMG #105
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); Si2H2(12), HSi2(42); 
 ! Estimated using template (Sis_H;Sis_rad) for rate rule (Sis_H;Si_silyl)
 ! Multiplied by reaction path degeneracy 2
 SiH3(9)+Si2H2(12)=SiH4(1)+HSi2(42)                  3.896e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #126; RMG #106
+! Reaction index: Chemkin #123; RMG #106
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H6Si4(43); Si2H2(12), H6Si4(43); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 SiH3SiH(5)+Si2H2(12)=H6Si4(43)                      2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #127; RMG #107
+! Reaction index: Chemkin #124; RMG #107
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); HSi2(42), Si2H2(12); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-HSi2(42)+H3Si2(21)=SiH2Si(11)+Si2H2(12)             3.153e+09 1.172     4.009    
+H3Si2(21)+HSi2(42)=SiH2Si(11)+Si2H2(12)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #128; RMG #108
+! Reaction index: Chemkin #125; RMG #108
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); HSi2(42), Si2H2(12); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-HSi2(42)+HSi2(23)=Si2H2(12)+Si2(30)                 3.153e+09 1.172     4.009    
+HSi2(23)+HSi2(42)=Si2H2(12)+Si2(30)                 3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #129; RMG #109
+! Reaction index: Chemkin #126; RMG #109
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); HSi2(42), Si2H2(12); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-HSi2(42)+H5Si3(36)=Si2H2(12)+H4Si3(31)              3.153e+09 1.172     4.009    
+H5Si3(36)+HSi2(42)=Si2H2(12)+H4Si3(31)              3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #130; RMG #110
+! Reaction index: Chemkin #127; RMG #110
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H4Si3(31), H6Si5(44); Si2H2(12), H6Si5(44); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H2(12)+H4Si3(31)=H6Si5(44)                       2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #131; RMG #111
+! Reaction index: Chemkin #128; RMG #111
 ! Template reaction: R_Recombination
 ! Flux pairs: H3Si2(16), H6Si3(18); SiH3(9), H6Si3(18); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_silyl)
 SiH3(9)+H3Si2(16)=H6Si3(18)                         7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #132; RMG #112
+! Reaction index: Chemkin #129; RMG #112
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si3(45), H6Si3(18); H(13), H6Si3(18); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-H5Si3(45)+H(13)=H6Si3(18)                           7.206e+12 0.101     -0.195   
+H(13)+H5Si3(45)=H6Si3(18)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #133; RMG #113
+! Reaction index: Chemkin #130; RMG #113
 ! Template reaction: R_Recombination
 ! Flux pairs: SiH(10), H6Si3(18); H5Si2(46), H6Si3(18); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_rad)
-H5Si2(46)+SiH(10)=H6Si3(18)                         7.206e+12 0.101     -0.195   
+SiH(10)+H5Si2(46)=H6Si3(18)                         7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #134; RMG #114
+! Reaction index: Chemkin #131; RMG #114
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si3(47), H6Si3(18); H(13), H6Si3(18); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-H5Si3(47)+H(13)=H6Si3(18)                           7.206e+12 0.101     -0.195   
+H(13)+H5Si3(47)=H6Si3(18)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #135; RMG #117
+! Reaction index: Chemkin #132; RMG #117
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH4(1), H10Si4(50); H6Si3(18), H10Si4(50); 
 ! Matched reaction 9 Si2H5SiH + SiH4 <=> nSi4H10 in Silylene_Insertion/training
 SiH4(1)+H6Si3(18)=H10Si4(50)                        3.800e+10 0.000     -8.500   
 
-! Reaction index: Chemkin #136; RMG #118
+! Reaction index: Chemkin #133; RMG #118
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(2), H8Si4(20); H6Si3(18), H8Si4(20); 
 ! Exact match found for rate rule (SiH2;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH2(2)+H6Si3(18)=H8Si4(20)                         5.580e+14 0.000     -0.454   
 
-! Reaction index: Chemkin #137; RMG #119
+! Reaction index: Chemkin #134; RMG #119
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(2), H8Si4(51); H6Si3(18), H8Si4(51); 
 ! Exact match found for rate rule (SiH2;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 SiH2(2)+H6Si3(18)=H8Si4(51)                         1.140e+12 0.000     -11.600  
 
-! Reaction index: Chemkin #138; RMG #120
+! Reaction index: Chemkin #135; RMG #120
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2(3), Si3H8(6); H6Si3(18), Si3H8(6); 
 ! Matched reaction 13 Si2H5SiH + H2 <=> Si3H8-1 in Silylene_Insertion/training
 H2(3)+H6Si3(18)=Si3H8(6)                            6.020e+12 0.000     2.100    
 
-! Reaction index: Chemkin #139; RMG #121
+! Reaction index: Chemkin #136; RMG #121
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si(14), H6Si4(43); H6Si3(18), H6Si4(43); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
@@ -1588,7 +1560,7 @@ H2(3)+H6Si3(18)=Si3H8(6)                            6.020e+12 0.000     2.100
 ! Ea raised from -1.9 to 1.6 kJ/mol to match endothermicity of reaction.
 Si(14)+H6Si3(18)=H6Si4(43)                          3.348e+15 0.000     0.386    
 
-! Reaction index: Chemkin #140; RMG #122
+! Reaction index: Chemkin #137; RMG #122
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si(14), H6Si4(52); H6Si3(18), H6Si4(52); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH2_R2)
@@ -1596,246 +1568,246 @@ Si(14)+H6Si3(18)=H6Si4(43)                          3.348e+15 0.000     0.386
 ! Ea raised from -1.9 to 0.9 kJ/mol to match endothermicity of reaction.
 Si(14)+H6Si3(18)=H6Si4(52)                          2.232e+15 0.000     0.206    
 
-! Reaction index: Chemkin #141; RMG #123
+! Reaction index: Chemkin #138; RMG #123
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H6Si3(18), H5Si3(45); 
 ! Exact match found for rate rule (Sis_Si_H3;H_rad)
 ! Multiplied by reaction path degeneracy 9
-H(13)+H6Si3(18)=H5Si3(45)+H2(3)                     1.130e+10 1.820     -1.467   
+H(13)+H6Si3(18)=H2(3)+H5Si3(45)                     1.130e+10 1.820     -1.467   
 
-! Reaction index: Chemkin #142; RMG #124
+! Reaction index: Chemkin #139; RMG #124
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H6Si3(18), H5Si3(47); 
 ! Estimated using an average for rate rule (Sis_H;H_rad)
 ! Multiplied by reaction path degeneracy 4
-H(13)+H6Si3(18)=H5Si3(47)+H2(3)                     2.514e+08 2.070     0.403    
+H(13)+H6Si3(18)=H2(3)+H5Si3(47)                     2.514e+08 2.070     0.403    
 
-! Reaction index: Chemkin #143; RMG #125
+! Reaction index: Chemkin #140; RMG #125
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H6Si3(18), H5Si3(45); 
 ! Exact match found for rate rule (Sis_Si_H3;Si_silyl)
 ! Multiplied by reaction path degeneracy 9
 SiH3(9)+H6Si3(18)=SiH4(1)+H5Si3(45)                 2.700e+03 3.580     -1.503   
 
-! Reaction index: Chemkin #144; RMG #126
+! Reaction index: Chemkin #141; RMG #126
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H6Si3(18), H5Si3(47); 
 ! Estimated using template (Sis_H;Sis_rad) for rate rule (Sis_H;Si_silyl)
 ! Multiplied by reaction path degeneracy 4
 SiH3(9)+H6Si3(18)=SiH4(1)+H5Si3(47)                 7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #145; RMG #127
+! Reaction index: Chemkin #142; RMG #127
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H10Si5(53); H6Si3(18), H10Si5(53); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 SiH3SiH(5)+H6Si3(18)=H10Si5(53)                     2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #146; RMG #128
+! Reaction index: Chemkin #143; RMG #128
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H10Si5(54); H6Si3(18), H10Si5(54); 
 ! Estimated using template (Si-Si-H;Si_H) for rate rule (Si-Si-H;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 SiH3SiH(5)+H6Si3(18)=H10Si5(54)                     7.200e+10 0.000     -9.100   
 
-! Reaction index: Chemkin #147; RMG #129
+! Reaction index: Chemkin #144; RMG #129
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H8Si5(55); H6Si3(18), H8Si5(55); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+H2Si2(22)=H8Si5(55)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #148; RMG #130
+! Reaction index: Chemkin #145; RMG #130
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H8Si5(56); H6Si3(18), H8Si5(56); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 H6Si3(18)+H2Si2(22)=H8Si5(56)                       2.232e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #149; RMG #131
+! Reaction index: Chemkin #146; RMG #131
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H5Si3(45), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si3(45)+H3Si2(21)=SiH2Si(11)+H6Si3(18)            3.153e+09 1.172     4.009    
+H3Si2(21)+H5Si3(45)=SiH2Si(11)+H6Si3(18)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #150; RMG #132
+! Reaction index: Chemkin #147; RMG #132
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H5Si3(47), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-H5Si3(47)+H3Si2(21)=SiH2Si(11)+H6Si3(18)            3.153e+09 1.172     4.009    
+H3Si2(21)+H5Si3(47)=SiH2Si(11)+H6Si3(18)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #151; RMG #133
+! Reaction index: Chemkin #148; RMG #133
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H5Si3(45), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si3(45)+HSi2(23)=H6Si3(18)+Si2(30)                3.153e+09 1.172     4.009    
+HSi2(23)+H5Si3(45)=H6Si3(18)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #152; RMG #134
+! Reaction index: Chemkin #149; RMG #134
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H5Si3(47), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-H5Si3(47)+HSi2(23)=H6Si3(18)+Si2(30)                3.153e+09 1.172     4.009    
+HSi2(23)+H5Si3(47)=H6Si3(18)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #153; RMG #135
+! Reaction index: Chemkin #150; RMG #135
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H6Si5(44); H6Si3(18), H6Si5(44); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+Si2(30)=H6Si5(44)                         3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #154; RMG #136
+! Reaction index: Chemkin #151; RMG #136
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H6Si5(59); H6Si3(18), H6Si5(59); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 H6Si3(18)+Si2(30)=H6Si5(59)                         2.232e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #155; RMG #137
+! Reaction index: Chemkin #152; RMG #137
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H5Si3(45), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si3(45)+H5Si3(36)=H6Si3(18)+H4Si3(31)             3.153e+09 1.172     4.009    
+H5Si3(36)+H5Si3(45)=H6Si3(18)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #156; RMG #138
+! Reaction index: Chemkin #153; RMG #138
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H5Si3(47), H6Si3(18); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad)
-H5Si3(47)+H5Si3(36)=H6Si3(18)+H4Si3(31)             3.153e+09 1.172     4.009    
+H5Si3(36)+H5Si3(47)=H6Si3(18)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #157; RMG #139
+! Reaction index: Chemkin #154; RMG #139
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H4Si3(31), H10Si6(60); H6Si3(18), H10Si6(60); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+H4Si3(31)=H10Si6(60)                      1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #158; RMG #140
+! Reaction index: Chemkin #155; RMG #140
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H2(12), H8Si5(61); H6Si3(18), H8Si5(61); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H2(12)+H6Si3(18)=H8Si5(61)                       2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #159; RMG #141
+! Reaction index: Chemkin #156; RMG #141
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H2(12), H8Si5(62); H6Si3(18), H8Si5(62); 
 ! Estimated using template (Si-Si-H;Si_H) for rate rule (Si-Si-H;SiH2_R2)
 ! Multiplied by reaction path degeneracy 24
 Si2H2(12)+H6Si3(18)=H8Si5(62)                       1.440e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #160; RMG #142
+! Reaction index: Chemkin #157; RMG #142
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H12Si6(63); H6Si3(18), H12Si6(63); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+H6Si3(18)=H12Si6(63)                      1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #161; RMG #143
+! Reaction index: Chemkin #158; RMG #143
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H12Si6(64); H6Si3(18), H12Si6(64); 
 ! Estimated using template (Si-Si-H;Si_H) for rate rule (Si-Si-H;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 H6Si3(18)+H6Si3(18)=H12Si6(64)                      7.200e+10 0.000     -9.100   
 
-! Reaction index: Chemkin #162; RMG #144
+! Reaction index: Chemkin #159; RMG #144
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si2(46), Si2H6(4); H(13), Si2H6(4); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-H5Si2(46)+H(13)=Si2H6(4)                            7.206e+12 0.101     -0.195   
+H(13)+H5Si2(46)=Si2H6(4)                            7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #163; RMG #145
+! Reaction index: Chemkin #160; RMG #145
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); Si2H6(4), H5Si2(46); 
 ! Matched reaction 1016 Si2H6 + H <=> SiH2SiH3-2 + H2 in H_Abstraction/training
-Si2H6(4)+H(13)=H5Si2(46)+H2(3)                      7.530e+09 1.820     -1.467   
+Si2H6(4)+H(13)=H2(3)+H5Si2(46)                      7.530e+09 1.820     -1.467   
 
-! Reaction index: Chemkin #164; RMG #146
+! Reaction index: Chemkin #161; RMG #146
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH4(1), SiH3(9); H5Si2(46), Si2H6(4); 
 ! Matched reaction 1019 SiH4 + SiH2SiH3-2 <=> SiH3 + Si2H6 in H_Abstraction/training
 ! Ea raised from 5.2 to 12.3 kJ/mol to match endothermicity of reaction.
 SiH4(1)+H5Si2(46)=Si2H6(4)+SiH3(9)                  5.060e+02 3.660     2.943    
 
-! Reaction index: Chemkin #165; RMG #147
+! Reaction index: Chemkin #162; RMG #147
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H10Si4(50); Si2H6(4), H10Si4(50); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H6(4)+SiH3SiH(5)=H10Si4(50)                      2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #166; RMG #148
+! Reaction index: Chemkin #163; RMG #148
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H8Si4(65); Si2H6(4), H8Si4(65); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H6(4)+H2Si2(22)=H8Si4(65)                        6.696e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #167; RMG #149
+! Reaction index: Chemkin #164; RMG #149
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H5Si2(46), Si2H6(4); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si2(46)+H3Si2(21)=Si2H6(4)+SiH2Si(11)             3.153e+09 1.172     4.009    
+H3Si2(21)+H5Si2(46)=Si2H6(4)+SiH2Si(11)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #168; RMG #150
+! Reaction index: Chemkin #165; RMG #150
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H5Si2(46), Si2H6(4); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si2(46)+HSi2(23)=Si2H6(4)+Si2(30)                 3.153e+09 1.172     4.009    
+HSi2(23)+H5Si2(46)=Si2H6(4)+Si2(30)                 3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #169; RMG #151
+! Reaction index: Chemkin #166; RMG #151
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H6Si4(37); Si2H6(4), H6Si4(37); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H6(4)+Si2(30)=H6Si4(37)                          6.696e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #170; RMG #152
+! Reaction index: Chemkin #167; RMG #152
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H5Si2(46), Si2H6(4); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
-H5Si2(46)+H5Si3(36)=Si2H6(4)+H4Si3(31)              3.153e+09 1.172     4.009    
+H5Si3(36)+H5Si2(46)=Si2H6(4)+H4Si3(31)              3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #171; RMG #153
+! Reaction index: Chemkin #168; RMG #153
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H2(12), H8Si4(20); Si2H6(4), H8Si4(20); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 72
 Si2H6(4)+Si2H2(12)=H8Si4(20)                        4.320e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #172; RMG #154
+! Reaction index: Chemkin #169; RMG #154
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H12Si5(67); Si2H6(4), H12Si5(67); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H6(4)+H6Si3(18)=H12Si5(67)                       2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #173; RMG #156
+! Reaction index: Chemkin #170; RMG #156
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si3(68), H6Si3(25); H(13), H6Si3(25); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+H5Si3(68)=H6Si3(25)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #174; RMG #158
+! Reaction index: Chemkin #171; RMG #158
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si3(69), H6Si3(25); H(13), H6Si3(25); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 H(13)+H5Si3(69)=H6Si3(25)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #175; RMG #159
+! Reaction index: Chemkin #172; RMG #159
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2(3), H6Si3(25); H4Si3(70), H6Si3(25); 
 ! Exact match found for rate rule (Si-Si-H;H_H)
 ! Multiplied by reaction path degeneracy 2
 H2(3)+H4Si3(70)=H6Si3(25)                           7.600e+12 0.000     0.800    
 
-! Reaction index: Chemkin #176; RMG #160
+! Reaction index: Chemkin #173; RMG #160
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(2), H8Si4(65); H6Si3(25), H8Si4(65); 
 ! Exact match found for rate rule (SiH2;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH2(2)+H6Si3(25)=H8Si4(65)                         5.580e+14 0.000     -0.454   
 
-! Reaction index: Chemkin #177; RMG #161
+! Reaction index: Chemkin #174; RMG #161
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si(14), H6Si4(26); H6Si3(25), H6Si4(26); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
@@ -1843,139 +1815,146 @@ SiH2(2)+H6Si3(25)=H8Si4(65)                         5.580e+14 0.000     -0.454
 ! Ea raised from -1.9 to 1.9 kJ/mol to match endothermicity of reaction.
 H6Si3(25)+Si(14)=H6Si4(26)                          3.348e+15 0.000     0.460    
 
-! Reaction index: Chemkin #178; RMG #162
+! Reaction index: Chemkin #175; RMG #162
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H6Si3(25), H5Si3(68); 
 ! Exact match found for rate rule (Sis_Si_H3;H_rad)
 ! Multiplied by reaction path degeneracy 9
 H(13)+H6Si3(25)=H2(3)+H5Si3(68)                     1.130e+10 1.820     -1.467   
 
-! Reaction index: Chemkin #179; RMG #164
+! Reaction index: Chemkin #176; RMG #164
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H6Si3(25), H5Si3(69); 
 ! Sid_Si_H2;H_radExact match found for rate rule (Sid_H;H_rad)
 H(13)+H6Si3(25)=H2(3)+H5Si3(69)                     1.988e+08 1.760     -0.339   
 
-! Reaction index: Chemkin #180; RMG #165
+! Reaction index: Chemkin #177; RMG #165
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H6Si3(25), H5Si3(68); 
 ! Exact match found for rate rule (Sis_Si_H3;Si_silyl)
 ! Multiplied by reaction path degeneracy 9
 SiH3(9)+H6Si3(25)=SiH4(1)+H5Si3(68)                 2.700e+03 3.580     -1.503   
 
-! Reaction index: Chemkin #181; RMG #167
+! Reaction index: Chemkin #178; RMG #167
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H6Si3(25), H5Si3(69); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Si_silyl)
 SiH3(9)+H6Si3(25)=SiH4(1)+H5Si3(69)                 1.948e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #182; RMG #168
+! Reaction index: Chemkin #179; RMG #168
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H10Si5(71); H6Si3(25), H10Si5(71); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+H6Si3(25)=H10Si5(71)                     1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #183; RMG #169
+! Reaction index: Chemkin #180; RMG #169
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H8Si5(72); H6Si3(25), H8Si5(72); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(25)+H2Si2(22)=H8Si5(72)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #184; RMG #170
+! Reaction index: Chemkin #181; RMG #170
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H5Si3(68), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H3Si2(21)+H5Si3(68)=SiH2Si(11)+H6Si3(25)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #185; RMG #172
+! Reaction index: Chemkin #182; RMG #172
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H5Si3(69), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H3Si2(21)+H5Si3(69)=SiH2Si(11)+H6Si3(25)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #186; RMG #173
+! Reaction index: Chemkin #183; RMG #173
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H5Si3(68), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 HSi2(23)+H5Si3(68)=H6Si3(25)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #187; RMG #175
+! Reaction index: Chemkin #184; RMG #175
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H5Si3(69), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 HSi2(23)+H5Si3(69)=H6Si3(25)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #188; RMG #176
+! Reaction index: Chemkin #185; RMG #176
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H6Si5(39); H6Si3(25), H6Si5(39); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(25)+Si2(30)=H6Si5(39)                         3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #189; RMG #177
+! Reaction index: Chemkin #186; RMG #177
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H5Si3(68), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H5Si3(36)+H5Si3(68)=H6Si3(25)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #190; RMG #179
+! Reaction index: Chemkin #187; RMG #179
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H5Si3(69), H6Si3(25); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H5Si3(36)+H5Si3(69)=H6Si3(25)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #191; RMG #180
+! Reaction index: Chemkin #188; RMG #180
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H2(12), H8Si5(55); H6Si3(25), H8Si5(55); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H2(12)+H6Si3(25)=H8Si5(55)                       2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #192; RMG #181
+! Reaction index: Chemkin #189; RMG #181
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H12Si6(74); H6Si3(25), H12Si6(74); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(25)+H6Si3(18)=H12Si6(74)                      1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #193; RMG #183
+! Reaction index: Chemkin #190; RMG #183
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2(2), SiH(10); HSi2(23), H2Si2(22); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2(2)+HSi2(23)=SiH(10)+H2Si2(22)                  7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #194; RMG #186
+! Reaction index: Chemkin #191; RMG #185
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); H2Si2(22), HSi2(23); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
+! Multiplied by reaction path degeneracy 4
+H2Si(15)+H2Si2(22)=SiH3(9)+HSi2(23)                 1.488e+08 1.617     6.531    
+
+! Reaction index: Chemkin #192; RMG #186
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3SiH(5), H3Si2(16); HSi2(23), H2Si2(22); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_Si_H3;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+HSi2(23)=H3Si2(16)+H2Si2(22)             1.753e+03 3.620     -0.129   
 
-! Reaction index: Chemkin #195; RMG #187
+! Reaction index: Chemkin #193; RMG #187
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H5Si4(90); HSi2(23), H5Si4(90); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+HSi2(23)=H5Si4(90)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #196; RMG #189
+! Reaction index: Chemkin #194; RMG #189
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2Si(11), HSi2(29); HSi2(23), H2Si2(22); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2Si(11)+HSi2(23)=H2Si2(22)+HSi2(29)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #197; RMG #191
+! Reaction index: Chemkin #195; RMG #191
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si3(33), H4Si3(31); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
 H2Si2(22)+H3Si3(33)=HSi2(23)+H4Si3(31)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #198; RMG #192
+! Reaction index: Chemkin #196; RMG #192
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si3(34), H4Si3(31); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad)
@@ -1983,70 +1962,70 @@ H2Si2(22)+H3Si3(33)=HSi2(23)+H4Si3(31)              7.792e+02 3.620     -0.129
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
 H2Si2(22)+H3Si3(34)=HSi2(23)+H4Si3(31)              7.792e+02 3.620     0.000    
 
-! Reaction index: Chemkin #199; RMG #194
+! Reaction index: Chemkin #197; RMG #194
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H4Si3(31), H5Si5(91); HSi2(23), H5Si5(91); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 HSi2(23)+H4Si3(31)=H5Si5(91)                        3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #200; RMG #195
+! Reaction index: Chemkin #198; RMG #195
 ! Template reaction: H_Abstraction
 ! Flux pairs: Si2H2(12), HSi2(42); HSi2(23), H2Si2(22); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 2
-Si2H2(12)+HSi2(23)=HSi2(42)+H2Si2(22)               3.896e+02 3.620     -0.129   
+Si2H2(12)+HSi2(23)=H2Si2(22)+HSi2(42)               3.896e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #201; RMG #196
+! Reaction index: Chemkin #199; RMG #196
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(45), H6Si3(18); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
-H5Si3(45)+H2Si2(22)=H6Si3(18)+HSi2(23)              7.792e+02 3.620     -0.129   
+H2Si2(22)+H5Si3(45)=H6Si3(18)+HSi2(23)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #202; RMG #197
+! Reaction index: Chemkin #200; RMG #197
 ! Template reaction: H_Abstraction
 ! Flux pairs: H6Si3(18), H5Si3(47); HSi2(23), H2Si2(22); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
-H6Si3(18)+HSi2(23)=H5Si3(47)+H2Si2(22)              7.792e+02 3.620     -0.129   
+H6Si3(18)+HSi2(23)=H2Si2(22)+H5Si3(47)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #203; RMG #198
+! Reaction index: Chemkin #201; RMG #198
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H7Si5(92); HSi2(23), H7Si5(92); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+HSi2(23)=H7Si5(92)                        3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #204; RMG #199
+! Reaction index: Chemkin #202; RMG #199
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), H7Si5(93); HSi2(23), H7Si5(93); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH2_R2)
 ! Multiplied by reaction path degeneracy 12
 H6Si3(18)+HSi2(23)=H7Si5(93)                        2.232e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #205; RMG #200
+! Reaction index: Chemkin #203; RMG #200
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si2(46), Si2H6(4); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
-H5Si2(46)+H2Si2(22)=Si2H6(4)+HSi2(23)               7.792e+02 3.620     -0.129   
+H2Si2(22)+H5Si2(46)=Si2H6(4)+HSi2(23)               7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #206; RMG #201
+! Reaction index: Chemkin #204; RMG #201
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H6(4), H7Si4(94); HSi2(23), H7Si4(94); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H6(4)+HSi2(23)=H7Si4(94)                         6.696e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #207; RMG #202
+! Reaction index: Chemkin #205; RMG #202
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(68), H6Si3(25); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
 H2Si2(22)+H5Si3(68)=H6Si3(25)+HSi2(23)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #208; RMG #204
+! Reaction index: Chemkin #206; RMG #204
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(69), H6Si3(25); H2Si2(22), HSi2(23); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad)
@@ -2054,60 +2033,60 @@ H2Si2(22)+H5Si3(68)=H6Si3(25)+HSi2(23)              7.792e+02 3.620     -0.129
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
 H2Si2(22)+H5Si3(69)=H6Si3(25)+HSi2(23)              7.792e+02 3.620     0.000    
 
-! Reaction index: Chemkin #209; RMG #205
+! Reaction index: Chemkin #207; RMG #205
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(25), H7Si5(95); HSi2(23), H7Si5(95); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(25)+HSi2(23)=H7Si5(95)                        3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #210; RMG #206
+! Reaction index: Chemkin #208; RMG #206
 ! Template reaction: R_Recombination
 ! Flux pairs: HSi2(23), H2Si4(97); HSi2(23), H2Si4(97); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_rad)
 HSi2(23)+HSi2(23)=H2Si4(97)                         7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #211; RMG #207
+! Reaction index: Chemkin #209; RMG #207
 ! Template reaction: R_Recombination
 ! Flux pairs: H2Si2(98), H5Si3(36); SiH3(9), H5Si3(36); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_silyl)
 ! Multiplied by reaction path degeneracy 2
-SiH3(9)+H2Si2(98)=H5Si3(36)                         1.441e+13 0.101     -0.195   
+H2Si2(98)+SiH3(9)=H5Si3(36)                         1.441e+13 0.101     -0.195   
 
-! Reaction index: Chemkin #212; RMG #208
+! Reaction index: Chemkin #210; RMG #208
 ! Template reaction: R_Recombination
 ! Flux pairs: H4Si3(99), H5Si3(36); H(13), H5Si3(36); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-H(13)+H4Si3(99)=H5Si3(36)                           7.206e+12 0.101     -0.195   
+H4Si3(99)+H(13)=H5Si3(36)                           7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #213; RMG #209
+! Reaction index: Chemkin #211; RMG #209
 ! Template reaction: R_Recombination
 ! Flux pairs: H4Si3(100), H5Si3(36); H(13), H5Si3(36); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
-H(13)+H4Si3(100)=H5Si3(36)                          7.206e+12 0.101     -0.195   
+H4Si3(100)+H(13)=H5Si3(36)                          7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #214; RMG #210
+! Reaction index: Chemkin #212; RMG #210
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2(3), H5Si3(36); H3Si3(101), H5Si3(36); 
 ! Exact match found for rate rule (Si-Si-H;H_H)
 ! Multiplied by reaction path degeneracy 2
-H2(3)+H3Si3(101)=H5Si3(36)                          7.600e+12 0.000     0.800    
+H3Si3(101)+H2(3)=H5Si3(36)                          7.600e+12 0.000     0.800    
 
-! Reaction index: Chemkin #215; RMG #211
+! Reaction index: Chemkin #213; RMG #211
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2(2), SiH(10); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2(2)+H5Si3(36)=SiH(10)+H6Si3(25)                 7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #216; RMG #212
+! Reaction index: Chemkin #214; RMG #212
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(2), H7Si4(94); H5Si3(36), H7Si4(94); 
 ! Exact match found for rate rule (SiH2;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH2(2)+H5Si3(36)=H7Si4(94)                         5.580e+14 0.000     -0.454   
 
-! Reaction index: Chemkin #217; RMG #213
+! Reaction index: Chemkin #215; RMG #213
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si(14), H5Si4(90); H5Si3(36), H5Si4(90); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
@@ -2115,179 +2094,186 @@ SiH2(2)+H5Si3(36)=H7Si4(94)                         5.580e+14 0.000     -0.454
 ! Ea raised from -1.9 to 1.9 kJ/mol to match endothermicity of reaction.
 Si(14)+H5Si3(36)=H5Si4(90)                          3.348e+15 0.000     0.460    
 
-! Reaction index: Chemkin #218; RMG #214
+! Reaction index: Chemkin #216; RMG #214
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H5Si3(36), H4Si3(99); 
 ! Sid_Si_H2;H_radExact match found for rate rule (Sid_H;H_rad)
-H(13)+H5Si3(36)=H2(3)+H4Si3(99)                     1.988e+08 1.760     -0.339   
+H(13)+H5Si3(36)=H4Si3(99)+H2(3)                     1.988e+08 1.760     -0.339   
 
-! Reaction index: Chemkin #219; RMG #215
+! Reaction index: Chemkin #217; RMG #215
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H5Si3(36), H4Si3(100); 
 ! Exact match found for rate rule (Sis_Si_H3;H_rad)
 ! Multiplied by reaction path degeneracy 9
-H(13)+H5Si3(36)=H2(3)+H4Si3(100)                    1.130e+10 1.820     -1.467   
+H(13)+H5Si3(36)=H4Si3(100)+H2(3)                    1.130e+10 1.820     -1.467   
 
-! Reaction index: Chemkin #220; RMG #217
+! Reaction index: Chemkin #218; RMG #216
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); H6Si3(25), H5Si3(36); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
+! Multiplied by reaction path degeneracy 4
+H6Si3(25)+H2Si(15)=SiH3(9)+H5Si3(36)                1.488e+08 1.617     6.531    
+
+! Reaction index: Chemkin #219; RMG #217
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H5Si3(36), H4Si3(99); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Si_silyl)
 SiH3(9)+H5Si3(36)=SiH4(1)+H4Si3(99)                 1.948e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #221; RMG #218
+! Reaction index: Chemkin #220; RMG #218
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3(9), SiH4(1); H5Si3(36), H4Si3(100); 
 ! Exact match found for rate rule (Sis_Si_H3;Si_silyl)
 ! Multiplied by reaction path degeneracy 9
 SiH3(9)+H5Si3(36)=SiH4(1)+H4Si3(100)                2.700e+03 3.580     -1.503   
 
-! Reaction index: Chemkin #222; RMG #219
+! Reaction index: Chemkin #221; RMG #219
 ! Template reaction: R_Recombination
 ! Flux pairs: SiH3(9), H8Si4(102); H5Si3(36), H8Si4(102); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_silyl;Si_rad)
 SiH3(9)+H5Si3(36)=H8Si4(102)                        7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #223; RMG #220
+! Reaction index: Chemkin #222; RMG #220
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH3SiH(5), H3Si2(16); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_Si_H3;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 9
 SiH3SiH(5)+H5Si3(36)=H6Si3(25)+H3Si2(16)            1.753e+03 3.620     -0.129   
 
-! Reaction index: Chemkin #224; RMG #221
+! Reaction index: Chemkin #223; RMG #221
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(5), H9Si5(103); H5Si3(36), H9Si5(103); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 SiH3SiH(5)+H5Si3(36)=H9Si5(103)                     1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #225; RMG #223
+! Reaction index: Chemkin #224; RMG #223
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2Si2(22), H7Si5(95); H5Si3(36), H7Si5(95); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H5Si3(36)+H2Si2(22)=H7Si5(95)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #226; RMG #224
+! Reaction index: Chemkin #225; RMG #224
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2Si(11), HSi2(29); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2Si(11)+H5Si3(36)=H6Si3(25)+HSi2(29)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #227; RMG #225
+! Reaction index: Chemkin #226; RMG #225
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H4Si3(99), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H4Si3(99)+H3Si2(21)=SiH2Si(11)+H5Si3(36)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #228; RMG #226
+! Reaction index: Chemkin #227; RMG #226
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si2(21), SiH2Si(11); H4Si3(100), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H4Si3(100)+H3Si2(21)=SiH2Si(11)+H5Si3(36)           3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #229; RMG #228
+! Reaction index: Chemkin #228; RMG #228
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H4Si3(99), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H4Si3(99)+HSi2(23)=H5Si3(36)+Si2(30)                3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #230; RMG #229
+! Reaction index: Chemkin #229; RMG #229
 ! Template reaction: H_Abstraction
 ! Flux pairs: HSi2(23), Si2(30); H4Si3(100), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H4Si3(100)+HSi2(23)=H5Si3(36)+Si2(30)               3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #231; RMG #230
+! Reaction index: Chemkin #230; RMG #230
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2(30), H5Si5(91); H5Si3(36), H5Si5(91); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H5Si3(36)+Si2(30)=H5Si5(91)                         3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #232; RMG #231
+! Reaction index: Chemkin #231; RMG #231
 ! Template reaction: H_Abstraction
 ! Flux pairs: H3Si3(33), H4Si3(31); H6Si3(25), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
 H6Si3(25)+H3Si3(33)=H5Si3(36)+H4Si3(31)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #233; RMG #232
+! Reaction index: Chemkin #232; RMG #232
 ! Template reaction: H_Abstraction
 ! Flux pairs: H4Si3(31), H3Si3(34); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Sid_rad_Si_H)
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
 H5Si3(36)+H4Si3(31)=H6Si3(25)+H3Si3(34)             1.948e+02 3.620     0.000    
 
-! Reaction index: Chemkin #234; RMG #233
+! Reaction index: Chemkin #233; RMG #233
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H4Si3(99), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad)
 H4Si3(99)+H5Si3(36)=H5Si3(36)+H4Si3(31)             3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #235; RMG #234
+! Reaction index: Chemkin #234; RMG #234
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(31); H4Si3(100), H5Si3(36); 
 ! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sis_rad_Si_H2)
 H4Si3(100)+H5Si3(36)=H5Si3(36)+H4Si3(31)            3.153e+09 1.172     4.009    
 
-! Reaction index: Chemkin #236; RMG #235
+! Reaction index: Chemkin #235; RMG #235
 ! Template reaction: H_Abstraction
 ! Flux pairs: Si2H2(12), HSi2(42); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 2
-Si2H2(12)+H5Si3(36)=HSi2(42)+H6Si3(25)              3.896e+02 3.620     -0.129   
+Si2H2(12)+H5Si3(36)=H6Si3(25)+HSi2(42)              3.896e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #237; RMG #236
+! Reaction index: Chemkin #236; RMG #236
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H2(12), H7Si5(92); H5Si3(36), H7Si5(92); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 36
 Si2H2(12)+H5Si3(36)=H7Si5(92)                       2.160e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #238; RMG #237
+! Reaction index: Chemkin #237; RMG #237
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(45), H6Si3(18); H6Si3(25), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
-H5Si3(45)+H6Si3(25)=H6Si3(18)+H5Si3(36)             7.792e+02 3.620     -0.129   
+H6Si3(25)+H5Si3(45)=H6Si3(18)+H5Si3(36)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #239; RMG #238
+! Reaction index: Chemkin #238; RMG #238
 ! Template reaction: H_Abstraction
 ! Flux pairs: H6Si3(18), H5Si3(47); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
-H6Si3(18)+H5Si3(36)=H5Si3(47)+H6Si3(25)             7.792e+02 3.620     -0.129   
+H6Si3(18)+H5Si3(36)=H6Si3(25)+H5Si3(47)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #240; RMG #239
+! Reaction index: Chemkin #239; RMG #239
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(18), S(105); H5Si3(36), S(105); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H6Si3(18)+H5Si3(36)=S(105)                          1.080e+11 0.000     -9.100   
 
-! Reaction index: Chemkin #241; RMG #240
+! Reaction index: Chemkin #240; RMG #240
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si2(46), Si2H6(4); H6Si3(25), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
-H5Si2(46)+H6Si3(25)=Si2H6(4)+H5Si3(36)              7.792e+02 3.620     -0.129   
+H6Si3(25)+H5Si2(46)=Si2H6(4)+H5Si3(36)              7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #242; RMG #241
+! Reaction index: Chemkin #241; RMG #241
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(68), H6Si3(25); H6Si3(25), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
 H6Si3(25)+H5Si3(68)=H6Si3(25)+H5Si3(36)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #243; RMG #242
+! Reaction index: Chemkin #242; RMG #242
 ! Template reaction: H_Abstraction
 ! Flux pairs: H6Si3(25), H5Si3(69); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Sid_rad_Si_H)
 H6Si3(25)+H5Si3(36)=H6Si3(25)+H5Si3(69)             1.948e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #244; RMG #243
+! Reaction index: Chemkin #243; RMG #243
 ! Template reaction: H_Abstraction
 ! Flux pairs: H2Si2(22), HSi2(23); H4Si3(99), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad)
@@ -2295,66 +2281,73 @@ H6Si3(25)+H5Si3(36)=H6Si3(25)+H5Si3(69)             1.948e+02 3.620     -0.129
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
 H4Si3(99)+H2Si2(22)=H5Si3(36)+HSi2(23)              7.792e+02 3.620     0.000    
 
-! Reaction index: Chemkin #245; RMG #244
+! Reaction index: Chemkin #244; RMG #244
 ! Template reaction: H_Abstraction
 ! Flux pairs: H2Si2(22), HSi2(23); H4Si3(100), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
 H4Si3(100)+H2Si2(22)=H5Si3(36)+HSi2(23)             7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #246; RMG #245
+! Reaction index: Chemkin #245; RMG #245
 ! Template reaction: R_Recombination
 ! Flux pairs: HSi2(23), H6Si5(107); H5Si3(36), H6Si5(107); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_rad)
 H5Si3(36)+HSi2(23)=H6Si5(107)                       7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #247; RMG #246
+! Reaction index: Chemkin #246; RMG #246
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: HSi2(23), H6Si5(108); H5Si3(36), H6Si5(108); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH3_Si)
 ! Multiplied by reaction path degeneracy 18
 H5Si3(36)+HSi2(23)=H6Si5(108)                       3.348e+15 0.000     -0.454   
 
-! Reaction index: Chemkin #248; RMG #247
+! Reaction index: Chemkin #247; RMG #247
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H4Si3(99); H5Si3(36), H6Si3(25); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_H;Sid_rad_Si_H)
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
-H5Si3(36)+H5Si3(36)=H6Si3(25)+H4Si3(99)             1.948e+02 3.620     0.000    
+H5Si3(36)+H5Si3(36)=H4Si3(99)+H6Si3(25)             1.948e+02 3.620     0.000    
 
-! Reaction index: Chemkin #249; RMG #248
+! Reaction index: Chemkin #248; RMG #248
 ! Template reaction: H_Abstraction
 ! Flux pairs: H4Si3(100), H5Si3(36); H6Si3(25), H5Si3(36); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 4
-H6Si3(25)+H4Si3(100)=H5Si3(36)+H5Si3(36)            7.792e+02 3.620     -0.129   
+H4Si3(100)+H6Si3(25)=H5Si3(36)+H5Si3(36)            7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #250; RMG #249
+! Reaction index: Chemkin #249; RMG #249
 ! Template reaction: R_Recombination
 ! Flux pairs: H5Si3(36), S(109); H5Si3(36), S(109); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_rad)
 H5Si3(36)+H5Si3(36)=S(109)                          7.206e+12 0.101     -0.195   
 
-! Reaction index: Chemkin #251; RMG #250
+! Reaction index: Chemkin #250; RMG #250
 ! Template reaction: R_Recombination
 ! Flux pairs: H2Si2(98), H3Si2(21); H(13), H3Si2(21); 
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 ! Multiplied by reaction path degeneracy 2
-H(13)+H2Si2(98)=H3Si2(21)                           1.441e+13 0.101     -0.195   
+H2Si2(98)+H(13)=H3Si2(21)                           1.441e+13 0.101     -0.195   
 
-! Reaction index: Chemkin #252; RMG #251
+! Reaction index: Chemkin #251; RMG #251
 ! Template reaction: H_Abstraction
 ! Flux pairs: SiH2(2), SiH(10); H3Si2(21), H4Si2(7); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2(2)+H3Si2(21)=H4Si2(7)+SiH(10)                  7.792e+02 3.620     -0.129   
 
-! Reaction index: Chemkin #253; RMG #252
+! Reaction index: Chemkin #252; RMG #252
 ! Template reaction: H_Abstraction
 ! Flux pairs: H(13), H2(3); H3Si2(21), H2Si2(98); 
 ! Exact match found for rate rule (Sid_Si_H2;H_rad)
 ! Multiplied by reaction path degeneracy 4
-H(13)+H3Si2(21)=H2(3)+H2Si2(98)                     7.950e+08 1.760     -0.339   
+H(13)+H3Si2(21)=H2Si2(98)+H2(3)                     7.950e+08 1.760     -0.339   
+
+! Reaction index: Chemkin #253; RMG #253
+! Template reaction: H_Abstraction
+! Flux pairs: H2Si(15), SiH3(9); H4Si2(7), H3Si2(21); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
+! Multiplied by reaction path degeneracy 8
+H4Si2(7)+H2Si(15)=SiH3(9)+H3Si2(21)                 2.976e+08 1.617     6.531    
 
 ! Reaction index: Chemkin #254; RMG #254
 ! Template reaction: H_Abstraction
@@ -2417,28 +2410,28 @@ H2Si2(98)+H5Si3(36)=H3Si2(21)+H4Si3(31)             6.305e+09 1.172     4.009
 ! Flux pairs: Si2H2(12), HSi2(42); H3Si2(21), H4Si2(7); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 2
-Si2H2(12)+H3Si2(21)=HSi2(42)+H4Si2(7)               3.896e+02 3.620     -0.129   
+Si2H2(12)+H3Si2(21)=H4Si2(7)+HSi2(42)               3.896e+02 3.620     -0.129   
 
 ! Reaction index: Chemkin #263; RMG #263
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(45), H6Si3(18); H4Si2(7), H3Si2(21); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 8
-H5Si3(45)+H4Si2(7)=H6Si3(18)+H3Si2(21)              1.558e+03 3.620     -0.129   
+H4Si2(7)+H5Si3(45)=H6Si3(18)+H3Si2(21)              1.558e+03 3.620     -0.129   
 
 ! Reaction index: Chemkin #264; RMG #264
 ! Template reaction: H_Abstraction
 ! Flux pairs: H6Si3(18), H5Si3(47); H3Si2(21), H4Si2(7); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sis_H;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
-H6Si3(18)+H3Si2(21)=H5Si3(47)+H4Si2(7)              7.792e+02 3.620     -0.129   
+H6Si3(18)+H3Si2(21)=H4Si2(7)+H5Si3(47)              7.792e+02 3.620     -0.129   
 
 ! Reaction index: Chemkin #265; RMG #265
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si2(46), Si2H6(4); H4Si2(7), H3Si2(21); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 8
-H5Si2(46)+H4Si2(7)=Si2H6(4)+H3Si2(21)               1.558e+03 3.620     -0.129   
+H4Si2(7)+H5Si2(46)=Si2H6(4)+H3Si2(21)               1.558e+03 3.620     -0.129   
 
 ! Reaction index: Chemkin #266; RMG #266
 ! Template reaction: H_Abstraction
@@ -2469,21 +2462,21 @@ H2Si2(98)+H2Si2(22)=H3Si2(21)+HSi2(23)              1.558e+03 3.620     0.002
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad)
 ! Multiplied by reaction path degeneracy 8
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
-H4Si2(7)+H4Si3(99)=H5Si3(36)+H3Si2(21)              1.558e+03 3.620     0.000    
+H4Si3(99)+H4Si2(7)=H5Si3(36)+H3Si2(21)              1.558e+03 3.620     0.000    
 
 ! Reaction index: Chemkin #270; RMG #270
 ! Template reaction: H_Abstraction
 ! Flux pairs: H4Si3(100), H5Si3(36); H4Si2(7), H3Si2(21); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sis_rad_Si_H2)
 ! Multiplied by reaction path degeneracy 8
-H4Si2(7)+H4Si3(100)=H5Si3(36)+H3Si2(21)             1.558e+03 3.620     -0.129   
+H4Si3(100)+H4Si2(7)=H5Si3(36)+H3Si2(21)             1.558e+03 3.620     -0.129   
 
 ! Reaction index: Chemkin #271; RMG #271
 ! Template reaction: H_Abstraction
 ! Flux pairs: H5Si3(36), H6Si3(25); H3Si2(21), H2Si2(98); 
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 4
-H5Si3(36)+H3Si2(21)=H6Si3(25)+H2Si2(98)             7.792e+02 3.620     -0.129   
+H5Si3(36)+H3Si2(21)=H2Si2(98)+H6Si3(25)             7.792e+02 3.620     -0.129   
 
 ! Reaction index: Chemkin #272; RMG #272
 ! Template reaction: H_Abstraction
@@ -2491,162 +2484,7 @@ H5Si3(36)+H3Si2(21)=H6Si3(25)+H2Si2(98)             7.792e+02 3.620     -0.129
 ! Estimated using template (Si_H;Si_rad) for rate rule (Sid_Si_H2;Sid_rad_Si_H)
 ! Multiplied by reaction path degeneracy 16
 ! Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
-H4Si2(7)+H2Si2(98)=H3Si2(21)+H3Si2(21)              3.117e+03 3.620     0.002    
-
-! Reaction index: Chemkin #273; RMG #273
-! Template reaction: H_Abstraction
-! Flux pairs: SiH2(2), SiH(10); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_H;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-SiH2(2)+H2Si(15)=SiH3(9)+SiH(10)                    1.488e+08 1.617     6.509    
-
-! Reaction index: Chemkin #274; RMG #274
-! Template reaction: H_Abstraction
-! Flux pairs: H2(3), H(13); HSi(113), H2Si(15); 
-! Estimated using template (X_H;Y_rad_birad_trirad_quadrad) for rate rule (H2;SiH_quartet)
-! Multiplied by reaction path degeneracy 2
-H2(3)+HSi(113)=H(13)+H2Si(15)                       2.000e+05 0.000     10.000   
-
-! Reaction index: Chemkin #275; RMG #275
-! Template reaction: H_Abstraction
-! Flux pairs: SiH4(1), SiH3(9); HSi(113), H2Si(15); 
-! Estimated using template (X_H;Y_rad_birad_trirad_quadrad) for rate rule (Si_silane;SiH_quartet)
-! Multiplied by reaction path degeneracy 16
-SiH4(1)+HSi(113)=SiH3(9)+H2Si(15)                   1.600e+06 0.000     10.000   
-
-! Reaction index: Chemkin #276; RMG #276
-! Template reaction: H_Abstraction
-! Flux pairs: SiH3SiH(5), H3Si2(16); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 9
-SiH3SiH(5)+H2Si(15)=SiH3(9)+H3Si2(16)               3.349e+08 1.617     6.483    
-
-! Reaction index: Chemkin #277; RMG #277
-! Template reaction: H_Abstraction
-! Flux pairs: SiH2Si(11), HSi2(29); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-SiH2Si(11)+H2Si(15)=SiH3(9)+HSi2(29)                1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #278; RMG #278
-! Template reaction: H_Abstraction
-! Flux pairs: H3Si2(21), SiH2Si(11); HSi(113), H2Si(15); 
-! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_quartet)
-HSi(113)+H3Si2(21)=SiH2Si(11)+H2Si(15)              6.400e+12 0.100     21.260   
-
-! Reaction index: Chemkin #279; RMG #279
-! Template reaction: H_Abstraction
-! Flux pairs: HSi2(23), Si2(30); HSi(113), H2Si(15); 
-! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_quartet)
-HSi(113)+HSi2(23)=H2Si(15)+Si2(30)                  6.400e+12 0.100     21.260   
-
-! Reaction index: Chemkin #280; RMG #280
-! Template reaction: H_Abstraction
-! Flux pairs: H4Si3(31), H3Si3(33); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 9
-H2Si(15)+H4Si3(31)=SiH3(9)+H3Si3(33)                3.349e+08 1.617     6.573    
-
-! Reaction index: Chemkin #281; RMG #281
-! Template reaction: H_Abstraction
-! Flux pairs: H4Si3(31), H3Si3(34); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_H;Si_triplet)
-H2Si(15)+H4Si3(31)=SiH3(9)+H3Si3(34)                3.721e+07 1.617     6.531    
-
-! Reaction index: Chemkin #282; RMG #282
-! Template reaction: H_Abstraction
-! Flux pairs: H5Si3(36), H4Si3(31); HSi(113), H2Si(15); 
-! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_quartet)
-HSi(113)+H5Si3(36)=H2Si(15)+H4Si3(31)               6.400e+12 0.100     21.260   
-
-! Reaction index: Chemkin #283; RMG #283
-! Template reaction: H_Abstraction
-! Flux pairs: Si2H2(12), HSi2(42); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_H;Si_triplet)
-! Multiplied by reaction path degeneracy 2
-Si2H2(12)+H2Si(15)=HSi2(42)+SiH3(9)                 7.441e+07 1.617     6.497    
-
-! Reaction index: Chemkin #284; RMG #284
-! Template reaction: H_Abstraction
-! Flux pairs: H6Si3(18), H5Si3(45); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 9
-H2Si(15)+H6Si3(18)=H5Si3(45)+SiH3(9)                3.349e+08 1.617     6.573    
-
-! Reaction index: Chemkin #285; RMG #285
-! Template reaction: H_Abstraction
-! Flux pairs: H6Si3(18), H5Si3(47); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_H;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H2Si(15)+H6Si3(18)=H5Si3(47)+SiH3(9)                1.488e+08 1.617     6.483    
-
-! Reaction index: Chemkin #286; RMG #286
-! Template reaction: H_Abstraction
-! Flux pairs: Si2H6(4), H5Si2(46); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 18
-Si2H6(4)+H2Si(15)=H5Si2(46)+SiH3(9)                 6.697e+08 1.617     6.573    
-
-! Reaction index: Chemkin #287; RMG #287
-! Template reaction: H_Abstraction
-! Flux pairs: H6Si3(25), H5Si3(68); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 9
-H6Si3(25)+H2Si(15)=SiH3(9)+H5Si3(68)                3.349e+08 1.617     6.573    
-
-! Reaction index: Chemkin #288; RMG #288
-! Template reaction: H_Abstraction
-! Flux pairs: H6Si3(25), H5Si3(69); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_H;Si_triplet)
-H6Si3(25)+H2Si(15)=SiH3(9)+H5Si3(69)                3.721e+07 1.617     6.531    
-
-! Reaction index: Chemkin #289; RMG #289
-! Template reaction: H_Abstraction
-! Flux pairs: H2Si2(22), HSi2(23); HSi(113), H2Si(15); 
-! Estimated using template (X_H;Y_rad_birad_trirad_quadrad) for rate rule (Sid_Si_H2;SiH_quartet)
-! Multiplied by reaction path degeneracy 4
-HSi(113)+H2Si2(22)=H2Si(15)+HSi2(23)                4.000e+05 0.000     10.000   
-
-! Reaction index: Chemkin #290; RMG #290
-! Template reaction: H_Abstraction
-! Flux pairs: H5Si3(36), H4Si3(99); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_H;Si_triplet)
-H2Si(15)+H5Si3(36)=SiH3(9)+H4Si3(99)                3.721e+07 1.617     6.531    
-
-! Reaction index: Chemkin #291; RMG #291
-! Template reaction: H_Abstraction
-! Flux pairs: H5Si3(36), H4Si3(100); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
-! Multiplied by reaction path degeneracy 9
-H2Si(15)+H5Si3(36)=SiH3(9)+H4Si3(100)               3.349e+08 1.617     6.573    
-
-! Reaction index: Chemkin #292; RMG #292
-! Template reaction: H_Abstraction
-! Flux pairs: H6Si3(25), H5Si3(36); HSi(113), H2Si(15); 
-! Estimated using template (X_H;Y_rad_birad_trirad_quadrad) for rate rule (Sid_Si_H2;SiH_quartet)
-! Multiplied by reaction path degeneracy 4
-H6Si3(25)+HSi(113)=H2Si(15)+H5Si3(36)               4.000e+05 0.000     10.000   
-
-! Reaction index: Chemkin #293; RMG #293
-! Template reaction: H_Abstraction
-! Flux pairs: H3Si2(21), H2Si2(98); H2Si(15), SiH3(9); 
-! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sid_Si_H2;Si_triplet)
-! Multiplied by reaction path degeneracy 4
-H2Si(15)+H3Si2(21)=SiH3(9)+H2Si2(98)                1.488e+08 1.617     6.531    
-
-! Reaction index: Chemkin #294; RMG #294
-! Template reaction: H_Abstraction
-! Flux pairs: H4Si2(7), H3Si2(21); HSi(113), H2Si(15); 
-! Estimated using template (X_H;Y_rad_birad_trirad_quadrad) for rate rule (Sid_Si_H2;SiH_quartet)
-! Multiplied by reaction path degeneracy 8
-H4Si2(7)+HSi(113)=H2Si(15)+H3Si2(21)                8.000e+05 0.000     10.000   
-
-! Reaction index: Chemkin #295; RMG #295
-! Template reaction: H_Abstraction
-! Flux pairs: HSi(113), H2Si(15); SiH3(9), H2Si(15); 
-! Estimated using template (Xrad_H;Y_1centertrirad) for rate rule (Sirad_H;SiH_quartet)
-! Multiplied by reaction path degeneracy 3
-SiH3(9)+HSi(113)=H2Si(15)+H2Si(15)                  1.920e+13 0.100     21.260   
+H2Si2(98)+H4Si2(7)=H3Si2(21)+H3Si2(21)              3.117e+03 3.620     0.002    
 
 END
 
