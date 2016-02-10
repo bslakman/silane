@@ -21,6 +21,16 @@ species(
     structure=SMILES("[Ar]")
 )
 
+species(
+    label='SiH2',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u0 p1 c0 {2,S} {3,S}
+2 H u0 p0 c0 {1,S}
+3 H u0 p0 c0 {1,S}
+""")
+)
+
 # Reaction systems
 simpleReactor(
     temperature=(913,'K'),
@@ -32,7 +42,9 @@ simpleReactor(
     terminationConversion={
         'SiH4': 0.9,
     },
-    terminationTime=(1, 's')
+    terminationTime=(1, 's'),
+    sensitivity=['SiH4', 'SiH2'],
+    sensitivityThreshold=0.001,
 )
 
 simulator(
@@ -42,8 +54,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-9,
-    toleranceInterruptSimulation=5e-9,
+    toleranceMoveToCore=1e-8,
+    toleranceInterruptSimulation=5e-8,
     maximumEdgeSpecies=100000
 )
 
