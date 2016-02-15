@@ -1,8 +1,8 @@
 # Data sources
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
-    reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
-    #reactionLibraries = [],
+    #reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+    reactionLibraries = [('Silicon_Giunta_1990', False)],
     #seedMechanisms = [('Silicon_Giunta_1990')],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
@@ -148,8 +148,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-3,
-    toleranceInterruptSimulation=5e-3,
+    toleranceMoveToCore=0.1,
+    toleranceInterruptSimulation=0.5,
     maximumEdgeSpecies=100000
 )
 
