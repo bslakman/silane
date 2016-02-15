@@ -1,8 +1,8 @@
 # Data sources
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
-    #reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
-    reactionLibraries = [('Silicon_Giunta_1990', False)],
+    reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+    #reactionLibraries = [('Silicon_Giunta_1990', False)],
     #seedMechanisms = [('Silicon_Giunta_1990')],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
@@ -148,19 +148,19 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-4,
-    toleranceInterruptSimulation=5e-4,
+    toleranceMoveToCore=0.1,
+    toleranceInterruptSimulation=0.5,
     maximumEdgeSpecies=100000
 )
 
-#pressureDependence(
-#    method='modified strong collision',
-#    maximumGrainSize=(0.5,'kcal/mol'),
-#    minimumNumberOfGrains=250,
-#    temperatures=(300,2000,'K',8),
-#    pressures=(0.01,20,'bar',5),
-#    interpolation=('Chebyshev', 6, 4),
-#)
+pressureDependence(
+    method='modified strong collision',
+    maximumGrainSize=(0.5,'kcal/mol'),
+    minimumNumberOfGrains=250,
+    temperatures=(300,2000,'K',8),
+    pressures=(0.01,20,'bar',5),
+    interpolation=('Chebyshev', 6, 4),
+)
 
 options(
     units='si',
