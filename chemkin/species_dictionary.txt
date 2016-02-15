@@ -44,12 +44,42 @@ SiH3SiH(5)
 6 H  u0 p0 c0 {2,S}
 
 H2Si2(15)
-1 Si u0 p0 c0 {2,S} {3,D} {4,S}
+1 Si u0 p0 c0 {2,S} {3,S} {4,D}
 2 H  u0 p0 c0 {1,S}
-3 Si u0 p1 c0 {1,D}
-4 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u0 p1 c0 {1,D}
 
 Si2(23)
 1 Si u0 p1 c0 {2,D}
 2 Si u0 p1 c0 {1,D}
+
+SiH2Si(11)
+multiplicity 3
+1 Si u0 p0 c0 {2,D} {3,S} {4,S}
+2 Si u2 p0 c0 {1,D}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+
+Si2(37)
+multiplicity 3
+1 Si u0 p1 c0 {2,D}
+2 Si u2 p0 c0 {1,D}
+
+HSi2(22)
+multiplicity 2
+1 Si u1 p0 c0 {2,D} {3,S}
+2 Si u0 p1 c0 {1,D}
+3 H  u0 p0 c0 {1,S}
+
+SiH3(9)
+multiplicity 2
+1 Si u1 p0 c0 {2,S} {3,S} {4,S}
+2 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+
+SiH(10)
+multiplicity 2
+1 Si u1 p1 c0 {2,S}
+2 H  u0 p0 c0 {1,S}
 
