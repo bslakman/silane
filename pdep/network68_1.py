@@ -45,6 +45,21 @@ species(
 )
 
 species(
+    label = '[SiH2][SiH2](80)',
+    structure = SMILES('[SiH2][SiH2]'),
+    E0 = (485.451,'kJ/mol'),
+    modes = [
+        HarmonicOscillator(frequencies=([180,637.188,1235.37,1235.44,4000,4000],'cm^-1')),
+    ],
+    spinMultiplicity = 3,
+    opticalIsomers = 1,
+    molecularWeight = (58.1869,'amu'),
+    collisionModel = TransportData(shapeIndex=2, epsilon=(920.412,'J/mol'), sigma=(4.443e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
+    energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
+    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[3.64643,0.00832611,-6.6009e-06,2.86937e-09,-5.20408e-13,58398.5,9.66432], Tmin=(100,'K'), Tmax=(1267.65,'K')), NASAPolynomial(coeffs=[4.92228,0.0043002,-1.83704e-06,3.64012e-10,-2.63103e-14,58075.1,3.20646], Tmin=(1267.65,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(485.451,'kJ/mol'), comment="""Thermo library: SiliconHydrideLibrary + radical(SiJ_LP_Si) + radical(SisJ_SiLP)"""),
+)
+
+species(
     label = 'H2(3)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
@@ -57,21 +72,6 @@ species(
     collisionModel = TransportData(shapeIndex=1, epsilon=(315.951,'J/mol'), sigma=(2.92,'angstroms'), dipoleMoment=(0,'C*m'), polarizability=(0.79,'angstroms^3'), rotrelaxcollnum=280.0, comment="""GRI-Mech"""),
     energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
     thermo = NASA(polynomials=[NASAPolynomial(coeffs=[3.43536,0.000212709,-2.78622e-07,3.40265e-10,-7.76026e-14,-1031.36,-3.90842], Tmin=(100,'K'), Tmax=(1959.08,'K')), NASAPolynomial(coeffs=[2.78815,0.000587663,1.59e-07,-5.52718e-11,4.34296e-15,-596.134,0.112835], Tmin=(1959.08,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(-8.60349,'kJ/mol'), comment="""Thermo library: primaryThermoLibrary"""),
-)
-
-species(
-    label = '[SiH2][SiH2](80)',
-    structure = SMILES('[SiH2][SiH2]'),
-    E0 = (485.451,'kJ/mol'),
-    modes = [
-        HarmonicOscillator(frequencies=([180,637.188,1235.37,1235.45,4000,4000],'cm^-1')),
-    ],
-    spinMultiplicity = 3,
-    opticalIsomers = 1,
-    molecularWeight = (58.1869,'amu'),
-    collisionModel = TransportData(shapeIndex=2, epsilon=(920.412,'J/mol'), sigma=(4.443e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
-    energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
-    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[3.64643,0.00832612,-6.60092e-06,2.86939e-09,-5.20415e-13,58398.5,9.66432], Tmin=(100,'K'), Tmax=(1267.63,'K')), NASAPolynomial(coeffs=[4.92228,0.00430021,-1.83705e-06,3.64014e-10,-2.63104e-14,58075.1,3.20651], Tmin=(1267.63,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(485.451,'kJ/mol'), comment="""Thermo library: SiliconHydrideLibrary + radical(SisJ_SiLP) + radical(SiJ_LP_Si)"""),
 )
 
 species(
@@ -148,7 +148,7 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction2',
-    reactants = ['H2(3)', '[SiH2][SiH2](80)'],
+    reactants = ['[SiH2][SiH2](80)', 'H2(3)'],
     products = ['[SiH2][SiH2](79)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(2.1e+06,'cm^3/(mol*s)'), n=1.97, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(400,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si2S;H_H)

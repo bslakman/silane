@@ -103,7 +103,7 @@ species(
 )
 
 species(
-    label = '[SiH2][SiH3](65)',
+    label = '[SiH2][SiH3](61)',
     structure = SMILES('[SiH2][SiH3]'),
     E0 = (207.489,'kJ/mol'),
     modes = [
@@ -205,7 +205,7 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction2',
-    reactants = ['[H](13)', '[SiH2][SiH3](65)'],
+    reactants = ['[H](13)', '[SiH2][SiH3](61)'],
     products = ['Si2H6(4)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)

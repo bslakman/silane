@@ -42,7 +42,7 @@ species(
 )
 
 species(
-    label = '[SiH]=[Si][Si]=[SiH2](89)',
+    label = '[SiH]=[Si][Si]=[SiH2](88)',
     structure = SMILES('[SiH]#[Si][Si][SiH2]'),
     E0 = (705.841,'kJ/mol'),
     modes = [
@@ -54,11 +54,11 @@ species(
     molecularWeight = (113.35,'amu'),
     collisionModel = TransportData(shapeIndex=2, epsilon=(4418.31,'J/mol'), sigma=(4.687e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
     energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
-    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[1.41629,0.0664438,-0.000135126,1.24789e-07,-4.23462e-11,84977,-13.6407], Tmin=(100,'K'), Tmax=(898.499,'K')), NASAPolynomial(coeffs=[8.36375,0.0125916,-6.95392e-06,1.2935e-09,-8.39246e-14,84653.9,-41.2656], Tmin=(898.499,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(705.841,'kJ/mol'), comment="""Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(Sis-Sis4) + other(R) + group(si) + other(R) + group(Sis-Sis4) + other(R) + radical(SiJ_LP_Si) + radical(SiSiSi_triplet)"""),
+    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[1.41636,0.0664428,-0.000135123,1.24784e-07,-4.23438e-11,84977,-13.641], Tmin=(100,'K'), Tmax=(898.516,'K')), NASAPolynomial(coeffs=[8.36355,0.012592,-6.95413e-06,1.29355e-09,-8.39288e-14,84653.9,-41.2645], Tmin=(898.516,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(705.841,'kJ/mol'), comment="""Thermo group additivity estimation: group(Sis-H3si) + other(R) + group(Sis-Sis4) + other(R) + group(si) + other(R) + group(Sis-Sis4) + other(R) + radical(SiSiSi_triplet) + radical(SiJ_LP_Si)"""),
 )
 
 species(
-    label = '[SiH][SiH2][SiH]=[SiH2](90)',
+    label = '[SiH][SiH2][SiH]=[SiH2](89)',
     structure = SMILES('[SiH][SiH2][SiH]=[SiH2]'),
     E0 = (887.812,'kJ/mol'),
     modes = [
@@ -75,7 +75,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[Si]=[SiH2](64)',
+    label = '[SiH2]=[Si]=[SiH2](75)',
     structure = SMILES('[SiH2]=[Si]=[SiH2]'),
     E0 = (551.673,'kJ/mol'),
     modes = [
@@ -90,7 +90,7 @@ species(
 )
 
 species(
-    label = '[SiH2](68)',
+    label = '[SiH2](64)',
     structure = SMILES('[SiH2]'),
     E0 = (345.086,'kJ/mol'),
     modes = [
@@ -105,19 +105,7 @@ species(
 )
 
 species(
-    label = 'Si(8)',
-    structure = SMILES('[SiH2]'),
-    E0 = (444.552,'kJ/mol'),
-    spinMultiplicity = 1,
-    opticalIsomers = 1,
-    molecularWeight = (28.0855,'amu'),
-    collisionModel = TransportData(shapeIndex=2, epsilon=(1235.53,'J/mol'), sigma=(3.758e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
-    energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
-    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[2.5,1.37382e-15,-2.66902e-18,1.75563e-21,-3.60841e-25,53467.3,4.92941], Tmin=(100,'K'), Tmax=(2121.2,'K')), NASAPolynomial(coeffs=[2.5,3.04115e-14,-1.54211e-17,3.31771e-21,-2.56694e-25,53467.3,4.92941], Tmin=(2121.2,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(444.552,'kJ/mol'), comment="""Thermo library: SiliconHydrideLibrary"""),
-)
-
-species(
-    label = '[SiH2]=[Si]=[SiH2](91)',
+    label = '[SiH2]=[Si]=[SiH2](90)',
     structure = SMILES('[SiH2]=[Si]=[SiH2]'),
     E0 = (414.727,'kJ/mol'),
     modes = [
@@ -129,6 +117,18 @@ species(
     collisionModel = TransportData(shapeIndex=2, epsilon=(1971.36,'J/mol'), sigma=(5.118e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
     energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
     thermo = NASA(polynomials=[NASAPolynomial(coeffs=[1.57575,0.0595463,-0.000105232,9.24967e-08,-3.08812e-11,49961.5,6.54957], Tmin=(100,'K'), Tmax=(880.354,'K')), NASAPolynomial(coeffs=[8.20167,0.0159642,-8.0131e-06,1.48704e-09,-9.87737e-14,49317.1,-21.6064], Tmin=(880.354,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(414.727,'kJ/mol'), comment="""Thermo group additivity estimation: group(Sid-H2) + other(R) + group(Sis-Sis4) + other(R) + group(si) + other(R)"""),
+)
+
+species(
+    label = 'Si(8)',
+    structure = SMILES('[SiH2]'),
+    E0 = (444.552,'kJ/mol'),
+    spinMultiplicity = 1,
+    opticalIsomers = 1,
+    molecularWeight = (28.0855,'amu'),
+    collisionModel = TransportData(shapeIndex=2, epsilon=(1235.53,'J/mol'), sigma=(3.758e-10,'m'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0, comment="""Epsilon & sigma estimated with fixed Lennard Jones Parameters. This is the fallback method! Try improving transport databases!"""),
+    energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
+    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[2.5,1.37382e-15,-2.66902e-18,1.75563e-21,-3.60841e-25,53467.3,4.92941], Tmin=(100,'K'), Tmax=(2121.2,'K')), NASAPolynomial(coeffs=[2.5,3.04115e-14,-1.54211e-17,3.31771e-21,-2.56694e-25,53467.3,4.92941], Tmin=(2121.2,'K'), Tmax=(5000,'K'))], Tmin=(100,'K'), Tmax=(5000,'K'), E0=(444.552,'kJ/mol'), comment="""Thermo library: SiliconHydrideLibrary"""),
 )
 
 species(
@@ -225,7 +225,7 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction2',
-    reactants = ['[H](13)', '[SiH]=[Si][Si]=[SiH2](89)'],
+    reactants = ['[H](13)', '[SiH]=[Si][Si]=[SiH2](88)'],
     products = ['[SiH]=[SiH][Si]=[SiH2](56)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
@@ -234,7 +234,7 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction3',
-    reactants = ['[SiH][SiH2][SiH]=[SiH2](90)'],
+    reactants = ['[SiH][SiH2][SiH]=[SiH2](89)'],
     products = ['[SiH]=[SiH][Si]=[SiH2](56)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(7.9e+12,'cm^3/(mol*s)'), n=0, Ea=(5.3095,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(1600,'K'), comment="""Estimated using template (SiRSiH) for rate rule (SiSiSiH)"""),
@@ -242,7 +242,7 @@ reaction(
 
 reaction(
     label = 'reaction4',
-    reactants = ['[SiH2]=[Si]=[SiH2](64)', '[SiH2](68)'],
+    reactants = ['[SiH2]=[Si]=[SiH2](75)', '[SiH2](64)'],
     products = ['[SiH]=[SiH][Si]=[SiH2](56)'],
     transitionState = 'TS4',
     kinetics = Arrhenius(A=(7.44e+14,'cm^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(295,'K'), Tmax=(595,'K'), comment="""Exact match found for rate rule (Si2S;Si_H)
@@ -252,7 +252,7 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction5',
-    reactants = ['Si(8)', '[SiH2]=[Si]=[SiH2](91)'],
+    reactants = ['[SiH2]=[Si]=[SiH2](90)', 'Si(8)'],
     products = ['[SiH]=[SiH][Si]=[SiH2](56)'],
     transitionState = 'TS5',
     kinetics = Arrhenius(A=(3.72e+14,'cm^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(295,'K'), Tmax=(595,'K'), comment="""Exact match found for rate rule (Si2S;Si_H)
