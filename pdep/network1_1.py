@@ -38,7 +38,7 @@ species(
 )
 
 species(
-    label = 'SiH2(2)',
+    label = 'SiH2(3)',
     structure = SMILES('[SiH4]'),
     E0 = (253.111,'kJ/mol'),
     spinMultiplicity = 1,
@@ -50,7 +50,7 @@ species(
 )
 
 species(
-    label = 'H2(3)',
+    label = 'H2(4)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     spinMultiplicity = 1,
@@ -135,7 +135,7 @@ Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction."""),
 reaction(
     label = 'reaction2',
     reactants = ['SiH4(1)'],
-    products = ['SiH2(2)', 'H2(3)'],
+    products = ['SiH2(3)', 'H2(4)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(3.3e+15,'1/s'), n=-0.5, Ea=(55.9,'kcal/mol'), T0=(1,'K')),
 )

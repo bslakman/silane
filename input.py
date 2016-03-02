@@ -4,7 +4,7 @@ database(
     reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction', 'H2_transfer'],
+    kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction'],
     kineticsEstimator = 'rate rules',
 )
 
@@ -16,14 +16,20 @@ species(
 )
 
 species(
+    label='Si2H6',
+    reactive=True,
+    structure=SMILES("[SiH3][SiH3]")
+)
+
+species(
     label='Ar',
     reactive=False,
     structure=SMILES("[Ar]")
 )
 
-# Reaction systems
+# Reaction system
 simpleReactor(
-    temperature=(913,'K'),
+    temperature=(873,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
@@ -32,7 +38,35 @@ simpleReactor(
     terminationConversion={
         'SiH4': 0.9,
     },
-    terminationTime=(1, 's')
+#    terminationTime=(1, 's')
+)
+
+# Reaction system
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "SiH4": 0.0025,
+	"Ar": 0.9975,
+    },
+    terminationConversion={
+        'SiH4': 0.9,
+    },
+#    terminationTime=(1, 's')
+)
+
+# Reaction system
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "SiH4": 0.05,
+	"Ar": 0.95,
+    },
+    terminationConversion={
+        'SiH4': 0.9,
+    },
+ #   terminationTime=(1, 's')
 )
 
 simulator(
@@ -65,7 +99,7 @@ options(
 )
 
 generatedSpeciesConstraints(
-    maximumSiliconAtoms=6
+    maximumSiliconAtoms=3
 )
 
 

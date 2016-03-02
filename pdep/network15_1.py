@@ -1,5 +1,5 @@
 species(
-    label = '[SiH2]=[SiH][SiH3](16)',
+    label = '[SiH2]=[SiH][SiH3](20)',
     structure = SMILES('[SiH2]=[SiH][SiH3]'),
     E0 = (291.686,'kJ/mol'),
     modes = [
@@ -30,7 +30,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[SiH2](15)',
+    label = '[SiH2]=[SiH2](19)',
     structure = SMILES('[SiH2]=[SiH2]'),
     E0 = (401.579,'kJ/mol'),
     modes = [
@@ -45,7 +45,7 @@ species(
 )
 
 species(
-    label = 'SiH2(2)',
+    label = 'SiH2(3)',
     structure = SMILES('[SiH4]'),
     E0 = (253.111,'kJ/mol'),
     modes = [
@@ -90,7 +90,7 @@ species(
 )
 
 species(
-    label = '[SiH]=[SiH2](14)',
+    label = '[SiH]=[SiH2](18)',
     structure = SMILES('[SiH]=[SiH2]'),
     E0 = (383.981,'kJ/mol'),
     modes = [
@@ -117,7 +117,7 @@ species(
 )
 
 species(
-    label = '[SiH2][SiH]=[SiH2](29)',
+    label = '[SiH2][SiH]=[SiH2](24)',
     structure = SMILES('[SiH2][SiH]=[SiH2]'),
     E0 = (448.225,'kJ/mol'),
     modes = [
@@ -133,7 +133,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[Si][SiH3](30)',
+    label = '[SiH2]=[Si][SiH3](25)',
     structure = SMILES('[SiH2]=[Si][SiH3]'),
     E0 = (420.252,'kJ/mol'),
     modes = [
@@ -149,7 +149,7 @@ species(
 )
 
 species(
-    label = '[SiH]=[SiH][SiH3](31)',
+    label = '[SiH]=[SiH][SiH3](26)',
     structure = SMILES('[SiH]=[SiH][SiH3]'),
     E0 = (420.252,'kJ/mol'),
     modes = [
@@ -165,7 +165,7 @@ species(
 )
 
 species(
-    label = '[SiH3][SiH2][SiH3](32)',
+    label = '[SiH3][SiH2][SiH3](27)',
     structure = SMILES('[SiH3][SiH2][SiH3]'),
     E0 = (340.821,'kJ/mol'),
     modes = [
@@ -182,7 +182,7 @@ species(
 )
 
 species(
-    label = 'H2(3)',
+    label = 'H2(4)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     modes = [
@@ -197,7 +197,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[SiH][SiH3](33)',
+    label = '[SiH2]=[SiH][SiH3](28)',
     structure = SMILES('[SiH2]=[SiH][SiH3]'),
     E0 = (414.721,'kJ/mol'),
     modes = [
@@ -318,8 +318,8 @@ transitionState(
 
 reaction(
     label = 'reaction1',
-    reactants = ['SiH4(1)', '[SiH2]=[SiH2](15)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['SiH4(1)', '[SiH2]=[SiH2](19)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(7.44e+14,'cm^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(295,'K'), Tmax=(595,'K'), comment="""Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
 Multiplied by reaction path degeneracy 4
@@ -328,8 +328,8 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction2',
-    reactants = ['SiH3(9)', '[SiH]=[SiH2](14)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['SiH3(9)', '[SiH]=[SiH2](18)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;Si_silyl)
 Ea raised from -0.8 to 0 kJ/mol."""),
@@ -337,8 +337,8 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction3',
-    reactants = ['[H](13)', '[SiH2][SiH]=[SiH2](29)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['[H](13)', '[SiH2][SiH]=[SiH2](24)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 Ea raised from -0.8 to 0 kJ/mol."""),
@@ -346,8 +346,8 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction4',
-    reactants = ['[H](13)', '[SiH2]=[Si][SiH3](30)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['[H](13)', '[SiH2]=[Si][SiH3](25)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS4',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 Ea raised from -0.8 to 0 kJ/mol."""),
@@ -355,8 +355,8 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction5',
-    reactants = ['[H](13)', '[SiH]=[SiH][SiH3](31)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['[H](13)', '[SiH]=[SiH][SiH3](26)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS5',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 Ea raised from -0.8 to 0 kJ/mol."""),
@@ -364,16 +364,16 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction6',
-    reactants = ['[SiH3][SiH2][SiH3](32)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['[SiH3][SiH2][SiH3](27)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS6',
     kinetics = Arrhenius(A=(5.01e+12,'1/s'), n=0, Ea=(4.7,'kcal/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Matched reaction 4 H3SiSiSiH3 <=> SiH3Si2H4 in Silylene_to_Silene/training"""),
 )
 
 reaction(
     label = 'reaction7',
-    reactants = ['H2(3)', '[SiH2]=[SiH][SiH3](33)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['H2(4)', '[SiH2]=[SiH][SiH3](28)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS7',
     kinetics = Arrhenius(A=(7.6e+12,'cm^3/(mol*s)'), n=0, Ea=(3.3472,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si-Si-H;H_H)
 Multiplied by reaction path degeneracy 2"""),
@@ -381,8 +381,8 @@ Multiplied by reaction path degeneracy 2"""),
 
 reaction(
     label = 'reaction8',
-    reactants = ['SiH2(2)', 'SiH2SiH2(7)'],
-    products = ['[SiH2]=[SiH][SiH3](16)'],
+    reactants = ['SiH2(3)', 'SiH2SiH2(7)'],
+    products = ['[SiH2]=[SiH][SiH3](20)'],
     transitionState = 'TS8',
     kinetics = Arrhenius(A=(925165,'m^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using an average for rate rule (SiH2;Si_H)
 Multiplied by reaction path degeneracy 4
@@ -392,11 +392,11 @@ Ea raised from -39.3 to 0 kJ/mol."""),
 network(
     label = '15',
     isomers = [
-        '[SiH2]=[SiH][SiH3](16)',
+        '[SiH2]=[SiH][SiH3](20)',
     ],
     reactants = [
-        ('SiH4(1)', '[SiH2]=[SiH2](15)'),
-        ('SiH2(2)', 'SiH2SiH2(7)'),
+        ('SiH4(1)', '[SiH2]=[SiH2](19)'),
+        ('SiH2(3)', 'SiH2SiH2(7)'),
     ],
     bathGas = {
         'He': 0.25,

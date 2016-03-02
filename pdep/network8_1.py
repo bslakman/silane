@@ -27,7 +27,7 @@ species(
 )
 
 species(
-    label = '[SiH2][SiH3](17)',
+    label = '[SiH2][SiH3](15)',
     structure = SMILES('[SiH2][SiH3]'),
     E0 = (384.731,'kJ/mol'),
     modes = [
@@ -46,9 +46,6 @@ species(
     label = 'SiH2SiH2(7)',
     structure = SMILES('[SiH2]=[SiH2]'),
     E0 = (255.415,'kJ/mol'),
-    modes = [
-        HarmonicOscillator(frequencies=([180,180,180,634.668,1003.64,1003.85,1003.99,1004.34,1004.41,1485.48,3071.85,3071.88],'cm^-1')),
-    ],
     spinMultiplicity = 1,
     opticalIsomers = 1,
     molecularWeight = (60.2028,'amu'),
@@ -58,7 +55,7 @@ species(
 )
 
 species(
-    label = 'H2(3)',
+    label = 'H2(4)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     modes = [
@@ -158,8 +155,8 @@ transitionState(
 )
 
 reaction(
-    label = 'reaction4',
-    reactants = ['[H](13)', '[SiH2][SiH3](17)'],
+    label = 'reaction1',
+    reactants = ['[H](13)', '[SiH2][SiH3](15)'],
     products = ['SiH3SiH(5)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
@@ -175,8 +172,8 @@ reaction(
 )
 
 reaction(
-    label = 'reaction5',
-    reactants = ['H2(3)', 'Si2H2(12)'],
+    label = 'reaction3',
+    reactants = ['H2(4)', 'Si2H2(12)'],
     products = ['SiH3SiH(5)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(1.52e+13,'cm^3/(mol*s)'), n=0, Ea=(3.3472,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si-Si-H;H_H)

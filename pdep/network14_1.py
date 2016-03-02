@@ -1,5 +1,5 @@
 species(
-    label = '[SiH2]=[SiH2](15)',
+    label = '[SiH2]=[SiH2](19)',
     structure = SMILES('[SiH2]=[SiH2]'),
     E0 = (401.579,'kJ/mol'),
     modes = [
@@ -26,7 +26,7 @@ species(
 )
 
 species(
-    label = '[SiH]=[SiH2](22)',
+    label = '[SiH]=[SiH2](21)',
     structure = SMILES('[SiH]=[SiH2]'),
     E0 = (530.145,'kJ/mol'),
     modes = [
@@ -57,7 +57,7 @@ species(
 )
 
 species(
-    label = 'H2(3)',
+    label = 'H2(4)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     modes = [
@@ -72,7 +72,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[SiH2](23)',
+    label = '[SiH2]=[SiH2](22)',
     structure = SMILES('[SiH2]=[SiH2]'),
     E0 = (538.524,'kJ/mol'),
     modes = [
@@ -157,8 +157,8 @@ transitionState(
 
 reaction(
     label = 'reaction1',
-    reactants = ['[H](13)', '[SiH]=[SiH2](22)'],
-    products = ['[SiH2]=[SiH2](15)'],
+    reactants = ['[H](13)', '[SiH]=[SiH2](21)'],
+    products = ['[SiH2]=[SiH2](19)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 Ea raised from -0.8 to 0 kJ/mol."""),
@@ -167,7 +167,7 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 reaction(
     label = 'reaction2',
     reactants = ['Si2H2(12)'],
-    products = ['[SiH2]=[SiH2](15)'],
+    products = ['[SiH2]=[SiH2](19)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(1.58e+13,'cm^3/(mol*s)'), n=0, Ea=(5.3095,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(1600,'K'), comment="""Estimated using template (SiRSiH) for rate rule (SiHSiH)
 Multiplied by reaction path degeneracy 2"""),
@@ -175,8 +175,8 @@ Multiplied by reaction path degeneracy 2"""),
 
 reaction(
     label = 'reaction3',
-    reactants = ['H2(3)', '[SiH2]=[SiH2](23)'],
-    products = ['[SiH2]=[SiH2](15)'],
+    reactants = ['H2(4)', '[SiH2]=[SiH2](22)'],
+    products = ['[SiH2]=[SiH2](19)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(4.2e+06,'cm^3/(mol*s)'), n=1.97, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(400,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si2S;H_H)
 Multiplied by reaction path degeneracy 4
@@ -186,7 +186,7 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 network(
     label = '14',
     isomers = [
-        '[SiH2]=[SiH2](15)',
+        '[SiH2]=[SiH2](19)',
     ],
     reactants = [
     ],

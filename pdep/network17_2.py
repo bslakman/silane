@@ -30,7 +30,7 @@ species(
 )
 
 species(
-    label = 'H2(3)',
+    label = 'H2(4)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     modes = [
@@ -45,7 +45,7 @@ species(
 )
 
 species(
-    label = '[SiH2]=[SiH2](15)',
+    label = '[SiH2]=[SiH2](19)',
     structure = SMILES('[SiH2]=[SiH2]'),
     E0 = (401.579,'kJ/mol'),
     modes = [
@@ -72,7 +72,7 @@ species(
 )
 
 species(
-    label = '[SiH]=[SiH2](14)',
+    label = '[SiH]=[SiH2](18)',
     structure = SMILES('[SiH]=[SiH2]'),
     E0 = (383.981,'kJ/mol'),
     modes = [
@@ -87,7 +87,7 @@ species(
 )
 
 species(
-    label = '[SiH2][SiH3](17)',
+    label = '[SiH2][SiH3](15)',
     structure = SMILES('[SiH2][SiH3]'),
     E0 = (384.731,'kJ/mol'),
     modes = [
@@ -202,8 +202,8 @@ transitionState(
 )
 
 reaction(
-    label = 'reaction3',
-    reactants = ['H2(3)', '[SiH2]=[SiH2](15)'],
+    label = 'reaction5',
+    reactants = ['H2(4)', '[SiH2]=[SiH2](19)'],
     products = ['SiH2SiH2(7)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(2.1e+06,'cm^3/(mol*s)'), n=1.97, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(400,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si2S;H_H)
@@ -212,8 +212,8 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 )
 
 reaction(
-    label = 'reaction1',
-    reactants = ['[H](13)', '[SiH]=[SiH2](14)'],
+    label = 'reaction4',
+    reactants = ['[H](13)', '[SiH]=[SiH2](18)'],
     products = ['SiH2SiH2(7)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
@@ -229,8 +229,8 @@ reaction(
 )
 
 reaction(
-    label = 'reaction4',
-    reactants = ['[H](13)', '[SiH2][SiH3](17)'],
+    label = 'reaction1',
+    reactants = ['[H](13)', '[SiH2][SiH3](15)'],
     products = ['SiH3SiH(5)'],
     transitionState = 'TS4',
     kinetics = Arrhenius(A=(7.20571e+06,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
@@ -238,8 +238,8 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 )
 
 reaction(
-    label = 'reaction5',
-    reactants = ['H2(3)', 'Si2H2(12)'],
+    label = 'reaction3',
+    reactants = ['H2(4)', 'Si2H2(12)'],
     products = ['SiH3SiH(5)'],
     transitionState = 'TS5',
     kinetics = Arrhenius(A=(1.52e+13,'cm^3/(mol*s)'), n=0, Ea=(3.3472,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si-Si-H;H_H)
@@ -253,7 +253,7 @@ network(
         'SiH3SiH(5)',
     ],
     reactants = [
-        ('H2(3)', '[SiH2]=[SiH2](15)'),
+        ('H2(4)', '[SiH2]=[SiH2](19)'),
     ],
     bathGas = {
         'He': 0.25,
