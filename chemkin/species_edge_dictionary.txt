@@ -18,32 +18,14 @@ SiH4(1)
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {1,S}
 
-Si2H6(2)
-1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
-2 Si u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {2,S}
-7 H  u0 p0 c0 {2,S}
-8 H  u0 p0 c0 {2,S}
-
-SiH2(3)
+SiH2(2)
 1 Si u0 p1 c0 {2,S} {3,S}
 2 H  u0 p0 c0 {1,S}
 3 H  u0 p0 c0 {1,S}
 
-H2(4)
+H2(3)
 1 H u0 p0 c0 {2,S}
 2 H u0 p0 c0 {1,S}
-
-SiH3SiH(5)
-1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
-2 Si u0 p1 c0 {1,S} {6,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {2,S}
 
 H4Si2(7)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
@@ -53,13 +35,21 @@ H4Si2(7)
 5 H  u0 p0 c0 {2,S}
 6 H  u0 p0 c0 {2,S}
 
-H2Si2(19)
+SiH3SiH(5)
+1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2 Si u0 p1 c0 {1,S} {6,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {2,S}
+
+H2Si2(15)
 1 Si u0 p0 c0 {2,S} {3,D} {4,S}
 2 H  u0 p0 c0 {1,S}
 3 Si u0 p1 c0 {1,D}
 4 H  u0 p0 c0 {1,S}
 
-Si2(22)
+Si2(21)
 1 Si u0 p1 c0 {2,D}
 2 Si u0 p1 c0 {1,D}
 
@@ -70,12 +60,22 @@ multiplicity 3
 3 H  u0 p0 c0 {1,S}
 4 H  u0 p0 c0 {1,S}
 
-Si2(30)
+Si2(29)
 multiplicity 3
 1 Si u0 p1 c0 {2,D}
 2 Si u2 p0 c0 {1,D}
 
-HSi2(21)
+Si2H6(4)
+1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2 Si u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {2,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {2,S}
+
+HSi2(20)
 multiplicity 2
 1 Si u1 p0 c0 {2,S} {3,D}
 2 H  u0 p0 c0 {1,S}
@@ -88,7 +88,7 @@ multiplicity 2
 3 H  u0 p0 c0 {1,S}
 4 H  u0 p0 c0 {1,S}
 
-H5Si2(14)
+H5Si2(31)
 multiplicity 2
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u1 p0 c0 {1,S} {6,S} {7,S}
@@ -130,26 +130,7 @@ H(13)
 multiplicity 2
 1 H u1 p0 c0
 
-H3Si2(15)
-multiplicity 2
-1 Si u1 p0 c0 {2,S} {3,S} {4,S}
-2 Si u0 p1 c0 {1,S} {5,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {2,S}
-
-H6Si3(17)
-1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
-2 Si u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
-3 Si u0 p1 c0 {1,S} {9,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {2,S}
-7 H  u0 p0 c0 {2,S}
-8 H  u0 p0 c0 {2,S}
-9 H  u0 p0 c0 {3,S}
-
-H3Si2(18)
+H3Si2(14)
 multiplicity 2
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
 2 Si u1 p0 c0 {1,D} {5,S}
@@ -157,7 +138,7 @@ multiplicity 2
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {2,S}
 
-H6Si3(20)
+H6Si3(16)
 1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {1,S} {3,D} {7,S}
 3 Si u0 p0 c0 {2,D} {8,S} {9,S}
@@ -168,7 +149,26 @@ H6Si3(20)
 8 H  u0 p0 c0 {3,S}
 9 H  u0 p0 c0 {3,S}
 
-H4Si3(23)
+H3Si2(17)
+multiplicity 2
+1 Si u1 p0 c0 {2,S} {3,S} {4,S}
+2 Si u0 p1 c0 {1,S} {5,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {2,S}
+
+H6Si3(19)
+1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2 Si u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
+3 Si u0 p1 c0 {1,S} {9,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {2,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {2,S}
+9 H  u0 p0 c0 {3,S}
+
+H4Si3(22)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p0 c0 {1,S} {6,D} {7,S}
 3 H  u0 p0 c0 {1,S}
@@ -177,7 +177,7 @@ H4Si3(23)
 6 Si u0 p1 c0 {2,D}
 7 H  u0 p0 c0 {2,S}
 
-H5Si3(24)
+H5Si3(23)
 multiplicity 2
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
 2 Si u0 p0 c0 {1,D} {5,S} {6,S}
@@ -188,7 +188,7 @@ multiplicity 2
 7 H  u0 p0 c0 {3,S}
 8 H  u0 p0 c0 {3,S}
 
-H5Si3(25)
+H5Si3(24)
 multiplicity 2
 1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {3,D} {7,S} {8,S}
@@ -199,7 +199,7 @@ multiplicity 2
 7 H  u0 p0 c0 {2,S}
 8 H  u0 p0 c0 {2,S}
 
-H5Si3(26)
+H5Si3(25)
 multiplicity 2
 1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {1,S} {3,D} {7,S}
@@ -210,7 +210,7 @@ multiplicity 2
 7 H  u0 p0 c0 {2,S}
 8 H  u0 p0 c0 {3,S}
 
-H6Si3(27)
+H6Si3(26)
 1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {3,S} {7,S} {8,S} {9,S}
 3 Si u0 p1 c0 {1,S} {2,S}
@@ -221,7 +221,7 @@ H6Si3(27)
 8 H  u0 p0 c0 {2,S}
 9 H  u0 p0 c0 {2,S}
 
-H4Si3(28)
+H4Si3(27)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
 2 Si u0 p0 c0 {1,D} {5,S} {6,S}
 3 Si u0 p1 c0 {1,S} {7,S}
@@ -230,13 +230,13 @@ H4Si3(28)
 6 H  u0 p0 c0 {2,S}
 7 H  u0 p0 c0 {3,S}
 
-HSi2(29)
+HSi2(28)
 multiplicity 4
 1 Si u1 p0 c0 {2,S} {3,D}
 2 H  u0 p0 c0 {1,S}
 3 Si u2 p0 c0 {1,D}
 
-H4Si3(31)
+H4Si3(30)
 multiplicity 3
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p0 c0 {1,S} {6,D} {7,S}
@@ -310,33 +310,7 @@ multiplicity 3
 6 H  u0 p0 c0 {2,S}
 7 H  u0 p0 c0 {3,S}
 
-H2Si2(40)
-multiplicity 3
-1 Si u1 p0 c0 {2,D} {3,S}
-2 Si u1 p0 c0 {1,D} {4,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {2,S}
-
-H4Si3(41)
-multiplicity 3
-1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
-2 Si u1 p0 c0 {1,S} {3,D}
-3 Si u1 p0 c0 {2,D} {7,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {1,S}
-7 H  u0 p0 c0 {3,S}
-
-H3Si3(42)
-multiplicity 2
-1 Si u0 p0 c0 {2,D} {3,S} {4,S}
-2 Si u1 p0 c0 {1,D} {5,S}
-3 Si u0 p1 c0 {1,S} {6,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {2,S}
-6 H  u0 p0 c0 {3,S}
-
-H3Si2(16)
+H3Si2(18)
 multiplicity 2
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u1 p1 c0 {1,S}
@@ -344,7 +318,7 @@ multiplicity 2
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {1,S}
 
-H5Si3(43)
+H5Si3(40)
 multiplicity 2
 1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
 2 Si u1 p0 c0 {3,S} {7,S} {8,S}
@@ -355,7 +329,7 @@ multiplicity 2
 7 H  u0 p0 c0 {2,S}
 8 H  u0 p0 c0 {2,S}
 
-H4Si3(44)
+H4Si3(41)
 1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
 2 Si u0 p1 c0 {1,S} {3,S}
 3 Si u0 p1 c0 {2,S} {7,S}
@@ -363,6 +337,32 @@ H4Si3(44)
 5 H  u0 p0 c0 {1,S}
 6 H  u0 p0 c0 {1,S}
 7 H  u0 p0 c0 {3,S}
+
+H2Si2(42)
+multiplicity 3
+1 Si u1 p0 c0 {2,D} {3,S}
+2 Si u1 p0 c0 {1,D} {4,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {2,S}
+
+H4Si3(43)
+multiplicity 3
+1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
+2 Si u1 p0 c0 {1,S} {3,D}
+3 Si u1 p0 c0 {2,D} {7,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {3,S}
+
+H3Si3(44)
+multiplicity 2
+1 Si u0 p0 c0 {2,D} {3,S} {4,S}
+2 Si u1 p0 c0 {1,D} {5,S}
+3 Si u0 p1 c0 {1,S} {6,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {2,S}
+6 H  u0 p0 c0 {3,S}
 
 H4Si2(45)
 multiplicity 3
@@ -373,7 +373,44 @@ multiplicity 3
 5 H  u0 p0 c0 {2,S}
 6 H  u0 p0 c0 {2,S}
 
-H7Si3(46)
+H2Si3(46)
+multiplicity 5
+1 Si u1 p0 c0 {2,S} {3,S} {4,S}
+2 Si u1 p0 c0 {1,S} {5,D}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+5 Si u2 p0 c0 {2,D}
+
+HSi3(47)
+multiplicity 4
+1 Si u0 p0 c0 {2,S} {3,S} {4,D}
+2 Si u1 p1 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u2 p0 c0 {1,D}
+
+H2Si3(48)
+multiplicity 5
+1 Si u0 p0 c0 {2,D} {3,S} {4,S}
+2 Si u1 p0 c0 {1,D} {5,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u3 p0 c0 {1,S}
+5 H  u0 p0 c0 {2,S}
+
+H3Si3(49)
+multiplicity 4
+1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2 Si u0 p1 c0 {1,S} {6,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 Si u3 p0 c0 {2,S}
+
+HSi(51)
+multiplicity 4
+1 H  u0 p0 c0 {2,S}
+2 Si u3 p0 c0 {1,S}
+
+H7Si3(52)
 multiplicity 2
 1  Si u0 p0 c0 {3,S} {4,S} {5,S} {9,S}
 2  Si u0 p0 c0 {3,S} {6,S} {7,S} {8,S}
@@ -386,7 +423,7 @@ multiplicity 2
 9  H  u0 p0 c0 {1,S}
 10 H  u0 p0 c0 {3,S}
 
-H4Si2(47)
+H4Si2(53)
 multiplicity 3
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u2 p0 c0 {1,S} {6,S}
@@ -394,43 +431,6 @@ multiplicity 3
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {1,S}
 6 H  u0 p0 c0 {2,S}
-
-H2Si3(48)
-multiplicity 5
-1 Si u1 p0 c0 {2,S} {3,S} {4,S}
-2 Si u1 p0 c0 {1,S} {5,D}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 Si u2 p0 c0 {2,D}
-
-HSi3(49)
-multiplicity 4
-1 Si u0 p0 c0 {2,S} {3,S} {4,D}
-2 Si u1 p1 c0 {1,S}
-3 H  u0 p0 c0 {1,S}
-4 Si u2 p0 c0 {1,D}
-
-H2Si3(50)
-multiplicity 5
-1 Si u0 p0 c0 {2,D} {3,S} {4,S}
-2 Si u1 p0 c0 {1,D} {5,S}
-3 Si u3 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {2,S}
-
-H3Si3(51)
-multiplicity 4
-1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
-2 Si u0 p1 c0 {1,S} {6,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 Si u3 p0 c0 {2,S}
-
-HSi(53)
-multiplicity 4
-1 H  u0 p0 c0 {2,S}
-2 Si u3 p0 c0 {1,S}
 
 H5Si3(54)
 multiplicity 2
@@ -541,8 +541,8 @@ H2Si2(66)
 multiplicity 3
 1 Si u1 p0 c0 {2,S} {3,S} {4,S}
 2 H  u0 p0 c0 {1,S}
-3 Si u1 p1 c0 {1,S}
-4 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u1 p1 c0 {1,S}
 
 HSi3(67)
 multiplicity 4

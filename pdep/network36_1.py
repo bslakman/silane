@@ -1,5 +1,5 @@
 species(
-    label = '[SiH2][SiH3](14)',
+    label = '[SiH2][SiH3](31)',
     structure = SMILES('[SiH2][SiH3]'),
     E0 = (207.489,'kJ/mol'),
     modes = [
@@ -15,7 +15,7 @@ species(
 )
 
 species(
-    label = 'SiH2(3)',
+    label = 'SiH2(2)',
     structure = SMILES('[SiH4]'),
     E0 = (253.111,'kJ/mol'),
     modes = [
@@ -73,7 +73,7 @@ species(
 )
 
 species(
-    label = 'H2(4)',
+    label = 'H2(3)',
     structure = SMILES('[H][H]'),
     E0 = (-8.60349,'kJ/mol'),
     modes = [
@@ -88,7 +88,7 @@ species(
 )
 
 species(
-    label = '[SiH2][SiH3](15)',
+    label = '[SiH2][SiH3](17)',
     structure = SMILES('[SiH2][SiH3]'),
     E0 = (384.731,'kJ/mol'),
     modes = [
@@ -146,15 +146,15 @@ species(
 )
 
 species(
-    label = 'Ar',
-    structure = SMILES('[Ar]'),
-    E0 = (-6.19738,'kJ/mol'),
+    label = 'N2',
+    structure = SMILES('N#N'),
+    E0 = (-8.64289,'kJ/mol'),
     spinMultiplicity = 1,
     opticalIsomers = 1,
-    molecularWeight = (39.348,'amu'),
-    collisionModel = TransportData(shapeIndex=0, epsilon=(1134.93,'J/mol'), sigma=(3.33,'angstroms'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0.0, comment="""GRI-Mech"""),
+    molecularWeight = (28.0135,'amu'),
+    collisionModel = TransportData(shapeIndex=1, epsilon=(810.913,'J/mol'), sigma=(3.621,'angstroms'), dipoleMoment=(0,'C*m'), polarizability=(1.76,'angstroms^3'), rotrelaxcollnum=4.0, comment="""GRI-Mech"""),
     energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
-    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[2.5,0,0,0,0,-745.375,4.37967], Tmin=(200,'K'), Tmax=(1000,'K')), NASAPolynomial(coeffs=[2.5,0,0,0,0,-745.375,4.37967], Tmin=(1000,'K'), Tmax=(6000,'K'))], Tmin=(200,'K'), Tmax=(6000,'K'), E0=(-6.19738,'kJ/mol'), comment="""Thermo library: primaryThermoLibrary"""),
+    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[3.53101,-0.000123661,-5.02999e-07,2.43531e-09,-1.40881e-12,-1046.98,2.96747], Tmin=(200,'K'), Tmax=(1000,'K')), NASAPolynomial(coeffs=[2.95258,0.0013969,-4.92632e-07,7.8601e-11,-4.60755e-15,-923.949,5.87189], Tmin=(1000,'K'), Tmax=(6000,'K'))], Tmin=(200,'K'), Tmax=(6000,'K'), E0=(-8.64289,'kJ/mol'), comment="""Thermo library: primaryThermoLibrary"""),
 )
 
 species(
@@ -170,15 +170,15 @@ species(
 )
 
 species(
-    label = 'N2',
-    structure = SMILES('N#N'),
-    E0 = (-8.64289,'kJ/mol'),
+    label = 'Ar',
+    structure = SMILES('[Ar]'),
+    E0 = (-6.19738,'kJ/mol'),
     spinMultiplicity = 1,
     opticalIsomers = 1,
-    molecularWeight = (28.0135,'amu'),
-    collisionModel = TransportData(shapeIndex=1, epsilon=(810.913,'J/mol'), sigma=(3.621,'angstroms'), dipoleMoment=(0,'C*m'), polarizability=(1.76,'angstroms^3'), rotrelaxcollnum=4.0, comment="""GRI-Mech"""),
+    molecularWeight = (39.348,'amu'),
+    collisionModel = TransportData(shapeIndex=0, epsilon=(1134.93,'J/mol'), sigma=(3.33,'angstroms'), dipoleMoment=(0,'C*m'), polarizability=(0,'angstroms^3'), rotrelaxcollnum=0.0, comment="""GRI-Mech"""),
     energyTransferModel = SingleExponentialDown(alpha0=(3.5886,'kJ/mol'), T0=(300,'K'), n=0.85),
-    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[3.53101,-0.000123661,-5.02999e-07,2.43531e-09,-1.40881e-12,-1046.98,2.96747], Tmin=(200,'K'), Tmax=(1000,'K')), NASAPolynomial(coeffs=[2.95258,0.0013969,-4.92632e-07,7.8601e-11,-4.60755e-15,-923.949,5.87189], Tmin=(1000,'K'), Tmax=(6000,'K'))], Tmin=(200,'K'), Tmax=(6000,'K'), E0=(-8.64289,'kJ/mol'), comment="""Thermo library: primaryThermoLibrary"""),
+    thermo = NASA(polynomials=[NASAPolynomial(coeffs=[2.5,0,0,0,0,-745.375,4.37967], Tmin=(200,'K'), Tmax=(1000,'K')), NASAPolynomial(coeffs=[2.5,0,0,0,0,-745.375,4.37967], Tmin=(1000,'K'), Tmax=(6000,'K'))], Tmin=(200,'K'), Tmax=(6000,'K'), E0=(-6.19738,'kJ/mol'), comment="""Thermo library: primaryThermoLibrary"""),
 )
 
 transitionState(
@@ -212,7 +212,7 @@ transitionState(
 reaction(
     label = 'reaction2',
     reactants = ['[H](13)', '[SiH2][SiH2](45)'],
-    products = ['[SiH2][SiH3](14)'],
+    products = ['[SiH2][SiH3](31)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(1.44114e+07,'m^3/(mol*s)'), n=0.100587, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Y_rad;Y_rad) for rate rule (Si_rad;H_rad)
 Multiplied by reaction path degeneracy 2
@@ -221,8 +221,8 @@ Ea raised from -0.8 to 0 kJ/mol."""),
 
 reaction(
     label = 'reaction3',
-    reactants = ['H2(4)', '[SiH2][SiH3](15)'],
-    products = ['[SiH2][SiH3](14)'],
+    reactants = ['H2(3)', '[SiH2][SiH3](17)'],
+    products = ['[SiH2][SiH3](31)'],
     transitionState = 'TS2',
     kinetics = Arrhenius(A=(7.6e+12,'cm^3/(mol*s)'), n=0, Ea=(3.3472,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si-Si-H;H_H)
 Multiplied by reaction path degeneracy 2"""),
@@ -230,8 +230,8 @@ Multiplied by reaction path degeneracy 2"""),
 
 reaction(
     label = 'reaction1',
-    reactants = ['SiH2(3)', 'SiH3(9)'],
-    products = ['[SiH2][SiH3](14)'],
+    reactants = ['SiH2(2)', 'SiH3(9)'],
+    products = ['[SiH2][SiH3](31)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(693874,'m^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), comment="""Estimated using an average for rate rule (SiH2;Si_H)
 Multiplied by reaction path degeneracy 3
@@ -241,7 +241,7 @@ Ea raised from -39.3 to 0 kJ/mol."""),
 reaction(
     label = 'reaction4',
     reactants = ['SiH4(1)', 'SiH(10)'],
-    products = ['[SiH2][SiH3](14)'],
+    products = ['[SiH2][SiH3](31)'],
     transitionState = 'TS4',
     kinetics = Arrhenius(A=(7.44e+14,'cm^3/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(295,'K'), Tmax=(595,'K'), comment="""Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
 Multiplied by reaction path degeneracy 4
@@ -251,16 +251,16 @@ Ea raised from -1.9 to 0 kJ/mol."""),
 network(
     label = '36',
     isomers = [
-        '[SiH2][SiH3](14)',
+        '[SiH2][SiH3](31)',
     ],
     reactants = [
-        ('SiH2(3)', 'SiH3(9)'),
+        ('SiH2(2)', 'SiH3(9)'),
     ],
     bathGas = {
         'He': 0.25,
-        'Ar': 0.25,
-        'Ne': 0.25,
         'N2': 0.25,
+        'Ne': 0.25,
+        'Ar': 0.25,
     },
 )
 

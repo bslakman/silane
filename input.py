@@ -15,11 +15,11 @@ species(
     structure=SMILES("[SiH4]")
 )
 
-species(
-    label='Si2H6',
-    reactive=True,
-    structure=SMILES("[SiH3][SiH3]")
-)
+#species(
+#    label='Si2H6',
+#    reactive=True,
+#    structure=SMILES("[SiH3][SiH3]")
+#)
 
 species(
     label='Ar',
@@ -76,8 +76,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=0.01,
-    toleranceInterruptSimulation=0.05,
+    toleranceMoveToCore=0.005,
+    toleranceInterruptSimulation=0.025,
     maximumEdgeSpecies=100000
 )
 
