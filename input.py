@@ -2,6 +2,7 @@
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
     reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+    #reactionLibraries = [('Silicon_Giunta_1990', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction'],
@@ -15,11 +16,58 @@ species(
     structure=SMILES("[SiH4]")
 )
 
+species(
+    label='Si2H6',
+    reactive=True,
+    structure=SMILES("[SiH3][SiH3]")
+)
+
+species(
+    label='SiH3',
+    reactive=True,
+    structure=SMILES("[SiH3]")
+)
+
+species(
+    label='Si2H5',
+    reactive=True,
+    structure=SMILES("[SiH3][SiH2]")
+)
+
 #species(
-#    label='Si2H6',
+#    label='H',
 #    reactive=True,
-#    structure=SMILES("[SiH3][SiH3]")
+#    structure=SMILES("[H]")
 #)
+#
+#species(
+#    label='H2',
+#    reactive=True,
+#    structure=SMILES("[H][H]")
+#)
+#
+species(
+    label='SiH2',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u0 p1 c0 {2,S} {3,S}
+2 H u0 p0 c0 {1,S}
+3 H u0 p0 c0 {1,S}
+""")
+)
+
+species(
+    label='SiH3SiH',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u0 p1 c0 {2,S} {3,S}
+2 H u0 p0 c0 {1,S}
+3 Si u0 p0 c0 {1,S} {4,S} {5,S} {6,S}
+4 H u0 p0 c0 {3,S}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+""")
+)
 
 species(
     label='Ar',
@@ -76,8 +124,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=0.005,
-    toleranceInterruptSimulation=0.025,
+    toleranceMoveToCore=0.001,
+    toleranceInterruptSimulation=0.005,
     maximumEdgeSpecies=100000
 )
 

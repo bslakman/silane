@@ -1,0 +1,365 @@
+RMG execution initiated at Wed Mar 16 15:12:11 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.3                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD for RMG-Py is:
+	864039a164361f44fc5fb3deba199c2cd51e2eb4
+	Mon Feb 15 16:53:44 2016 -0500
+
+The current git HEAD for RMG-database is:
+	91176cdfbdca1e5d098d092e46b7005bb0b9a5b2
+	Mon Feb 15 17:37:28 2016 -0500
+
+Reading input file "/Users/belinda/Code/RMG-Py/examples/rmg/silane/GR/input.py"...
+# Data sources
+database(
+    thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
+#    reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+#    seedMechanisms = ['Silicon_Giunta_1990'],
+    kineticsDepositories = ['training'],
+    kineticsFamilies = ['H_Abstraction', 'Silylene_Insertion', 'Silylene_to_Silene', 'R_Recombination'],
+    kineticsEstimator = 'rate rules',
+)
+
+# List of species
+species(
+    label='H2',
+    reactive=True,
+    structure=SMILES("[H][H]")
+)
+
+species(
+    label='Si2H2_T',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u2 p0 c0 {2,D}
+2 Si u0 p0 c0 {1,D} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+""")
+)
+
+species(
+    label='Ar',
+    reactive=False,
+    structure=SMILES("[Ar]")
+)
+
+# Reaction system
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "H2": 0.49,
+        "Si2H2_T": 0.49,
+        "Ar": 0.02
+    },
+    terminationConversion={
+        'Si2H2_T': 0.9,
+    },
+#    terminationTime=(1, 's')
+)
+
+## Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.0025,
+#	"Ar": 0.9975,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+##    terminationTime=(1, 's')
+#)
+#
+## Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.05,
+#	"Ar": 0.95,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+# #   terminationTime=(1, 's')
+#)
+#
+#simulator(
+#    atol=1e-16,
+#    rtol=1e-8,
+#)
+#
+#model(
+#    toleranceKeepInEdge=0.0,
+#    toleranceMoveToCore=0.01,
+#    toleranceInterruptSimulation=0.05,
+#    maximumEdgeSpecies=100000
+#)
+#
+pressureDependence(
+    method='modified strong collision',
+    maximumGrainSize=(0.5,'kcal/mol'),
+    minimumNumberOfGrains=250,
+    temperatures=(300,2000,'K',8),
+    pressures=(0.01,20,'bar',5),
+    interpolation=('Chebyshev', 6, 4),
+)
+
+options(
+    units='si',
+    saveRestartPeriod=None,
+    generateOutputHTML=True,
+    generatePlots=False,
+    saveEdgeSpecies=True,
+)
+
+#generatedSpeciesConstraints(
+#    maximumSiliconAtoms=3
+#)
+
+
+
+
+Loading thermodynamics library from primaryThermoLibrary.py in /Users/belinda/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from SiliconHydrideLibrary.py in /Users/belinda/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /Users/belinda/Code/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /Users/belinda/Code/RMG-database/input/transport/libraries...
+Loading transport library from PrimaryTransportLibrary.py in /Users/belinda/Code/RMG-database/input/transport/libraries...
+Loading transport group database from /Users/belinda/Code/RMG-database/input/transport/groups...
+Loading the user-specified kinetics families from /Users/belinda/Code/RMG-database/input/kinetics/families
+Loading frequencies group database from /Users/belinda/Code/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /Users/belinda/Code/RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for SiH4 in thermo library: siliconhydridelibrary
+Found thermo for SiH3 in thermo library: siliconhydridelibrary
+Found thermo for H in thermo library: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Found thermo for H2 in thermo library: primarythermolibrary
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+Found thermo for N2 in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+Adding species H2(1) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    H2(1)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 1 species and 0 reactions
+
+
+Adding species Si2H2_T(2) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Si2H2_T(2)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+Generating thermodynamics for new species...
+Found thermo for [H] in thermo library: primarythermolibrary
+Found thermo for [SiH]=[SiH2] in thermo library: siliconhydridelibrary
+Generating kinetics for new reactions...
+For reaction [H](3) + [Si]=[SiH](4) <=> Si2H2_T(2) Ea raised from -0.8 to 0 kJ/mol.
+For reaction H2(1) + [Si]=[SiH2](5) <=> Si2H2_T(2) Ea raised from -1.9 to 0 kJ/mol.
+Updating 2 modified unimolecular reaction networks...
+========================================================================
+1 network information
+---------------------
+Isomers:
+    H2(1)                                                -8.60349 kJ/mol
+Reactant channels:
+Product channels:
+    [H](3) + [H](3)                                       423.609 kJ/mol
+Path reactions:
+    [H](3) + [H](3) <=> H2(1)                             429.885 kJ/mol
+========================================================================
+
+Calculating densities of states for 1 network...
+Using 529 grains from -8.60 to 1095.97 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](3) + [H](3) <=> H2(1)...
+Using 259 grains from -8.60 to 531.13 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 262 grains from -8.60 to 537.41 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 270 grains from -8.60 to 554.14 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 284 grains from -8.60 to 583.43 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 308 grains from -8.60 to 633.64 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 352 grains from -8.60 to 725.69 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 426 grains from -8.60 to 880.50 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 513 grains from -8.60 to 1062.50 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+Warning: Statmech node 'R!Hx0' and all its parents have data = None
+Warning: Statmech node 'R!Hx2' and all its parents have data = None
+Warning: Statmech node 'R!Hx1' and all its parents have data = None
+Warning: Statmech node 'R!Hx2' and all its parents have data = None
+Warning: Statmech node 'R!Hx0' and all its parents have data = None
+Warning: Statmech node 'R!Hx2' and all its parents have data = None
+========================================================================
+2 network information
+---------------------
+Isomers:
+    Si2H2_T(2)                                            475.448 kJ/mol
+Reactant channels:
+Product channels:
+    [H](3) + [Si]=[SiH](4)                                815.815 kJ/mol
+    H2(1) + [Si]=[SiH2](5)                                613.553 kJ/mol
+Path reactions:
+    [H](3) + [Si]=[SiH](4) <=> Si2H2_T(2)                 815.815 kJ/mol
+    H2(1) + [Si]=[SiH2](5) <=> Si2H2_T(2)                 613.553 kJ/mol
+========================================================================
+
+Calculating densities of states for 2 network...
+Using 571 grains from 475.45 to 1483.00 kJ/mol in steps of 1.77 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(1) + [Si]=[SiH2](5) <=> Si2H2_T(2)...
+Using 250 grains from 475.45 to 916.41 kJ/mol in steps of 1.77 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 475.45 to 923.29 kJ/mol in steps of 1.80 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 475.45 to 938.82 kJ/mol in steps of 1.86 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 475.45 to 967.47 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 261 grains from 475.45 to 1019.37 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 305 grains from 475.45 to 1111.41 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 379 grains from 475.45 to 1266.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 466 grains from 475.45 to 1448.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 4 new edge species
+    [H](3)
+    [Si]=[SiH](4)
+    [Si]=[SiH2](5)
+    [SiH]=[SiH2](6)
+Added 0 new core reactions
+Created 5 new edge reactions
+    [H](3) + [SiH]=[SiH2](6) <=> H2(1) + Si2H2_T(2)
+    [Si]=[SiH](4) + [SiH]=[SiH2](6) <=> Si2H2_T(2) + Si2H2_T(2)
+    H2(1) => [H](3) + [H](3)
+    Si2H2_T(2) => [H](3) + [Si]=[SiH](4)
+    Si2H2_T(2) => H2(1) + [Si]=[SiH2](5)
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 4 species and 5 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+
+RMG execution terminated at Wed Mar 16 15:12:17 2016

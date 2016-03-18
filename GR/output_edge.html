@@ -1,0 +1,2267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>RMG Output</title>
+<style type="text/css">
+    body {
+        font-family: sans-serif;
+    }
+    a {
+        color: #993333;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #993333;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    
+    table.speciesList, table.reactionList {
+        border-collapse: collapse;
+        align: center;
+    }
+
+        
+    table.speciesList th, table.reactionList th {
+        text-align: left;
+        vertical-align: top;
+    }
+    table.reaction {
+        border-top: 1px solid #808080;        
+        padding: 10px;
+    }
+    td.reactants {
+        text-align: right;
+    }
+    td.products {
+        text-align: left;
+    }
+    td.reactionArrow {
+        text-align: center;
+        font-size: 16px;
+    }
+    td.species img, td.reactants img, td.products img {
+        vertical-align: middle;
+    }
+    
+    tr.species{
+        border-top: 1px solid #808080;        
+    }
+
+    tr.rxnStart{
+        border-top: 1px solid #808080;        
+    }
+    
+    td, .speciesList th{
+        padding: 10px;
+        }
+    
+    td.index {
+    width: 50px;
+    }
+    
+    .thermo td, .thermo th{
+    padding: 2px;
+    }
+    
+    .kinetics td,  .kinetics th {
+    padding: 2px;
+    }
+    
+    tr.kinetics {
+        font-size: small;
+    }
+    .KineticsData {
+        # border: 1px solid gray;
+    }
+    .KineticsData th {
+        width: 15em;
+        word-wrap: none;
+    }
+    .KineticsData td {
+        width: 3em;
+    }
+    
+    .chemkin, .KineticsData_repr {
+       white-space: pre-wrap;
+       font-size: x-small;
+       font-family: "Andale Mono", monospace;
+    }
+    
+    .energy {
+        font-size: small;
+    }
+    
+    .thermoComment {
+       white-space: pre-wrap;
+       font-size: small;
+       font-family: "Andale Mono", monospace;
+    }
+    .hide_kinetics .kinetics{
+       display: none !important;
+    }
+    .hide_chemkin .chemkin{
+       display: none !important;
+    }
+    .hide_reaction{
+       display: none !important;
+    }
+    .hide_energy .energy{
+       display: none !important;
+    }
+    .hide_thermoComment .thermoComment{
+       display: none !important;
+    }
+
+           
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../../external/jquery.min.js"></script>
+<script type="text/javascript">
+function updateFamily(family) {
+    if (family.checked) {
+        $("."+family.value).show();
+    } else {
+        $("."+family.value).hide();
+    }
+}
+function updateDetails(type) {
+    if (type.checked) {
+        $("."+type.value).show();
+    } else {
+        $("."+type.value).hide();
+    }
+}
+function checkAllFamilies() {
+    $("#familySelector").find("[name='family']").each(function() { this.checked = true; updateFamily(this); });
+    return false;
+}
+function uncheckAllFamilies() {
+    $("#familySelector").find("[name='family']").each(function() { this.checked = false; updateFamily(this); });
+    return false;
+}
+function checkAllDetails() {
+    $("#familySelector").find("[name='detail']").each(function() { this.checked = true; updateDetails(this); });
+    return false;
+}
+function uncheckAllDetails() {
+    $("#familySelector").find("[name='detail']").each(function() { this.checked = false; updateDetails(this); });
+    return false;
+}
+
+function updateFamilyDetails() {
+    $("#familySelector").find("[name='family']").each(function() { 
+        updateDetails(this); });
+    return false;
+}
+function updateReactionDetails() {
+    $("#familySelector").find("[name='detail']").each(function() { 
+        updateDetails(this); });
+    return false;
+}
+
+function updateThermoDetails(type) {
+    if (type.checked) {
+        $(".thermoComment").removeClass("hide_"+type.value);
+    } else {
+        $(".thermoComment").addClass("hide_"+type.value);
+    }
+}
+
+function uncheckThermoDetails() {
+    $("#thermoSelector").find("[name='detail']").each(function() { this.checked = false; updateThermoDetails(this); });
+    return false;
+}
+
+function resetReactionFilter() {
+    $.each($(".reaction"), function() {
+        $(this).removeClass("hide_reaction");
+    });
+}
+
+function submitReactionFilter(){
+    resetReactionFilter();
+    _r1 = $("#reactant1").val().toLowerCase();
+    _r2 = $("#reactant2").val().toLowerCase();
+    _p1 = $("#product1").val().toLowerCase();
+    _p2 = $("#product2").val().toLowerCase();
+    $.each($(".reaction"), function() {
+        _rxnRow = this;
+        _matched = false;
+        _rxn_spc_list = [""];
+        _reactants = _rxnRow.getElementsByClassName('reactants');
+        $.each($(_reactants).find("a"), function() {
+            _a = this;
+            $.each($(_a).find("img"), function() {
+                _spec = this;
+                _rxn_spc_list.push(_spec.getAttribute("alt").toLowerCase());
+          
+            });
+        });
+        _products = _rxnRow.getElementsByClassName('products');
+        $.each($(_products).find("a"), function() {
+            _a = this;
+            $.each($(_a).find("img"), function() {
+                _spec = this;
+                _rxn_spc_list.push(_spec.getAttribute("alt").toLowerCase());
+            
+            });
+        });
+
+        if(_rxn_spc_list.indexOf(_r1) != -1 && _rxn_spc_list.indexOf(_r2) != -1 &&_rxn_spc_list.indexOf(_p1) != -1 && _rxn_spc_list.indexOf(_p2) != -1){
+            _matched = true
+        }
+        if(_matched == true)
+        $(_rxnRow).removeClass("hide_reaction");
+        else
+        $(_rxnRow).addClass("hide_reaction");
+
+     });
+}
+
+$(document).ready(function() {
+    uncheckThermoDetails();
+    checkAllFamilies();
+    uncheckAllDetails();
+});
+</script>
+</head>
+
+<body>
+
+<h1>RMG Output</h1>
+
+<h2>Species (24)</h2>
+
+<form id='thermoSelector' action="">
+<input type="checkbox" id="thermoComment" name="detail" value="thermoComment" onclick="updateThermoDetails(this);" checked="false"><label for="thermoComment"><b>Show Thermo Details</b></label><br>
+</form>
+
+
+<table class="speciesList" hide_thermoComment>
+<tr><th>Index</th><th>Thermo<br> H298 (kcal/mol), S298 (cal/mol*K), Cp (cal/mol*K)</th><th>Structure</th><th>Label</th><th>SMILES</th><th>MW<br> (g/mol)</th></tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    4.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                52.10
+                 </td>
+                <td>
+                27.42
+                </td>
+                <td>4.97</td>
+                <td>4.97</td>
+                <td>4.97</td>
+                <td>4.97</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: primaryThermoLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A><img src="species/[H](4).png" alt="H(4)" title="H(4)"></a></td>
+    <td class="label" valign="top">H(4)</td>
+    <td class="SMILES" valign="top">[H]</td>
+    
+  <td class="MW" valign="top">1.01</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    5.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                147.35
+                 </td>
+                <td>
+                70.51
+                </td>
+                <td>11.64</td>
+                <td>12.10</td>
+                <td>13.08</td>
+                <td>13.48</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary + radical(SidsJ_Si) +<br>radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5)"></a></td>
+    <td class="label" valign="top">HSi2(5)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH]</td>
+    
+  <td class="MW" valign="top">57.18</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    6.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                151.67
+                 </td>
+                <td>
+                81.40
+                </td>
+                <td>12.56</td>
+                <td>13.83</td>
+                <td>16.13</td>
+                <td>16.95</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sid-H2) + other(R) + group(si) +<br>other(R) + radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A><img src="species/[Si]=[SiH2](6).png" alt="Si2(6)" title="Si2(6)"></a></td>
+    <td class="label" valign="top">Si2(6)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH2]</td>
+    
+  <td class="MW" valign="top">56.17</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    7.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                90.02
+                 </td>
+                <td>
+                47.33
+                </td>
+                <td>7.17</td>
+                <td>7.30</td>
+                <td>8.16</td>
+                <td>8.61</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A><img src="species/[SiH3](7).png" alt="HSi(7)" title="HSi(7)"></a></td>
+    <td class="label" valign="top">HSi(7)</td>
+    <td class="SMILES" valign="top">[SiH3]</td>
+    
+  <td class="MW" valign="top">29.09</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    8.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                45.89
+                 </td>
+                <td>
+                51.82
+                </td>
+                <td>9.59</td>
+                <td>11.92</td>
+                <td>15.90</td>
+                <td>17.70</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A><img src="species/[SiH3](8).png" alt="H3Si(8)" title="H3Si(8)"></a></td>
+    <td class="label" valign="top">H3Si(8)</td>
+    <td class="SMILES" valign="top">[SiH3]</td>
+    
+  <td class="MW" valign="top">31.11</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    9.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.42
+                 </td>
+                <td>
+                70.72
+                </td>
+                <td>15.46</td>
+                <td>18.35</td>
+                <td>22.14</td>
+                <td>23.84</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary + radical(SisJ_SiLP)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9)"></a></td>
+    <td class="label" valign="top">H3Si2(9)</td>
+    <td class="SMILES" valign="top">[SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">59.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    11.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                64.56
+                 </td>
+                <td>
+                64.26
+                </td>
+                <td>16.50</td>
+                <td>21.01</td>
+                <td>26.39</td>
+                <td>28.83</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH2]=[SiH2](11).png" alt="H4Si2(11)" title="H4Si2(11)"></a></td>
+    <td class="label" valign="top">H4Si2(11)</td>
+    <td class="SMILES" valign="top">[SiH2]=[SiH2]</td>
+    
+  <td class="MW" valign="top">60.20</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    12.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                108.78
+                 </td>
+                <td>
+                63.22
+                </td>
+                <td>13.69</td>
+                <td>15.42</td>
+                <td>17.49</td>
+                <td>18.60</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH3][SiH3](12).png" alt="H2Si2(12)" title="H2Si2(12)"></a></td>
+    <td class="label" valign="top">H2Si2(12)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH3]</td>
+    
+  <td class="MW" valign="top">58.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    13.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.24
+                 </td>
+                <td>
+                69.91
+                </td>
+                <td>15.46</td>
+                <td>18.35</td>
+                <td>22.14</td>
+                <td>23.84</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13)"></a></td>
+    <td class="label" valign="top">H3Si2(13)</td>
+    <td class="SMILES" valign="top">[SiH]=[SiH2]</td>
+    
+  <td class="MW" valign="top">59.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    14.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                15.97
+                 </td>
+                <td>
+                65.43
+                </td>
+                <td>19.06</td>
+                <td>25.94</td>
+                <td>35.22</td>
+                <td>39.11</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B5%2CS%7D%20%7B6%2CS%7D%20%7B7%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B8%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A7%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A8%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH3][SiH3](14).png" alt="H6Si2(14)" title="H6Si2(14)"></a></td>
+    <td class="label" valign="top">H6Si2(14)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH3]</td>
+    
+  <td class="MW" valign="top">62.22</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    15.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                136.96
+                 </td>
+                <td>
+                92.27
+                </td>
+                <td>30.61</td>
+                <td>38.24</td>
+                <td>47.66</td>
+                <td>51.36</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sis-H2SidSis) + other(R) + group(Sis-<br>H3Sis) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) +<br>radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%20%7B7%2CS%7D%20%7B8%2CS%7D%0A3%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B9%2CD%7D%20%7B10%2CS%7D%0A4%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A7%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A8%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A9%20%20Si%20u2%20p0%20c0%20%7B3%2CD%7D%0A10%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A><img src="species/[Si]=[SiH][SiH2][SiH3](15).png" alt="H6Si4(15)" title="H6Si4(15)"></a></td>
+    <td class="label" valign="top">H6Si4(15)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH][SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">118.39</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    16.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.85
+                 </td>
+                <td>
+                95.00
+                </td>
+                <td>34.55</td>
+                <td>44.57</td>
+                <td>56.83</td>
+                <td>61.78</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-<br>H2siSis) + other(R) + group(Sis-H3Sis) + other(R) + group(si) + other(R)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B5%2CS%7D%20%7B6%2CS%7D%0A2%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%20%7B7%2CS%7D%20%7B8%2CS%7D%0A3%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B9%2CS%7D%20%7B10%2CS%7D%20%7B11%2CS%7D%0A4%20%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B12%2CS%7D%0A5%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A7%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A8%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A9%20%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A10%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A11%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A12%20H%20%20u0%20p0%20c0%20%7B4%2CS%7D%0A><img src="species/[SiH3][SiH2][SiH2][SiH3](16).png" alt="H8Si4(16)" title="H8Si4(16)"></a></td>
+    <td class="label" valign="top">H8Si4(16)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH2][SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">120.41</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    4.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                52.10
+                 </td>
+                <td>
+                27.42
+                </td>
+                <td>4.97</td>
+                <td>4.97</td>
+                <td>4.97</td>
+                <td>4.97</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: primaryThermoLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A><img src="species/[H](4).png" alt="H(4)" title="H(4)"></a></td>
+    <td class="label" valign="top">H(4)</td>
+    <td class="SMILES" valign="top">[H]</td>
+    
+  <td class="MW" valign="top">1.01</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    5.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                147.35
+                 </td>
+                <td>
+                70.51
+                </td>
+                <td>11.64</td>
+                <td>12.10</td>
+                <td>13.08</td>
+                <td>13.48</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary + radical(SidsJ_Si) +<br>radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5)"></a></td>
+    <td class="label" valign="top">HSi2(5)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH]</td>
+    
+  <td class="MW" valign="top">57.18</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    6.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                151.67
+                 </td>
+                <td>
+                81.40
+                </td>
+                <td>12.56</td>
+                <td>13.83</td>
+                <td>16.13</td>
+                <td>16.95</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sid-H2) + other(R) + group(si) +<br>other(R) + radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A><img src="species/[Si]=[SiH2](6).png" alt="Si2(6)" title="Si2(6)"></a></td>
+    <td class="label" valign="top">Si2(6)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH2]</td>
+    
+  <td class="MW" valign="top">56.17</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    7.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                90.02
+                 </td>
+                <td>
+                47.33
+                </td>
+                <td>7.17</td>
+                <td>7.30</td>
+                <td>8.16</td>
+                <td>8.61</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A><img src="species/[SiH3](7).png" alt="HSi(7)" title="HSi(7)"></a></td>
+    <td class="label" valign="top">HSi(7)</td>
+    <td class="SMILES" valign="top">[SiH3]</td>
+    
+  <td class="MW" valign="top">29.09</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    8.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                45.89
+                 </td>
+                <td>
+                51.82
+                </td>
+                <td>9.59</td>
+                <td>11.92</td>
+                <td>15.90</td>
+                <td>17.70</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A><img src="species/[SiH3](8).png" alt="H3Si(8)" title="H3Si(8)"></a></td>
+    <td class="label" valign="top">H3Si(8)</td>
+    <td class="SMILES" valign="top">[SiH3]</td>
+    
+  <td class="MW" valign="top">31.11</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    9.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.42
+                 </td>
+                <td>
+                70.72
+                </td>
+                <td>15.46</td>
+                <td>18.35</td>
+                <td>22.14</td>
+                <td>23.84</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary + radical(SisJ_SiLP)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9)"></a></td>
+    <td class="label" valign="top">H3Si2(9)</td>
+    <td class="SMILES" valign="top">[SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">59.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    11.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                64.56
+                 </td>
+                <td>
+                64.26
+                </td>
+                <td>16.50</td>
+                <td>21.01</td>
+                <td>26.39</td>
+                <td>28.83</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH2]=[SiH2](11).png" alt="H4Si2(11)" title="H4Si2(11)"></a></td>
+    <td class="label" valign="top">H4Si2(11)</td>
+    <td class="SMILES" valign="top">[SiH2]=[SiH2]</td>
+    
+  <td class="MW" valign="top">60.20</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    12.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                108.78
+                 </td>
+                <td>
+                63.22
+                </td>
+                <td>13.69</td>
+                <td>15.42</td>
+                <td>17.49</td>
+                <td>18.60</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH3][SiH3](12).png" alt="H2Si2(12)" title="H2Si2(12)"></a></td>
+    <td class="label" valign="top">H2Si2(12)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH3]</td>
+    
+  <td class="MW" valign="top">58.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    13.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.24
+                 </td>
+                <td>
+                69.91
+                </td>
+                <td>15.46</td>
+                <td>18.35</td>
+                <td>22.14</td>
+                <td>23.84</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13)"></a></td>
+    <td class="label" valign="top">H3Si2(13)</td>
+    <td class="SMILES" valign="top">[SiH]=[SiH2]</td>
+    
+  <td class="MW" valign="top">59.19</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    14.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                15.97
+                 </td>
+                <td>
+                65.43
+                </td>
+                <td>19.06</td>
+                <td>25.94</td>
+                <td>35.22</td>
+                <td>39.11</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo library: SiliconHydrideLibrary</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B5%2CS%7D%20%7B6%2CS%7D%20%7B7%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B8%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A7%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A8%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A><img src="species/[SiH3][SiH3](14).png" alt="H6Si2(14)" title="H6Si2(14)"></a></td>
+    <td class="label" valign="top">H6Si2(14)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH3]</td>
+    
+  <td class="MW" valign="top">62.22</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    15.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                136.96
+                 </td>
+                <td>
+                92.27
+                </td>
+                <td>30.61</td>
+                <td>38.24</td>
+                <td>47.66</td>
+                <td>51.36</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sis-H2SidSis) + other(R) + group(Sis-<br>H3Sis) + other(R) + group(Sid-HSis) + other(R) + group(Sid-H2) + other(R) +<br>radical(Si=SiJ2_triplet)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%20%7B7%2CS%7D%20%7B8%2CS%7D%0A3%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B9%2CD%7D%20%7B10%2CS%7D%0A4%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A7%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A8%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A9%20%20Si%20u2%20p0%20c0%20%7B3%2CD%7D%0A10%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A><img src="species/[Si]=[SiH][SiH2][SiH3](15).png" alt="H6Si4(15)" title="H6Si4(15)"></a></td>
+    <td class="label" valign="top">H6Si4(15)</td>
+    <td class="SMILES" valign="top">[Si]=[SiH][SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">118.39</td>
+    
+</tr>
+
+
+<tr class="species">
+    <td class="index" valign="top">
+    16.</td>
+    
+    
+ <td class="thermo" valign="top">
+ 
+
+        <table class="thermo" align="left">
+            <tr>
+                <th>H298</th>
+                <th>S298</th>
+                <th>Cp300</th>
+                <th>Cp500</th>
+                <th>Cp1000</th>
+                <th>Cp1500</th>
+            </tr>
+            <tr>
+                <td>
+                                    
+                95.85
+                 </td>
+                <td>
+                95.00
+                </td>
+                <td>34.55</td>
+                <td>44.57</td>
+                <td>56.83</td>
+                <td>61.78</td>
+            </tr>
+<tr><td colspan="6" class="thermoComment">
+<div id="thermoComment" class="thermoComment">Thermo group additivity estimation: group(Sis-H2Sis2) + other(R) + group(Sis-<br>H2siSis) + other(R) + group(Sis-H3Sis) + other(R) + group(si) + other(R)</div>
+</td></tr>
+        </table>
+    
+  
+
+ </td>
+    
+    <td class="structure" valign="top"><a href=http://rmg.mit.edu/database/molecule/1%20%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B5%2CS%7D%20%7B6%2CS%7D%0A2%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%20%7B7%2CS%7D%20%7B8%2CS%7D%0A3%20%20Si%20u0%20p0%20c0%20%7B1%2CS%7D%20%7B9%2CS%7D%20%7B10%2CS%7D%20%7B11%2CS%7D%0A4%20%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B12%2CS%7D%0A5%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A7%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A8%20%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A9%20%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A10%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A11%20H%20%20u0%20p0%20c0%20%7B3%2CS%7D%0A12%20H%20%20u0%20p0%20c0%20%7B4%2CS%7D%0A><img src="species/[SiH3][SiH2][SiH2][SiH3](16).png" alt="H8Si4(16)" title="H8Si4(16)"></a></td>
+    <td class="label" valign="top">H8Si4(16)</td>
+    <td class="SMILES" valign="top">[SiH3][SiH2][SiH2][SiH3]</td>
+    
+  <td class="MW" valign="top">120.41</td>
+    
+</tr>
+
+</table>
+
+<h2>Reactions (20)</h2>
+
+<form id='familySelector' action="">
+<h4>Reaction families:</h4>
+    <input type="checkbox" id="H_Abstraction" name="family" value="H_Abstraction" checked="checked" onclick="updateFamily(this);"><label for="H_Abstraction">H_Abstraction (6 rxns)</label><br>
+    <input type="checkbox" id="PDepNetwork" name="family" value="PDepNetwork" checked="checked" onclick="updateFamily(this);"><label for="PDepNetwork">PDepNetwork (14 rxns)</label><br>
+
+<a href="javascript:checkAllFamilies();" onclick="checkAllFamilies()">check all</a> &nbsp; &nbsp; <a href="javascript:uncheckAllFamilies();" onclick="uncheckAllFamilies();">uncheck all</a><br>
+
+<h4>Reaction Details:</h4>
+<input type="checkbox" id="kinetics" name="detail" value="kinetics" onclick="updateDetails(this);"><label for="kinetics">Kinetics</label><br>
+<input type="checkbox" id="energy" name="detail" value="energy" onclick="updateDetails(this);"><label for="energy">Heats of Reaction</label><br>
+<input type="checkbox" id="chemkin" name="detail" value="chemkin" onclick="updateDetails(this);"><label for="chemkin">Chemkin strings</label><br>
+<a href="javascript:checkAllDetails();" onclick="checkAllDetails()">check all</a> &nbsp; &nbsp; <a href="javascript:uncheckAllDetails();" onclick="uncheckAllDetails();">uncheck all</a>
+</form>
+
+<h4>Reaction Filter:</h4>
+
+<form id="reactionFilter">
+  Reactant 1: <input type="text" id="reactant1" value=""> &nbsp;
+  Reactant 2: <input type="text" id="reactant2" value=""> &nbsp;
+  Product 1: <input type="text" id="product1" value=""> &nbsp;
+  Product 2: <input type="text" id="product2" value=""><br><br>
+
+  
+</form>
+
+<input type="button" onclick="submitReactionFilter()" value="Search"> &nbsp;
+<input type="button" onclick="resetReactionFilter()" value="Clear Filter"> 
+
+<h4>Reaction List:</h4>
+
+<table class="reactionList">
+<thead>
+<tr><th>Index</th><th colspan="3" style="text-align: center;">Reaction</th><th>Family</th></tr>
+</thead>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__reactant2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">8.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+7.7</td><td>+7.9</td><td>+8.1</td><td>+8.3</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(424.5,'m^3/(mol*s)'), n=1.69, Ea=(-4.42,'kJ/mol'), T0=(1,'K'), comment="""Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -30.68
+    <br><b>S298 (cal/mol*K)</b> = -1.24
+    <br><b>G298 (kcal/mol)</b> = -30.31</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: H(4), H2(1); H3Si2(13), Si2H2_T(2); 
+! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
+H(4)+H3Si2(13)=H2(1)+Si2H2_T(2)                     4.245e+08 1.690     -1.056   
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A__reactant2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">10.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5), MW = 57.18 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+4.9</td><td>+6.1</td><td>+6.6</td><td>+6.9</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(3152.69,'m^3/(mol*s)'), n=1.17167, Ea=(16.7734,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -9.26
+    <br><b>S298 (cal/mol*K)</b> = -10.71
+    <br><b>G298 (kcal/mol)</b> = -6.06</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: HSi2(5), Si2H2_T(2); H3Si2(13), Si2H2_T(2); 
+! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)
+HSi2(5)+H3Si2(13)=Si2H2_T(2)+Si2H2_T(2)             3.153e+09 1.172     4.009    
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__reactant2%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">11.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9), MW = 59.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+4.0</td><td>+5.9</td><td>+6.7</td><td>+7.1</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(334.853,'m^3/(mol*s)'), n=1.61699, Ea=(27.5856,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
+Multiplied by reaction path degeneracy 9""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 1.56
+    <br><b>S298 (cal/mol*K)</b> = 5.75
+    <br><b>G298 (kcal/mol)</b> = -0.15</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: Si2H2_T(2), H3Si2(13); H3SiSiH(3), H3Si2(9); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
+! Multiplied by reaction path degeneracy 9
+Si2H2_T(2)+H3SiSiH(3)=H3Si2(9)+H3Si2(13)            3.349e+08 1.617     6.593    
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #1 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A" title="Search on RMG website" class="searchlink">14.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a></td>
+    <td class="family">PDepNetwork #1</td>
+</tr>
+<tr class="kinetics PDepNetwork #1 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-35.5</td><td>-12.7</td><td>-5.2</td><td>-1.5</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-34.9</td><td>-12.0</td><td>-4.4</td><td>-0.6</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-34.1231,1.42636,-0.119065,-0.0400737],[32.3338,0.115886,0.0542652,0.0119617],[-0.0601283,0.0197567,0.0115348,0.00461336],[-0.0230927,0.00348167,0.00244055,0.00132584],[-0.00948065,0.000612248,0.000513647,0.000346145],[-0.00400158,9.07145e-05,0.000100557,8.44775e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #1 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 104.21
+    <br><b>S298 (cal/mol*K)</b> = 23.60
+    <br><b>G298 (kcal/mol)</b> = 97.17</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #1 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #1
+! Flux pairs: H2(1), H(4); H2(1), H(4); 
+H2(1)(+M)=>H(4)+H(4)(+M)                            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -3.412e+01   1.426e+00    -1.191e-01   -4.007e-02  /
+    CHEB/ 3.233e+01    1.159e-01    5.427e-02    1.196e-02   /
+    CHEB/ -6.013e-02   1.976e-02    1.153e-02    4.613e-03   /
+    CHEB/ -2.309e-02   3.482e-03    2.441e-03    1.326e-03   /
+    CHEB/ -9.481e-03   6.122e-04    5.136e-04    3.461e-04   /
+    CHEB/ -4.002e-03   9.071e-05    1.006e-04    8.448e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #2 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A" title="Search on RMG website" class="searchlink">15.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5), MW = 57.18 g/mol"></a></td>
+    <td class="family">PDepNetwork #2</td>
+</tr>
+<tr class="kinetics PDepNetwork #2 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-30.3</td><td>-12.7</td><td>-7.1</td><td>-4.4</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-29.3</td><td>-11.7</td><td>-6.1</td><td>-3.4</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-29.3281,1.65051,-2.63022e-10,-1.31105e-10],[24.9376,3.66795e-10,2.35497e-10,1.17386e-10],[-0.242763,8.91442e-12,5.77365e-12,2.88135e-12],[-0.0750965,-7.48149e-12,-4.84568e-12,-2.4144e-12],[-0.0419128,-2.99194e-13,-1.44995e-13,-7.40519e-14],[-0.00641653,-2.61724e-12,-1.77891e-12,-8.67414e-13]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #2 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 82.78
+    <br><b>S298 (cal/mol*K)</b> = 33.07
+    <br><b>G298 (kcal/mol)</b> = 72.93</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #2 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #2
+! Flux pairs: Si2H2_T(2), H(4); Si2H2_T(2), HSi2(5); 
+Si2H2_T(2)(+M)=>H(4)+HSi2(5)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.933e+01   1.651e+00    -2.630e-10   -1.311e-10  /
+    CHEB/ 2.494e+01    3.668e-10    2.355e-10    1.174e-10   /
+    CHEB/ -2.428e-01   8.914e-12    5.774e-12    2.881e-12   /
+    CHEB/ -7.510e-02   -7.481e-12   -4.846e-12   -2.414e-12  /
+    CHEB/ -4.191e-02   -2.992e-13   -1.450e-13   -7.405e-14  /
+    CHEB/ -6.417e-03   -2.617e-12   -1.779e-12   -8.674e-13  /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #2 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A" title="Search on RMG website" class="searchlink">16.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH2](6).png" alt="Si2(6)" title="Si2(6), MW = 56.17 g/mol"></a></td>
+    <td class="family">PDepNetwork #2</td>
+</tr>
+<tr class="kinetics PDepNetwork #2 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-1.2</td><td>+5.2</td><td>+7.0</td><td>+7.7</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-0.3</td><td>+6.2</td><td>+7.9</td><td>+8.6</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-1.35046,1.51614,-0.0267909,-0.00206977],[9.2678,0.118313,0.0205586,0.00609112],[-0.412528,-0.00704618,0.00570924,-0.0025383],[-0.150555,0.0166473,-0.00781156,-0.00213049],[-0.0387654,-0.0130188,0.00555977,0.00102236],[-0.00862672,-0.00368568,-0.00247999,0.00324751]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #2 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 35.00
+    <br><b>S298 (cal/mol*K)</b> = 47.77
+    <br><b>G298 (kcal/mol)</b> = 20.77</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #2 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #2
+! Flux pairs: Si2H2_T(2), H2(1); Si2H2_T(2), Si2(6); 
+Si2H2_T(2)(+M)=>H2(1)+Si2(6)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -1.350e+00   1.516e+00    -2.679e-02   -2.070e-03  /
+    CHEB/ 9.268e+00    1.183e-01    2.056e-02    6.091e-03   /
+    CHEB/ -4.125e-01   -7.046e-03   5.709e-03    -2.538e-03  /
+    CHEB/ -1.506e-01   1.665e-02    -7.812e-03   -2.130e-03  /
+    CHEB/ -3.877e-02   -1.302e-02   5.560e-03    1.022e-03   /
+    CHEB/ -8.627e-03   -3.686e-03   -2.480e-03   3.248e-03   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">17.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A"><img src="species/[SiH3](7).png" alt="HSi(7)" title="HSi(7), MW = 29.09 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/[SiH3](8).png" alt="H3Si(8)" title="H3Si(8), MW = 31.11 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-16.4</td><td>-2.7</td><td>+1.7</td><td>+3.7</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-15.4</td><td>-1.7</td><td>+2.7</td><td>+4.7</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-15.6545,1.6492,-0.000843493,-0.000419868],[19.2749,-0.000342583,-0.000219597,-0.000109126],[-0.0817503,-0.00025702,-0.000164783,-8.19144e-05],[-0.083622,8.61336e-05,5.52264e-05,2.74566e-05],[-0.0711377,0.000190362,0.000122024,6.06403e-05],[-0.0454151,0.000156376,0.000100206,4.9768e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 63.49
+    <br><b>S298 (cal/mol*K)</b> = 29.13
+    <br><b>G298 (kcal/mol)</b> = 54.81</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), HSi(7); H3SiSiH(3), H3Si(8); 
+H3SiSiH(3)(+M)=>HSi(7)+H3Si(8)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -1.565e+01   1.649e+00    -8.435e-04   -4.199e-04  /
+    CHEB/ 1.927e+01    -3.426e-04   -2.196e-04   -1.091e-04  /
+    CHEB/ -8.175e-02   -2.570e-04   -1.648e-04   -8.191e-05  /
+    CHEB/ -8.362e-02   8.613e-05    5.523e-05    2.746e-05   /
+    CHEB/ -7.114e-02   1.904e-04    1.220e-04    6.064e-05   /
+    CHEB/ -4.542e-02   1.564e-04    1.002e-04    4.977e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">18.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9), MW = 59.19 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-21.7</td><td>-5.1</td><td>+0.4</td><td>+3.0</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-20.7</td><td>-4.1</td><td>+1.4</td><td>+4.0</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-20.5457,1.64937,-0.000734531,-0.000365691],[23.2656,-0.000354744,-0.000227445,-0.000113073],[0.0676644,-0.000234562,-0.000150409,-7.47916e-05],[-0.0419755,7.06427e-05,4.53046e-05,2.25331e-05],[-0.0511111,0.000167217,0.000107208,5.32951e-05],[-0.0444465,0.000140343,8.99507e-05,4.46917e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 75.09
+    <br><b>S298 (cal/mol*K)</b> = 28.12
+    <br><b>G298 (kcal/mol)</b> = 66.71</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H(4); H3SiSiH(3), H3Si2(9); 
+H3SiSiH(3)(+M)=>H(4)+H3Si2(9)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.055e+01   1.649e+00    -7.345e-04   -3.657e-04  /
+    CHEB/ 2.327e+01    -3.547e-04   -2.274e-04   -1.131e-04  /
+    CHEB/ 6.766e-02    -2.346e-04   -1.504e-04   -7.479e-05  /
+    CHEB/ -4.198e-02   7.064e-05    4.530e-05    2.253e-05   /
+    CHEB/ -5.111e-02   1.672e-04    1.072e-04    5.330e-05   /
+    CHEB/ -4.445e-02   1.403e-04    8.995e-05    4.469e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">19.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2]=[SiH2](11).png" alt="H4Si2(11)" title="H4Si2(11), MW = 60.20 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>+8.4</td><td>+9.3</td><td>+9.4</td><td>+9.3</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>+9.4</td><td>+10.3</td><td>+10.4</td><td>+10.3</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[8.10317,1.61233,-0.0231213,-0.0103469],[1.12384,0.0304222,0.0182493,0.00800981],[-0.0909185,0.00113685,0.000713903,0.000343746],[-0.0526212,0.00109452,0.000695045,0.000339144],[-0.0539476,0.00201442,0.00113146,0.000433251],[-0.0409604,0.00215965,0.00121437,0.000463516]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -7.87
+    <br><b>S298 (cal/mol*K)</b> = -5.76
+    <br><b>G298 (kcal/mol)</b> = -6.16</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H4Si2(11); 
+H3SiSiH(3)(+M)=>H4Si2(11)(+M)                       1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 8.103e+00    1.612e+00    -2.312e-02   -1.035e-02  /
+    CHEB/ 1.124e+00    3.042e-02    1.825e-02    8.010e-03   /
+    CHEB/ -9.092e-02   1.137e-03    7.139e-04    3.437e-04   /
+    CHEB/ -5.262e-02   1.095e-03    6.950e-04    3.391e-04   /
+    CHEB/ -5.395e-02   2.014e-03    1.131e-03    4.333e-04   /
+    CHEB/ -4.096e-02   2.160e-03    1.214e-03    4.635e-04   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3D1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">20.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH3][SiH3](12).png" alt="H2Si2(12)" title="H2Si2(12), MW = 58.19 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-5.6</td><td>+2.6</td><td>+5.1</td><td>+6.2</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-4.6</td><td>+3.6</td><td>+6.1</td><td>+7.2</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-5.24882,1.64859,-0.00123497,-0.000614349],[11.3173,-0.000302568,-0.000193763,-9.6128e-05],[-0.0376174,-0.00030604,-0.000196075,-9.73522e-05],[-0.0558148,0.000152588,9.77555e-05,4.85316e-05],[-0.0740733,0.000277577,0.000177802,8.82468e-05],[-0.0384838,0.000213496,0.000136698,6.77964e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 36.36
+    <br><b>S298 (cal/mol*K)</b> = 24.43
+    <br><b>G298 (kcal/mol)</b> = 29.07</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H2(1); H3SiSiH(3), H2Si2(12); 
+H3SiSiH(3)(+M)=>H2(1)+H2Si2(12)(+M)                 1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -5.249e+00   1.649e+00    -1.235e-03   -6.143e-04  /
+    CHEB/ 1.132e+01    -3.026e-04   -1.938e-04   -9.613e-05  /
+    CHEB/ -3.762e-02   -3.060e-04   -1.961e-04   -9.735e-05  /
+    CHEB/ -5.581e-02   1.526e-04    9.776e-05    4.853e-05   /
+    CHEB/ -7.407e-02   2.776e-04    1.778e-04    8.825e-05   /
+    CHEB/ -3.848e-02   2.135e-04    1.367e-04    6.780e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__reactant2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">8.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+7.7</td><td>+7.9</td><td>+8.1</td><td>+8.3</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(424.5,'m^3/(mol*s)'), n=1.69, Ea=(-4.42,'kJ/mol'), T0=(1,'K'), comment="""Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -30.68
+    <br><b>S298 (cal/mol*K)</b> = -1.24
+    <br><b>G298 (kcal/mol)</b> = -30.31</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: H(4), H2(1); H3Si2(13), Si2H2_T(2); 
+! Sirad_Si_H2;H_radExact match found for rate rule (Sirad_H;H_rad)
+H(4)+H3Si2(13)=H2(1)+Si2H2_T(2)                     4.245e+08 1.690     -1.056   
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A__reactant2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">10.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5), MW = 57.18 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+4.9</td><td>+6.1</td><td>+6.6</td><td>+6.9</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(3152.69,'m^3/(mol*s)'), n=1.17167, Ea=(16.7734,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -9.26
+    <br><b>S298 (cal/mol*K)</b> = -10.71
+    <br><b>G298 (kcal/mol)</b> = -6.06</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: HSi2(5), Si2H2_T(2); H3Si2(13), Si2H2_T(2); 
+! Estimated using template (Xrad_H;Y_rad) for rate rule (Sirad_H;Sid_rad_Si_H)
+HSi2(5)+H3Si2(13)=Si2H2_T(2)+Si2H2_T(2)             3.153e+09 1.172     4.009    
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="H_Abstraction rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__reactant2%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product2%3Dmultiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">11.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&hArr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9), MW = 59.19 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u1%20p0%20c0%20%7B1%2CD%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH]=[SiH2](13).png" alt="H3Si2(13)" title="H3Si2(13), MW = 59.19 g/mol"></a></td>
+    <td class="family">H_Abstraction</td>
+</tr>
+<tr class="kinetics H_Abstraction hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k/[mole,m,s])
+    <td>+4.0</td><td>+5.9</td><td>+6.7</td><td>+7.1</td>
+</tr></table><span class='KineticsData_repr'>Arrhenius(A=(334.853,'m^3/(mol*s)'), n=1.61699, Ea=(27.5856,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
+Multiplied by reaction path degeneracy 9""")</span></td>
+</tr>
+<tr class="energy H_Abstraction hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 1.56
+    <br><b>S298 (cal/mol*K)</b> = 5.75
+    <br><b>G298 (kcal/mol)</b> = -0.15</td>
+    <td></td>
+</tr>
+<tr class="chemkin H_Abstraction hide_chemkin">
+    <td></td>
+    <td colspan="4">! Template reaction: H_Abstraction
+! Flux pairs: Si2H2_T(2), H3Si2(13); H3SiSiH(3), H3Si2(9); 
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Sis_Si_H3;Si_triplet)
+! Multiplied by reaction path degeneracy 9
+Si2H2_T(2)+H3SiSiH(3)=H3Si2(9)+H3Si2(13)            3.349e+08 1.617     6.593    
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #1 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A" title="Search on RMG website" class="searchlink">14.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a></td>
+    <td class="family">PDepNetwork #1</td>
+</tr>
+<tr class="kinetics PDepNetwork #1 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-35.5</td><td>-12.7</td><td>-5.2</td><td>-1.5</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-34.9</td><td>-12.0</td><td>-4.4</td><td>-0.6</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-34.1231,1.42636,-0.119065,-0.0400737],[32.3338,0.115886,0.0542652,0.0119617],[-0.0601283,0.0197567,0.0115348,0.00461336],[-0.0230927,0.00348167,0.00244055,0.00132584],[-0.00948065,0.000612248,0.000513647,0.000346145],[-0.00400158,9.07145e-05,0.000100557,8.44775e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #1 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 104.21
+    <br><b>S298 (cal/mol*K)</b> = 23.60
+    <br><b>G298 (kcal/mol)</b> = 97.17</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #1 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #1
+! Flux pairs: H2(1), H(4); H2(1), H(4); 
+H2(1)(+M)=>H(4)+H(4)(+M)                            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -3.412e+01   1.426e+00    -1.191e-01   -4.007e-02  /
+    CHEB/ 3.233e+01    1.159e-01    5.427e-02    1.196e-02   /
+    CHEB/ -6.013e-02   1.976e-02    1.153e-02    4.613e-03   /
+    CHEB/ -2.309e-02   3.482e-03    2.441e-03    1.326e-03   /
+    CHEB/ -9.481e-03   6.122e-04    5.136e-04    3.461e-04   /
+    CHEB/ -4.002e-03   9.071e-05    1.006e-04    8.448e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #2 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A" title="Search on RMG website" class="searchlink">15.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%204%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CD%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH](5).png" alt="HSi2(5)" title="HSi2(5), MW = 57.18 g/mol"></a></td>
+    <td class="family">PDepNetwork #2</td>
+</tr>
+<tr class="kinetics PDepNetwork #2 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-30.3</td><td>-12.7</td><td>-7.1</td><td>-4.4</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-29.3</td><td>-11.7</td><td>-6.1</td><td>-3.4</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-29.3281,1.65051,-2.63022e-10,-1.31105e-10],[24.9376,3.66795e-10,2.35497e-10,1.17386e-10],[-0.242763,8.91442e-12,5.77365e-12,2.88135e-12],[-0.0750965,-7.48149e-12,-4.84568e-12,-2.4144e-12],[-0.0419128,-2.99194e-13,-1.44995e-13,-7.40519e-14],[-0.00641653,-2.61724e-12,-1.77891e-12,-8.67414e-13]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #2 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 82.78
+    <br><b>S298 (cal/mol*K)</b> = 33.07
+    <br><b>G298 (kcal/mol)</b> = 72.93</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #2 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #2
+! Flux pairs: Si2H2_T(2), H(4); Si2H2_T(2), HSi2(5); 
+Si2H2_T(2)(+M)=>H(4)+HSi2(5)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.933e+01   1.651e+00    -2.630e-10   -1.311e-10  /
+    CHEB/ 2.494e+01    3.668e-10    2.355e-10    1.174e-10   /
+    CHEB/ -2.428e-01   8.914e-12    5.774e-12    2.881e-12   /
+    CHEB/ -7.510e-02   -7.481e-12   -4.846e-12   -2.414e-12  /
+    CHEB/ -4.191e-02   -2.992e-13   -1.450e-13   -7.405e-14  /
+    CHEB/ -6.417e-03   -2.617e-12   -1.779e-12   -8.674e-13  /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #2 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3Dmultiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A" title="Search on RMG website" class="searchlink">16.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/Si2H2_T(2).png" alt="Si2H2_T(2)" title="Si2H2_T(2), MW = 58.19 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%203%0A1%20Si%20u0%20p1%20c0%20%7B2%2CD%7D%0A2%20Si%20u2%20p0%20c0%20%7B1%2CD%7D%0A"><img src="species/[Si]=[SiH2](6).png" alt="Si2(6)" title="Si2(6), MW = 56.17 g/mol"></a></td>
+    <td class="family">PDepNetwork #2</td>
+</tr>
+<tr class="kinetics PDepNetwork #2 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-1.2</td><td>+5.2</td><td>+7.0</td><td>+7.7</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-0.3</td><td>+6.2</td><td>+7.9</td><td>+8.6</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-1.35046,1.51614,-0.0267909,-0.00206977],[9.2678,0.118313,0.0205586,0.00609112],[-0.412528,-0.00704618,0.00570924,-0.0025383],[-0.150555,0.0166473,-0.00781156,-0.00213049],[-0.0387654,-0.0130188,0.00555977,0.00102236],[-0.00862672,-0.00368568,-0.00247999,0.00324751]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #2 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 35.00
+    <br><b>S298 (cal/mol*K)</b> = 47.77
+    <br><b>G298 (kcal/mol)</b> = 20.77</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #2 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #2
+! Flux pairs: Si2H2_T(2), H2(1); Si2H2_T(2), Si2(6); 
+Si2H2_T(2)(+M)=>H2(1)+Si2(6)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -1.350e+00   1.516e+00    -2.679e-02   -2.070e-03  /
+    CHEB/ 9.268e+00    1.183e-01    2.056e-02    6.091e-03   /
+    CHEB/ -4.125e-01   -7.046e-03   5.709e-03    -2.538e-03  /
+    CHEB/ -1.506e-01   1.665e-02    -7.812e-03   -2.130e-03  /
+    CHEB/ -3.877e-02   -1.302e-02   5.560e-03    1.022e-03   /
+    CHEB/ -8.627e-03   -3.686e-03   -2.480e-03   3.248e-03   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A__product2%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A" title="Search on RMG website" class="searchlink">17.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20Si%20u1%20p1%20c0%20%7B1%2CS%7D%0A"><img src="species/[SiH3](7).png" alt="HSi(7)" title="HSi(7), MW = 29.09 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/[SiH3](8).png" alt="H3Si(8)" title="H3Si(8), MW = 31.11 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-16.4</td><td>-2.7</td><td>+1.7</td><td>+3.7</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-15.4</td><td>-1.7</td><td>+2.7</td><td>+4.7</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-15.6545,1.6492,-0.000843493,-0.000419868],[19.2749,-0.000342583,-0.000219597,-0.000109126],[-0.0817503,-0.00025702,-0.000164783,-8.19144e-05],[-0.083622,8.61336e-05,5.52264e-05,2.74566e-05],[-0.0711377,0.000190362,0.000122024,6.06403e-05],[-0.0454151,0.000156376,0.000100206,4.9768e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 63.49
+    <br><b>S298 (cal/mol*K)</b> = 29.13
+    <br><b>G298 (kcal/mol)</b> = 54.81</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), HSi(7); H3SiSiH(3), H3Si(8); 
+H3SiSiH(3)(+M)=>HSi(7)+H3Si(8)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -1.565e+01   1.649e+00    -8.435e-04   -4.199e-04  /
+    CHEB/ 1.927e+01    -3.426e-04   -2.196e-04   -1.091e-04  /
+    CHEB/ -8.175e-02   -2.570e-04   -1.648e-04   -8.191e-05  /
+    CHEB/ -8.362e-02   8.613e-05    5.523e-05    2.746e-05   /
+    CHEB/ -7.114e-02   1.904e-04    1.220e-04    6.064e-05   /
+    CHEB/ -4.542e-02   1.564e-04    1.002e-04    4.977e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3Dmultiplicity%202%0A1%20H%20u1%20p0%20c0%0A__product2%3Dmultiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">18.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20H%20u1%20p0%20c0%0A"><img src="species/[H](4).png" alt="H(4)" title="H(4), MW = 1.01 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/multiplicity%202%0A1%20Si%20u1%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B5%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2][SiH3](9).png" alt="H3Si2(9)" title="H3Si2(9), MW = 59.19 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-21.7</td><td>-5.1</td><td>+0.4</td><td>+3.0</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-20.7</td><td>-4.1</td><td>+1.4</td><td>+4.0</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-20.5457,1.64937,-0.000734531,-0.000365691],[23.2656,-0.000354744,-0.000227445,-0.000113073],[0.0676644,-0.000234562,-0.000150409,-7.47916e-05],[-0.0419755,7.06427e-05,4.53046e-05,2.25331e-05],[-0.0511111,0.000167217,0.000107208,5.32951e-05],[-0.0444465,0.000140343,8.99507e-05,4.46917e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 75.09
+    <br><b>S298 (cal/mol*K)</b> = 28.12
+    <br><b>G298 (kcal/mol)</b> = 66.71</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H(4); H3SiSiH(3), H3Si2(9); 
+H3SiSiH(3)(+M)=>H(4)+H3Si2(9)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -2.055e+01   1.649e+00    -7.345e-04   -3.657e-04  /
+    CHEB/ 2.327e+01    -3.547e-04   -2.274e-04   -1.131e-04  /
+    CHEB/ 6.766e-02    -2.346e-04   -1.504e-04   -7.479e-05  /
+    CHEB/ -4.198e-02   7.064e-05    4.530e-05    2.253e-05   /
+    CHEB/ -5.111e-02   1.672e-04    1.072e-04    5.330e-05   /
+    CHEB/ -4.445e-02   1.403e-04    8.995e-05    4.469e-05   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">19.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CD%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p0%20c0%20%7B1%2CD%7D%20%7B3%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH2]=[SiH2](11).png" alt="H4Si2(11)" title="H4Si2(11), MW = 60.20 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>+8.4</td><td>+9.3</td><td>+9.4</td><td>+9.3</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>+9.4</td><td>+10.3</td><td>+10.4</td><td>+10.3</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[8.10317,1.61233,-0.0231213,-0.0103469],[1.12384,0.0304222,0.0182493,0.00800981],[-0.0909185,0.00113685,0.000713903,0.000343746],[-0.0526212,0.00109452,0.000695045,0.000339144],[-0.0539476,0.00201442,0.00113146,0.000433251],[-0.0409604,0.00215965,0.00121437,0.000463516]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = -7.87
+    <br><b>S298 (cal/mol*K)</b> = -5.76
+    <br><b>G298 (kcal/mol)</b> = -6.16</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H4Si2(11); 
+H3SiSiH(3)(+M)=>H4Si2(11)(+M)                       1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 8.103e+00    1.612e+00    -2.312e-02   -1.035e-02  /
+    CHEB/ 1.124e+00    3.042e-02    1.825e-02    8.010e-03   /
+    CHEB/ -9.092e-02   1.137e-03    7.139e-04    3.437e-04   /
+    CHEB/ -5.262e-02   1.095e-03    6.950e-04    3.391e-04   /
+    CHEB/ -5.395e-02   2.014e-03    1.131e-03    4.333e-04   /
+    CHEB/ -4.096e-02   2.160e-03    1.214e-03    4.635e-04   /
+</td>
+</tr>
+</tbody>
+
+<tbody class="reaction">
+<tr class="PDepNetwork #3 rxnStart">
+    <td class="index"><a href="http://rmg.mit.edu/database/kinetics/reaction/reactant1%3D1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A__product1%3D1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A__product2%3D1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A" title="Search on RMG website" class="searchlink">20.</a></td>
+    <td class="reactants"><a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p0%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%20%7B4%2CS%7D%20%7B5%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B6%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A5%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A6%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/H3SiSiH(3).png" alt="H3SiSiH(3)" title="H3SiSiH(3), MW = 60.20 g/mol"></a></td>
+    <td class="reactionArrow">&rarr;</td>
+    <td class="products"><a href="http://rmg.mit.edu/database/molecule/1%20H%20u0%20p0%20c0%20%7B2%2CS%7D%0A2%20H%20u0%20p0%20c0%20%7B1%2CS%7D%0A"><img src="species/H2(1).png" alt="H2(1)" title="H2(1), MW = 2.02 g/mol"></a> + <a href="http://rmg.mit.edu/database/molecule/1%20Si%20u0%20p1%20c0%20%7B2%2CS%7D%20%7B3%2CS%7D%0A2%20Si%20u0%20p1%20c0%20%7B1%2CS%7D%20%7B4%2CS%7D%0A3%20H%20%20u0%20p0%20c0%20%7B1%2CS%7D%0A4%20H%20%20u0%20p0%20c0%20%7B2%2CS%7D%0A"><img src="species/[SiH3][SiH3](12).png" alt="H2Si2(12)" title="H2Si2(12), MW = 58.19 g/mol"></a></td>
+    <td class="family">PDepNetwork #3</td>
+</tr>
+<tr class="kinetics PDepNetwork #3 hide_kinetics">
+    <td></td>
+    <td colspan="4"><table class="KineticsData">
+<tr class="KineticsData_Tdata"><th>T/[K]</th>
+<td>500</td><td>1000</td><td>1500</td><td>2000</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(1 bar)/[mole,m,s])
+    <td>-5.6</td><td>+2.6</td><td>+5.1</td><td>+6.2</td>
+</tr><tr class="KineticsData_kdata"><th>log<sub>10</sub>(k(10 bar)/[mole,m,s])
+    <td>-4.6</td><td>+3.6</td><td>+6.1</td><td>+7.2</td>
+</tr></table><span class='KineticsData_repr'>Chebyshev(coeffs=[[-5.24882,1.64859,-0.00123497,-0.000614349],[11.3173,-0.000302568,-0.000193763,-9.6128e-05],[-0.0376174,-0.00030604,-0.000196075,-9.73522e-05],[-0.0558148,0.000152588,9.77555e-05,4.85316e-05],[-0.0740733,0.000277577,0.000177802,8.82468e-05],[-0.0384838,0.000213496,0.000136698,6.77964e-05]], kunits='s^-1', Tmin=(300,'K'), Tmax=(2000,'K'), Pmin=(0.01,'bar'), Pmax=(20,'bar'))</span></td>
+</tr>
+<tr class="energy PDepNetwork #3 hide_energy">
+    <td></td>
+    <td colspan="3"><b>H298 (kcal/mol)</b> = 36.36
+    <br><b>S298 (cal/mol*K)</b> = 24.43
+    <br><b>G298 (kcal/mol)</b> = 29.07</td>
+    <td></td>
+</tr>
+<tr class="chemkin PDepNetwork #3 hide_chemkin">
+    <td></td>
+    <td colspan="4">! PDep reaction: PDepNetwork #3
+! Flux pairs: H3SiSiH(3), H2(1); H3SiSiH(3), H2Si2(12); 
+H3SiSiH(3)(+M)=>H2(1)+H2Si2(12)(+M)                 1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ -5.249e+00   1.649e+00    -1.235e-03   -6.143e-04  /
+    CHEB/ 1.132e+01    -3.026e-04   -1.938e-04   -9.613e-05  /
+    CHEB/ -3.762e-02   -3.060e-04   -1.961e-04   -9.735e-05  /
+    CHEB/ -5.581e-02   1.526e-04    9.776e-05    4.853e-05   /
+    CHEB/ -7.407e-02   2.776e-04    1.778e-04    8.825e-05   /
+    CHEB/ -3.848e-02   2.135e-04    1.367e-04    6.780e-05   /
+</td>
+</tr>
+</tbody>
+
+
+</table>
+
+</body>
+
+</html>
