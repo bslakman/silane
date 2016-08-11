@@ -23,6 +23,12 @@ species(
 )
 
 species(
+    label='Si3H8',
+    reactive=True,
+    structure=SMILES("[SiH3][SiH2][SiH3]")
+)
+
+species(
     label='SiH3',
     reactive=True,
     structure=SMILES("[SiH3]")
@@ -66,6 +72,20 @@ species(
 4 H u0 p0 c0 {3,S}
 5 H u0 p0 c0 {3,S}
 6 H u0 p0 c0 {3,S}
+""")
+)
+
+species(
+    label='Si=SiHSiH3',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u0 p1 c0 {2,D}
+2 Si u0 p0 c0 {1,D} {3,S} {4,S}
+3 Si u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+7 H u0 p0 c0 {3,S}
 """)
 )
 
@@ -129,14 +149,14 @@ model(
     maximumEdgeSpecies=100000
 )
 
-pressureDependence(
-    method='modified strong collision',
-    maximumGrainSize=(0.5,'kcal/mol'),
-    minimumNumberOfGrains=250,
-    temperatures=(300,2000,'K',8),
-    pressures=(0.01,20,'bar',5),
-    interpolation=('Chebyshev', 6, 4),
-)
+#pressureDependence(
+#    method='modified strong collision',
+#    maximumGrainSize=(0.5,'kcal/mol'),
+#    minimumNumberOfGrains=250,
+#    temperatures=(300,2000,'K',8),
+#    pressures=(0.01,20,'bar',5),
+#    interpolation=('Chebyshev', 6, 4),
+#)
 
 options(
     units='si',
