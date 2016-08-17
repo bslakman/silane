@@ -1,6 +1,6 @@
 Global RMG Settings:
    database.directory   = /Users/belinda/Code/RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Thu Aug 11 10:53:48 2016
+RMG execution initiated at Wed Aug 17 16:04:26 2016
 
 #########################################################
 # RMG-Py - Reaction Mechanism Generator in Python       #
@@ -16,8 +16,8 @@ The current git HEAD for RMG-Py is:
 	Tue Aug 9 17:42:46 2016 -0400
 
 The current git HEAD for RMG-database is:
-	802b7ba63635434105dfaf51942f12576ad6cdd4
-	Wed Aug 3 18:54:55 2016 -0400
+	d0bf8182c0a94a091e5c2ad6f4df706aa8f9521f
+	Wed Aug 17 15:40:41 2016 -0400
 
 Reading input file "/Users/belinda/Code/RMG-Py/examples/rmg/silane/input.py"...
 # Data sources
@@ -150,8 +150,8 @@ simpleReactor(
     temperature=(873,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.05,
-	"Ar": 0.95,
+        "SiH4": 0.01,
+	"Ar": 0.99,
     },
     terminationConversion={
         'SiH4': 0.9,
@@ -498,16 +498,17 @@ After model enlargement:
 
 Generating thermodynamics for new species...
 Found thermo for [H] in thermo library: primarythermolibrary
-Resonance isomer 1 [Si][SiH]=[SiH2] gives H298=609404 J/mol
-Resonance isomer 2 [Si]=[SiH][SiH2] gives H298=848482 J/mol
+Resonance isomer 1 [Si][SiH]=[SiH2] gives H298=603019 J/mol
+Resonance isomer 2 [Si]=[SiH][SiH2] gives H298=844637 J/mol
 Found thermo for [SiH2] in thermo library: siliconhydridelibrary
 Generating kinetics for new reactions...
 For reaction SiH4(1) <=> SiH3(4) + [H](17), Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
-For reaction SiH3(4) + [Si]=[SiH](25) <=> Si=SiHSiH3(8), Ea raised from -0.8 to 2.8 kJ/mol to match endothermicity of reaction.
+For reaction SiH3(4) + [Si]=[SiH](25) <=> Si=SiHSiH3(8), Ea raised from -0.8 to 1.2 kJ/mol to match endothermicity of reaction.
 For reaction [Si]=[SiH][SiH](29) + H2(9) <=> Si=SiHSiH3(8), Ea raised from 90.4 to 95.1 kJ/mol to match endothermicity of reaction.
 For reaction SiH2(6) + SiH2Si(13) <=> Si=SiHSiH3(8), Ea raised from -39.3 to 59.8 kJ/mol to match endothermicity of reaction.
 For reaction SiH4(1) + [Si]=[Si](30) <=> Si=SiHSiH3(8), Ea raised from -1.9 to 208.1 kJ/mol to match endothermicity of reaction.
-For reaction SiH4(1) + Si2H5(5) <=> SiH3(4) + Si2H6(2), Ea raised from 5.2 to 12.3 kJ/mol to match endothermicity of reaction.
+For reaction SiH4(1) + Si2H5(5) <=> SiH3(4) + Si2H6(2), Ea raised from 5.2 to 16.1 kJ/mol to match endothermicity of reaction.
+For reaction Si2H6(2) + [SiH2][SiH2](22) <=> Si2H5(5) + Si2H5(5), Ea raised from -0.5 to 0.0 kJ/mol to match endothermicity of reaction.
 
 Summary of Secondary Model Edge Enlargement
 ---------------------------------
@@ -599,7 +600,7 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:06
-    Memory used: 160.41 MB
+    Memory used: 163.03 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-15 s, species H2(9) exceeded the minimum rate for moving to model core
@@ -624,11 +625,11 @@ At time 1.0000e-15 s, species H2(9) exceeded the minimum rate for simulation int
 Conducting simulation of reaction system 3...
 At time 1.0000e-15 s, species H2(9) exceeded the minimum rate for moving to model core
     Characteristic rate: 0.0000e+00 mol/m^3*s
-    H2(9) rate: 3.0429e-01 mol/m^3*s
+    H2(9) rate: 6.0858e-02 mol/m^3*s
     SiH4(1) conversion: 0         
 At time 1.0000e-15 s, species H2(9) exceeded the minimum rate for simulation interruption
     Characteristic rate: 0.0000e+00 mol/m^3*s
-    H2(9) rate: 3.0429e-01 mol/m^3*s
+    H2(9) rate: 6.0858e-02 mol/m^3*s
     SiH4(1) conversion: 0         
 
 
@@ -684,7 +685,7 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:07
-    Memory used: 161.60 MB
+    Memory used: 164.18 MB
 
 Conducting simulation of reaction system 1...
 At time 1.5854e-06 s, species SiH2SiH2(10) exceeded the minimum rate for moving to model core
@@ -707,14 +708,14 @@ At time 6.9636e-07 s, species SiH2SiH2(10) exceeded the minimum rate for simulat
     SiH4(1) conversion: 9.416e-07 
 
 Conducting simulation of reaction system 3...
-At time 3.2709e-07 s, species SiH2SiH2(10) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.3979e-01 mol/m^3*s
-    SiH2SiH2(10) rate: 7.4660e-04 mol/m^3*s (0.001009)
-    SiH4(1) conversion: 6.541e-07 
-At time 3.2709e-07 s, species SiH2SiH2(10) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.3979e-01 mol/m^3*s
-    SiH2SiH2(10) rate: 7.4660e-04 mol/m^3*s (0.001009)
-    SiH4(1) conversion: 6.541e-07 
+At time 4.5320e-07 s, species SiH2SiH2(10) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2794e-01 mol/m^3*s
+    SiH2SiH2(10) rate: 1.3417e-04 mol/m^3*s (0.001049)
+    SiH4(1) conversion: 7.234e-07 
+At time 4.5320e-07 s, species SiH2SiH2(10) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2794e-01 mol/m^3*s
+    SiH2SiH2(10) rate: 1.3417e-04 mol/m^3*s (0.001049)
+    SiH4(1) conversion: 7.234e-07 
 
 
 Adding species SiH2SiH2(10) to model core
@@ -771,7 +772,7 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:07
-    Memory used: 162.66 MB
+    Memory used: 165.28 MB
 
 Conducting simulation of reaction system 1...
 At time 4.2698e-06 s, species SiH2Si(13) exceeded the minimum rate for moving to model core
@@ -794,14 +795,14 @@ At time 1.8173e-06 s, species SiH2Si(13) exceeded the minimum rate for simulatio
     SiH4(1) conversion: 2.902e-06 
 
 Conducting simulation of reaction system 3...
-At time 1.2718e-06 s, species SiH2Si(13) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.4534e-01 mol/m^3*s
-    SiH2Si(13) rate: 7.9168e-04 mol/m^3*s (0.001062)
-    SiH4(1) conversion: 2.793e-06 
-At time 1.2718e-06 s, species SiH2Si(13) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.4534e-01 mol/m^3*s
-    SiH2Si(13) rate: 7.9168e-04 mol/m^3*s (0.001062)
-    SiH4(1) conversion: 2.793e-06 
+At time 1.4557e-06 s, species SiH2Si(13) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.4730e-01 mol/m^3*s
+    SiH2Si(13) rate: 1.5382e-04 mol/m^3*s (0.001044)
+    SiH4(1) conversion: 2.867e-06 
+At time 1.4557e-06 s, species SiH2Si(13) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.4730e-01 mol/m^3*s
+    SiH2Si(13) rate: 1.5382e-04 mol/m^3*s (0.001044)
+    SiH4(1) conversion: 2.867e-06 
 
 
 Adding species SiH2Si(13) to model core
@@ -859,8 +860,8 @@ Chemkin file contains 88 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:08
-    Memory used: 161.74 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:07
+    Memory used: 164.29 MB
 
 Conducting simulation of reaction system 1...
 At time 1.8539e-06 s, species [Si]=[Si](30) exceeded the minimum rate for moving to model core
@@ -883,14 +884,14 @@ At time 8.1716e-07 s, species [Si]=[Si](30) exceeded the minimum rate for simula
     SiH4(1) conversion: 1.131e-06 
 
 Conducting simulation of reaction system 3...
-At time 4.1885e-07 s, species [Si]=[Si](30) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.4363e-01 mol/m^3*s
-    [Si]=[Si](30) rate: 7.7063e-04 mol/m^3*s (0.001036)
-    SiH4(1) conversion: 8.611e-07 
-At time 4.1885e-07 s, species [Si]=[Si](30) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.4363e-01 mol/m^3*s
-    [Si]=[Si](30) rate: 7.7063e-04 mol/m^3*s (0.001036)
-    SiH4(1) conversion: 8.611e-07 
+At time 5.3044e-07 s, species [Si]=[Si](30) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3139e-01 mol/m^3*s
+    [Si]=[Si](30) rate: 1.3517e-04 mol/m^3*s (0.001029)
+    SiH4(1) conversion: 8.736e-07 
+At time 5.3044e-07 s, species [Si]=[Si](30) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3139e-01 mol/m^3*s
+    [Si]=[Si](30) rate: 1.3517e-04 mol/m^3*s (0.001029)
+    SiH4(1) conversion: 8.736e-07 
 
 
 Adding species [Si]=[Si](30) to model core
@@ -941,17 +942,17 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:08
-    Memory used: 161.15 MB
+    Memory used: 163.73 MB
 
 Conducting simulation of reaction system 1...
-At time 8.1796e-03 s, species SiH(12) exceeded the minimum rate for moving to model core
-    Characteristic rate: 2.5675e-03 mol/m^3*s
-    SiH(12) rate: 2.6153e-06 mol/m^3*s (0.001019)
-    SiH4(1) conversion: 0.01819   
-At time 8.1796e-03 s, species SiH(12) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 2.5675e-03 mol/m^3*s
-    SiH(12) rate: 2.6153e-06 mol/m^3*s (0.001019)
-    SiH4(1) conversion: 0.01819   
+At time 8.5837e-03 s, species SiH(12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.5790e-03 mol/m^3*s
+    SiH(12) rate: 2.8520e-06 mol/m^3*s (0.001106)
+    SiH4(1) conversion: 0.01908   
+At time 8.5837e-03 s, species SiH(12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.5790e-03 mol/m^3*s
+    SiH(12) rate: 2.8520e-06 mol/m^3*s (0.001106)
+    SiH4(1) conversion: 0.01908   
 
 Conducting simulation of reaction system 2...
 At time 5.4816e-03 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate for moving to model core
@@ -964,14 +965,35 @@ At time 5.4816e-03 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate f
     SiH4(1) conversion: 0.01233   
 
 Conducting simulation of reaction system 3...
-At time 4.8406e-04 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.4805e-01 mol/m^3*s
-    [SiH2]=[SiH][SiH3](32) rate: 8.7170e-04 mol/m^3*s (0.001165)
-    SiH4(1) conversion: 0.001096  
-At time 4.8406e-04 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.4805e-01 mol/m^3*s
-    [SiH2]=[SiH][SiH3](32) rate: 8.7170e-04 mol/m^3*s (0.001165)
-    SiH4(1) conversion: 0.001096  
+At time 1.8516e-03 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5131e-01 mol/m^3*s
+    [SiH2]=[SiH][SiH3](32) rate: 1.6041e-04 mol/m^3*s (0.00106)
+    SiH4(1) conversion: 0.004185  
+At time 1.8516e-03 s, species [SiH2]=[SiH][SiH3](32) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5131e-01 mol/m^3*s
+    [SiH2]=[SiH][SiH3](32) rate: 1.6041e-04 mol/m^3*s (0.00106)
+    SiH4(1) conversion: 0.004185  
+
+
+Adding species [SiH2]=[SiH][SiH3](32) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [SiH2]=[SiH][SiH3](32)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    Si=SiHSiH3(8) + H2(9) <=> [SiH2]=[SiH][SiH3](32)
+    SiH2(6) + SiH2SiH2(10) <=> [SiH2]=[SiH][SiH3](32)
+    SiH4(1) + SiH2Si(13) <=> [SiH2]=[SiH][SiH3](32)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 17 species and 20 reactions
+    The model edge has 21 species and 69 reactions
 
 
 Adding species SiH(12) to model core
@@ -990,27 +1012,6 @@ Moved 6 reactions from edge to core
     SiH4(1) + SiH(12) <=> Si2H5(5)
     SiH3(4) + SiH2(6) <=> SiH4(1) + SiH(12)
     Si2H5(5) + SiH2(6) <=> Si2H6(2) + SiH(12)
-Added 0 new core reactions
-Created 0 new edge reactions
-
-After model enlargement:
-    The model core has 17 species and 23 reactions
-    The model edge has 21 species and 66 reactions
-
-
-Adding species [SiH2]=[SiH][SiH3](32) to model core
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-
-Summary of Model Enlargement
----------------------------------
-Added 1 new core species
-    [SiH2]=[SiH][SiH3](32)
-Created 0 new edge species
-Moved 3 reactions from edge to core
-    Si=SiHSiH3(8) + H2(9) <=> [SiH2]=[SiH][SiH3](32)
-    SiH2(6) + SiH2SiH2(10) <=> [SiH2]=[SiH][SiH3](32)
-    SiH4(1) + SiH2Si(13) <=> [SiH2]=[SiH][SiH3](32)
 Added 0 new core reactions
 Created 0 new edge reactions
 
@@ -1044,20 +1045,20 @@ Created 39 new edge reactions
     Si2H6(2) + SiH(12) <=> [SiH2][SiH2][SiH3](19)
     SiH2(6) + [SiH3][SiH][SiH3](18) <=> Si3H8(3) + SiH(12)
     SiH2(6) + [SiH2][SiH2][SiH3](19) <=> Si3H8(3) + SiH(12)
-    SiH2(6) + [SiH2](31) <=> SiH3(4) + SiH(12)
-    SiH3(4) + SiH(12) <=> [SiH2][SiH2](22)
     SiH3(4) + [SiH2]=[SiH][SiH3](32) <=> SiH4(1) + [SiH2][SiH]=[SiH2](34)
     SiH3(4) + [SiH2]=[SiH][SiH3](32) <=> SiH4(1) + [SiH2]=[Si][SiH3](35)
     SiH3(4) + [SiH2]=[SiH][SiH3](32) <=> SiH4(1) + [SiH]=[SiH][SiH3](36)
+    SiH2(6) + [SiH2](31) <=> SiH3(4) + SiH(12)
+    SiH3(4) + SiH(12) <=> [SiH2][SiH2](22)
+    Si2H6(2) + [SiH2][SiH]=[SiH2](34) <=> Si2H5(5) + [SiH2]=[SiH][SiH3](32)
+    Si2H5(5) + [SiH2]=[SiH][SiH3](32) <=> Si2H6(2) + [SiH2]=[Si][SiH3](35)
+    Si2H5(5) + [SiH2]=[SiH][SiH3](32) <=> Si2H6(2) + [SiH]=[SiH][SiH3](36)
     SiH2(6) + [SiH2][SiH2](22) <=> Si2H5(5) + SiH(12)
     SiH2(6) + H3SiSiH_T(14) <=> Si2H5(5) + SiH(12)
     Si2H5(5) + SiH(12) <=> Si2H6(2) + Si(11)
     Si2H5(5) + SiH(12) <=> [SiH][SiH2][SiH3](21)
     Si2H5(5) + SiH(12) <=> [SiH2][SiH2][SiH2](38)
     Si2H5(5) + SiH(12) <=> [SiH2][SiH][SiH3](39)
-    Si2H6(2) + [SiH2][SiH]=[SiH2](34) <=> Si2H5(5) + [SiH2]=[SiH][SiH3](32)
-    Si2H5(5) + [SiH2]=[SiH][SiH3](32) <=> Si2H6(2) + [SiH2]=[Si][SiH3](35)
-    Si2H5(5) + [SiH2]=[SiH][SiH3](32) <=> Si2H6(2) + [SiH]=[SiH][SiH3](36)
     SiH3SiH(7) + SiH(12) <=> SiH2(6) + [SiH][SiH2](23)
     SiH3SiH(7) + SiH(12) <=> SiH2(6) + [Si][SiH3](24)
     SiH3SiH(7) + SiH(12) <=> [SiH][SiH2][SiH2](40)
@@ -1068,11 +1069,11 @@ Created 39 new edge reactions
     SiH2SiH2(10) + SiH(12) <=> [SiH2][SiH]=[SiH2](34)
     SiH2(6) + [Si]=[SiH](25) <=> SiH(12) + SiH2Si(13)
     SiH(12) + SiH2Si(13) <=> [Si]=[SiH][SiH2](26)
-    SiH(12) + SiH(12) <=> SiH2(6) + Si(11)
-    SiH(12) + SiH(12) <=> Si2H2(16)
     SiH2(6) + [SiH2][SiH]=[SiH2](34) <=> SiH(12) + [SiH2]=[SiH][SiH3](32)
     SiH2(6) + [SiH2]=[Si][SiH3](35) <=> SiH(12) + [SiH2]=[SiH][SiH3](32)
     SiH2(6) + [SiH]=[SiH][SiH3](36) <=> SiH(12) + [SiH2]=[SiH][SiH3](32)
+    SiH(12) + SiH(12) <=> SiH2(6) + Si(11)
+    SiH(12) + SiH(12) <=> Si2H2(16)
 
 After model enlargement:
     The model core has 18 species and 26 reactions
@@ -1090,15 +1091,39 @@ Chemkin file contains 128 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:10
-    Memory used: 161.75 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:09
+    Memory used: 164.60 MB
 
 Conducting simulation of reaction system 1...
-At time 3.3833e+00 s, reached target termination conversion: 0.900000 of SiH4(1)
+At time 3.3799e+00 s, reached target termination conversion: 0.900000 of SiH4(1)
     SiH4(1) conversion: 0.9002    
 
 Conducting simulation of reaction system 2...
-At time 3.4743e+00 s, reached target termination conversion: 0.900000 of SiH4(1)
-    SiH4(1) conversion: 0.9003    
+At time 3.4652e+00 s, reached target termination conversion: 0.900000 of SiH4(1)
+    SiH4(1) conversion: 0.9       
 
 Conducting simulation of reaction system 3...
+At time 3.8472e+00 s, reached target termination conversion: 0.900000 of SiH4(1)
+    SiH4(1) conversion: 0.9001    
+
+Saving current model core to Chemkin file...
+Chemkin file contains 26 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 26 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 128 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 128 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:10
+    Memory used: 162.12 MB
+
+
+MODEL GENERATION COMPLETED
+
+The final model core has 18 species and 26 reactions
+The final model edge has 26 species and 102 reactions
+
+RMG execution terminated at Wed Aug 17 16:04:36 2016

@@ -102,11 +102,6 @@ Si2(30)
 1 Si u0 p1 c0 {2,D}
 2 Si u0 p1 c0 {1,D}
 
-SiH(12)
-multiplicity 2
-1 Si u1 p1 c0 {2,S}
-2 H  u0 p0 c0 {1,S}
-
 H6Si3(32)
 1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {1,S} {3,D} {7,S}
@@ -117,4 +112,9 @@ H6Si3(32)
 7 H  u0 p0 c0 {2,S}
 8 H  u0 p0 c0 {3,S}
 9 H  u0 p0 c0 {3,S}
+
+SiH(12)
+multiplicity 2
+1 Si u1 p1 c0 {2,S}
+2 H  u0 p0 c0 {1,S}
 
