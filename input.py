@@ -22,12 +22,12 @@ species(
     structure=SMILES("[SiH3][SiH3]")
 )
 
-species(
-    label='Si3H8',
-    reactive=True,
-    structure=SMILES("[SiH3][SiH2][SiH3]")
-)
-
+#species(
+#    label='Si3H8',
+#    reactive=True,
+#    structure=SMILES("[SiH3][SiH2][SiH3]")
+#)
+#
 species(
     label='SiH3',
     reactive=True,
@@ -75,19 +75,19 @@ species(
 """)
 )
 
-species(
-    label='Si=SiHSiH3',
-    reactive=True,
-    structure=adjacencyList("""
-1 Si u0 p1 c0 {2,D}
-2 Si u0 p0 c0 {1,D} {3,S} {4,S}
-3 Si u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
-4 H u0 p0 c0 {2,S}
-5 H u0 p0 c0 {3,S}
-6 H u0 p0 c0 {3,S}
-7 H u0 p0 c0 {3,S}
-""")
-)
+#species(
+#    label='Si=SiHSiH3',
+#    reactive=True,
+#    structure=adjacencyList("""
+#1 Si u0 p1 c0 {2,D}
+#2 Si u0 p0 c0 {1,D} {3,S} {4,S}
+#3 Si u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
+#4 H u0 p0 c0 {2,S}
+#5 H u0 p0 c0 {3,S}
+#6 H u0 p0 c0 {3,S}
+#7 H u0 p0 c0 {3,S}
+#""")
+#)
 
 species(
     label='Ar',
@@ -97,7 +97,7 @@ species(
 
 # Reaction system
 simpleReactor(
-    temperature=(873,'K'),
+    temperature=(913,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
@@ -109,33 +109,33 @@ simpleReactor(
 #    terminationTime=(1, 's')
 )
 
-# Reaction system
-simpleReactor(
-    temperature=(873,'K'),
-    pressure=(39000,'Pa'),
-    initialMoleFractions={
-        "SiH4": 0.0025,
-	"Ar": 0.9975,
-    },
-    terminationConversion={
-        'SiH4': 0.9,
-    },
-#    terminationTime=(1, 's')
-)
-
-# Reaction system
-simpleReactor(
-    temperature=(873,'K'),
-    pressure=(39000,'Pa'),
-    initialMoleFractions={
-        "SiH4": 0.01,
-	"Ar": 0.99,
-    },
-    terminationConversion={
-        'SiH4': 0.9,
-    },
- #   terminationTime=(1, 's')
-)
+## Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.0025,
+#	"Ar": 0.9975,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+##    terminationTime=(1, 's')
+#)
+#
+## Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.05,
+#	"Ar": 0.95,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+# #   terminationTime=(1, 's')
+#)
 
 simulator(
     atol=1e-16,
@@ -144,8 +144,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=0.001,
-    toleranceInterruptSimulation=0.005,
+    toleranceMoveToCore=0.0001,
+    toleranceInterruptSimulation=0.0005,
     maximumEdgeSpecies=100000
 )
 
@@ -167,7 +167,7 @@ options(
 )
 
 generatedSpeciesConstraints(
-    allowed=['reaction libraries'],
+    allowed = ['reaction libraries'],
     maximumSiliconAtoms=3
 )
 
