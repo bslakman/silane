@@ -1,0 +1,500 @@
+Global RMG Settings:
+   database.directory   = /Users/belinda/Code/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Thu Mar 31 11:57:03 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.3                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD for RMG-Py is:
+	ea6122a9f2de57461981e6aa98da8c7c5c4e3f7f
+	Wed Mar 23 15:16:00 2016 -0400
+
+The current git HEAD for RMG-database is:
+	91176cdfbdca1e5d098d092e46b7005bb0b9a5b2
+	Mon Feb 15 17:37:28 2016 -0500
+
+Reading input file "/Users/belinda/Code/RMG-Py/examples/rmg/silane/libraries/input.py"...
+# Data sources
+database(
+    thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
+    #reactionLibraries = [('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+    #reactionLibraries = [('Silicon_Giunta_1990', False)],
+    seedMechanisms = ['DolletSi2H4'],
+#    kineticsDepositories = ['training'],
+    #kineticsFamilies = ['R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene', 'H_Abstraction'],
+#    kineticsEstimator = 'rate rules',
+)
+
+# List of species
+species(
+    label='SiH4',
+    reactive=True,
+    structure=SMILES("[SiH4]")
+)
+
+#species(
+#    label='Si2H6',
+#    reactive=True,
+#    structure=SMILES("[SiH3][SiH3]")
+#)
+#
+#species(
+#    label='SiH3',
+#    reactive=True,
+#    structure=SMILES("[SiH3]")
+#)
+#
+#species(
+#    label='Si2H5',
+#    reactive=True,
+#    structure=SMILES("[SiH3][SiH2]")
+#)
+#
+#species(
+#    label='H',
+#    reactive=True,
+#    structure=SMILES("[H]")
+#)
+#
+#species(
+#    label='H2',
+#    reactive=True,
+#    structure=SMILES("[H][H]")
+#)
+#
+#species(
+#    label='SiH2',
+#    reactive=True,
+#    structure=adjacencyList("""
+#1 Si u0 p1 c0 {2,S} {3,S}
+#2 H u0 p0 c0 {1,S}
+#3 H u0 p0 c0 {1,S}
+#""")
+#)
+#
+#species(
+#    label='SiH3SiH',
+#    reactive=True,
+#    structure=adjacencyList("""
+#1 Si u0 p1 c0 {2,S} {3,S}
+#2 H u0 p0 c0 {1,S}
+#3 Si u0 p0 c0 {1,S} {4,S} {5,S} {6,S}
+#4 H u0 p0 c0 {3,S}
+#5 H u0 p0 c0 {3,S}
+#6 H u0 p0 c0 {3,S}
+#""")
+#)
+
+species(
+    label='Ar',
+    reactive=False,
+    structure=SMILES("[Ar]")
+)
+
+# Reaction system
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "SiH4": 0.00016,
+	"Ar": 0.99984,
+    },
+    terminationConversion={
+        'SiH4': 0.9,
+    },
+    terminationTime=(0, 's')
+)
+
+# Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.0025,
+#	"Ar": 0.9975,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+##    terminationTime=(1, 's')
+#)
+#
+## Reaction system
+#simpleReactor(
+#    temperature=(873,'K'),
+#    pressure=(39000,'Pa'),
+#    initialMoleFractions={
+#        "SiH4": 0.05,
+#	"Ar": 0.95,
+#    },
+#    terminationConversion={
+#        'SiH4': 0.9,
+#    },
+# #   terminationTime=(1, 's')
+#)
+
+simulator(
+    atol=1e-16,
+    rtol=1e-8,
+)
+
+model(
+    toleranceKeepInEdge=0.0,
+    toleranceMoveToCore=0.001,
+    toleranceInterruptSimulation=0.005,
+    maximumEdgeSpecies=100000
+)
+
+#pressureDependence(
+#    method='modified strong collision',
+#    maximumGrainSize=(0.5,'kcal/mol'),
+#    minimumNumberOfGrains=250,
+#    temperatures=(300,2000,'K',8),
+#    pressures=(0.01,20,'bar',5),
+#    interpolation=('Chebyshev', 6, 4),
+#)
+
+options(
+    units='si',
+    saveRestartPeriod=None,
+    generateOutputHTML=True,
+    generatePlots=False,
+    saveEdgeSpecies=True,
+)
+
+#generatedSpeciesConstraints(
+#    maximumSiliconAtoms=3
+#)
+
+
+
+
+Loading thermodynamics library from primaryThermoLibrary.py in /Users/belinda/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from SiliconHydrideLibrary.py in /Users/belinda/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /Users/belinda/Code/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /Users/belinda/Code/RMG-database/input/transport/libraries...
+Loading transport library from PrimaryTransportLibrary.py in /Users/belinda/Code/RMG-database/input/transport/libraries...
+Loading transport group database from /Users/belinda/Code/RMG-database/input/transport/groups...
+Loading default kinetics families from /Users/belinda/Code/RMG-database/input/kinetics/families
+Loading kinetics library DolletSi2H4 from /Users/belinda/Code/RMG-database/input/kinetics/libraries/DolletSi2H4/reactions.py...
+Loading frequencies group database from /Users/belinda/Code/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /Users/belinda/Code/RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
+Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for SiH4 in thermo library: siliconhydridelibrary
+Found thermo for SiH3 in thermo library: siliconhydridelibrary
+Found thermo for H in thermo library: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Adding seed mechanism DolletSi2H4 to model core...
+Found thermo for H3SiSiH in thermo library: siliconhydridelibrary
+Found thermo for H2SiSiH2 in thermo library: siliconhydridelibrary
+Found thermo for Si in thermo library: siliconhydridelibrary
+Found thermo for SiH3 in thermo library: siliconhydridelibrary
+Found thermo for SiH in thermo library: siliconhydridelibrary
+Found thermo for H2 in thermo library: primarythermolibrary
+Found thermo for SiH2 in thermo library: siliconhydridelibrary
+Found thermo for Si2H2 in thermo library: siliconhydridelibrary
+
+Summary of Model Enlargement
+---------------------------------
+Added 11 new core species
+    H3SiSiH(2)
+    H2SiSiH2(3)
+    Si(4)
+    SiH3(5)
+    SiH(6)
+    SiH2Si(7)
+    H2(8)
+    H3SiSiH_T(9)
+    SiH2Si_T(10)
+    SiH2(11)
+    Si2H2(12)
+Created 0 new edge species
+Added 17 new core reactions
+    H3SiSiH(2) => H2SiSiH2(3)
+    H3SiSiH(2) => SiH4(1) + Si(4)
+    H3SiSiH(2) => SiH3(5) + SiH(6)
+    H3SiSiH(2) => SiH2Si(7) + H2(8)
+    H3SiSiH_T(9) => H2(8) + SiH2Si_T(10)
+    H3SiSiH(2) => SiH2(11) + SiH2(11)
+    SiH4(1) + Si(4) => H3SiSiH(2)
+    SiH4(1) + Si(4) => H2SiSiH2(3)
+    SiH4(1) + Si(4) => SiH2Si(7) + H2(8)
+    SiH4(1) + Si(4) => H2(8) + SiH2Si_T(10)
+    SiH4(1) + Si(4) => SiH3(5) + SiH(6)
+    SiH4(1) + Si(4) => SiH2(11) + SiH2(11)
+    H2(8) + Si2H2(12) => H2SiSiH2(3)
+    SiH2(11) + SiH2(11) => H2SiSiH2(3)
+    SiH3(5) + SiH(6) => H2SiSiH2(3)
+    SiH2(11) + SiH2(11) => H2(8) + Si2H2(12)
+    SiH3(5) + SiH(6) => H2(8) + Si2H2(12)
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 11 species and 17 reactions
+    The model edge has 2 species and 0 reactions
+
+Found thermo for SiH4 in thermo library: siliconhydridelibrary
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+Found thermo for N2 in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 12 species and 17 reactions
+    The model edge has 1 species and 0 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 13 species and 17 reactions
+    The model edge has 1 species and 0 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 14 species and 17 reactions
+    The model edge has 1 species and 0 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 15 species and 17 reactions
+    The model edge has 1 species and 0 reactions
+
+
+Adding species SiH4(1) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    SiH4(1)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 16 species and 17 reactions
+    The model edge has 0 species and 0 reactions
+
+
+Generating thermodynamics for new species...
+Found thermo for [H] in thermo library: primarythermolibrary
+Found thermo for [SiH]=[SiH2] in thermo library: siliconhydridelibrary
+Found thermo for [SiH2] in thermo library: siliconhydridelibrary
+Found thermo for [SiH3][SiH3] in thermo library: siliconhydridelibrary
+Generating kinetics for new reactions...
+For reaction SiH4(1) <=> SiH3(5) + [H](14), Ea raised from 374.2 to 380.7 kJ/mol to match endothermicity of reaction.
+For reaction [SiH2][SiH2][SiH2][SiH2](22) <=> H2SiSiH2(3) + H2SiSiH2(3), Ea raised from 0.0 to 60.5 kJ/mol to match endothermicity of reaction.
+For reaction [SiH2][Si][SiH2][SiH2](23) <=> H2SiSiH2(3) + SiH2Si(7), Ea raised from 0.0 to 26.3 kJ/mol to match endothermicity of reaction.
+For reaction [Si][SiH2][SiH2][SiH2](24) <=> H2SiSiH2(3) + SiH2Si(7), Ea raised from 0.0 to 24.9 kJ/mol to match endothermicity of reaction.
+For reaction H2(8) + H3SiSiH_T(9) <=> [H](14) + [SiH2][SiH3](21), Ea raised from 74.1 to 77.3 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 18 new edge species
+    [SiH][SiH2](13)
+    [H](14)
+    [Si][SiH3](15)
+    [SiH]=[SiH2](16)
+    [Si]=[SiH](17)
+    [SiH][SiH2](18)
+    [Si]=[SiH](19)
+    [Si][SiH](20)
+    [SiH2][SiH3](21)
+    [SiH2][SiH2][SiH2][SiH2](22)
+    [SiH2][Si][SiH2][SiH2](23)
+    [Si][SiH2][SiH2][SiH2](24)
+    [SiH2](25)
+    [Si]#[SiH](26)
+    [SiH3][SiH3](27)
+    [SiH2][Si][Si][SiH2](28)
+    [Si][SiH2][Si][SiH2](29)
+    [Si][SiH2][SiH2][Si](30)
+Added 3 new core reactions
+    SiH(6) + SiH(6) <=> Si2H2(12)
+    SiH(6) + SiH(6) <=> Si(4) + SiH2(11)
+    SiH3(5) + SiH2(11) <=> SiH4(1) + SiH(6)
+Created 79 new edge reactions
+    [SiH][SiH2](13) + [H](14) <=> H3SiSiH(2)
+    [H](14) + [Si][SiH3](15) <=> H3SiSiH(2)
+    [H](14) + [SiH]=[SiH2](16) <=> H2SiSiH2(3)
+    [Si]=[SiH](17) + [H](14) <=> SiH2Si(7)
+    [H](14) + [H](14) <=> H2(8)
+    [H](14) + [SiH][SiH2](18) <=> H3SiSiH_T(9)
+    [H](14) + [Si]=[SiH](19) <=> SiH2Si_T(10)
+    SiH(6) + [H](14) <=> SiH2(11)
+    [H](14) + [Si][SiH](20) <=> Si2H2(12)
+    SiH4(1) <=> SiH3(5) + [H](14)
+    SiH(6) + [SiH][SiH2](13) <=> H3SiSiH(2) + Si(4)
+    SiH(6) + [Si][SiH3](15) <=> H3SiSiH(2) + Si(4)
+    H3SiSiH(2) + SiH3(5) <=> SiH4(1) + [SiH][SiH2](13)
+    H3SiSiH(2) + SiH3(5) <=> SiH4(1) + [Si][SiH3](15)
+    H3SiSiH(2) + SiH(6) <=> SiH2(11) + [SiH][SiH2](13)
+    H3SiSiH(2) + SiH(6) <=> SiH2(11) + [Si][SiH3](15)
+    H3SiSiH(2) + H3SiSiH_T(9) <=> [SiH][SiH2](13) + [SiH2][SiH3](21)
+    H3SiSiH(2) + H3SiSiH_T(9) <=> [Si][SiH3](15) + [SiH2][SiH3](21)
+    H3SiSiH(2) + SiH2Si_T(10) <=> [SiH][SiH2](13) + [SiH]=[SiH2](16)
+    [Si][SiH3](15) + [SiH]=[SiH2](16) <=> H3SiSiH(2) + SiH2Si_T(10)
+    [SiH2][SiH2][SiH2][SiH2](22) <=> H2SiSiH2(3) + H2SiSiH2(3)
+    SiH(6) + [SiH]=[SiH2](16) <=> Si(4) + H2SiSiH2(3)
+    H2SiSiH2(3) + SiH3(5) <=> SiH4(1) + [SiH]=[SiH2](16)
+    SiH2(11) + [SiH]=[SiH2](16) <=> H2SiSiH2(3) + SiH(6)
+    [SiH2][Si][SiH2][SiH2](23) <=> H2SiSiH2(3) + SiH2Si(7)
+    [Si][SiH2][SiH2][SiH2](24) <=> H2SiSiH2(3) + SiH2Si(7)
+    [H](14) + [SiH2][SiH3](21) <=> H2SiSiH2(3) + H2(8)
+    H2SiSiH2(3) + H3SiSiH_T(9) <=> [SiH]=[SiH2](16) + [SiH2][SiH3](21)
+    [SiH]=[SiH2](16) + [SiH]=[SiH2](16) <=> H2SiSiH2(3) + SiH2Si_T(10)
+    SiH(6) + [SiH2](25) <=> Si(4) + SiH3(5)
+    SiH(6) + [Si]=[SiH](17) <=> Si(4) + SiH2Si(7)
+    SiH(6) + [H](14) <=> Si(4) + H2(8)
+    Si(4) + H3SiSiH_T(9) <=> SiH(6) + [SiH]=[SiH2](16)
+    SiH(6) + [SiH][SiH2](18) <=> Si(4) + H3SiSiH_T(9)
+    Si(4) + SiH2Si_T(10) <=> SiH(6) + [Si]#[SiH](26)
+    SiH(6) + [Si]=[SiH](19) <=> Si(4) + SiH2Si_T(10)
+    SiH(6) + [Si][SiH](20) <=> Si(4) + Si2H2(12)
+    SiH3(5) + SiH3(5) <=> SiH4(1) + [SiH2](25)
+    SiH3(5) + SiH3(5) <=> [SiH3][SiH3](27)
+    SiH2(11) + [SiH2](25) <=> SiH3(5) + SiH(6)
+    SiH3(5) + SiH2Si(7) <=> SiH4(1) + [Si]=[SiH](17)
+    SiH4(1) + [H](14) <=> SiH3(5) + H2(8)
+    SiH3(5) + H3SiSiH_T(9) <=> SiH4(1) + [SiH]=[SiH2](16)
+    [SiH2][SiH3](21) + [SiH2](25) <=> SiH3(5) + H3SiSiH_T(9)
+    SiH3(5) + H3SiSiH_T(9) <=> SiH4(1) + [SiH][SiH2](18)
+    SiH3(5) + SiH2Si_T(10) <=> SiH4(1) + [Si]#[SiH](26)
+    [SiH]=[SiH2](16) + [SiH2](25) <=> SiH3(5) + SiH2Si_T(10)
+    SiH3(5) + SiH2Si_T(10) <=> SiH4(1) + [Si]=[SiH](19)
+    SiH3(5) + Si2H2(12) <=> SiH4(1) + [Si][SiH](20)
+    SiH2(11) + [Si]=[SiH](17) <=> SiH(6) + SiH2Si(7)
+    SiH2(11) + [H](14) <=> SiH(6) + H2(8)
+    SiH(6) + H3SiSiH_T(9) <=> Si(4) + [SiH2][SiH3](21)
+    SiH2(11) + [SiH][SiH2](18) <=> SiH(6) + H3SiSiH_T(9)
+    SiH(6) + SiH2Si_T(10) <=> Si(4) + [SiH]=[SiH2](16)
+    SiH2(11) + [Si]=[SiH](19) <=> SiH(6) + SiH2Si_T(10)
+    SiH(6) + Si2H2(12) <=> SiH2(11) + [Si][SiH](20)
+    [SiH2][Si][Si][SiH2](28) <=> SiH2Si(7) + SiH2Si(7)
+    [Si][SiH2][Si][SiH2](29) <=> SiH2Si(7) + SiH2Si(7)
+    [Si][SiH2][SiH2][Si](30) <=> SiH2Si(7) + SiH2Si(7)
+    [H](14) + [Si][SiH3](15) <=> SiH2Si(7) + H2(8)
+    [SiH][SiH2](13) + [H](14) <=> SiH2Si(7) + H2(8)
+    SiH2Si(7) + H3SiSiH_T(9) <=> [Si]=[SiH](17) + [SiH2][SiH3](21)
+    [Si]=[SiH](17) + [SiH]=[SiH2](16) <=> SiH2Si(7) + SiH2Si_T(10)
+    H2(8) + H3SiSiH_T(9) <=> [H](14) + [SiH2][SiH3](21)
+    [H](14) + [SiH]=[SiH2](16) <=> H2(8) + SiH2Si_T(10)
+    H3SiSiH_T(9) + H3SiSiH_T(9) <=> [SiH]=[SiH2](16) + [SiH2][SiH3](21)
+    [SiH][SiH2](18) + [SiH2][SiH3](21) <=> H3SiSiH_T(9) + H3SiSiH_T(9)
+    H3SiSiH_T(9) + SiH2Si_T(10) <=> [SiH2][SiH3](21) + [Si]#[SiH](26)
+    H3SiSiH_T(9) + SiH2Si_T(10) <=> [SiH]=[SiH2](16) + [SiH]=[SiH2](16)
+    [SiH]=[SiH2](16) + [SiH][SiH2](18) <=> H3SiSiH_T(9) + SiH2Si_T(10)
+    H3SiSiH_T(9) + SiH2Si_T(10) <=> [Si]=[SiH](19) + [SiH2][SiH3](21)
+    H3SiSiH_T(9) + SiH2(11) <=> SiH(6) + [SiH2][SiH3](21)
+    H3SiSiH_T(9) + Si2H2(12) <=> [Si][SiH](20) + [SiH2][SiH3](21)
+    SiH3(5) + [SiH2][SiH3](21) <=> SiH4(1) + H3SiSiH_T(9)
+    SiH2Si_T(10) + SiH2Si_T(10) <=> [SiH]=[SiH2](16) + [Si]#[SiH](26)
+    [SiH]=[SiH2](16) + [Si]=[SiH](19) <=> SiH2Si_T(10) + SiH2Si_T(10)
+    SiH(6) + [SiH]=[SiH2](16) <=> SiH2Si_T(10) + SiH2(11)
+    [SiH]=[SiH2](16) + [Si][SiH](20) <=> SiH2Si_T(10) + Si2H2(12)
+    SiH3(5) + [SiH]=[SiH2](16) <=> SiH4(1) + SiH2Si_T(10)
+
+After model enlargement:
+    The model core has 16 species and 20 reactions
+    The model edge has 18 species and 79 reactions
+
+
+Completed initial enlarge edge step...
+Saving current model core to Chemkin file...
+Chemkin file contains 20 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 20 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 99 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 99 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 204.52 MB
+
+Conducting simulation of reaction system 1...
+At time 0.0000e+00 s, reached target termination time.
+    SiH4(1) conversion: nan       
+
+Saving current model core to Chemkin file...
+Chemkin file contains 20 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 20 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 99 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 99 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:21
+    Memory used: 205.08 MB
+
+
+MODEL GENERATION COMPLETED
+
+The final model core has 16 species and 20 reactions
+The final model edge has 18 species and 79 reactions
+
+RMG execution terminated at Thu Mar 31 11:57:25 2016

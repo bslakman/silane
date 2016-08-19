@@ -10,6 +10,31 @@ database(
 )
 
 # List of species
+
+######
+# species to explicitly allow the ring opening reaction
+species(
+    label='cSi3H6',
+    reactive=True,
+    structure=SMILES("[SiH2]1[SiH2][SiH2]1"),
+)
+
+species(
+    label='SiHSiH2SiH3',
+    reactive=True,
+    structure=adjacencyList("""
+1 Si u0 p1 c0 {2,S} {3,S}
+2 H  u0 p0 c0 {1,S}
+3 Si u0 p0 c0 {1,S} {4,S} {5,S} {6,S}
+4 H  u0 p0 c0 {3,S}
+5 H  u0 p0 c0 {3,S}
+6 Si u0 p0 c0 {3,S} {7,S} {8,S} {9,S}
+7 H  u0 p0 c0 {6,S}
+8 H  u0 p0 c0 {6,S}
+9 H  u0 p0 c0 {6,S}"""),
+)
+#####
+
 species(
     label='SiH4',
     reactive=True,
