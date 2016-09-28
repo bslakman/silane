@@ -124,12 +124,6 @@ H6Si3(21)
 8 H  u0 p0 c0 {3,S}
 9 H  u0 p0 c0 {3,S}
 
-Si2H2(19)
-1 Si u0 p1 c0 {2,S} {3,S}
-2 Si u0 p1 c0 {1,S} {4,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {2,S}
-
 H4Si3(20)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p0 c0 {1,S} {3,S} {6,S} {7,S}
@@ -139,7 +133,7 @@ H4Si3(20)
 6 H  u0 p0 c0 {2,S}
 7 H  u0 p0 c0 {2,S}
 
-H4Si3(35)
+H4Si3(34)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p0 c0 {1,S} {3,D} {7,S}
 3 Si u0 p0 c0 {1,S} {2,D} {6,S}
@@ -148,31 +142,37 @@ H4Si3(35)
 6 H  u0 p0 c0 {3,S}
 7 H  u0 p0 c0 {2,S}
 
-H2Si3(36)
+H2Si3(35)
 1 Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
 2 Si u0 p1 c0 {1,S} {3,S}
 3 Si u0 p1 c0 {1,S} {2,S}
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {1,S}
 
-Si3(38)
+Si3(37)
 1 Si u0 p1 c0 {2,S} {3,S}
 2 Si u0 p1 c0 {1,S} {3,S}
 3 Si u0 p1 c0 {1,S} {2,S}
 
-H2Si3(37)
+H2Si3(36)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
 2 Si u0 p0 c0 {1,D} {3,S} {5,S}
 3 Si u0 p1 c0 {1,S} {2,S}
 4 H  u0 p0 c0 {1,S}
 5 H  u0 p0 c0 {2,S}
 
-H2Si3(39)
+H2Si3(38)
 1 Si u0 p0 c0 {2,S} {3,D} {5,S}
 2 Si u0 p0 c0 {1,S} {3,D} {4,S}
 3 Si u0 p0 c0 {1,D} {2,D}
 4 H  u0 p0 c0 {2,S}
 5 H  u0 p0 c0 {1,S}
+
+Si2H2(19)
+1 Si u0 p1 c0 {2,S} {3,S}
+2 Si u0 p1 c0 {1,S} {4,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {2,S}
 
 H4Si3(32)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
@@ -183,12 +183,14 @@ H4Si3(32)
 6 H  u0 p0 c0 {2,S}
 7 H  u0 p0 c0 {3,S}
 
-H2Si3(41)
-1 Si u0 p0 c0 {2,S} {3,S} {4,D}
-2 Si u0 p1 c0 {1,S} {5,S}
-3 H  u0 p0 c0 {1,S}
-4 Si u0 p1 c0 {1,D}
-5 H  u0 p0 c0 {2,S}
+H4Si3(40)
+1 Si u0 p0 c0 {3,D} {5,S} {6,S}
+2 Si u0 p0 c0 {3,D} {4,S} {7,S}
+3 Si u0 p0 c0 {1,D} {2,D}
+4 H  u0 p0 c0 {2,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {2,S}
 
 H2Si3(43)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
@@ -202,23 +204,12 @@ Si3(44)
 2 Si u0 p1 c0 {1,D}
 3 Si u0 p1 c0 {1,D}
 
-H4Si3(40)
-1 Si u0 p0 c0 {3,D} {5,S} {6,S}
-2 Si u0 p0 c0 {3,D} {4,S} {7,S}
-3 Si u0 p0 c0 {1,D} {2,D}
-4 H  u0 p0 c0 {2,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {1,S}
-7 H  u0 p0 c0 {2,S}
-
-H4Si3(22)
-1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
-2 Si u0 p1 c0 {1,S} {3,S}
-3 Si u0 p1 c0 {2,S} {7,S}
+H2Si3(41)
+1 Si u0 p0 c0 {2,S} {3,D} {4,S}
+2 Si u0 p1 c0 {1,S} {5,S}
+3 Si u0 p1 c0 {1,D}
 4 H  u0 p0 c0 {1,S}
-5 H  u0 p0 c0 {1,S}
-6 H  u0 p0 c0 {1,S}
-7 H  u0 p0 c0 {3,S}
+5 H  u0 p0 c0 {2,S}
 
 Si3H8(12)
 1  Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
