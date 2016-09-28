@@ -75,7 +75,7 @@ species(
 )
 
 species(
-    label = '[SiH3][Si][SiH3](32)',
+    label = '[SiH3][Si][SiH3](31)',
     structure = SMILES('[SiH3][Si][SiH3]'),
     E0 = (318.795,'kJ/mol'),
     modes = [
@@ -124,7 +124,7 @@ species(
 )
 
 species(
-    label = '[SiH][SiH]=[SiH2](33)',
+    label = '[SiH][SiH]=[SiH2](32)',
     structure = SMILES('[SiH][SiH]=[SiH2]'),
     E0 = (491.995,'kJ/mol'),
     modes = [
@@ -247,7 +247,7 @@ transitionState(
 
 reaction(
     label = 'reaction2',
-    reactants = ['[SiH3][Si][SiH3](32)'],
+    reactants = ['[SiH3][Si][SiH3](31)'],
     products = ['[SiH2]=[SiH][SiH3](21)'],
     transitionState = 'TS1',
     kinetics = Arrhenius(A=(5.01e+12,'1/s'), n=0, Ea=(4.7,'kcal/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Matched reaction 4 H3SiSiSiH3 <=> SiH3Si2H4 in Silylene_to_Silene/training"""),
@@ -263,7 +263,7 @@ reaction(
 
 reaction(
     label = 'reaction4',
-    reactants = ['H2(11)', '[SiH][SiH]=[SiH2](33)'],
+    reactants = ['H2(11)', '[SiH][SiH]=[SiH2](32)'],
     products = ['[SiH2]=[SiH][SiH3](21)'],
     transitionState = 'TS3',
     kinetics = Arrhenius(A=(7.6e+12,'cm^3/(mol*s)'), n=0, Ea=(3.3472,'kJ/mol'), T0=(1,'K'), Tmin=(300,'K'), Tmax=(2000,'K'), comment="""Exact match found for rate rule (Si-Si-H;H_H)

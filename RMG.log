@@ -1,6 +1,6 @@
 Global RMG Settings:
    database.directory   = /Users/belinda/Code/RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Wed Sep 28 15:21:43 2016
+RMG execution initiated at Wed Sep 28 15:37:13 2016
 
 #########################################################
 # RMG-Py - Reaction Mechanism Generator in Python       #
@@ -144,7 +144,7 @@ species(
 
 # Reaction system
 simpleReactor(
-    temperature=(813,'K'),
+    temperature=(713,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
         "SiH4": 0.00016,
@@ -837,18 +837,18 @@ Chemkin file contains 34 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:07
-    Memory used: 135.61 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:08
+    Memory used: 136.34 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-15 s, species H2(11) exceeded the minimum rate for moving to model core
     Characteristic rate: 0.0000e+00 mol/m^3*s
-    H2(11) rate: 4.4258e-05 mol/m^3*s
+    H2(11) rate: 4.9812e-07 mol/m^3*s
     PDepNetwork #1 leak rate: 0.0000e+00 mol/m^3*s
     SiH4(3) conversion: 0         
 At time 1.0000e-15 s, species H2(11) exceeded the minimum rate for simulation interruption
     Characteristic rate: 0.0000e+00 mol/m^3*s
-    H2(11) rate: 4.4258e-05 mol/m^3*s
+    H2(11) rate: 4.9812e-07 mol/m^3*s
     PDepNetwork #1 leak rate: 0.0000e+00 mol/m^3*s
     SiH4(3) conversion: 0         
 
@@ -999,20 +999,20 @@ Chemkin file contains 42 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:09
-    Memory used: 134.43 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:10
+    Memory used: 135.01 MB
 
 Conducting simulation of reaction system 1...
-At time 3.3554e-08 s, species SiH2SiH2(13) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.6658e-05 mol/m^3*s
-    SiH2SiH2(13) rate: 1.0189e-08 mol/m^3*s (0.0001329)
-    PDepNetwork #7 leak rate: 1.0189e-08 mol/m^3*s (0.0001329)
-    SiH4(3) conversion: 1.609e-09 
-At time 3.3554e-08 s, species SiH2SiH2(13) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.6658e-05 mol/m^3*s
-    SiH2SiH2(13) rate: 1.0189e-08 mol/m^3*s (0.0001329)
-    PDepNetwork #7 leak rate: 1.0189e-08 mol/m^3*s (0.0001329)
-    SiH4(3) conversion: 1.609e-09 
+At time 6.7109e-08 s, species SiH2SiH2(13) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.6279e-07 mol/m^3*s
+    SiH2SiH2(13) rate: 1.7763e-10 mol/m^3*s (0.0002059)
+    PDepNetwork #7 leak rate: 1.7763e-10 mol/m^3*s (0.0002059)
+    SiH4(3) conversion: 3.178e-11 
+At time 6.7109e-08 s, species SiH2SiH2(13) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.6279e-07 mol/m^3*s
+    SiH2SiH2(13) rate: 1.7763e-10 mol/m^3*s (0.0002059)
+    PDepNetwork #7 leak rate: 1.7763e-10 mol/m^3*s (0.0002059)
+    SiH4(3) conversion: 3.178e-11 
 
 
 Adding species SiH2SiH2(13) to model core
@@ -1183,19 +1183,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:12
-    Memory used: 138.87 MB
+    Memory used: 139.36 MB
 
 Conducting simulation of reaction system 1...
-At time 1.3422e-07 s, PDepNetwork #21 exceeded the minimum rate for exploring
-    Characteristic rate: 7.6179e-05 mol/m^3*s
-    SiH2Si(16) rate: 1.4391e-09 mol/m^3*s (1.889e-05)
-    PDepNetwork #21 leak rate: 1.2105e-08 mol/m^3*s (0.0001589)
-    SiH4(3) conversion: 6.401e-09 
-At time 1.3422e-07 s, PDepNetwork #21 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.6179e-05 mol/m^3*s
-    SiH2Si(16) rate: 1.4391e-09 mol/m^3*s (1.889e-05)
-    PDepNetwork #21 leak rate: 1.2105e-08 mol/m^3*s (0.0001589)
-    SiH4(3) conversion: 6.401e-09 
+At time 2.6844e-07 s, PDepNetwork #21 exceeded the minimum rate for exploring
+    Characteristic rate: 8.6143e-07 mol/m^3*s
+    SiH2Si(16) rate: 6.3226e-12 mol/m^3*s (7.34e-06)
+    PDepNetwork #21 leak rate: 2.0140e-10 mol/m^3*s (0.0002338)
+    SiH4(3) conversion: 1.272e-10 
+At time 2.6844e-07 s, PDepNetwork #21 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.6143e-07 mol/m^3*s
+    SiH2Si(16) rate: 6.3226e-12 mol/m^3*s (7.34e-06)
+    PDepNetwork #21 leak rate: 2.0140e-10 mol/m^3*s (0.0002338)
+    SiH4(3) conversion: 1.272e-10 
 
 
 Exploring isomer SiH3SiH(8) in pressure-dependent network #21
@@ -1256,19 +1256,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:13
-    Memory used: 138.10 MB
+    Memory used: 138.57 MB
 
 Conducting simulation of reaction system 1...
-At time 3.3554e-07 s, species SiH2Si(16) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.6186e-05 mol/m^3*s
-    SiH2Si(16) rate: 8.3313e-09 mol/m^3*s (0.0001094)
-    PDepNetwork #10 leak rate: 1.2884e-17 mol/m^3*s (1.691e-13)
-    SiH4(3) conversion: 1.602e-08 
-At time 3.3554e-07 s, species SiH2Si(16) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.6186e-05 mol/m^3*s
-    SiH2Si(16) rate: 8.3313e-09 mol/m^3*s (0.0001094)
-    PDepNetwork #10 leak rate: 1.2884e-17 mol/m^3*s (1.691e-13)
-    SiH4(3) conversion: 1.602e-08 
+At time 1.6106e-06 s, species SiH2Si(16) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.6195e-07 mol/m^3*s
+    SiH2Si(16) rate: 1.8375e-10 mol/m^3*s (0.0002132)
+    PDepNetwork #10 leak rate: 1.5832e-20 mol/m^3*s (1.837e-14)
+    SiH4(3) conversion: 7.715e-10 
+At time 1.6106e-06 s, species SiH2Si(16) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.6195e-07 mol/m^3*s
+    SiH2Si(16) rate: 1.8375e-10 mol/m^3*s (0.0002132)
+    PDepNetwork #10 leak rate: 1.5832e-20 mol/m^3*s (1.837e-14)
+    SiH4(3) conversion: 7.715e-10 
 
 
 Adding species SiH2Si(16) to model core
@@ -1359,124 +1359,25 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:14
-    Memory used: 138.02 MB
+    Memory used: 138.66 MB
 
 Conducting simulation of reaction system 1...
-At time 8.7242e-07 s, species [Si]=[Si](28) exceeded the minimum rate for moving to model core
-    Characteristic rate: 7.6222e-05 mol/m^3*s
-    [Si]=[Si](28) rate: 1.3820e-08 mol/m^3*s (0.0001813)
-    PDepNetwork #24 leak rate: 6.5456e-09 mol/m^3*s (8.587e-05)
-    SiH4(3) conversion: 4.181e-08 
-At time 8.7242e-07 s, species [Si]=[Si](28) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.6222e-05 mol/m^3*s
-    [Si]=[Si](28) rate: 1.3820e-08 mol/m^3*s (0.0001813)
-    PDepNetwork #24 leak rate: 6.5456e-09 mol/m^3*s (8.587e-05)
-    SiH4(3) conversion: 4.181e-08 
-
-
-Adding species [Si]=[Si](28) to model core
-Exploring isomer SiH2SiH2(13) in pressure-dependent network #27
-Exploring isomer SiH3SiH(8) in pressure-dependent network #27
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-Updating 1 modified unimolecular reaction networks...
-========================================================================
-27 network information
-----------------------
-Isomers:
-    SiH2SiH2(13)                                          255.415 kJ/mol
-    SiH3SiH(8)                                            288.191 kJ/mol
-Reactant channels:
-    SiH2Si(16) + H2(11)                                   348.485 kJ/mol
-Product channels:
-    Si2H2(19) + H2(11)                                    433.015 kJ/mol
-Path reactions:
-    SiH2Si(16) + H2(11) <=> SiH2SiH2(13)                  348.485 kJ/mol
-    SiH3SiH(8) <=> SiH2SiH2(13)                           315.931 kJ/mol
-    Si2H2(19) + H2(11) <=> SiH3SiH(8)                     436.362 kJ/mol
-========================================================================
-
-Calculating densities of states for 27 network...
-Using 753 grains from 255.41 to 1103.22 kJ/mol in steps of 1.13 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for Si2H2(19) + H2(11) <=> SiH3SiH(8)...
-Using 250 grains from 255.41 to 536.96 kJ/mol in steps of 1.13 kJ/mol to compute the k(T,P) values at 302.47 K
-Using 250 grains from 255.41 to 543.83 kJ/mol in steps of 1.16 kJ/mol to compute the k(T,P) values at 323.145 K
-Using 250 grains from 255.41 to 559.37 kJ/mol in steps of 1.22 kJ/mol to compute the k(T,P) values at 369.86 K
-Using 250 grains from 255.41 to 588.01 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 455.987 K
-Using 250 grains from 255.41 to 639.12 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 609.649 K
-Using 250 grains from 255.41 to 730.78 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 885.262 K
-Using 303 grains from 255.41 to 887.20 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
-Using 390 grains from 255.41 to 1069.20 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
-
-
-Summary of Model Enlargement
----------------------------------
-Added 1 new core species
-    [Si]=[Si](28)
-Created 0 new edge species
-Moved 1 reactions from edge to core
-Added 1 new core reactions
-    SiH2Si(16) + H2(11) <=> SiH3SiH(8)
-Created 1 new edge reactions
-    SiH2Si(16) + H2(11) => Si2H2(19) + H2(11)
-
-After model enlargement:
-    The model core has 16 species and 14 reactions
-    The model edge has 18 species and 34 reactions
-
-
-Generating thermodynamics for new species...
-Resonance isomer 1 [Si][SiH]=[SiH2] gives H298=603019 J/mol
-Resonance isomer 2 [Si]=[SiH][SiH2] gives H298=844637 J/mol
-Generating kinetics for new reactions...
-For reaction SiH4(3) + [Si]=[Si](28) <=> [Si]=[SiH][SiH3](30), Ea raised from -1.9 to 208.1 kJ/mol to match endothermicity of reaction.
-For reaction SiH3(5) + [Si]=[Si](28) <=> [Si]=[SiH][SiH2](31) Ea raised from -1.9 to 0 kJ/mol.
-Updating 0 modified unimolecular reaction networks...
-
-
-Summary of Secondary Model Edge Enlargement
----------------------------------
-Added 0 new core species
-Created 1 new edge species
-    [Si]=[SiH][SiH2](31)
-Added 0 new core reactions
-Created 0 new edge reactions
-
-After model enlargement:
-    The model core has 16 species and 14 reactions
-    The model edge has 19 species and 34 reactions
-
-
-Saving current model core to Chemkin file...
-Chemkin file contains 14 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 14 reactions.
-Saving current model core and edge to Chemkin file...
-Chemkin file contains 48 reactions.
-Saving current core and edge to verbose Chemkin file...
-Chemkin file contains 48 reactions.
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:15
-    Memory used: 137.54 MB
-
-Conducting simulation of reaction system 1...
-At time 1.0000e-06 s, PDepNetwork #24 exceeded the minimum rate for exploring
-    Characteristic rate: 7.6254e-05 mol/m^3*s
-    Si2H2(19) rate: 2.1474e-13 mol/m^3*s (2.816e-09)
-    PDepNetwork #24 leak rate: 8.9537e-09 mol/m^3*s (0.0001174)
-    SiH4(3) conversion: 4.797e-08 
-At time 1.0000e-06 s, PDepNetwork #24 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 7.6254e-05 mol/m^3*s
-    Si2H2(19) rate: 2.1474e-13 mol/m^3*s (2.816e-09)
-    PDepNetwork #24 leak rate: 8.9537e-09 mol/m^3*s (0.0001174)
-    SiH4(3) conversion: 4.797e-08 
+At time 2.1475e-06 s, PDepNetwork #24 exceeded the minimum rate for exploring
+    Characteristic rate: 8.6239e-07 mol/m^3*s
+    [Si]=[Si](28) rate: 7.4797e-11 mol/m^3*s (8.673e-05)
+    PDepNetwork #24 leak rate: 1.5482e-10 mol/m^3*s (0.0001795)
+    SiH4(3) conversion: 1.033e-09 
+At time 2.1475e-06 s, PDepNetwork #24 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.6239e-07 mol/m^3*s
+    [Si]=[Si](28) rate: 7.4797e-11 mol/m^3*s (8.673e-05)
+    PDepNetwork #24 leak rate: 1.5482e-10 mol/m^3*s (0.0001795)
+    SiH4(3) conversion: 1.033e-09 
 
 
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #24
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #24
-Exploring isomer SiH2Si(16) in pressure-dependent network #30
+Exploring isomer SiH2SiH2(13) in pressure-dependent network #27
+Exploring isomer SiH3SiH(8) in pressure-dependent network #27
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 For reaction H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21) Ea raised from -1.9 to 0 kJ/mol.
@@ -1508,17 +1409,17 @@ Reactant channels:
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
 Product channels:
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
 Path reactions:
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
@@ -1530,6 +1431,205 @@ Path reactions:
 Calculating densities of states for 24 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
 Calculating phenomenological rate coefficients for SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)...
+Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 255 grains from 283.33 to 814.70 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 279 grains from 283.33 to 864.91 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 323 grains from 283.33 to 956.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 397 grains from 283.33 to 1111.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+27 network information
+----------------------
+Isomers:
+    SiH2SiH2(13)                                          255.415 kJ/mol
+    SiH3SiH(8)                                            288.191 kJ/mol
+Reactant channels:
+    SiH2Si(16) + H2(11)                                   348.485 kJ/mol
+Product channels:
+    Si2H2(19) + H2(11)                                    433.015 kJ/mol
+Path reactions:
+    SiH2Si(16) + H2(11) <=> SiH2SiH2(13)                  348.485 kJ/mol
+    SiH3SiH(8) <=> SiH2SiH2(13)                           315.931 kJ/mol
+    Si2H2(19) + H2(11) <=> SiH3SiH(8)                     436.362 kJ/mol
+========================================================================
+
+Calculating densities of states for 27 network...
+Using 753 grains from 255.41 to 1103.22 kJ/mol in steps of 1.13 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si2H2(19) + H2(11) <=> SiH3SiH(8)...
+Using 250 grains from 255.41 to 536.96 kJ/mol in steps of 1.13 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 255.41 to 543.83 kJ/mol in steps of 1.16 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 255.41 to 559.37 kJ/mol in steps of 1.22 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 255.41 to 588.01 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 255.41 to 639.12 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 250 grains from 255.41 to 730.78 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 303 grains from 255.41 to 887.20 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 390 grains from 255.41 to 1069.20 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    [SiH3][Si][SiH3](31)
+    [SiH][SiH]=[SiH2](32)
+Added 3 new core reactions
+    SiH4(3) + SiH2Si(16) <=> SiH2(7) + SiH3SiH(8)
+    SiH2Si(16) + H2(11) <=> SiH2SiH2(13)
+    SiH2Si(16) + H2(11) <=> SiH3SiH(8)
+Created 8 new edge reactions
+    SiH4(3) + SiH2Si(16) => [SiH2]=[SiH][SiH3](21)
+    SiH4(3) + SiH2Si(16) => [SiH3][Si][SiH3](31)
+    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH]=[SiH2](32)
+    SiH4(3) + SiH2Si(16) => H2(11) + [Si]=[SiH][SiH3](30)
+    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][Si][SiH3](22)
+    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH2][SiH](23)
+    SiH4(3) + SiH2Si(16) => SiH4(3) + Si2H2(19)
+    SiH2Si(16) + H2(11) => Si2H2(19) + H2(11)
+
+After model enlargement:
+    The model core has 15 species and 16 reactions
+    The model edge has 21 species and 42 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 16 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 16 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 58 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 58 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 147.05 MB
+
+Conducting simulation of reaction system 1...
+At time 2.6844e-06 s, species [Si]=[Si](28) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.6283e-07 mol/m^3*s
+    [Si]=[Si](28) rate: 1.4836e-10 mol/m^3*s (0.0001719)
+    PDepNetwork #24 leak rate: 1.3813e-12 mol/m^3*s (1.601e-06)
+    SiH4(3) conversion: 1.296e-09 
+At time 2.6844e-06 s, species [Si]=[Si](28) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.6283e-07 mol/m^3*s
+    [Si]=[Si](28) rate: 1.4836e-10 mol/m^3*s (0.0001719)
+    PDepNetwork #24 leak rate: 1.3813e-12 mol/m^3*s (1.601e-06)
+    SiH4(3) conversion: 1.296e-09 
+
+
+Adding species [Si]=[Si](28) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [Si]=[Si](28)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    SiH2Si(16) => H2(11) + [Si]=[Si](28)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 16 species and 17 reactions
+    The model edge has 20 species and 41 reactions
+
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [Si][SiH]=[SiH2] gives H298=603019 J/mol
+Resonance isomer 2 [Si]=[SiH][SiH2] gives H298=844637 J/mol
+Generating kinetics for new reactions...
+For reaction SiH4(3) + [Si]=[Si](28) <=> [Si]=[SiH][SiH3](30), Ea raised from -1.9 to 208.1 kJ/mol to match endothermicity of reaction.
+For reaction SiH3(5) + [Si]=[Si](28) <=> [Si]=[SiH][SiH2](33) Ea raised from -1.9 to 0 kJ/mol.
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 1 new edge species
+    [Si]=[SiH][SiH2](33)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 16 species and 17 reactions
+    The model edge has 21 species and 41 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 58 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 58 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 145.29 MB
+
+Conducting simulation of reaction system 1...
+At time 5.1065e-05 s, species [SiH3][Si][SiH3](31) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.9914e-07 mol/m^3*s
+    [SiH3][Si][SiH3](31) rate: 1.0790e-10 mol/m^3*s (0.000108)
+    PDepNetwork #24 leak rate: 1.0790e-10 mol/m^3*s (0.000108)
+    SiH4(3) conversion: 3.166e-08 
+At time 5.1065e-05 s, species [SiH3][Si][SiH3](31) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.9914e-07 mol/m^3*s
+    [SiH3][Si][SiH3](31) rate: 1.0790e-10 mol/m^3*s (0.000108)
+    PDepNetwork #24 leak rate: 1.0790e-10 mol/m^3*s (0.000108)
+    SiH4(3) conversion: 3.166e-08 
+
+
+Adding species [SiH3][Si][SiH3](31) to model core
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #24
+Exploring isomer SiH2Si(16) in pressure-dependent network #30
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 2 modified unimolecular reaction networks...
+========================================================================
+24 network information
+----------------------
+Isomers:
+    [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
+    SiHSiH2SiH3(2)                                        328.595 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
+Reactant channels:
+    SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
+    SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
+    SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
+Product channels:
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
+    H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
+    H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
+    SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
+Path reactions:
+    SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
+    SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
+    H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
+    SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
+    SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
+========================================================================
+
+Calculating densities of states for 24 network...
+Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -1567,114 +1667,14 @@ Using 346 grains from 357.09 to 1078.83 kJ/mol in steps of 2.09 kJ/mol to comput
 
 Summary of Model Enlargement
 ---------------------------------
-Added 0 new core species
-Created 2 new edge species
-    [SiH3][Si][SiH3](32)
-    [SiH][SiH]=[SiH2](33)
-Added 3 new core reactions
-    SiH4(3) + SiH2Si(16) <=> SiH2(7) + SiH2SiH2(13)
-    SiH4(3) + SiH2Si(16) <=> SiH2(7) + SiH3SiH(8)
-    H2(11) + [Si]=[Si](28) <=> SiH2Si(16)
-Created 8 new edge reactions
-    SiH4(3) + SiH2Si(16) => [SiH2]=[SiH][SiH3](21)
-    SiH4(3) + SiH2Si(16) => [SiH3][Si][SiH3](32)
-    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH]=[SiH2](33)
-    SiH4(3) + SiH2Si(16) => H2(11) + [Si]=[SiH][SiH3](30)
-    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][Si][SiH3](22)
-    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH2][SiH](23)
-    SiH4(3) + SiH2Si(16) => SiH4(3) + Si2H2(19)
-    H2(11) + [Si]=[Si](28) => Si2H2(19)
-
-After model enlargement:
-    The model core has 16 species and 17 reactions
-    The model edge has 21 species and 42 reactions
-
-
-Saving current model core to Chemkin file...
-Chemkin file contains 17 reactions.
-Saving current model to verbose Chemkin file...
-Chemkin file contains 17 reactions.
-Saving current model core and edge to Chemkin file...
-Chemkin file contains 59 reactions.
-Saving current core and edge to verbose Chemkin file...
-Chemkin file contains 59 reactions.
-Saving current model core to HTML file...
-Saving current model edge to HTML file...
-Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:17
-    Memory used: 144.11 MB
-
-Conducting simulation of reaction system 1...
-At time 1.2479e-01 s, species [SiH3][Si][SiH3](32) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.2679e-04 mol/m^3*s
-    [SiH3][Si][SiH3](32) rate: 1.2990e-08 mol/m^3*s (0.0001025)
-    PDepNetwork #24 leak rate: 1.2990e-08 mol/m^3*s (0.0001025)
-    SiH4(3) conversion: 0.0118    
-At time 1.2479e-01 s, species [SiH3][Si][SiH3](32) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.2679e-04 mol/m^3*s
-    [SiH3][Si][SiH3](32) rate: 1.2990e-08 mol/m^3*s (0.0001025)
-    PDepNetwork #24 leak rate: 1.2990e-08 mol/m^3*s (0.0001025)
-    SiH4(3) conversion: 0.0118    
-
-
-Adding species [SiH3][Si][SiH3](32) to model core
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #24
-Generating thermodynamics for new species...
-Generating kinetics for new reactions...
-Updating 1 modified unimolecular reaction networks...
-========================================================================
-24 network information
-----------------------
-Isomers:
-    [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
-    SiHSiH2SiH3(2)                                        328.595 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
-Reactant channels:
-    SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
-    SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
-    SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
-Product channels:
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
-    H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
-    H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
-    SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
-Path reactions:
-    SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
-    H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
-    SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
-    H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
-    SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
-    SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
-========================================================================
-
-Calculating densities of states for 24 network...
-Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
-Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
-Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
-Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
-Using 255 grains from 283.33 to 814.70 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
-Using 279 grains from 283.33 to 864.91 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
-Using 323 grains from 283.33 to 956.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
-Using 397 grains from 283.33 to 1111.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
-Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
-
-
-Summary of Model Enlargement
----------------------------------
 Added 1 new core species
-    [SiH3][Si][SiH3](32)
+    [SiH3][Si][SiH3](31)
 Created 0 new edge species
 Moved 1 reactions from edge to core
-    SiH4(3) + SiH2Si(16) <=> [SiH3][Si][SiH3](32)
-Added 0 new core reactions
-Created 0 new edge reactions
+Added 1 new core reactions
+    H2(11) + [Si]=[Si](28) <=> SiH2Si(16)
+Created 1 new edge reactions
+    H2(11) + [Si]=[Si](28) => Si2H2(19)
 
 After model enlargement:
     The model core has 17 species and 18 reactions
@@ -1683,25 +1683,25 @@ After model enlargement:
 
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
-For reaction H2(11) + [SiH3][Si][SiH3](32) <=> Si3H8(12) Ea raised from -2.1 to 0 kJ/mol.
+For reaction H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12) Ea raised from -2.1 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 ========================================================================
 31 network information
 ----------------------
 Isomers:
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
 Product channels:
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
 Path reactions:
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 31 network...
 Using 716 grains from 283.33 to 1154.13 kJ/mol in steps of 1.22 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 587.41 kJ/mol in steps of 1.22 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 594.29 kJ/mol in steps of 1.25 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 609.82 kJ/mol in steps of 1.31 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -1718,8 +1718,8 @@ Added 0 new core species
 Created 0 new edge species
 Added 0 new core reactions
 Created 2 new edge reactions
-    [SiH3][Si][SiH3](32) => [SiH2]=[SiH][SiH3](21)
-    [SiH3][Si][SiH3](32) => H2(11) + [SiH][Si][SiH3](22)
+    [SiH3][Si][SiH3](31) => [SiH2]=[SiH][SiH3](21)
+    [SiH3][Si][SiH3](31) => H2(11) + [SiH][Si][SiH3](22)
 
 After model enlargement:
     The model core has 17 species and 18 reactions
@@ -1737,30 +1737,30 @@ Chemkin file contains 61 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:19
-    Memory used: 154.54 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 147.39 MB
 
 Conducting simulation of reaction system 1...
-At time 1.8954e+00 s, species [SiH2]=[SiH][SiH3](21) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.5991e-04 mol/m^3*s
-    [SiH2]=[SiH][SiH3](21) rate: 1.6381e-08 mol/m^3*s (0.0001024)
-    PDepNetwork #30 leak rate: 2.5187e-09 mol/m^3*s (1.575e-05)
-    SiH4(3) conversion: 0.1599    
-At time 1.8954e+00 s, species [SiH2]=[SiH][SiH3](21) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.5991e-04 mol/m^3*s
-    [SiH2]=[SiH][SiH3](21) rate: 1.6381e-08 mol/m^3*s (0.0001024)
-    PDepNetwork #30 leak rate: 2.5187e-09 mol/m^3*s (1.575e-05)
-    SiH4(3) conversion: 0.1599    
+At time 1.0000e+01 s, species [SiH2]=[SiH][SiH3](21) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3558e-06 mol/m^3*s
+    [SiH2]=[SiH][SiH3](21) rate: 1.5198e-10 mol/m^3*s (0.0001121)
+    PDepNetwork #31 leak rate: 1.5948e-11 mol/m^3*s (1.176e-05)
+    SiH4(3) conversion: 0.009401  
+At time 1.0000e+01 s, species [SiH2]=[SiH][SiH3](21) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3558e-06 mol/m^3*s
+    [SiH2]=[SiH][SiH3](21) rate: 1.5198e-10 mol/m^3*s (0.0001121)
+    PDepNetwork #31 leak rate: 1.5948e-11 mol/m^3*s (1.176e-05)
+    SiH4(3) conversion: 0.009401  
 
 
 Adding species [SiH2]=[SiH][SiH3](21) to model core
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #2
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #2
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #2
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #16
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #16
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #16
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #22
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #22
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #22
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #22
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #31
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #31
 Generating thermodynamics for new species...
@@ -1772,7 +1772,7 @@ Updating 4 modified unimolecular reaction networks...
 Isomers:
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
@@ -1781,7 +1781,7 @@ Product channels:
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
 Path reactions:
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
@@ -1789,17 +1789,17 @@ Path reactions:
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
     SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 2 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -1814,7 +1814,7 @@ Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to comput
 Isomers:
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
@@ -1823,7 +1823,7 @@ Product channels:
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
 Path reactions:
     SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
@@ -1831,17 +1831,17 @@ Path reactions:
     H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 16 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -1856,34 +1856,34 @@ Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to comput
 Isomers:
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
     SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
 Product channels:
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
 Path reactions:
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
     H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
     SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 22 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -1896,7 +1896,7 @@ Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to comput
 31 network information
 ----------------------
 Isomers:
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
 Reactant channels:
@@ -1905,15 +1905,15 @@ Reactant channels:
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
 Product channels:
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
 Path reactions:
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
@@ -1943,30 +1943,30 @@ Added 1 new core species
 Created 0 new edge species
 Moved 4 reactions from edge to core
 Added 10 new core reactions
-    SiHSiH2SiH3(2) <=> [SiH3][Si][SiH3](32)
+    SiHSiH2SiH3(2) <=> [SiH3][Si][SiH3](31)
     SiH2(7) + SiH2SiH2(13) <=> SiHSiH2SiH3(2)
-    SiH2(7) + SiH3SiH(8) <=> [SiH3][Si][SiH3](32)
+    SiH2(7) + SiH3SiH(8) <=> [SiH3][Si][SiH3](31)
     SiH4(3) + SiH2Si(16) <=> SiHSiH2SiH3(2)
     SiH2(7) + SiH3SiH(8) <=> SiH2(7) + SiH2SiH2(13)
     SiH2(7) + SiH3SiH(8) <=> SiH4(3) + SiH2Si(16)
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)
-    SiH2(7) + SiH2SiH2(13) <=> [SiH3][Si][SiH3](32)
+    SiH2(7) + SiH2SiH2(13) <=> [SiH3][Si][SiH3](31)
     SiH2(7) + SiH2SiH2(13) <=> SiH4(3) + SiH2Si(16)
-    SiH4(3) + SiH2Si(16) <=> [SiH3][Si][SiH3](32)
+    SiH4(3) + SiH2Si(16) <=> [SiH3][Si][SiH3](31)
 Created 13 new edge reactions
-    SiHSiH2SiH3(2) => H2(11) + [SiH][SiH]=[SiH2](33)
+    SiHSiH2SiH3(2) => H2(11) + [SiH][SiH]=[SiH2](32)
     SiHSiH2SiH3(2) => H2(11) + [Si]=[SiH][SiH3](30)
-    SiH2(7) + SiH3SiH(8) => H2(11) + [SiH][SiH]=[SiH2](33)
+    SiH2(7) + SiH3SiH(8) => H2(11) + [SiH][SiH]=[SiH2](32)
     SiH2(7) + SiH3SiH(8) => H2(11) + [Si]=[SiH][SiH3](30)
-    SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][SiH]=[SiH2](33)
+    SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][SiH]=[SiH2](32)
     SiH2(7) + SiH2SiH2(13) => H2(11) + [Si]=[SiH][SiH3](30)
     SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][Si][SiH3](22)
     SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][SiH2][SiH](23)
     SiH2(7) + SiH2SiH2(13) => SiH4(3) + Si2H2(19)
-    [SiH3][Si][SiH3](32) => H2(11) + [SiH][SiH]=[SiH2](33)
-    [SiH3][Si][SiH3](32) => H2(11) + [Si]=[SiH][SiH3](30)
-    [SiH3][Si][SiH3](32) => H2(11) + [SiH][SiH2][SiH](23)
-    [SiH3][Si][SiH3](32) => SiH4(3) + Si2H2(19)
+    [SiH3][Si][SiH3](31) => H2(11) + [SiH][SiH]=[SiH2](32)
+    [SiH3][Si][SiH3](31) => H2(11) + [Si]=[SiH][SiH3](30)
+    [SiH3][Si][SiH3](31) => H2(11) + [SiH][SiH2][SiH](23)
+    [SiH3][Si][SiH3](31) => SiH4(3) + Si2H2(19)
 
 After model enlargement:
     The model core has 18 species and 28 reactions
@@ -1985,14 +1985,14 @@ Reactant channels:
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
     SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
 Product channels:
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
 Path reactions:
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
@@ -2009,10 +2009,10 @@ Using 279 grains from 283.33 to 864.91 kJ/mol in steps of 2.09 kJ/mol to compute
 Using 323 grains from 283.33 to 956.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
 Using 397 grains from 283.33 to 1111.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
 Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
-Warning: Forward and reverse PDepReactions for reaction [SiH2]=[SiH][SiH3](21) => [SiH3][Si][SiH3](32) generated from networks 33 and 31 do not satisfy thermodynamic consistency.
-Warning: [SiH2]=[SiH][SiH3](21) => [SiH3][Si][SiH3](32):
+Warning: Forward and reverse PDepReactions for reaction [SiH2]=[SiH][SiH3](21) => [SiH3][Si][SiH3](31) generated from networks 33 and 31 do not satisfy thermodynamic consistency.
+Warning: [SiH2]=[SiH][SiH3](21) => [SiH3][Si][SiH3](31):
 Warning: 1.40e+08 5.37e+06:
-Warning: [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21):
+Warning: [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21):
 Warning: 1.99e+10 7.64e+08:
 
 
@@ -2022,7 +2022,7 @@ Added 0 new core species
 Created 0 new edge species
 Added 0 new core reactions
 Created 2 new edge reactions
-    [SiH2]=[SiH][SiH3](21) => H2(11) + [SiH][SiH]=[SiH2](33)
+    [SiH2]=[SiH][SiH3](21) => H2(11) + [SiH][SiH]=[SiH2](32)
     [SiH2]=[SiH][SiH3](21) => H2(11) + [Si]=[SiH][SiH3](30)
 
 After model enlargement:
@@ -2041,23 +2041,23 @@ Chemkin file contains 82 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:25
-    Memory used: 149.08 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:26
+    Memory used: 151.64 MB
 
 Conducting simulation of reaction system 1...
-At time 1.7221e+00 s, PDepNetwork #33 exceeded the minimum rate for exploring
-    Characteristic rate: 1.6326e-04 mol/m^3*s
-    Si2H2(19) rate: 2.2401e-09 mol/m^3*s (1.372e-05)
-    PDepNetwork #33 leak rate: 1.6408e-08 mol/m^3*s (0.0001005)
-    SiH4(3) conversion: 0.1469    
-At time 1.7221e+00 s, PDepNetwork #33 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.6326e-04 mol/m^3*s
-    Si2H2(19) rate: 2.2401e-09 mol/m^3*s (1.372e-05)
-    PDepNetwork #33 leak rate: 1.6408e-08 mol/m^3*s (0.0001005)
-    SiH4(3) conversion: 0.1469    
+At time 6.4695e+00 s, PDepNetwork #33 exceeded the minimum rate for exploring
+    Characteristic rate: 1.3064e-06 mol/m^3*s
+    Si2H2(19) rate: 3.3298e-13 mol/m^3*s (2.549e-07)
+    PDepNetwork #33 leak rate: 1.4085e-10 mol/m^3*s (0.0001078)
+    SiH4(3) conversion: 0.006093  
+At time 6.4695e+00 s, PDepNetwork #33 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3064e-06 mol/m^3*s
+    Si2H2(19) rate: 3.3298e-13 mol/m^3*s (2.549e-07)
+    PDepNetwork #33 leak rate: 1.4085e-10 mol/m^3*s (0.0001078)
+    SiH4(3) conversion: 0.006093  
 
 
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #33
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #33
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #33
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
@@ -2066,7 +2066,7 @@ Updating 1 modified unimolecular reaction networks...
 33 network information
 ----------------------
 Isomers:
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
 Reactant channels:
@@ -2074,19 +2074,19 @@ Reactant channels:
     SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
 Product channels:
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
 Path reactions:
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
     H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
@@ -2133,19 +2133,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:27
-    Memory used: 149.25 MB
+    Memory used: 151.26 MB
 
 Conducting simulation of reaction system 1...
-At time 4.2834e+00 s, species Si2H2(19) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1729e-04 mol/m^3*s
-    Si2H2(19) rate: 1.2038e-08 mol/m^3*s (0.0001026)
-    PDepNetwork #30 leak rate: 1.1808e-08 mol/m^3*s (0.0001007)
-    SiH4(3) conversion: 0.3104    
-At time 4.2834e+00 s, species Si2H2(19) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1729e-04 mol/m^3*s
-    Si2H2(19) rate: 1.2038e-08 mol/m^3*s (0.0001026)
-    PDepNetwork #30 leak rate: 1.1808e-08 mol/m^3*s (0.0001007)
-    SiH4(3) conversion: 0.3104    
+At time 6.1165e+01 s, species Si2H2(19) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.8014e-06 mol/m^3*s
+    Si2H2(19) rate: 1.8910e-10 mol/m^3*s (0.000105)
+    PDepNetwork #30 leak rate: 1.8611e-10 mol/m^3*s (0.0001033)
+    SiH4(3) conversion: 0.05561   
+At time 6.1165e+01 s, species Si2H2(19) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.8014e-06 mol/m^3*s
+    Si2H2(19) rate: 1.8910e-10 mol/m^3*s (0.000105)
+    PDepNetwork #30 leak rate: 1.8611e-10 mol/m^3*s (0.0001033)
+    SiH4(3) conversion: 0.05561   
 
 
 Adding species Si2H2(19) to model core
@@ -2169,11 +2169,11 @@ Moved 13 reactions from edge to core
     SiH2(7) + SiH3SiH(8) => SiH4(3) + Si2H2(19)
     SiH2SiH2(13) => Si2H2(19) + H2(11)
     SiH2Si(16) => Si2H2(19)
-    SiH2Si(16) + H2(11) => Si2H2(19) + H2(11)
     SiH4(3) + SiH2Si(16) => SiH4(3) + Si2H2(19)
+    SiH2Si(16) + H2(11) => Si2H2(19) + H2(11)
     H2(11) + [Si]=[Si](28) => Si2H2(19)
     SiH2(7) + SiH2SiH2(13) => SiH4(3) + Si2H2(19)
-    [SiH3][Si][SiH3](32) => SiH4(3) + Si2H2(19)
+    [SiH3][Si][SiH3](31) => SiH4(3) + Si2H2(19)
     [SiH2]=[SiH][SiH3](21) => SiH4(3) + Si2H2(19)
 Added 0 new core reactions
 Created 0 new edge reactions
@@ -2243,25 +2243,25 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:28
-    Memory used: 140.57 MB
+    Memory used: 150.79 MB
 
 Conducting simulation of reaction system 1...
-At time 3.0746e+00 s, PDepNetwork #34 exceeded the minimum rate for exploring
-    Characteristic rate: 1.3711e-04 mol/m^3*s
-    [Si]1[SiH2][SiH2]1(20) rate: 4.7185e-10 mol/m^3*s (3.441e-06)
-    PDepNetwork #34 leak rate: 1.3904e-08 mol/m^3*s (0.0001014)
-    SiH4(3) conversion: 0.2401    
-At time 3.0746e+00 s, PDepNetwork #34 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.3711e-04 mol/m^3*s
-    [Si]1[SiH2][SiH2]1(20) rate: 4.7185e-10 mol/m^3*s (3.441e-06)
-    PDepNetwork #34 leak rate: 1.3904e-08 mol/m^3*s (0.0001014)
-    SiH4(3) conversion: 0.2401    
+At time 4.7905e+01 s, PDepNetwork #34 exceeded the minimum rate for exploring
+    Characteristic rate: 1.7292e-06 mol/m^3*s
+    [Si]1[SiH2][SiH2]1(20) rate: 2.7339e-11 mol/m^3*s (1.581e-05)
+    PDepNetwork #34 leak rate: 1.8856e-10 mol/m^3*s (0.000109)
+    SiH4(3) conversion: 0.04398   
+At time 4.7905e+01 s, PDepNetwork #34 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.7292e-06 mol/m^3*s
+    [Si]1[SiH2][SiH2]1(20) rate: 2.7339e-11 mol/m^3*s (1.581e-05)
+    PDepNetwork #34 leak rate: 1.8856e-10 mol/m^3*s (0.000109)
+    SiH4(3) conversion: 0.04398   
 
 
 Exploring isomer SiH2Si(16) in pressure-dependent network #34
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #35
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #35
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #35
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #35
 Exploring isomer SiH3SiH(8) in pressure-dependent network #38
 Exploring isomer SiH2SiH2(13) in pressure-dependent network #38
 Generating thermodynamics for new species...
@@ -2298,7 +2298,7 @@ Using 346 grains from 357.09 to 1078.83 kJ/mol in steps of 2.09 kJ/mol to comput
 Isomers:
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
     SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
@@ -2307,7 +2307,7 @@ Reactant channels:
 Product channels:
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
 Path reactions:
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
@@ -2315,17 +2315,17 @@ Path reactions:
     H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
     SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 35 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -2376,7 +2376,7 @@ Added 0 new core reactions
 Created 4 new edge reactions
     SiH4(3) + Si2H2(19) => H2(11) + [SiH][Si][SiH3](22)
     SiH4(3) + Si2H2(19) => H2(11) + [SiH][SiH2][SiH](23)
-    SiH4(3) + Si2H2(19) => H2(11) + [SiH][SiH]=[SiH2](33)
+    SiH4(3) + Si2H2(19) => H2(11) + [SiH][SiH]=[SiH2](32)
     SiH4(3) + Si2H2(19) => H2(11) + [Si]=[SiH][SiH3](30)
 
 After model enlargement:
@@ -2396,19 +2396,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:31
-    Memory used: 149.50 MB
+    Memory used: 151.18 MB
 
 Conducting simulation of reaction system 1...
-At time 2.6382e+01 s, species [Si]1[SiH2][SiH2]1(20) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.6415e-05 mol/m^3*s
-    [Si]1[SiH2][SiH2]1(20) rate: 1.6475e-09 mol/m^3*s (0.0001004)
-    PDepNetwork #28 leak rate: 4.6203e-12 mol/m^3*s (2.815e-07)
-    SiH4(3) conversion: 0.7792    
-At time 2.6382e+01 s, species [Si]1[SiH2][SiH2]1(20) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.6415e-05 mol/m^3*s
-    [Si]1[SiH2][SiH2]1(20) rate: 1.6475e-09 mol/m^3*s (0.0001004)
-    PDepNetwork #28 leak rate: 4.6203e-12 mol/m^3*s (2.815e-07)
-    SiH4(3) conversion: 0.7792    
+At time 9.9911e+01 s, species [Si]1[SiH2][SiH2]1(20) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.8737e-06 mol/m^3*s
+    [Si]1[SiH2][SiH2]1(20) rate: 2.0010e-10 mol/m^3*s (0.0001068)
+    PDepNetwork #28 leak rate: 2.3132e-14 mol/m^3*s (1.235e-08)
+    SiH4(3) conversion: 0.08803   
+At time 9.9911e+01 s, species [Si]1[SiH2][SiH2]1(20) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.8737e-06 mol/m^3*s
+    [Si]1[SiH2][SiH2]1(20) rate: 2.0010e-10 mol/m^3*s (0.0001068)
+    PDepNetwork #28 leak rate: 2.3132e-14 mol/m^3*s (1.235e-08)
+    SiH4(3) conversion: 0.08803   
 
 
 Adding species [Si]1[SiH2][SiH2]1(20) to model core
@@ -2492,19 +2492,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:32
-    Memory used: 147.54 MB
+    Memory used: 152.01 MB
 
 Conducting simulation of reaction system 1...
-At time 1.2084e-03 s, species [SiH]1=[SiH][SiH2]1(35) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1177e-04 mol/m^3*s
-    [SiH]1=[SiH][SiH2]1(35) rate: 1.2874e-08 mol/m^3*s (0.0001152)
-    PDepNetwork #39 leak rate: 1.2874e-08 mol/m^3*s (0.0001152)
-    SiH4(3) conversion: 0.0001116 
-At time 1.2084e-03 s, species [SiH]1=[SiH][SiH2]1(35) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1177e-04 mol/m^3*s
-    [SiH]1=[SiH][SiH2]1(35) rate: 1.2874e-08 mol/m^3*s (0.0001152)
-    PDepNetwork #39 leak rate: 1.2874e-08 mol/m^3*s (0.0001152)
-    SiH4(3) conversion: 0.0001116 
+At time 5.4908e-03 s, species [SiH]1=[SiH][SiH2]1(35) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2388e-06 mol/m^3*s
+    [SiH]1=[SiH][SiH2]1(35) rate: 1.7134e-10 mol/m^3*s (0.0001383)
+    PDepNetwork #39 leak rate: 1.7134e-10 mol/m^3*s (0.0001383)
+    SiH4(3) conversion: 5.158e-06 
+At time 5.4908e-03 s, species [SiH]1=[SiH][SiH2]1(35) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2388e-06 mol/m^3*s
+    [SiH]1=[SiH][SiH2]1(35) rate: 1.7134e-10 mol/m^3*s (0.0001383)
+    PDepNetwork #39 leak rate: 1.7134e-10 mol/m^3*s (0.0001383)
+    SiH4(3) conversion: 5.158e-06 
 
 
 Adding species [SiH]1=[SiH][SiH2]1(35) to model core
@@ -2639,19 +2639,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:35
-    Memory used: 140.33 MB
+    Memory used: 151.36 MB
 
 Conducting simulation of reaction system 1...
-At time 8.0472e-02 s, PDepNetwork #41 exceeded the minimum rate for exploring
-    Characteristic rate: 1.2118e-04 mol/m^3*s
-    [Si]1[Si][SiH2]1(36) rate: 8.5754e-09 mol/m^3*s (7.077e-05)
-    PDepNetwork #41 leak rate: 1.3014e-08 mol/m^3*s (0.0001074)
-    SiH4(3) conversion: 0.007628  
-At time 8.0472e-02 s, PDepNetwork #41 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.2118e-04 mol/m^3*s
-    [Si]1[Si][SiH2]1(36) rate: 8.5754e-09 mol/m^3*s (7.077e-05)
-    PDepNetwork #41 leak rate: 1.3014e-08 mol/m^3*s (0.0001074)
-    SiH4(3) conversion: 0.007628  
+At time 4.0019e-01 s, PDepNetwork #41 exceeded the minimum rate for exploring
+    Characteristic rate: 1.2424e-06 mol/m^3*s
+    [Si]1[Si][SiH2]1(36) rate: 1.8606e-11 mol/m^3*s (1.498e-05)
+    PDepNetwork #41 leak rate: 1.4696e-10 mol/m^3*s (0.0001183)
+    SiH4(3) conversion: 0.000378  
+At time 4.0019e-01 s, PDepNetwork #41 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2424e-06 mol/m^3*s
+    [Si]1[Si][SiH2]1(36) rate: 1.8606e-11 mol/m^3*s (1.498e-05)
+    PDepNetwork #41 leak rate: 1.4696e-10 mol/m^3*s (0.0001183)
+    SiH4(3) conversion: 0.000378  
 
 
 Exploring isomer [Si]1[SiH2][SiH2]1(20) in pressure-dependent network #41
@@ -2712,19 +2712,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:36
-    Memory used: 139.13 MB
+    Memory used: 150.48 MB
 
 Conducting simulation of reaction system 1...
-At time 1.0000e-01 s, species [Si]1[Si][SiH2]1(36) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.2503e-04 mol/m^3*s
-    [Si]1[Si][SiH2]1(36) rate: 1.4000e-08 mol/m^3*s (0.000112)
-    PDepNetwork #11 leak rate: 1.2282e-12 mol/m^3*s (9.824e-09)
-    SiH4(3) conversion: 0.009471  
-At time 1.0000e-01 s, species [Si]1[Si][SiH2]1(36) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.2503e-04 mol/m^3*s
-    [Si]1[Si][SiH2]1(36) rate: 1.4000e-08 mol/m^3*s (0.000112)
-    PDepNetwork #11 leak rate: 1.2282e-12 mol/m^3*s (9.824e-09)
-    SiH4(3) conversion: 0.009471  
+At time 2.0655e+00 s, species [Si]1[Si][SiH2]1(36) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2585e-06 mol/m^3*s
+    [Si]1[Si][SiH2]1(36) rate: 1.4603e-10 mol/m^3*s (0.000116)
+    PDepNetwork #28 leak rate: 6.0219e-17 mol/m^3*s (4.785e-11)
+    SiH4(3) conversion: 0.00195   
+At time 2.0655e+00 s, species [Si]1[Si][SiH2]1(36) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2585e-06 mol/m^3*s
+    [Si]1[Si][SiH2]1(36) rate: 1.4603e-10 mol/m^3*s (0.000116)
+    PDepNetwork #28 leak rate: 6.0219e-17 mol/m^3*s (4.785e-11)
+    SiH4(3) conversion: 0.00195   
 
 
 Adding species [Si]1[Si][SiH2]1(36) to model core
@@ -2806,20 +2806,20 @@ Chemkin file contains 96 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:37
-    Memory used: 135.22 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:36
+    Memory used: 137.59 MB
 
 Conducting simulation of reaction system 1...
-At time 2.1468e-04 s, species [Si]1[Si][Si]1(38) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.0878e-04 mol/m^3*s
-    [Si]1[Si][Si]1(38) rate: 1.1694e-08 mol/m^3*s (0.0001075)
-    PDepNetwork #42 leak rate: 1.1381e-13 mol/m^3*s (1.046e-09)
-    SiH4(3) conversion: 1.715e-05 
-At time 2.1468e-04 s, species [Si]1[Si][Si]1(38) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.0878e-04 mol/m^3*s
-    [Si]1[Si][Si]1(38) rate: 1.1694e-08 mol/m^3*s (0.0001075)
-    PDepNetwork #42 leak rate: 1.1381e-13 mol/m^3*s (1.046e-09)
-    SiH4(3) conversion: 1.715e-05 
+At time 1.2837e-03 s, species [Si]1[Si][Si]1(38) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2387e-06 mol/m^3*s
+    [Si]1[Si][Si]1(38) rate: 1.6642e-10 mol/m^3*s (0.0001343)
+    PDepNetwork #42 leak rate: 1.0041e-15 mol/m^3*s (8.106e-10)
+    SiH4(3) conversion: 1.183e-06 
+At time 1.2837e-03 s, species [Si]1[Si][Si]1(38) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2387e-06 mol/m^3*s
+    [Si]1[Si][Si]1(38) rate: 1.6642e-10 mol/m^3*s (0.0001343)
+    PDepNetwork #42 leak rate: 1.0041e-15 mol/m^3*s (8.106e-10)
+    SiH4(3) conversion: 1.183e-06 
 
 
 Adding species [Si]1[Si][Si]1(38) to model core
@@ -2902,19 +2902,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:38
-    Memory used: 134.22 MB
+    Memory used: 136.29 MB
 
 Conducting simulation of reaction system 1...
-At time 3.6623e-01 s, PDepNetwork #44 exceeded the minimum rate for exploring
-    Characteristic rate: 1.5238e-04 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 1.3406e-11 mol/m^3*s (8.798e-08)
-    PDepNetwork #44 leak rate: 1.5328e-08 mol/m^3*s (0.0001006)
-    SiH4(3) conversion: 0.03418   
-At time 3.6623e-01 s, PDepNetwork #44 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.5238e-04 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 1.3406e-11 mol/m^3*s (8.798e-08)
-    PDepNetwork #44 leak rate: 1.5328e-08 mol/m^3*s (0.0001006)
-    SiH4(3) conversion: 0.03418   
+At time 5.3092e+00 s, PDepNetwork #44 exceeded the minimum rate for exploring
+    Characteristic rate: 1.2932e-06 mol/m^3*s
+    [Si]1[SiH]=[SiH]1(37) rate: 2.5596e-14 mol/m^3*s (1.979e-08)
+    PDepNetwork #44 leak rate: 1.6685e-10 mol/m^3*s (0.000129)
+    SiH4(3) conversion: 0.005004  
+At time 5.3092e+00 s, PDepNetwork #44 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2932e-06 mol/m^3*s
+    [Si]1[SiH]=[SiH]1(37) rate: 2.5596e-14 mol/m^3*s (1.979e-08)
+    PDepNetwork #44 leak rate: 1.6685e-10 mol/m^3*s (0.000129)
+    SiH4(3) conversion: 0.005004  
 
 
 Exploring isomer [Si]1[Si][SiH2]1(36) in pressure-dependent network #44
@@ -2972,20 +2972,20 @@ Chemkin file contains 98 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:39
-    Memory used: 134.50 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:38
+    Memory used: 138.54 MB
 
 Conducting simulation of reaction system 1...
-At time 9.1259e+00 s, species [Si]1[SiH]=[SiH]1(37) exceeded the minimum rate for moving to model core
-    Characteristic rate: 6.6927e-05 mol/m^3*s
-    [Si]1[SiH]=[SiH]1(37) rate: 6.8617e-09 mol/m^3*s (0.0001025)
-    PDepNetwork #44 leak rate: 6.4127e-09 mol/m^3*s (9.582e-05)
-    SiH4(3) conversion: 0.5086    
-At time 9.1259e+00 s, species [Si]1[SiH]=[SiH]1(37) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 6.6927e-05 mol/m^3*s
-    [Si]1[SiH]=[SiH]1(37) rate: 6.8617e-09 mol/m^3*s (0.0001025)
-    PDepNetwork #44 leak rate: 6.4127e-09 mol/m^3*s (9.582e-05)
-    SiH4(3) conversion: 0.5086    
+At time 7.9380e+01 s, species [Si]1[SiH]=[SiH]1(37) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.8568e-06 mol/m^3*s
+    [Si]1[SiH]=[SiH]1(37) rate: 2.0146e-10 mol/m^3*s (0.0001085)
+    PDepNetwork #44 leak rate: 1.8375e-10 mol/m^3*s (9.896e-05)
+    SiH4(3) conversion: 0.07115   
+At time 7.9380e+01 s, species [Si]1[SiH]=[SiH]1(37) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.8568e-06 mol/m^3*s
+    [Si]1[SiH]=[SiH]1(37) rate: 2.0146e-10 mol/m^3*s (0.0001085)
+    PDepNetwork #44 leak rate: 1.8375e-10 mol/m^3*s (9.896e-05)
+    SiH4(3) conversion: 0.07115   
 
 
 Adding species [Si]1[SiH]=[SiH]1(37) to model core
@@ -3143,20 +3143,20 @@ Chemkin file contains 101 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:41
-    Memory used: 137.86 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:40
+    Memory used: 138.41 MB
 
 Conducting simulation of reaction system 1...
-At time 5.2088e-03 s, species [Si]1=[SiH][SiH]=1(39) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1219e-04 mol/m^3*s
-    [Si]1=[SiH][SiH]=1(39) rate: 1.3635e-08 mol/m^3*s (0.0001215)
-    PDepNetwork #45 leak rate: 1.3635e-08 mol/m^3*s (0.0001215)
-    SiH4(3) conversion: 0.0004924 
-At time 5.2088e-03 s, species [Si]1=[SiH][SiH]=1(39) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1219e-04 mol/m^3*s
-    [Si]1=[SiH][SiH]=1(39) rate: 1.3635e-08 mol/m^3*s (0.0001215)
-    PDepNetwork #45 leak rate: 1.3635e-08 mol/m^3*s (0.0001215)
-    SiH4(3) conversion: 0.0004924 
+At time 2.1864e-02 s, species [Si]1=[SiH][SiH]=1(39) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]1=[SiH][SiH]=1(39) rate: 1.3430e-10 mol/m^3*s (0.0001084)
+    PDepNetwork #45 leak rate: 1.3430e-10 mol/m^3*s (0.0001084)
+    SiH4(3) conversion: 2.063e-05 
+At time 2.1864e-02 s, species [Si]1=[SiH][SiH]=1(39) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]1=[SiH][SiH]=1(39) rate: 1.3430e-10 mol/m^3*s (0.0001084)
+    PDepNetwork #45 leak rate: 1.3430e-10 mol/m^3*s (0.0001084)
+    SiH4(3) conversion: 2.063e-05 
 
 
 Adding species [Si]1=[SiH][SiH]=1(39) to model core
@@ -3305,19 +3305,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:43
-    Memory used: 145.21 MB
+    Memory used: 142.32 MB
 
 Conducting simulation of reaction system 1...
-At time 2.5446e+01 s, PDepNetwork #47 exceeded the minimum rate for exploring
-    Characteristic rate: 1.7423e-05 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 7.5860e-10 mol/m^3*s (4.354e-05)
-    PDepNetwork #47 leak rate: 1.7562e-09 mol/m^3*s (0.0001008)
-    SiH4(3) conversion: 0.7718    
-At time 2.5446e+01 s, PDepNetwork #47 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.7423e-05 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 7.5860e-10 mol/m^3*s (4.354e-05)
-    PDepNetwork #47 leak rate: 1.7562e-09 mol/m^3*s (0.0001008)
-    SiH4(3) conversion: 0.7718    
+At time 2.4532e+02 s, PDepNetwork #47 exceeded the minimum rate for exploring
+    Characteristic rate: 1.5648e-06 mol/m^3*s
+    [SiH][SiH]=[SiH2](32) rate: 8.7781e-11 mol/m^3*s (5.61e-05)
+    PDepNetwork #47 leak rate: 1.5696e-10 mol/m^3*s (0.0001003)
+    SiH4(3) conversion: 0.1908    
+At time 2.4532e+02 s, PDepNetwork #47 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5648e-06 mol/m^3*s
+    [SiH][SiH]=[SiH2](32) rate: 8.7781e-11 mol/m^3*s (5.61e-05)
+    PDepNetwork #47 leak rate: 1.5696e-10 mol/m^3*s (0.0001003)
+    SiH4(3) conversion: 0.1908    
 
 
 Exploring isomer [Si]1[SiH]=[SiH]1(37) in pressure-dependent network #47
@@ -3383,23 +3383,23 @@ Chemkin file contains 101 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:45
-    Memory used: 143.43 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:44
+    Memory used: 140.59 MB
 
 Conducting simulation of reaction system 1...
-At time 5.0215e+01 s, species [SiH][SiH]=[SiH2](33) exceeded the minimum rate for moving to model core
-    Characteristic rate: 5.1168e-06 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 5.1412e-10 mol/m^3*s (0.0001005)
-    PDepNetwork #28 leak rate: 2.7981e-12 mol/m^3*s (5.468e-07)
-    SiH4(3) conversion: 0.8822    
-At time 5.0215e+01 s, species [SiH][SiH]=[SiH2](33) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 5.1168e-06 mol/m^3*s
-    [SiH][SiH]=[SiH2](33) rate: 5.1412e-10 mol/m^3*s (0.0001005)
-    PDepNetwork #28 leak rate: 2.7981e-12 mol/m^3*s (5.468e-07)
-    SiH4(3) conversion: 0.8822    
+At time 3.2513e+02 s, species [SiH][SiH]=[SiH2](32) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3781e-06 mol/m^3*s
+    [SiH][SiH]=[SiH2](32) rate: 1.3981e-10 mol/m^3*s (0.0001015)
+    PDepNetwork #32 leak rate: 2.8387e-13 mol/m^3*s (2.06e-07)
+    SiH4(3) conversion: 0.2372    
+At time 3.2513e+02 s, species [SiH][SiH]=[SiH2](32) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3781e-06 mol/m^3*s
+    [SiH][SiH]=[SiH2](32) rate: 1.3981e-10 mol/m^3*s (0.0001015)
+    PDepNetwork #32 leak rate: 2.8387e-13 mol/m^3*s (2.06e-07)
+    SiH4(3) conversion: 0.2372    
 
 
-Adding species [SiH][SiH]=[SiH2](33) to model core
+Adding species [SiH][SiH]=[SiH2](32) to model core
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 Updating 0 modified unimolecular reaction networks...
@@ -3408,16 +3408,16 @@ Updating 0 modified unimolecular reaction networks...
 Summary of Model Enlargement
 ---------------------------------
 Added 1 new core species
-    [SiH][SiH]=[SiH2](33)
+    [SiH][SiH]=[SiH2](32)
 Created 0 new edge species
 Moved 7 reactions from edge to core
-    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH]=[SiH2](33)
-    SiHSiH2SiH3(2) => H2(11) + [SiH][SiH]=[SiH2](33)
-    SiH2(7) + SiH3SiH(8) => H2(11) + [SiH][SiH]=[SiH2](33)
-    SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][SiH]=[SiH2](33)
-    [SiH3][Si][SiH3](32) => H2(11) + [SiH][SiH]=[SiH2](33)
-    [SiH2]=[SiH][SiH3](21) => H2(11) + [SiH][SiH]=[SiH2](33)
-    SiH4(3) + Si2H2(19) => H2(11) + [SiH][SiH]=[SiH2](33)
+    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][SiH]=[SiH2](32)
+    SiHSiH2SiH3(2) => H2(11) + [SiH][SiH]=[SiH2](32)
+    SiH2(7) + SiH3SiH(8) => H2(11) + [SiH][SiH]=[SiH2](32)
+    SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][SiH]=[SiH2](32)
+    [SiH3][Si][SiH3](31) => H2(11) + [SiH][SiH]=[SiH2](32)
+    [SiH2]=[SiH][SiH3](21) => H2(11) + [SiH][SiH]=[SiH2](32)
+    SiH4(3) + Si2H2(19) => H2(11) + [SiH][SiH]=[SiH2](32)
 Added 0 new core reactions
 Created 0 new edge reactions
 
@@ -3428,7 +3428,7 @@ After model enlargement:
 
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
-For reaction H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33) Ea raised from -1.9 to 0 kJ/mol.
+For reaction H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32) Ea raised from -1.9 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: Statmech node 'R!Hx0' and all its parents have data = None
 Warning: Statmech node 'R!Hx0' and all its parents have data = None
@@ -3438,7 +3438,7 @@ Warning: Maximum number of iterations reached when fitting spectral data for [Si
 48 network information
 ----------------------
 Isomers:
-    [SiH][SiH]=[SiH2](33)                                 491.995 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
 Reactant channels:
 Product channels:
     [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
@@ -3446,15 +3446,15 @@ Product channels:
     [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
     H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
 Path reactions:
-    [SiH][SiH]=[SiH2](33) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
-    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](33)         511.738 kJ/mol
-    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](33)        586.274 kJ/mol
-    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
 ========================================================================
 
 Calculating densities of states for 48 network...
 Using 620 grains from 304.66 to 1252.76 kJ/mol in steps of 1.53 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)...
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)...
 Using 250 grains from 304.66 to 686.87 kJ/mol in steps of 1.53 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 304.66 to 693.75 kJ/mol in steps of 1.56 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 304.66 to 709.28 kJ/mol in steps of 1.62 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -3473,10 +3473,10 @@ Created 2 new edge species
     [Si]=[SiH][SiH](41)
 Added 0 new core reactions
 Created 4 new edge reactions
-    [SiH][SiH]=[SiH2](33) => [SiH2]=[Si]=[SiH2](40)
-    [SiH][SiH]=[SiH2](33) => [SiH][Si][SiH3](22)
-    [SiH][SiH]=[SiH2](33) => [SiH][SiH2][SiH](23)
-    [SiH][SiH]=[SiH2](33) => H2(11) + [Si]=[SiH][SiH](41)
+    [SiH][SiH]=[SiH2](32) => [SiH2]=[Si]=[SiH2](40)
+    [SiH][SiH]=[SiH2](32) => [SiH][Si][SiH3](22)
+    [SiH][SiH]=[SiH2](32) => [SiH][SiH2][SiH](23)
+    [SiH][SiH]=[SiH2](32) => H2(11) + [Si]=[SiH][SiH](41)
 
 After model enlargement:
     The model core has 26 species and 61 reactions
@@ -3494,26 +3494,26 @@ Chemkin file contains 105 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:46
-    Memory used: 143.27 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:45
+    Memory used: 137.27 MB
 
 Conducting simulation of reaction system 1...
-At time 2.0281e-04 s, PDepNetwork #48 exceeded the minimum rate for exploring
-    Characteristic rate: 1.0828e-04 mol/m^3*s
-    [SiH][Si][SiH3](22) rate: 1.0093e-08 mol/m^3*s (9.321e-05)
-    PDepNetwork #48 leak rate: 1.1007e-08 mol/m^3*s (0.0001016)
-    SiH4(3) conversion: 1.605e-05 
-At time 2.0281e-04 s, PDepNetwork #48 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.0828e-04 mol/m^3*s
-    [SiH][Si][SiH3](22) rate: 1.0093e-08 mol/m^3*s (9.321e-05)
-    PDepNetwork #48 leak rate: 1.1007e-08 mol/m^3*s (0.0001016)
-    SiH4(3) conversion: 1.605e-05 
+At time 1.3152e-03 s, PDepNetwork #48 exceeded the minimum rate for exploring
+    Characteristic rate: 1.2387e-06 mol/m^3*s
+    [SiH][Si][SiH3](22) rate: 1.1910e-10 mol/m^3*s (9.615e-05)
+    PDepNetwork #48 leak rate: 1.3175e-10 mol/m^3*s (0.0001064)
+    SiH4(3) conversion: 1.213e-06 
+At time 1.3152e-03 s, PDepNetwork #48 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2387e-06 mol/m^3*s
+    [SiH][Si][SiH3](22) rate: 1.1910e-10 mol/m^3*s (9.615e-05)
+    PDepNetwork #48 leak rate: 1.3175e-10 mol/m^3*s (0.0001064)
+    SiH4(3) conversion: 1.213e-06 
 
 
 Exploring isomer [SiH][Si][SiH3](22) in pressure-dependent network #48
 Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #49
 Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #49
-Exploring isomer [SiH3][Si][SiH3](32) in pressure-dependent network #49
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #49
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 Updating 2 modified unimolecular reaction networks...
@@ -3526,7 +3526,7 @@ Warning: Maximum number of iterations reached when fitting spectral data for [Si
 ----------------------
 Isomers:
     [SiH][Si][SiH3](22)                                   492.073 kJ/mol
-    [SiH][SiH]=[SiH2](33)                                 491.995 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
 Reactant channels:
 Product channels:
     [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
@@ -3535,10 +3535,10 @@ Product channels:
     [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
     H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
 Path reactions:
-    [SiH][SiH]=[SiH2](33) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
-    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](33)         511.738 kJ/mol
-    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](33)        586.274 kJ/mol
-    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
     [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
     H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
 ========================================================================
@@ -3560,9 +3560,9 @@ Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to comput
 Isomers:
     [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
     SiHSiH2SiH3(2)                                        328.595 kJ/mol
-    [SiH3][Si][SiH3](32)                                  318.795 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
 Reactant channels:
-    H2(11) + [SiH][SiH]=[SiH2](33)                        483.391 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
     SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
     SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
     SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
@@ -3572,8 +3572,8 @@ Product channels:
     H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
     H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
 Path reactions:
-    H2(11) + [SiH][SiH]=[SiH2](33) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
-    [SiH3][Si][SiH3](32) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
     SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
     H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
     SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
@@ -3582,12 +3582,12 @@ Path reactions:
     H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
     SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
     SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
-    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)      486.817 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
 ========================================================================
 
 Calculating densities of states for 49 network...
 Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](32)...
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
 Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -3605,11 +3605,11 @@ Created 1 new edge species
     [SiH][Si][SiH](42)
 Added 0 new core reactions
 Created 5 new edge reactions
-    [SiH][SiH]=[SiH2](33) => [Si]=[SiH][SiH3](30)
-    [SiH][SiH]=[SiH2](33) => H2(11) + [SiH][Si][SiH](42)
-    H2(11) + [SiH][SiH]=[SiH2](33) => H2(11) + [Si]=[SiH][SiH3](30)
-    H2(11) + [SiH][SiH]=[SiH2](33) => H2(11) + [SiH][Si][SiH3](22)
-    H2(11) + [SiH][SiH]=[SiH2](33) => H2(11) + [SiH][SiH2][SiH](23)
+    [SiH][SiH]=[SiH2](32) => [Si]=[SiH][SiH3](30)
+    [SiH][SiH]=[SiH2](32) => H2(11) + [SiH][Si][SiH](42)
+    H2(11) + [SiH][SiH]=[SiH2](32) => H2(11) + [Si]=[SiH][SiH3](30)
+    H2(11) + [SiH][SiH]=[SiH2](32) => H2(11) + [SiH][Si][SiH3](22)
+    H2(11) + [SiH][SiH]=[SiH2](32) => H2(11) + [SiH][SiH2][SiH](23)
 
 After model enlargement:
     The model core has 26 species and 61 reactions
@@ -3627,20 +3627,20 @@ Chemkin file contains 110 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:49
-    Memory used: 161.20 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:48
+    Memory used: 156.66 MB
 
 Conducting simulation of reaction system 1...
-At time 4.3640e-04 s, species [Si]=[SiH][SiH](41) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1155e-04 mol/m^3*s
-    [Si]=[SiH][SiH](41) rate: 1.1472e-08 mol/m^3*s (0.0001028)
-    PDepNetwork #48 leak rate: 2.5723e-09 mol/m^3*s (2.306e-05)
-    SiH4(3) conversion: 3.809e-05 
-At time 4.3640e-04 s, species [Si]=[SiH][SiH](41) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1155e-04 mol/m^3*s
-    [Si]=[SiH][SiH](41) rate: 1.1472e-08 mol/m^3*s (0.0001028)
-    PDepNetwork #48 leak rate: 2.5723e-09 mol/m^3*s (2.306e-05)
-    SiH4(3) conversion: 3.809e-05 
+At time 1.0000e-02 s, species [Si]=[SiH][SiH](41) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2388e-06 mol/m^3*s
+    [Si]=[SiH][SiH](41) rate: 1.2558e-10 mol/m^3*s (0.0001014)
+    PDepNetwork #48 leak rate: 1.1920e-10 mol/m^3*s (9.622e-05)
+    SiH4(3) conversion: 9.419e-06 
+At time 1.0000e-02 s, species [Si]=[SiH][SiH](41) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2388e-06 mol/m^3*s
+    [Si]=[SiH][SiH](41) rate: 1.2558e-10 mol/m^3*s (0.0001014)
+    PDepNetwork #48 leak rate: 1.1920e-10 mol/m^3*s (9.622e-05)
+    SiH4(3) conversion: 9.419e-06 
 
 
 Adding species [Si]=[SiH][SiH](41) to model core
@@ -3655,7 +3655,7 @@ Added 1 new core species
     [Si]=[SiH][SiH](41)
 Created 0 new edge species
 Moved 1 reactions from edge to core
-    [SiH][SiH]=[SiH2](33) => H2(11) + [Si]=[SiH][SiH](41)
+    [SiH][SiH]=[SiH2](32) => H2(11) + [Si]=[SiH][SiH](41)
 Added 0 new core reactions
 Created 0 new edge reactions
 
@@ -3721,25 +3721,25 @@ Chemkin file contains 112 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:50
-    Memory used: 143.43 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:49
+    Memory used: 142.58 MB
 
 Conducting simulation of reaction system 1...
-At time 1.8024e-03 s, species [Si]=[Si]=[SiH2](43) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1183e-04 mol/m^3*s
-    [Si]=[Si]=[SiH2](43) rate: 1.1866e-08 mol/m^3*s (0.0001061)
-    PDepNetwork #50 leak rate: 1.1866e-08 mol/m^3*s (0.0001061)
-    SiH4(3) conversion: 0.0001681 
-At time 1.8024e-03 s, species [Si]=[Si]=[SiH2](43) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1183e-04 mol/m^3*s
-    [Si]=[Si]=[SiH2](43) rate: 1.1866e-08 mol/m^3*s (0.0001061)
-    PDepNetwork #50 leak rate: 1.1866e-08 mol/m^3*s (0.0001061)
-    SiH4(3) conversion: 0.0001681 
+At time 2.2213e-02 s, species [Si]=[Si]=[SiH2](43) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]=[Si]=[SiH2](43) rate: 2.2710e-10 mol/m^3*s (0.0001833)
+    PDepNetwork #50 leak rate: 2.2710e-10 mol/m^3*s (0.0001833)
+    SiH4(3) conversion: 2.096e-05 
+At time 2.2213e-02 s, species [Si]=[Si]=[SiH2](43) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]=[Si]=[SiH2](43) rate: 2.2710e-10 mol/m^3*s (0.0001833)
+    PDepNetwork #50 leak rate: 2.2710e-10 mol/m^3*s (0.0001833)
+    SiH4(3) conversion: 2.096e-05 
 
 
 Adding species [Si]=[Si]=[SiH2](43) to model core
 Exploring isomer [Si]=[Si]=[SiH2](43) in pressure-dependent network #50
-Exploring isomer [SiH][SiH]=[SiH2](33) in pressure-dependent network #52
+Exploring isomer [SiH][SiH]=[SiH2](32) in pressure-dependent network #52
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 For reaction H2(11) + [Si]=[Si]=[Si](44) <=> [Si]=[Si]=[SiH2](43) Ea raised from -1.9 to 0 kJ/mol.
@@ -3781,7 +3781,7 @@ Using 436 grains from 396.25 to 1306.27 kJ/mol in steps of 2.09 kJ/mol to comput
 52 network information
 ----------------------
 Isomers:
-    [SiH][SiH]=[SiH2](33)                                 491.995 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
 Reactant channels:
     H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
 Product channels:
@@ -3789,15 +3789,15 @@ Product channels:
     [SiH][Si][SiH3](22)                                   492.073 kJ/mol
     [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
 Path reactions:
-    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)      574.972 kJ/mol
-    [SiH][SiH]=[SiH2](33) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
-    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](33)         511.738 kJ/mol
-    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](33)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
 ========================================================================
 
 Calculating densities of states for 52 network...
 Using 620 grains from 304.66 to 1252.76 kJ/mol in steps of 1.53 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](33)...
+Calculating phenomenological rate coefficients for [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)...
 Using 250 grains from 304.66 to 686.87 kJ/mol in steps of 1.53 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 304.66 to 693.75 kJ/mol in steps of 1.56 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 304.66 to 709.28 kJ/mol in steps of 1.62 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -3816,7 +3816,7 @@ Created 1 new edge species
     [Si]=[Si]=[Si](44)
 Moved 1 reactions from edge to core
 Added 1 new core reactions
-    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)
 Created 4 new edge reactions
     [Si]=[SiH][SiH](41) => H2(11) + [Si]=[Si]=[Si](44)
     H2(11) + [Si]=[SiH][SiH](41) => [SiH2]=[Si]=[SiH2](40)
@@ -3884,19 +3884,19 @@ Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
     Execution time (DD:HH:MM:SS): 00:00:00:52
-    Memory used: 145.60 MB
+    Memory used: 143.50 MB
 
 Conducting simulation of reaction system 1...
-At time 1.6902e-03 s, species [Si]=[Si]=[Si](44) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.1182e-04 mol/m^3*s
-    [Si]=[Si]=[Si](44) rate: 1.1216e-08 mol/m^3*s (0.0001003)
-    PDepNetwork #48 leak rate: 9.5362e-13 mol/m^3*s (8.528e-09)
-    SiH4(3) conversion: 0.0001575 
-At time 1.6902e-03 s, species [Si]=[Si]=[Si](44) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1182e-04 mol/m^3*s
-    [Si]=[Si]=[Si](44) rate: 1.1216e-08 mol/m^3*s (0.0001003)
-    PDepNetwork #48 leak rate: 9.5362e-13 mol/m^3*s (8.528e-09)
-    SiH4(3) conversion: 0.0001575 
+At time 1.0000e-02 s, species [Si]=[Si]=[Si](44) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]=[Si]=[Si](44) rate: 1.3568e-10 mol/m^3*s (0.0001095)
+    PDepNetwork #48 leak rate: 7.0470e-15 mol/m^3*s (5.688e-09)
+    SiH4(3) conversion: 9.419e-06 
+At time 1.0000e-02 s, species [Si]=[Si]=[Si](44) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2389e-06 mol/m^3*s
+    [Si]=[Si]=[Si](44) rate: 1.3568e-10 mol/m^3*s (0.0001095)
+    PDepNetwork #48 leak rate: 7.0470e-15 mol/m^3*s (5.688e-09)
+    SiH4(3) conversion: 9.419e-06 
 
 
 Adding species [Si]=[Si]=[Si](44) to model core
@@ -3978,20 +3978,20 @@ Chemkin file contains 118 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:54
-    Memory used: 143.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:53
+    Memory used: 141.45 MB
 
 Conducting simulation of reaction system 1...
-At time 1.4398e+00 s, PDepNetwork #55 exceeded the minimum rate for exploring
-    Characteristic rate: 1.6821e-04 mol/m^3*s
-    [SiH2]=[Si]=[SiH2](40) rate: 3.1695e-11 mol/m^3*s (1.884e-07)
-    PDepNetwork #55 leak rate: 1.7315e-08 mol/m^3*s (0.0001029)
-    SiH4(3) conversion: 0.1252    
-At time 1.4398e+00 s, PDepNetwork #55 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.6821e-04 mol/m^3*s
-    [SiH2]=[Si]=[SiH2](40) rate: 3.1695e-11 mol/m^3*s (1.884e-07)
-    PDepNetwork #55 leak rate: 1.7315e-08 mol/m^3*s (0.0001029)
-    SiH4(3) conversion: 0.1252    
+At time 2.9027e+01 s, PDepNetwork #55 exceeded the minimum rate for exploring
+    Characteristic rate: 1.5693e-06 mol/m^3*s
+    [SiH2]=[Si]=[SiH2](40) rate: 9.3554e-13 mol/m^3*s (5.961e-07)
+    PDepNetwork #55 leak rate: 1.6064e-10 mol/m^3*s (0.0001024)
+    SiH4(3) conversion: 0.02699   
+At time 2.9027e+01 s, PDepNetwork #55 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5693e-06 mol/m^3*s
+    [SiH2]=[Si]=[SiH2](40) rate: 9.3554e-13 mol/m^3*s (5.961e-07)
+    PDepNetwork #55 leak rate: 1.6064e-10 mol/m^3*s (0.0001024)
+    SiH4(3) conversion: 0.02699   
 
 
 Exploring isomer [Si]=[Si]=[SiH2](43) in pressure-dependent network #55
@@ -4052,37 +4052,106 @@ Chemkin file contains 119 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:55
-    Memory used: 141.74 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:54
+    Memory used: 139.60 MB
 
 Conducting simulation of reaction system 1...
-At time 4.7922e+01 s, PDepNetwork #54 exceeded the minimum rate for exploring
-    Characteristic rate: 5.5995e-06 mol/m^3*s
-    [SiH2]=[Si]=[SiH2](40) rate: 2.6633e-10 mol/m^3*s (4.756e-05)
-    PDepNetwork #54 leak rate: 5.6684e-10 mol/m^3*s (0.0001012)
-    SiH4(3) conversion: 0.8764    
-At time 4.7922e+01 s, PDepNetwork #54 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 5.5995e-06 mol/m^3*s
-    [SiH2]=[Si]=[SiH2](40) rate: 2.6633e-10 mol/m^3*s (4.756e-05)
-    PDepNetwork #54 leak rate: 5.6684e-10 mol/m^3*s (0.0001012)
-    SiH4(3) conversion: 0.8764    
+At time 2.2234e+02 s, species [SiH2]=[Si]=[SiH2](40) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.6241e-06 mol/m^3*s
+    [SiH2]=[Si]=[SiH2](40) rate: 1.6411e-10 mol/m^3*s (0.000101)
+    PDepNetwork #48 leak rate: 1.6411e-10 mol/m^3*s (0.000101)
+    SiH4(3) conversion: 0.1763    
+At time 2.2234e+02 s, species [SiH2]=[Si]=[SiH2](40) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.6241e-06 mol/m^3*s
+    [SiH2]=[Si]=[SiH2](40) rate: 1.6411e-10 mol/m^3*s (0.000101)
+    PDepNetwork #48 leak rate: 1.6411e-10 mol/m^3*s (0.000101)
+    SiH4(3) conversion: 0.1763    
 
 
+Adding species [SiH2]=[Si]=[SiH2](40) to model core
+Exploring isomer [SiH2]=[Si]=[SiH2](40) in pressure-dependent network #48
+Exploring isomer [SiH2]=[Si]=[SiH2](40) in pressure-dependent network #52
 Exploring isomer [SiH2]=[Si]=[SiH2](40) in pressure-dependent network #54
-Exploring isomer [SiH][SiH]=[SiH2](33) in pressure-dependent network #54
+Exploring isomer [SiH][SiH]=[SiH2](32) in pressure-dependent network #54
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
-Updating 1 modified unimolecular reaction networks...
+Updating 3 modified unimolecular reaction networks...
 Warning: Statmech node 'R!Hx0' and all its parents have data = None
 Warning: Statmech node 'R!Hx0' and all its parents have data = None
 Warning: Statmech node 'R!Hx0' and all its parents have data = None
 Warning: Maximum number of iterations reached when fitting spectral data for [SiH2]=[Si]=[SiH2].
 ========================================================================
+48 network information
+----------------------
+Isomers:
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+Product channels:
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+Path reactions:
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+========================================================================
+
+Calculating densities of states for 48 network...
+Using 551 grains from 304.66 to 1340.65 kJ/mol in steps of 1.88 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)...
+Using 250 grains from 304.66 to 774.50 kJ/mol in steps of 1.89 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 781.38 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 796.92 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 825.56 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 275 grains from 304.66 to 877.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 319 grains from 304.66 to 969.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 393 grains from 304.66 to 1124.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+52 network information
+----------------------
+Isomers:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+Product channels:
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+Path reactions:
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+========================================================================
+
+Calculating densities of states for 52 network...
+Using 620 grains from 304.66 to 1252.76 kJ/mol in steps of 1.53 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)...
+Using 250 grains from 304.66 to 686.87 kJ/mol in steps of 1.53 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 693.75 kJ/mol in steps of 1.56 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 709.28 kJ/mol in steps of 1.62 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 737.93 kJ/mol in steps of 1.74 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 304.66 to 789.03 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 277 grains from 304.66 to 882.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 351 grains from 304.66 to 1036.86 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 438 grains from 304.66 to 1218.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
 54 network information
 ----------------------
 Isomers:
     [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
-    [SiH][SiH]=[SiH2](33)                                 491.995 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
 Reactant channels:
     H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
     H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
@@ -4091,15 +4160,15 @@ Product channels:
     [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
 Path reactions:
     H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
-    [SiH][SiH]=[SiH2](33) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
-    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](33)         511.738 kJ/mol
-    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](33)        586.274 kJ/mol
-    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
 ========================================================================
 
 Calculating densities of states for 54 network...
 Using 620 grains from 304.66 to 1252.76 kJ/mol in steps of 1.53 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](33)...
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)...
 Using 250 grains from 304.66 to 686.87 kJ/mol in steps of 1.53 kJ/mol to compute the k(T,P) values at 302.47 K
 Using 250 grains from 304.66 to 693.75 kJ/mol in steps of 1.56 kJ/mol to compute the k(T,P) values at 323.145 K
 Using 250 grains from 304.66 to 709.28 kJ/mol in steps of 1.62 kJ/mol to compute the k(T,P) values at 369.86 K
@@ -4112,25 +4181,71 @@ Using 438 grains from 304.66 to 1218.87 kJ/mol in steps of 2.09 kJ/mol to comput
 
 Summary of Model Enlargement
 ---------------------------------
-Added 0 new core species
+Added 1 new core species
+    [SiH2]=[Si]=[SiH2](40)
 Created 0 new edge species
-Added 2 new core reactions
-    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH][SiH]=[SiH2](33)
-    H2(11) + [Si]=[Si]=[SiH2](43) <=> H2(11) + [Si]=[SiH][SiH](41)
-Created 3 new edge reactions
-    H2(11) + [Si]=[Si]=[SiH2](43) => [SiH2]=[Si]=[SiH2](40)
+Moved 2 reactions from edge to core
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH2]=[Si]=[SiH2](40)
+Added 3 new core reactions
+    [SiH][SiH]=[SiH2](32) <=> H2(11) + [Si]=[Si]=[SiH2](43)
+    H2(11) + [Si]=[SiH][SiH](41) <=> H2(11) + [Si]=[Si]=[SiH2](43)
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)
+Created 2 new edge reactions
     H2(11) + [Si]=[Si]=[SiH2](43) => [SiH][Si][SiH3](22)
     H2(11) + [Si]=[Si]=[SiH2](43) => [SiH][SiH2][SiH](23)
 
 After model enlargement:
-    The model core has 29 species and 67 reactions
-    The model edge has 19 species and 57 reactions
+    The model core has 30 species and 70 reactions
+    The model edge has 18 species and 54 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+56 network information
+----------------------
+Isomers:
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+Product channels:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+Path reactions:
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+========================================================================
+
+Calculating densities of states for 56 network...
+Using 734 grains from 304.66 to 1165.47 kJ/mol in steps of 1.17 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)...
+Using 250 grains from 304.66 to 597.90 kJ/mol in steps of 1.18 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 604.78 kJ/mol in steps of 1.21 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 620.31 kJ/mol in steps of 1.27 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 648.96 kJ/mol in steps of 1.38 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 304.66 to 700.06 kJ/mol in steps of 1.59 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 250 grains from 304.66 to 791.72 kJ/mol in steps of 1.96 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 309 grains from 304.66 to 949.00 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 395 grains from 304.66 to 1128.91 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 30 species and 70 reactions
+    The model edge has 18 species and 54 reactions
 
 
 Saving current model core to Chemkin file...
-Chemkin file contains 67 reactions.
+Chemkin file contains 70 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 67 reactions.
+Chemkin file contains 70 reactions.
 Saving current model core and edge to Chemkin file...
 Chemkin file contains 124 reactions.
 Saving current core and edge to verbose Chemkin file...
@@ -4138,31 +4253,657 @@ Chemkin file contains 124 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:56
-    Memory used: 142.29 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:58
+    Memory used: 150.54 MB
 
 Conducting simulation of reaction system 1...
-At time 5.9312e+01 s, reached target termination conversion: 0.900000 of SiH4(3)
-    SiH4(3) conversion: 0.9008    
+At time 1.8301e+03 s, species [SiH][Si][SiH3](22) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.0586e-07 mol/m^3*s
+    [SiH][Si][SiH3](22) rate: 3.0807e-11 mol/m^3*s (0.0001007)
+    PDepNetwork #32 leak rate: 3.1703e-12 mol/m^3*s (1.037e-05)
+    SiH4(3) conversion: 0.6334    
+At time 1.8301e+03 s, species [SiH][Si][SiH3](22) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.0586e-07 mol/m^3*s
+    [SiH][Si][SiH3](22) rate: 3.0807e-11 mol/m^3*s (0.0001007)
+    PDepNetwork #32 leak rate: 3.1703e-12 mol/m^3*s (1.037e-05)
+    SiH4(3) conversion: 0.6334    
+
+
+Adding species [SiH][Si][SiH3](22) to model core
+Exploring isomer [SiH][Si][SiH3](22) in pressure-dependent network #52
+Exploring isomer [SiH][Si][SiH3](22) in pressure-dependent network #54
+Exploring isomer [SiH][SiH]=[SiH2](32) in pressure-dependent network #56
+Exploring isomer [SiH][Si][SiH3](22) in pressure-dependent network #56
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 3 modified unimolecular reaction networks...
+========================================================================
+52 network information
+----------------------
+Isomers:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+Product channels:
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+Path reactions:
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+========================================================================
+
+Calculating densities of states for 52 network...
+Using 551 grains from 304.66 to 1340.65 kJ/mol in steps of 1.88 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)...
+Using 250 grains from 304.66 to 774.50 kJ/mol in steps of 1.89 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 781.38 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 796.92 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 825.56 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 275 grains from 304.66 to 877.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 319 grains from 304.66 to 969.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 393 grains from 304.66 to 1124.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+54 network information
+----------------------
+Isomers:
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+Product channels:
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+Path reactions:
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+========================================================================
+
+Calculating densities of states for 54 network...
+Using 551 grains from 304.66 to 1340.65 kJ/mol in steps of 1.88 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)...
+Using 250 grains from 304.66 to 774.50 kJ/mol in steps of 1.89 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 781.38 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 796.92 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 825.56 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 275 grains from 304.66 to 877.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 319 grains from 304.66 to 969.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 393 grains from 304.66 to 1124.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+56 network information
+----------------------
+Isomers:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+Product channels:
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+Path reactions:
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+========================================================================
+
+Calculating densities of states for 56 network...
+Using 551 grains from 304.66 to 1340.65 kJ/mol in steps of 1.88 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)...
+Using 250 grains from 304.66 to 774.50 kJ/mol in steps of 1.89 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 781.38 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 796.92 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 825.56 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 275 grains from 304.66 to 877.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 319 grains from 304.66 to 969.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 393 grains from 304.66 to 1124.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [SiH][Si][SiH3](22)
+Created 0 new edge species
+Moved 11 reactions from edge to core
+    SiHSiH2SiH3(2) => H2(11) + [SiH][Si][SiH3](22)
+    SiH2(7) + SiH3SiH(8) => H2(11) + [SiH][Si][SiH3](22)
+    SiH4(3) + SiH2Si(16) => H2(11) + [SiH][Si][SiH3](22)
+    [SiH3][Si][SiH3](31) => H2(11) + [SiH][Si][SiH3](22)
+    SiH2(7) + SiH2SiH2(13) => H2(11) + [SiH][Si][SiH3](22)
+    [SiH2]=[SiH][SiH3](21) => H2(11) + [SiH][Si][SiH3](22)
+    SiH4(3) + Si2H2(19) => H2(11) + [SiH][Si][SiH3](22)
+    [SiH][SiH]=[SiH2](32) => [SiH][Si][SiH3](22)
+    H2(11) + [SiH][SiH]=[SiH2](32) => H2(11) + [SiH][Si][SiH3](22)
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][Si][SiH3](22)
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH][Si][SiH3](22)
+Added 1 new core reactions
+    [SiH2]=[Si]=[SiH2](40) <=> [SiH][Si][SiH3](22)
+Created 7 new edge reactions
+    H2(11) + [Si]=[SiH][SiH](41) => [Si]=[SiH][SiH3](30)
+    H2(11) + [Si]=[SiH][SiH](41) => H2(11) + [SiH][Si][SiH](42)
+    H2(11) + [Si]=[Si]=[SiH2](43) => [Si]=[SiH][SiH3](30)
+    H2(11) + [Si]=[Si]=[SiH2](43) => H2(11) + [SiH][Si][SiH](42)
+    [SiH2]=[Si]=[SiH2](40) => [SiH][SiH2][SiH](23)
+    [SiH2]=[Si]=[SiH2](40) => [Si]=[SiH][SiH3](30)
+    [SiH2]=[Si]=[SiH2](40) => H2(11) + [SiH][Si][SiH](42)
+
+After model enlargement:
+    The model core has 31 species and 82 reactions
+    The model edge has 17 species and 50 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+57 network information
+----------------------
+Isomers:
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+Reactant channels:
+Product channels:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+Path reactions:
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+========================================================================
+
+Calculating densities of states for 57 network...
+Using 750 grains from 491.99 to 1339.32 kJ/mol in steps of 1.13 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)...
+Using 250 grains from 491.99 to 774.50 kJ/mol in steps of 1.13 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 491.99 to 781.38 kJ/mol in steps of 1.16 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 491.99 to 796.92 kJ/mol in steps of 1.22 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 491.99 to 825.56 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 491.99 to 876.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 250 grains from 491.99 to 968.33 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 304 grains from 491.99 to 1125.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 390 grains from 491.99 to 1305.78 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 2 new edge reactions
+    [SiH][Si][SiH3](22) => [Si]=[SiH][SiH3](30)
+    [SiH][Si][SiH3](22) => H2(11) + [SiH][Si][SiH](42)
+
+After model enlargement:
+    The model core has 31 species and 82 reactions
+    The model edge has 17 species and 52 reactions
+
 
 Saving current model core to Chemkin file...
-Chemkin file contains 67 reactions.
+Chemkin file contains 82 reactions.
 Saving current model to verbose Chemkin file...
-Chemkin file contains 67 reactions.
+Chemkin file contains 82 reactions.
 Saving current model core and edge to Chemkin file...
-Chemkin file contains 124 reactions.
+Chemkin file contains 134 reactions.
 Saving current core and edge to verbose Chemkin file...
-Chemkin file contains 124 reactions.
+Chemkin file contains 134 reactions.
 Saving current model core to HTML file...
 Saving current model edge to HTML file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:57
-    Memory used: 141.10 MB
+    Execution time (DD:HH:MM:SS): 00:00:01:02
+    Memory used: 151.48 MB
+
+Conducting simulation of reaction system 1...
+At time 1.7417e+03 s, PDepNetwork #57 exceeded the minimum rate for exploring
+    Characteristic rate: 3.2584e-07 mol/m^3*s
+    [SiH][SiH2][SiH](23) rate: 7.2184e-15 mol/m^3*s (2.215e-08)
+    PDepNetwork #57 leak rate: 3.2845e-11 mol/m^3*s (0.0001008)
+    SiH4(3) conversion: 0.6216    
+At time 1.7417e+03 s, PDepNetwork #57 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.2584e-07 mol/m^3*s
+    [SiH][SiH2][SiH](23) rate: 7.2184e-15 mol/m^3*s (2.215e-08)
+    PDepNetwork #57 leak rate: 3.2845e-11 mol/m^3*s (0.0001008)
+    SiH4(3) conversion: 0.6216    
+
+
+Exploring isomer [SiH][SiH]=[SiH2](32) in pressure-dependent network #57
+Exploring isomer [SiH2]=[Si]=[SiH2](40) in pressure-dependent network #57
+Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #58
+Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #58
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #58
+Exploring isomer [SiH3][Si][SiH3](31) in pressure-dependent network #59
+Exploring isomer [SiH2]=[SiH][SiH3](21) in pressure-dependent network #59
+Exploring isomer SiHSiH2SiH3(2) in pressure-dependent network #59
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Merging PDepNetwork #58 and PDepNetwork #59
+Updating 2 modified unimolecular reaction networks...
+========================================================================
+57 network information
+----------------------
+Isomers:
+    [SiH][SiH]=[SiH2](32)                                 491.995 kJ/mol
+    [SiH2]=[Si]=[SiH2](40)                                304.664 kJ/mol
+    [SiH][Si][SiH3](22)                                   492.073 kJ/mol
+Reactant channels:
+    H2(11) + [Si]=[SiH][SiH](41)                          574.972 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43)                         387.642 kJ/mol
+Product channels:
+    [Si]=[SiH][SiH3](30)                                  670.032 kJ/mol
+    H2(11) + [SiH][Si][SiH](42)                           659.772 kJ/mol
+    [SiH][SiH2][SiH](23)                                  552.384 kJ/mol
+Path reactions:
+    [SiH][Si][SiH3](22) <=> [SiH][SiH]=[SiH2](32)         511.738 kJ/mol
+    [SiH][Si][SiH3](22) <=> [Si]=[SiH][SiH3](30)           673.91 kJ/mol
+    H2(11) + [SiH][Si][SiH](42) <=> [SiH][Si][SiH3](22)       663.12 kJ/mol
+    [SiH][SiH]=[SiH2](32) <=> [SiH2]=[Si]=[SiH2](40)      497.304 kJ/mol
+    [SiH][SiH2][SiH](23) <=> [SiH][SiH]=[SiH2](32)        586.274 kJ/mol
+    H2(11) + [Si]=[SiH][SiH](41) <=> [SiH][SiH]=[SiH2](32)      574.972 kJ/mol
+    H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)      387.642 kJ/mol
+========================================================================
+
+Calculating densities of states for 57 network...
+Using 551 grains from 304.66 to 1340.65 kJ/mol in steps of 1.88 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [Si]=[Si]=[SiH2](43) <=> [SiH2]=[Si]=[SiH2](40)...
+Using 250 grains from 304.66 to 774.50 kJ/mol in steps of 1.89 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 304.66 to 781.38 kJ/mol in steps of 1.91 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 304.66 to 796.92 kJ/mol in steps of 1.98 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 304.66 to 825.56 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 275 grains from 304.66 to 877.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 319 grains from 304.66 to 969.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 393 grains from 304.66 to 1124.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 480 grains from 304.66 to 1306.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+58 network information
+----------------------
+Isomers:
+    SiHSiH2SiH3(2)                                        328.595 kJ/mol
+    [SiH2]=[SiH][SiH3](21)                                283.336 kJ/mol
+    [SiH3][Si][SiH3](31)                                  318.795 kJ/mol
+Reactant channels:
+    H2(11) + [SiH][Si][SiH3](22)                           483.47 kJ/mol
+    SiH4(3) + Si2H2(19)                                   454.322 kJ/mol
+    SiH2(7) + SiH3SiH(8)                                  541.301 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32)                        483.391 kJ/mol
+    SiH2(7) + SiH2SiH2(13)                                508.525 kJ/mol
+    SiH4(3) + SiH2Si(16)                                  369.793 kJ/mol
+Product channels:
+    H2(11) + [SiH][SiH2][SiH](23)                          543.78 kJ/mol
+    H2(11) + [Si]=[SiH][SiH3](30)                         661.428 kJ/mol
+Path reactions:
+    H2(11) + [SiH][Si][SiH3](22) <=> SiHSiH2SiH3(2)        483.47 kJ/mol
+    SiHSiH2SiH3(2) <=> [SiH2]=[SiH][SiH3](21)             362.485 kJ/mol
+    H2(11) + [SiH][SiH2][SiH](23) <=> SiHSiH2SiH3(2)      547.128 kJ/mol
+    SiH4(3) + Si2H2(19) <=> SiHSiH2SiH3(2)                454.322 kJ/mol
+    SiH2(7) + SiH3SiH(8) <=> SiHSiH2SiH3(2)               541.301 kJ/mol
+    [SiH3][Si][SiH3](31) <=> [SiH2]=[SiH][SiH3](21)        338.46 kJ/mol
+    H2(11) + [SiH][SiH]=[SiH2](32) <=> [SiH2]=[SiH][SiH3](21)      486.739 kJ/mol
+    H2(11) + [Si]=[SiH][SiH3](30) <=> [SiH2]=[SiH][SiH3](21)      661.428 kJ/mol
+    SiH2(7) + SiH2SiH2(13) <=> [SiH2]=[SiH][SiH3](21)      508.525 kJ/mol
+    SiH4(3) + SiH2Si(16) <=> [SiH2]=[SiH][SiH3](21)       369.793 kJ/mol
+    H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)      486.817 kJ/mol
+========================================================================
+
+Calculating densities of states for 58 network...
+Using 545 grains from 283.33 to 1327.35 kJ/mol in steps of 1.92 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for H2(11) + [SiH][Si][SiH3](22) <=> [SiH3][Si][SiH3](31)...
+Using 250 grains from 283.33 to 762.02 kJ/mol in steps of 1.92 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 283.33 to 768.90 kJ/mol in steps of 1.95 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 283.33 to 784.44 kJ/mol in steps of 2.01 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 255 grains from 283.33 to 814.70 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 279 grains from 283.33 to 864.91 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 323 grains from 283.33 to 956.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 397 grains from 283.33 to 1111.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 484 grains from 283.33 to 1293.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 3 new edge reactions
+    [SiH][Si][SiH3](22) => [SiH][SiH2][SiH](23)
+    H2(11) + [SiH][Si][SiH3](22) => H2(11) + [SiH][SiH2][SiH](23)
+    H2(11) + [SiH][Si][SiH3](22) => H2(11) + [Si]=[SiH][SiH3](30)
+
+After model enlargement:
+    The model core has 31 species and 82 reactions
+    The model edge has 17 species and 55 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 82 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 82 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 137 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 137 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:05
+    Memory used: 155.96 MB
+
+Conducting simulation of reaction system 1...
+At time 7.8045e+03 s, PDepNetwork #32 exceeded the minimum rate for exploring
+    Characteristic rate: 2.3401e-08 mol/m^3*s
+    Si(14) rate: 8.7539e-15 mol/m^3*s (3.741e-07)
+    PDepNetwork #32 leak rate: 2.3622e-12 mol/m^3*s (0.0001009)
+    SiH4(3) conversion: 0.8788    
+At time 7.8045e+03 s, PDepNetwork #32 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.3401e-08 mol/m^3*s
+    Si(14) rate: 8.7539e-15 mol/m^3*s (3.741e-07)
+    PDepNetwork #32 leak rate: 2.3622e-12 mol/m^3*s (0.0001009)
+    SiH4(3) conversion: 0.8788    
+
+
+Exploring isomer Si3H8(12) in pressure-dependent network #32
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node 'R!Hx0' and all its parents have data = None
+Warning: Statmech node 'R!Hx0' and all its parents have data = None
+Warning: Statmech node 'R!Hx0' and all its parents have data = None
+Warning: Maximum number of iterations reached when fitting spectral data for [SiH3][SiH2][SiH3].
+========================================================================
+32 network information
+----------------------
+Isomers:
+    Si3H8(12)                                             104.805 kJ/mol
+Reactant channels:
+    H2(11) + [SiH3][Si][SiH3](31)                         310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11)                               319.991 kJ/mol
+    SiH4(3) + SiH3SiH(8)                                  300.895 kJ/mol
+    Si2H6(4) + SiH2(7)                                    304.064 kJ/mol
+Product channels:
+Path reactions:
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12)           310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)                 328.777 kJ/mol
+    Si3H8(12) <=> SiH4(3) + SiH3SiH(8)                    310.658 kJ/mol
+    Si3H8(12) <=> Si2H6(4) + SiH2(7)                      337.017 kJ/mol
+========================================================================
+
+Calculating densities of states for 32 network...
+Using 675 grains from 104.81 to 1003.43 kJ/mol in steps of 1.33 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si3H8(12) <=> Si2H6(4) + SiH2(7)...
+Using 250 grains from 104.81 to 437.61 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 104.81 to 444.49 kJ/mol in steps of 1.36 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 104.81 to 460.02 kJ/mol in steps of 1.43 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 104.81 to 488.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 104.81 to 539.77 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 253 grains from 104.81 to 631.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 328 grains from 104.81 to 788.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 414 grains from 104.81 to 968.80 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 3 new core reactions
+    H2(11) + [SiH3][Si][SiH3](31) <=> SiHSiH2SiH3(2) + H2(11)
+    H2(11) + [SiH3][Si][SiH3](31) <=> SiH4(3) + SiH3SiH(8)
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si2H6(4) + SiH2(7)
+Created 1 new edge reactions
+    H2(11) + [SiH3][Si][SiH3](31) => Si3H8(12)
+
+After model enlargement:
+    The model core has 31 species and 85 reactions
+    The model edge has 17 species and 56 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 85 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 85 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 141 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 141 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:07
+    Memory used: 135.00 MB
+
+Conducting simulation of reaction system 1...
+At time 7.9607e+03 s, species Si3H8(12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.2325e-08 mol/m^3*s
+    Si3H8(12) rate: 2.2365e-12 mol/m^3*s (0.0001002)
+    PDepNetwork #18 leak rate: 3.1124e-13 mol/m^3*s (1.394e-05)
+    SiH4(3) conversion: 0.8806    
+At time 7.9607e+03 s, species Si3H8(12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.2325e-08 mol/m^3*s
+    Si3H8(12) rate: 2.2365e-12 mol/m^3*s (0.0001002)
+    PDepNetwork #18 leak rate: 3.1124e-13 mol/m^3*s (1.394e-05)
+    SiH4(3) conversion: 0.8806    
+
+
+Adding species Si3H8(12) to model core
+Exploring isomer Si3H8(12) in pressure-dependent network #10
+Exploring isomer Si3H8(12) in pressure-dependent network #11
+Exploring isomer Si3H8(12) in pressure-dependent network #18
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 3 modified unimolecular reaction networks...
+========================================================================
+10 network information
+----------------------
+Isomers:
+    Si3H8(12)                                             104.805 kJ/mol
+Reactant channels:
+    SiH4(3) + SiH3SiH(8)                                  300.895 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31)                         310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11)                               319.991 kJ/mol
+    Si2H6(4) + SiH2(7)                                    304.064 kJ/mol
+Product channels:
+Path reactions:
+    Si3H8(12) <=> SiH4(3) + SiH3SiH(8)                    310.658 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12)           310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)                 328.777 kJ/mol
+    Si3H8(12) <=> Si2H6(4) + SiH2(7)                      337.017 kJ/mol
+========================================================================
+
+Calculating densities of states for 10 network...
+Using 675 grains from 104.81 to 1003.43 kJ/mol in steps of 1.33 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si3H8(12) <=> Si2H6(4) + SiH2(7)...
+Using 250 grains from 104.81 to 437.61 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 104.81 to 444.49 kJ/mol in steps of 1.36 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 104.81 to 460.02 kJ/mol in steps of 1.43 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 104.81 to 488.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 104.81 to 539.77 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 253 grains from 104.81 to 631.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 328 grains from 104.81 to 788.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 414 grains from 104.81 to 968.80 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+11 network information
+----------------------
+Isomers:
+    Si3H8(12)                                             104.805 kJ/mol
+Reactant channels:
+    Si2H6(4) + SiH2(7)                                    304.064 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31)                         310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11)                               319.991 kJ/mol
+    SiH4(3) + SiH3SiH(8)                                  300.895 kJ/mol
+Product channels:
+Path reactions:
+    Si3H8(12) <=> Si2H6(4) + SiH2(7)                      337.017 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12)           310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)                 328.777 kJ/mol
+    Si3H8(12) <=> SiH4(3) + SiH3SiH(8)                    310.658 kJ/mol
+========================================================================
+
+Calculating densities of states for 11 network...
+Using 675 grains from 104.81 to 1003.43 kJ/mol in steps of 1.33 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si3H8(12) <=> SiH4(3) + SiH3SiH(8)...
+Using 250 grains from 104.81 to 437.61 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 104.81 to 444.49 kJ/mol in steps of 1.36 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 104.81 to 460.02 kJ/mol in steps of 1.43 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 104.81 to 488.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 104.81 to 539.77 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 253 grains from 104.81 to 631.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 328 grains from 104.81 to 788.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 414 grains from 104.81 to 968.80 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+========================================================================
+18 network information
+----------------------
+Isomers:
+    Si3H8(12)                                             104.805 kJ/mol
+Reactant channels:
+    SiHSiH2SiH3(2) + H2(11)                               319.991 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31)                         310.192 kJ/mol
+    SiH4(3) + SiH3SiH(8)                                  300.895 kJ/mol
+    Si2H6(4) + SiH2(7)                                    304.064 kJ/mol
+Product channels:
+Path reactions:
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)                 328.777 kJ/mol
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12)           310.192 kJ/mol
+    Si3H8(12) <=> SiH4(3) + SiH3SiH(8)                    310.658 kJ/mol
+    Si3H8(12) <=> Si2H6(4) + SiH2(7)                      337.017 kJ/mol
+========================================================================
+
+Calculating densities of states for 18 network...
+Using 675 grains from 104.81 to 1003.43 kJ/mol in steps of 1.33 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si3H8(12) <=> Si2H6(4) + SiH2(7)...
+Using 250 grains from 104.81 to 437.61 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 104.81 to 444.49 kJ/mol in steps of 1.36 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 104.81 to 460.02 kJ/mol in steps of 1.43 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 104.81 to 488.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 104.81 to 539.77 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 253 grains from 104.81 to 631.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 328 grains from 104.81 to 788.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 414 grains from 104.81 to 968.80 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Si3H8(12)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+Added 7 new core reactions
+    H2(11) + [SiH3][Si][SiH3](31) <=> SiH4(3) + SiH3SiH(8)
+    Si2H6(4) + SiH2(7) <=> SiH4(3) + SiH3SiH(8)
+    Si2H6(4) + SiH2(7) <=> Si3H8(12)
+    SiHSiH2SiH3(2) + H2(11) <=> Si2H6(4) + SiH2(7)
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si2H6(4) + SiH2(7)
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)
+    SiHSiH2SiH3(2) + H2(11) <=> H2(11) + [SiH3][Si][SiH3](31)
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 32 species and 92 reactions
+    The model edge has 16 species and 55 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+60 network information
+----------------------
+Isomers:
+    Si3H8(12)                                             104.805 kJ/mol
+Reactant channels:
+    H2(11) + [SiH3][Si][SiH3](31)                         310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11)                               319.991 kJ/mol
+    SiH4(3) + SiH3SiH(8)                                  300.895 kJ/mol
+    Si2H6(4) + SiH2(7)                                    304.064 kJ/mol
+Product channels:
+Path reactions:
+    H2(11) + [SiH3][Si][SiH3](31) <=> Si3H8(12)           310.192 kJ/mol
+    SiHSiH2SiH3(2) + H2(11) <=> Si3H8(12)                 328.777 kJ/mol
+    Si3H8(12) <=> SiH4(3) + SiH3SiH(8)                    310.658 kJ/mol
+    Si3H8(12) <=> Si2H6(4) + SiH2(7)                      337.017 kJ/mol
+========================================================================
+
+Calculating densities of states for 60 network...
+Using 675 grains from 104.81 to 1003.43 kJ/mol in steps of 1.33 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for Si3H8(12) <=> Si2H6(4) + SiH2(7)...
+Using 250 grains from 104.81 to 437.61 kJ/mol in steps of 1.34 kJ/mol to compute the k(T,P) values at 302.47 K
+Using 250 grains from 104.81 to 444.49 kJ/mol in steps of 1.36 kJ/mol to compute the k(T,P) values at 323.145 K
+Using 250 grains from 104.81 to 460.02 kJ/mol in steps of 1.43 kJ/mol to compute the k(T,P) values at 369.86 K
+Using 250 grains from 104.81 to 488.67 kJ/mol in steps of 1.54 kJ/mol to compute the k(T,P) values at 455.987 K
+Using 250 grains from 104.81 to 539.77 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 609.649 K
+Using 253 grains from 104.81 to 631.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 885.262 K
+Using 328 grains from 104.81 to 788.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1353.64 K
+Using 414 grains from 104.81 to 968.80 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1896.74 K
+
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 32 species and 92 reactions
+    The model edge has 16 species and 55 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 92 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 92 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 147 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 147 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:10
+    Memory used: 129.65 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0390e+04 s, reached target termination conversion: 0.900000 of SiH4(3)
+    SiH4(3) conversion: 0.9003    
+
+Saving current model core to Chemkin file...
+Chemkin file contains 92 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 92 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 147 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 147 reactions.
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:11
+    Memory used: 128.68 MB
 
 
 MODEL GENERATION COMPLETED
 
-The final model core has 29 species and 67 reactions
-The final model edge has 19 species and 57 reactions
+The final model core has 32 species and 92 reactions
+The final model edge has 16 species and 55 reactions
 
-RMG execution terminated at Wed Sep 28 15:22:41 2016
+RMG execution terminated at Wed Sep 28 15:38:25 2016
