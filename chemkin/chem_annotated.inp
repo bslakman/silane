@@ -313,7 +313,7 @@ SiH3SiH(8)(+M)=H2(11)+SiH2Si(16)(+M)                2.530e+18 -1.300    41.338
     LOW/ 1.110e+24 -2.550    42.141   /
     TROE/ -1.097e+00 608       672       413      /
 
-! Reaction index: Chemkin #16; RMG #166
+! Reaction index: Chemkin #16; RMG #192
 ! PDep reaction: PDepNetwork #31
 ! Flux pairs: H2(11), SiH3SiH(8); SiH2Si(16), SiH3SiH(8); 
 H2(11)+SiH2Si(16)(+M)=SiH3SiH(8)(+M)                1.000e+00 0.000     0.000    
@@ -327,7 +327,7 @@ H2(11)+SiH2Si(16)(+M)=SiH3SiH(8)(+M)                1.000e+00 0.000     0.000
     CHEB/ -9.263e-02   -2.027e-02   -1.375e-03   4.182e-03   /
     CHEB/ -4.547e-02   7.308e-03    6.960e-03    2.889e-03   /
 
-! Reaction index: Chemkin #17; RMG #165
+! Reaction index: Chemkin #17; RMG #191
 ! PDep reaction: PDepNetwork #31
 ! Flux pairs: H2(11), H4Si2(13); SiH2Si(16), H4Si2(13); 
 H2(11)+SiH2Si(16)(+M)=H4Si2(13)(+M)                 1.000e+00 0.000     0.000    
@@ -341,21 +341,7 @@ H2(11)+SiH2Si(16)(+M)=H4Si2(13)(+M)                 1.000e+00 0.000     0.000
     CHEB/ -4.193e-03   -1.141e-02   -7.892e-03   -1.969e-03  /
     CHEB/ -6.562e-03   -7.097e-03   -3.173e-03   2.892e-04   /
 
-! Reaction index: Chemkin #18; RMG #203
-! PDep reaction: PDepNetwork #34
-! Flux pairs: H2(11), SiH2Si(16); Si2(37), SiH2Si(16); 
-H2(11)+Si2(37)(+M)=SiH2Si(16)(+M)                   1.000e+00 0.000     0.000    
-    TCHEB/ 300.000   2000.000 /
-    PCHEB/ 0.010     19.738   /
-    CHEB/ 6 4/
-    CHEB/ 1.032e+01    1.054e+00    -8.707e-02   -3.397e-03  /
-    CHEB/ -1.189e+00   5.916e-01    6.878e-02    -2.806e-03  /
-    CHEB/ -5.057e-01   1.573e-02    1.883e-02    6.554e-03   /
-    CHEB/ -1.138e-01   -3.156e-02   -5.866e-03   -2.055e-05  /
-    CHEB/ -4.153e-03   -8.667e-03   -2.567e-03   -9.673e-04  /
-    CHEB/ 1.191e-02    -1.700e-03   4.487e-04    -2.885e-04  /
-
-! Reaction index: Chemkin #19; RMG #179
+! Reaction index: Chemkin #18; RMG #173
 ! PDep reaction: PDepNetwork #28
 ! Flux pairs: SiH4(3), H6Si3(2); SiH2Si(16), H6Si3(2); 
 SiH4(3)+SiH2Si(16)(+M)=H6Si3(2)(+M)                 1.000e+00 0.000     0.000    
@@ -369,7 +355,7 @@ SiH4(3)+SiH2Si(16)(+M)=H6Si3(2)(+M)                 1.000e+00 0.000     0.000
     CHEB/ -6.231e-02   1.575e-02    5.022e-03    4.625e-04   /
     CHEB/ -3.282e-02   -7.607e-03   2.057e-03    2.977e-03   /
 
-! Reaction index: Chemkin #20; RMG #454
+! Reaction index: Chemkin #19; RMG #454
 ! PDep reaction: PDepNetwork #26
 ! Flux pairs: H4Si2(13), SiH2Si(16); SiH2(7), SiH4(3); 
 SiH2(7)+H4Si2(13)(+M)=SiH4(3)+SiH2Si(16)(+M)        1.000e+00 0.000     0.000    
@@ -383,7 +369,7 @@ SiH2(7)+H4Si2(13)(+M)=SiH4(3)+SiH2Si(16)(+M)        1.000e+00 0.000     0.000
     CHEB/ -2.316e-02   1.174e-06    7.352e-07    3.506e-07   /
     CHEB/ -1.427e-02   1.102e-06    6.924e-07    3.320e-07   /
 
-! Reaction index: Chemkin #21; RMG #354
+! Reaction index: Chemkin #20; RMG #354
 ! PDep reaction: PDepNetwork #19
 ! Flux pairs: SiH3SiH(8), SiH2Si(16); SiH2(7), SiH4(3); 
 SiH2(7)+SiH3SiH(8)(+M)=SiH4(3)+SiH2Si(16)(+M)       1.000e+00 0.000     0.000    
@@ -396,6 +382,20 @@ SiH2(7)+SiH3SiH(8)(+M)=SiH4(3)+SiH2Si(16)(+M)       1.000e+00 0.000     0.000
     CHEB/ -9.346e-02   1.740e-03    1.097e-03    5.288e-04   /
     CHEB/ -5.017e-02   2.526e-03    1.591e-03    7.658e-04   /
     CHEB/ -2.438e-02   1.831e-03    1.148e-03    5.481e-04   /
+
+! Reaction index: Chemkin #21; RMG #203
+! PDep reaction: PDepNetwork #34
+! Flux pairs: H2(11), SiH2Si(16); Si2(37), SiH2Si(16); 
+H2(11)+Si2(37)(+M)=SiH2Si(16)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 1.032e+01    1.054e+00    -8.707e-02   -3.397e-03  /
+    CHEB/ -1.189e+00   5.916e-01    6.878e-02    -2.806e-03  /
+    CHEB/ -5.057e-01   1.573e-02    1.883e-02    6.554e-03   /
+    CHEB/ -1.138e-01   -3.156e-02   -5.866e-03   -2.055e-05  /
+    CHEB/ -4.153e-03   -8.667e-03   -2.567e-03   -9.673e-04  /
+    CHEB/ 1.191e-02    -1.700e-03   4.487e-04    -2.885e-04  /
 
 ! Reaction index: Chemkin #22; RMG #21
 ! Library reaction: DolletSi2H4
@@ -483,21 +483,7 @@ Si2H2(19)(+M)=SiH2Si(16)(+M)                        1.000e+00 0.000     0.000
     CHEB/ -3.518e-02   -1.661e-02   -2.977e-03   5.324e-04   /
     CHEB/ -1.979e-02   1.989e-02    -7.703e-03   -9.235e-04  /
 
-! Reaction index: Chemkin #29; RMG #242
-! PDep reaction: PDepNetwork #41
-! Flux pairs: Si2H2(19), SiH2Si(16); H2(11), H2(11); 
-H2(11)+Si2H2(19)(+M)=H2(11)+SiH2Si(16)(+M)          1.000e+00 0.000     0.000    
-    TCHEB/ 300.000   2000.000 /
-    PCHEB/ 0.010     19.738   /
-    CHEB/ 6 4/
-    CHEB/ 1.267e+01    -1.057e-01   -5.656e-02   -1.994e-02  /
-    CHEB/ -3.563e-02   -1.282e-01   -6.258e-02   -1.700e-02  /
-    CHEB/ -2.113e-01   -7.504e-02   -3.432e-02   -7.413e-03  /
-    CHEB/ -1.286e-01   -1.914e-02   -5.484e-03   1.618e-03   /
-    CHEB/ -6.541e-02   1.137e-02    8.380e-03    4.327e-03   /
-    CHEB/ -2.638e-02   2.091e-02    1.120e-02    3.449e-03   /
-
-! Reaction index: Chemkin #30; RMG #431
+! Reaction index: Chemkin #29; RMG #431
 ! PDep reaction: PDepNetwork #37
 ! Flux pairs: Si2H2(19), SiH2Si(16); SiH4(3), SiH4(3); 
 SiH4(3)+Si2H2(19)(+M)=SiH4(3)+SiH2Si(16)(+M)        1.000e+00 0.000     0.000    
@@ -510,6 +496,20 @@ SiH4(3)+Si2H2(19)(+M)=SiH4(3)+SiH2Si(16)(+M)        1.000e+00 0.000     0.000
     CHEB/ -3.402e-02   3.346e-03    2.049e-03    9.354e-04   /
     CHEB/ -2.278e-02   4.854e-03    2.999e-03    1.394e-03   /
     CHEB/ -1.462e-02   3.357e-03    2.065e-03    9.512e-04   /
+
+! Reaction index: Chemkin #30; RMG #242
+! PDep reaction: PDepNetwork #41
+! Flux pairs: Si2H2(19), SiH2Si(16); H2(11), H2(11); 
+H2(11)+Si2H2(19)(+M)=H2(11)+SiH2Si(16)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   2000.000 /
+    PCHEB/ 0.010     19.738   /
+    CHEB/ 6 4/
+    CHEB/ 1.267e+01    -1.057e-01   -5.656e-02   -1.994e-02  /
+    CHEB/ -3.563e-02   -1.282e-01   -6.258e-02   -1.700e-02  /
+    CHEB/ -2.113e-01   -7.504e-02   -3.432e-02   -7.413e-03  /
+    CHEB/ -1.286e-01   -1.914e-02   -5.484e-03   1.618e-03   /
+    CHEB/ -6.541e-02   1.137e-02    8.380e-03    4.327e-03   /
+    CHEB/ -2.638e-02   2.091e-02    1.120e-02    3.449e-03   /
 
 ! Reaction index: Chemkin #31; RMG #228
 ! PDep reaction: PDepNetwork #35
@@ -525,7 +525,7 @@ Si2H2(19)(+M)=H2(11)+Si2(37)(+M)                    1.000e+00 0.000     0.000
     CHEB/ -2.643e-03   4.415e-04    -1.371e-03   -1.625e-03  /
     CHEB/ 1.172e-02    9.104e-03    -5.840e-04   -8.374e-05  /
 
-! Reaction index: Chemkin #32; RMG #186
+! Reaction index: Chemkin #32; RMG #180
 ! PDep reaction: PDepNetwork #28
 ! Flux pairs: SiH4(3), H6Si3(42); SiH2Si(16), H6Si3(42); 
 SiH4(3)+SiH2Si(16)(+M)=H6Si3(42)(+M)                1.000e+00 0.000     0.000    
