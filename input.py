@@ -143,8 +143,8 @@ simpleReactor(
 
 
 simulator(
-    atol=1e-16,
-    rtol=1e-8,
+    atol=1e-24,
+    rtol=1e-12,
 )
 
 model(
