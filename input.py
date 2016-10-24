@@ -52,8 +52,8 @@ species(
     reactive=True,
     structure=adjacencyList("""
 1 Si u0 p1 c0 {2,S} {3,S}
-2 H u0 p0 c0 {1,S}
-3 H u0 p0 c0 {1,S}
+2 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
 """)
 )
 
@@ -62,13 +62,15 @@ species(
     reactive=True,
     structure=adjacencyList("""
 1 Si u0 p1 c0 {2,S} {3,S}
-2 H u0 p0 c0 {1,S}
+2 H  u0 p0 c0 {1,S}
 3 Si u0 p0 c0 {1,S} {4,S} {5,S} {6,S}
-4 H u0 p0 c0 {3,S}
-5 H u0 p0 c0 {3,S}
-6 H u0 p0 c0 {3,S}
+4 H  u0 p0 c0 {3,S}
+5 H  u0 p0 c0 {3,S}
+6 H  u0 p0 c0 {3,S}
 """)
 )
+
+
 
 species(
     label='Ar',
@@ -113,7 +115,7 @@ simpleReactor(
     terminationConversion={
         'SiH4': 0.99,
     },
-    terminationTime=(1e5, 's')
+    terminationTime=(1e6, 's')
 )
 
 simpleReactor(
@@ -126,30 +128,30 @@ simpleReactor(
     terminationConversion={
         'SiH4': 0.999,
     },
-    terminationTime=(1e4, 's')
+    terminationTime=(1e6, 's')
 )
 
 
 simulator(
-    atol=1e-16,
-    rtol=1e-8,
+    atol=1e-24,
+    rtol=1e-12,
 )
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-7,
-    toleranceInterruptSimulation=0.0005,
+    toleranceMoveToCore=1e-2,
+    toleranceInterruptSimulation=1e-2,
     maximumEdgeSpecies=100000
 )
 
-pressureDependence(
-    method='modified strong collision',
-    maximumGrainSize=(0.5,'kcal/mol'),
-    minimumNumberOfGrains=250,
-    temperatures=(300,2000,'K',8),
-    pressures=(0.01,20,'bar',5),
-    interpolation=('Chebyshev', 6, 4),
-)
+# pressureDependence(
+#     method='modified strong collision',
+#     maximumGrainSize=(0.5,'kcal/mol'),
+#     minimumNumberOfGrains=250,
+#     temperatures=(300,2000,'K',8),
+#     pressures=(0.01,20,'bar',5),
+#     interpolation=('Chebyshev', 6, 4),
+# )
 
 options(
     units='si',
