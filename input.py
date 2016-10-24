@@ -82,16 +82,7 @@ species(
 """)
 )
 
-species(
-    label='HSiSiH',
-    reactive=True,
-    structure=adjacencyList("""
-    1 Si u0 p1 c0 {2,S} {3,S}
-    2 Si u0 p1 c0 {1,S} {4,S}
-    3 H u0 p0 c0 {1,S}
-    4 H u0 p0 c0 {2,S}
-    """) # note that in Dollet (2007) it's actually Si(H2)Si
-)
+
 
 species(
     label='Ar',
@@ -160,8 +151,8 @@ simulator(
 
 model(
     toleranceKeepInEdge=0.0,
-    toleranceMoveToCore=1e-3,
-    toleranceInterruptSimulation=1e-3,
+    toleranceMoveToCore=1e-2,
+    toleranceInterruptSimulation=1e-2,
     maximumEdgeSpecies=100000
 )
 
