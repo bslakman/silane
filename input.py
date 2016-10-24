@@ -64,8 +64,8 @@ species(
     reactive=True,
     structure=adjacencyList("""
 1 Si u0 p1 c0 {2,S} {3,S}
-2 H u0 p0 c0 {1,S}
-3 H u0 p0 c0 {1,S}
+2 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
 """)
 )
 
@@ -74,11 +74,11 @@ species(
     reactive=True,
     structure=adjacencyList("""
 1 Si u0 p1 c0 {2,S} {3,S}
-2 H u0 p0 c0 {1,S}
+2 H  u0 p0 c0 {1,S}
 3 Si u0 p0 c0 {1,S} {4,S} {5,S} {6,S}
-4 H u0 p0 c0 {3,S}
-5 H u0 p0 c0 {3,S}
-6 H u0 p0 c0 {3,S}
+4 H  u0 p0 c0 {3,S}
+5 H  u0 p0 c0 {3,S}
+6 H  u0 p0 c0 {3,S}
 """)
 )
 
@@ -132,6 +132,14 @@ multiplicity 2
 """)
 )
 
+species(
+    label='Hj',
+    reactive=True,
+    structure=adjacencyList("""
+multiplicity 2
+2 H  u1 p0 c0
+""")
+)
 
 species(
     label='Ar',
