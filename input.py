@@ -1,7 +1,7 @@
 # Data sources
 database(
     thermoLibraries = ['SiliconHydrideLibrary', 'primaryThermoLibrary'],
-    reactionLibraries = [('Silicon', False), ('Silicon_Giunta_1990', False), ('DolletSi2H4', False)],
+    reactionLibraries = [('Silicon', False), ('Silicon_Giunta_1990', False), ],
     #reactionLibraries = [('Silicon_Giunta_1990', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
