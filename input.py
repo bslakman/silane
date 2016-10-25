@@ -70,6 +70,17 @@ species(
 """)
 )
 
+species(
+    label='SiH3',
+    reactive=True,
+    structure=SMILES("[SiH3]")
+)
+
+species(
+    label='Si2H5',
+    reactive=True,
+    structure=SMILES("[SiH3][SiH2]")
+)
 
 
 species(
