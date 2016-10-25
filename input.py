@@ -83,11 +83,11 @@ simpleReactor(
     temperature=(613,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.00016,
+        "Si2H6": 0.00016,
 	"Ar": 0.99984,
     },
     terminationConversion={
-        'SiH4': 0.9,
+        'Si2H6': 0.9,
     },
     terminationTime=(1e8, 's')
 )
@@ -96,11 +96,11 @@ simpleReactor(
     temperature=(813,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.00016,
+        "Si2H6": 0.00016,
 	"Ar": 0.99984,
     },
     terminationConversion={
-        'SiH4': 0.99,
+        'Si2H6': 0.99,
     },
     terminationTime=(1e7, 's')
 )
@@ -109,11 +109,11 @@ simpleReactor(
     temperature=(863,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.00016,
+        "Si2H6": 0.00016,
 	"Ar": 0.99984,
     },
     terminationConversion={
-        'SiH4': 0.99,
+        'Si2H6': 0.99,
     },
     terminationTime=(1e6, 's')
 )
@@ -122,11 +122,11 @@ simpleReactor(
     temperature=(913,'K'),
     pressure=(39000,'Pa'),
     initialMoleFractions={
-        "SiH4": 0.00016,
+        "Si2H6": 0.00016,
 	"Ar": 0.99984,
     },
     terminationConversion={
-        'SiH4': 0.999,
+        'Si2H6': 0.999,
     },
     terminationTime=(1e6, 's')
 )
