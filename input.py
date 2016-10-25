@@ -5,7 +5,7 @@ database(
     #reactionLibraries = [('Silicon_Giunta_1990', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
-    kineticsFamilies = ['Silylene_Insertion', 'Silylene_to_Silene'],
+    kineticsFamilies = ['H_Abstraction', 'R_Recombination', 'Silylene_Insertion', 'Silylene_to_Silene'],
     kineticsEstimator = 'rate rules',
 )
 
