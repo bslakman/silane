@@ -81,9 +81,23 @@ SiH2Si(15)
 3 H  u0 p0 c0 {1,S}
 4 H  u0 p0 c0 {1,S}
 
-Si2(23)
+Si2(27)
 1 Si u0 p1 c0 {2,D}
 2 Si u0 p1 c0 {1,D}
+
+H8Si4(26)
+1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
+3  Si u0 p0 c0 {1,S} {4,D} {10,S}
+4  Si u0 p0 c0 {3,D} {11,S} {12,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {2,S}
+10 H  u0 p0 c0 {3,S}
+11 H  u0 p0 c0 {4,S}
+12 H  u0 p0 c0 {4,S}
 
 Si3H8(10)
 1  Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
@@ -98,6 +112,22 @@ Si3H8(10)
 10 H  u0 p0 c0 {3,S}
 11 H  u0 p0 c0 {3,S}
 
+H10Si4(39)
+1  Si u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2  Si u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
+3  Si u0 p0 c0 {1,S} {9,S} {10,S} {11,S}
+4  Si u0 p0 c0 {1,S} {12,S} {13,S} {14,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {2,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {3,S}
+11 H  u0 p0 c0 {3,S}
+12 H  u0 p0 c0 {4,S}
+13 H  u0 p0 c0 {4,S}
+14 H  u0 p0 c0 {4,S}
+
 H6Si3(20)
 1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {1,S} {3,D} {7,S}
@@ -109,7 +139,23 @@ H6Si3(20)
 8 H  u0 p0 c0 {3,S}
 9 H  u0 p0 c0 {3,S}
 
-H6Si3(25)
+H10Si4(24)
+1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {4,S} {7,S} {8,S}
+3  Si u0 p0 c0 {1,S} {9,S} {10,S} {11,S}
+4  Si u0 p0 c0 {2,S} {12,S} {13,S} {14,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {3,S}
+11 H  u0 p0 c0 {3,S}
+12 H  u0 p0 c0 {4,S}
+13 H  u0 p0 c0 {4,S}
+14 H  u0 p0 c0 {4,S}
+
+H6Si3(38)
 1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
 2 Si u0 p0 c0 {3,S} {7,S} {8,S} {9,S}
 3 Si u0 p1 c0 {1,S} {2,S}
@@ -120,11 +166,33 @@ H6Si3(25)
 8 H  u0 p0 c0 {2,S}
 9 H  u0 p0 c0 {2,S}
 
-Si2H2(18)
-1 Si u0 p1 c0 {2,S} {3,S}
-2 Si u0 p1 c0 {1,S} {4,S}
-3 H  u0 p0 c0 {1,S}
-4 H  u0 p0 c0 {2,S}
+H8Si4(35)
+1  Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
+3  Si u0 p0 c0 {4,S} {10,S} {11,S} {12,S}
+4  Si u0 p1 c0 {1,S} {3,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {2,S}
+10 H  u0 p0 c0 {3,S}
+11 H  u0 p0 c0 {3,S}
+12 H  u0 p0 c0 {3,S}
+
+H8Si4(41)
+1  Si u0 p0 c0 {4,S} {5,S} {6,S} {10,S}
+2  Si u0 p0 c0 {3,S} {7,S} {8,S} {9,S}
+3  Si u0 p0 c0 {2,S} {4,D} {11,S}
+4  Si u0 p0 c0 {1,S} {3,D} {12,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {2,S}
+10 H  u0 p0 c0 {1,S}
+11 H  u0 p0 c0 {3,S}
+12 H  u0 p0 c0 {4,S}
 
 H8Si4(8)
 1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
@@ -154,7 +222,7 @@ cSi4H8(7)
 11 H  u0 p0 c0 {4,S}
 12 H  u0 p0 c0 {4,S}
 
-H4Si3(26)
+H4Si3(37)
 1 Si u0 p0 c0 {2,D} {3,S} {4,S}
 2 Si u0 p0 c0 {1,D} {5,S} {6,S}
 3 Si u0 p1 c0 {1,S} {7,S}
@@ -163,11 +231,11 @@ H4Si3(26)
 6 H  u0 p0 c0 {2,S}
 7 H  u0 p0 c0 {3,S}
 
-H2Si3(28)
-1 Si u0 p0 c0 {2,S} {3,D} {4,S}
+H2Si3(49)
+1 Si u0 p0 c0 {2,S} {3,S} {4,D}
 2 Si u0 p1 c0 {1,S} {5,S}
-3 Si u0 p1 c0 {1,D}
-4 H  u0 p0 c0 {1,S}
+3 H  u0 p0 c0 {1,S}
+4 Si u0 p1 c0 {1,D}
 5 H  u0 p0 c0 {2,S}
 
 H4Si3(21)
@@ -178,4 +246,206 @@ H4Si3(21)
 5 H  u0 p0 c0 {1,S}
 6 H  u0 p0 c0 {1,S}
 7 H  u0 p0 c0 {3,S}
+
+H6Si4(45)
+1  Si u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
+2  Si u0 p0 c0 {1,S} {3,D} {8,S}
+3  Si u0 p0 c0 {2,D} {4,S} {9,S}
+4  Si u0 p1 c0 {3,S} {10,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {1,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {4,S}
+
+H6Si4(44)
+1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
+3  Si u0 p1 c0 {1,S} {4,S}
+4  Si u0 p1 c0 {3,S} {10,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {2,S}
+10 H  u0 p0 c0 {4,S}
+
+H6Si4(47)
+1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {4,S} {7,S} {8,S}
+3  Si u0 p0 c0 {1,S} {4,S} {9,S} {10,S}
+4  Si u0 p1 c0 {2,S} {3,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {3,S}
+
+H6Si4(58)
+1  Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {4,S} {7,S} {8,S}
+3  Si u0 p0 c0 {1,S} {4,D} {10,S}
+4  Si u0 p0 c0 {2,S} {3,D} {9,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {4,S}
+10 H  u0 p0 c0 {3,S}
+
+H4Si4(61)
+1 Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
+2 Si u0 p0 c0 {1,S} {3,D} {7,S}
+3 Si u0 p0 c0 {2,D} {4,S} {8,S}
+4 Si u0 p1 c0 {1,S} {3,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {3,S}
+
+H4Si4(62)
+1 Si u0 p0 c0 {2,S} {4,D} {6,S}
+2 Si u0 p0 c0 {1,S} {3,D} {7,S}
+3 Si u0 p0 c0 {2,D} {4,S} {8,S}
+4 Si u0 p0 c0 {1,D} {3,S} {5,S}
+5 H  u0 p0 c0 {4,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {3,S}
+
+H2Si4(64)
+1 Si u0 p0 c0 {2,D} {3,S} {5,S}
+2 Si u0 p0 c0 {1,D} {4,S} {6,S}
+3 Si u0 p1 c0 {1,S} {4,S}
+4 Si u0 p1 c0 {2,S} {3,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {2,S}
+
+H2Si4(66)
+1 Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2 Si u0 p1 c0 {1,S} {4,S}
+3 Si u0 p1 c0 {1,S} {4,S}
+4 Si u0 p1 c0 {2,S} {3,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+
+Si4(67)
+1 Si u0 p1 c0 {2,S} {3,S}
+2 Si u0 p1 c0 {1,S} {4,S}
+3 Si u0 p1 c0 {1,S} {4,S}
+4 Si u0 p1 c0 {2,S} {3,S}
+
+H4Si4(60)
+1 Si u0 p0 c0 {2,S} {3,S} {5,S} {6,S}
+2 Si u0 p0 c0 {1,S} {4,S} {7,S} {8,S}
+3 Si u0 p1 c0 {1,S} {4,S}
+4 Si u0 p1 c0 {2,S} {3,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {2,S}
+
+H6Si4(42)
+1  Si u0 p0 c0 {3,S} {5,S} {6,S} {7,S}
+2  Si u0 p0 c0 {4,S} {8,S} {9,S} {10,S}
+3  Si u0 p1 c0 {1,S} {4,S}
+4  Si u0 p1 c0 {2,S} {3,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {1,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {2,S}
+10 H  u0 p0 c0 {2,S}
+
+H6Si4(36)
+1  Si u0 p0 c0 {4,S} {5,S} {6,S} {7,S}
+2  Si u0 p0 c0 {3,D} {4,S} {8,S}
+3  Si u0 p0 c0 {2,D} {9,S} {10,S}
+4  Si u0 p1 c0 {1,S} {2,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {1,S}
+8  H  u0 p0 c0 {2,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {3,S}
+
+H6Si4(31)
+1  Si u0 p0 c0 {2,S} {3,D} {6,S}
+2  Si u0 p0 c0 {1,S} {4,D} {5,S}
+3  Si u0 p0 c0 {1,D} {7,S} {8,S}
+4  Si u0 p0 c0 {2,D} {9,S} {10,S}
+5  H  u0 p0 c0 {2,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {3,S}
+8  H  u0 p0 c0 {3,S}
+9  H  u0 p0 c0 {4,S}
+10 H  u0 p0 c0 {4,S}
+
+H4Si4(69)
+1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
+2 Si u0 p0 c0 {3,S} {7,D} {8,S}
+3 Si u0 p1 c0 {1,S} {2,S}
+4 H  u0 p0 c0 {1,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 Si u0 p1 c0 {2,D}
+8 H  u0 p0 c0 {2,S}
+
+H2Si4(71)
+1 Si u0 p0 c0 {2,S} {4,S} {5,D}
+2 Si u0 p1 c0 {1,S} {3,S}
+3 Si u0 p1 c0 {2,S} {6,S}
+4 H  u0 p0 c0 {1,S}
+5 Si u0 p1 c0 {1,D}
+6 H  u0 p0 c0 {3,S}
+
+H4Si4(59)
+1 Si u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
+2 Si u0 p0 c0 {3,S} {4,S} {7,S} {8,S}
+3 Si u0 p1 c0 {1,S} {2,S}
+4 Si u0 p1 c0 {1,S} {2,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {2,S}
+
+Si2H2(18)
+1 Si u0 p1 c0 {2,S} {3,S}
+2 Si u0 p1 c0 {1,S} {4,S}
+3 H  u0 p0 c0 {1,S}
+4 H  u0 p0 c0 {2,S}
+
+H6Si4(30)
+1  Si u0 p0 c0 {2,S} {4,S} {5,S} {6,S}
+2  Si u0 p0 c0 {1,S} {3,D} {7,S}
+3  Si u0 p0 c0 {2,D} {8,S} {9,S}
+4  Si u0 p1 c0 {1,S} {10,S}
+5  H  u0 p0 c0 {1,S}
+6  H  u0 p0 c0 {1,S}
+7  H  u0 p0 c0 {2,S}
+8  H  u0 p0 c0 {3,S}
+9  H  u0 p0 c0 {3,S}
+10 H  u0 p0 c0 {4,S}
+
+H4Si4(56)
+1 Si u0 p0 c0 {2,S} {5,S} {6,S} {7,S}
+2 Si u0 p1 c0 {1,S} {3,S}
+3 Si u0 p1 c0 {2,S} {4,S}
+4 Si u0 p1 c0 {3,S} {8,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {1,S}
+7 H  u0 p0 c0 {1,S}
+8 H  u0 p0 c0 {4,S}
+
+H4Si4(68)
+1 Si u0 p0 c0 {2,D} {3,S} {5,S}
+2 Si u0 p0 c0 {1,D} {6,S} {7,S}
+3 Si u0 p1 c0 {1,S} {4,S}
+4 Si u0 p1 c0 {3,S} {8,S}
+5 H  u0 p0 c0 {1,S}
+6 H  u0 p0 c0 {2,S}
+7 H  u0 p0 c0 {2,S}
+8 H  u0 p0 c0 {4,S}
 
