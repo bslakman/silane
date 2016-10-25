@@ -100,7 +100,7 @@ simpleReactor(
     terminationConversion={
         'Si2H6': 0.9,
     },
-    terminationTime=(1e8, 's')
+    terminationTime=(1e6, 's')
 )
 
 simpleReactor(
@@ -113,7 +113,7 @@ simpleReactor(
     terminationConversion={
         'Si2H6': 0.99,
     },
-    terminationTime=(1e7, 's')
+    terminationTime=(1e5, 's')
 )
 
 simpleReactor(
@@ -126,7 +126,7 @@ simpleReactor(
     terminationConversion={
         'Si2H6': 0.99,
     },
-    terminationTime=(1e6, 's')
+    terminationTime=(1e4, 's')
 )
 
 simpleReactor(
@@ -139,7 +139,7 @@ simpleReactor(
     terminationConversion={
         'Si2H6': 0.999,
     },
-    terminationTime=(1e6, 's')
+    terminationTime=(1e4, 's')
 )
 
 
