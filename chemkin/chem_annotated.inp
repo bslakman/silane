@@ -18,20 +18,12 @@ SPECIES
     H4Si2(11)           ! SiH2SiH2(11)
     SiH2Si(15)          ! SiH2Si(15)
     Si2H2(18)           ! Si2H2(18)
-    H4Si3(19)           ! [Si]1[SiH2][SiH2]1(19)
     H6Si3(20)           ! [SiH2]=[SiH][SiH3](20)
     H4Si3(21)           ! [SiH][Si][SiH3](21)
-    H4Si3(22)           ! [SiH][SiH2][SiH](22)
     Si2(23)             ! [Si]=[Si](23)
-    H4Si3(24)           ! [Si]=[SiH][SiH3](24)
     H6Si3(25)           ! [SiH3][Si][SiH3](25)
     H4Si3(26)           ! [SiH][SiH]=[SiH2](26)
     H2Si3(28)           ! [Si]=[SiH][SiH](28)
-    H2Si3(30)           ! [SiH][Si][SiH](30)
-    H4Si3(31)           ! [SiH]1=[SiH][SiH2]1(31)
-    H2Si3(32)           ! [Si]1[Si][SiH2]1(32)
-    H2Si3(33)           ! [Si]1[SiH]=[SiH]1(33)
-    Si3(34)             ! [Si]1[Si][Si]1(34)
 END
 
 
@@ -143,12 +135,6 @@ Si2H2(18)               H 2  Si2            G100.000   5000.000  910.26        1
  5.28912197E+04-1.63394890E+00 3.14502231E+00 2.08297963E-02-3.62766752E-05    3
  3.11974992E-08-1.00976579E-11 5.31433134E+04 9.04269350E+00                   4
 
-! Thermo library: SiliconHydrideLibrary
-H4Si3(19)               H 4  Si3            G100.000   5000.000  687.81        1
- 8.13725996E+00 1.33602638E-02-6.31166773E-06 1.20080185E-09-8.30334859E-14    2
- 5.50773431E+04-1.31015547E+01 2.17572701E+00 4.32736970E-02-6.11753035E-05    3
- 4.43240640E-08-1.21028157E-11 5.60099266E+04 1.42461754E+01                   4
-
 ! Thermo group additivity estimation: group(Sis-H3Si) + other(R) + group(Sid-Sid-H-Si) + other(R) + group(Sid-Sid-H2) + other(R)
 H6Si3(20)               H 6  Si3            G100.000   5000.000  791.88        1
  8.62080055E+00 2.00802801E-02-9.50548868E-06 1.81950899E-09-1.26617251E-13    2
@@ -161,23 +147,11 @@ H4Si3(21)               H 4  Si3            G100.000   5000.000  836.45        1
  5.85937629E+04-5.12653200E+00 2.06017992E+00 4.66724313E-02-7.53320549E-05    3
  6.46185270E-08-2.17083510E-11 5.92487230E+04 1.79213347E+01                   4
 
-! Thermo group additivity estimation: group(Sis-H2Si2) + other(R) + group(si-Sis-H) + other(R) + group(si-Sis-H) + other(R)
-H4Si3(22)               H 4  Si3            G100.000   5000.000  862.47        1
- 7.38019339E+00 1.57584219E-02-7.93480784E-06 1.50414791E-09-1.01858078E-13    2
- 6.59877362E+04-5.40145364E+00 1.84752808E+00 5.30771483E-02-9.31167853E-05    3
- 8.30217715E-08-2.82744218E-11 6.65084584E+04 1.79579800E+01                   4
-
 ! Thermo group additivity estimation: group(si-Sid-H) + other(R) + group(si-Sid-H) + other(R)
 Si2(23)                 Si2                 G100.000   5000.000  862.24        1
  4.96224171E+00 6.55922497E-03-3.19418075E-06 5.89064213E-10-3.93962292E-14    2
  5.37571572E+04 6.17608793E-01 2.66450601E+00 1.98424018E-02-3.08668388E-05    3
  2.55142090E-08-8.28952236E-12 5.40558632E+04 1.07966961E+01                   4
-
-! Thermo group additivity estimation: group(Sis-H3Si) + other(R) + group(Sid-sid-H-Si) + other(R) + group(si-Sid-H) + other(R)
-H4Si3(24)               H 4  Si3            G100.000   5000.000  868.31        1
- 8.55796460E+00 2.07851685E-02-1.04091419E-05 1.95480531E-09-1.31465558E-13    2
- 7.99684759E+04 4.67375874E-02 1.14459317E+00 7.01591004E-02-1.22000335E-04    3
- 1.07822846E-07-3.64259057E-11 8.06820177E+04 3.14605666E+01                   4
 
 ! Thermo group additivity estimation: group(Sis-H3Si) + other(R) + group(Sis-H3Si) + other(R) + group(si-Sis2) + other(R)
 H6Si3(25)               H 6  Si3            G100.000   5000.000  800.36        1
@@ -196,36 +170,6 @@ H2Si3(28)               H 2  Si3            G100.000   5000.000  871.25        1
  6.91105861E+00 1.47051028E-02-7.28776453E-06 1.35960210E-09-9.10977539E-14    2
  6.98025818E+04 4.57644097E+00 2.07534926E+00 4.72510853E-02-8.11313418E-05    3
  7.14918346E-08-2.41257193E-11 7.02525854E+04 2.49862530E+01                   4
-
-! Thermo group additivity estimation: group(si-si2) + other(R) + group(si-Sis-H) + other(R) + group(si-Sis-H) + other(R)
-H2Si3(30)               H 2  Si3            G100.000   5000.000  884.44        1
- 6.30914264E+00 1.03636818E-02-5.59139992E-06 1.05952059E-09-7.05515810E-14    2
- 8.02975015E+04-6.21242148E-01 2.34618501E+00 4.25470727E-02-8.43597509E-05    3
- 7.86636561E-08-2.71597376E-11 8.04407594E+04 1.48579890E+01                   4
-
-! Thermo library: SiliconHydrideLibrary
-H4Si3(31)               H 4  Si3            G100.000   5000.000  814.31        1
- 8.34321857E+00 1.31119749E-02-6.22048719E-06 1.18900910E-09-8.25633634E-14    2
- 5.32409606E+04-1.42641142E+01 2.13279731E+00 4.36177048E-02-6.24123010E-05    3
- 4.71915862E-08-1.42054197E-11 5.42524252E+04 1.44220111E+01                   4
-
-! Thermo group additivity estimation: group(Sis-H2Si2) + other(R) + group(si-Sis-si) + other(R) + group(si-Sis-si) + other(R) + ring(Cyclopropane)
-H2Si3(32)               H 2  Si3            G100.000   5000.000  1576.56       1
- 1.01237342E+01 2.47960977E-03-1.90750417E-07-2.32228949E-11 2.90835489E-15    2
- 6.22577257E+04-2.15667942E+01 2.48438069E+00 2.60658743E-02-2.66314307E-05    3
- 1.28488937E-08-2.30646976E-12 6.41440558E+04 1.71095166E+01                   4
-
-! Thermo library: SiliconHydrideLibrary
-H2Si3(33)               H 2  Si3            G100.000   5000.000  863.41        1
- 7.36414112E+00 7.32956162E-03-3.58944719E-06 6.71991138E-10-4.51484402E-14    2
- 5.93783106E+04-8.69755488E+00 2.57648180E+00 3.38939974E-02-5.73563497E-05    3
- 4.80680869E-08-1.54714725E-11 6.00416354E+04 1.27506455E+01                   4
-
-! Thermo group additivity estimation: group(si-si2) + other(R) + group(si-si2) + other(R) + group(si-si2) + other(R) + ring(Cyclopropane)
-Si3(34)                 Si3                 G100.000   5000.000  909.38        1
- 9.25507026E+00-2.97742789E-03 2.09776313E-06-4.11768467E-10 2.68144688E-14    2
- 6.49850343E+04-2.53498911E+01 3.35293237E+00 8.93091784E-03 5.63493734E-06    3
--1.99978698E-08 1.00828570E-11 6.66395568E+04 5.75869430E+00                   4
 
 END
 
@@ -300,27 +244,55 @@ SiH2Si(15)+H2(9)=H4Si2(11)                          2.100e+06 1.970     -0.454
 ! Multiplied by reaction path degeneracy 4
 H2(9)+Si2(23)=SiH2Si(15)                            4.200e+06 1.970     -0.454   
 
-! Reaction index: Chemkin #12; RMG #26
+! Reaction index: Chemkin #12; RMG #6
+! Library reaction: Silicon_Giunta_1990
+! Flux pairs: Si3H8(10), Si2H6(4); Si3H8(10), SiH2(5); 
+Si3H8(10)=Si2H6(4)+SiH2(5)                          2.600e+19 -1.000    55.500   
+
+! Reaction index: Chemkin #13; RMG #7
+! Library reaction: Silicon_Giunta_1990
+! Flux pairs: Si3H8(10), SiH4(3); Si3H8(10), SiH3SiH(6); 
+Si3H8(10)=SiH4(3)+SiH3SiH(6)                        4.800e+14 0.000     49.200   
+
+! Reaction index: Chemkin #14; RMG #34
+! Template reaction: Silylene_Insertion
+! Flux pairs: H6Si3(2), Si3H8(10); H2(9), Si3H8(10); 
+! Matched reaction 13 Si2H5SiH + H2 <=> Si3H8-1 in Silylene_Insertion/training
+H6Si3(2)+H2(9)=Si3H8(10)                            6.020e+12 0.000     2.100    
+
+! Reaction index: Chemkin #15; RMG #26
 ! Template reaction: Silylene_to_Silene
 ! Flux pairs: H6Si3(2), H6Si3(20); 
 ! Matched reaction 2 Si2H5SiH <=> SiH3Si2H4 in Silylene_to_Silene/training
 H6Si3(2)=H6Si3(20)                                  2.000e+12 0.000     8.100    
 
-! Reaction index: Chemkin #13; RMG #36
+! Reaction index: Chemkin #16; RMG #36
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH2(5), H6Si3(20); H4Si2(11), H6Si3(20); 
 ! Estimated using an average for rate rule (SiH2;Si_H)
 ! Multiplied by reaction path degeneracy 4
 SiH2(5)+H4Si2(11)=H6Si3(20)                         9.252e+11 0.000     -9.392   
 
-! Reaction index: Chemkin #14; RMG #39
+! Reaction index: Chemkin #17; RMG #39
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH4(3), H6Si3(20); SiH2Si(15), H6Si3(20); 
 ! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
 ! Multiplied by reaction path degeneracy 4
 SiH4(3)+SiH2Si(15)=H6Si3(20)                        7.440e+14 0.000     -0.454   
 
-! Reaction index: Chemkin #15; RMG #21
+! Reaction index: Chemkin #18; RMG #42
+! Template reaction: Silylene_Insertion
+! Flux pairs: H2(9), Si3H8(10); H6Si3(25), Si3H8(10); 
+! Matched reaction 14 H3SiSiSiH3 + H2 <=> Si3H8-1 in Silylene_Insertion/training
+H2(9)+H6Si3(25)=Si3H8(10)                           1.200e+13 0.000     -0.500   
+
+! Reaction index: Chemkin #19; RMG #43
+! Template reaction: Silylene_to_Silene
+! Flux pairs: H6Si3(25), H6Si3(20); 
+! Matched reaction 4 H3SiSiSiH3 <=> SiH3Si2H4 in Silylene_to_Silene/training
+H6Si3(25)=H6Si3(20)                                 5.010e+12 0.000     4.700    
+
+! Reaction index: Chemkin #20; RMG #21
 ! Library reaction: DolletSi2H4
 ! Flux pairs: Si2H2(18), H4Si2(11); H2(9), H4Si2(11); 
 Si2H2(18)+H2(9)(+M)=H4Si2(11)(+M)                   4.590e+14 0.000     0.000    
@@ -328,7 +300,7 @@ Si2H2(18)+H2(9)(+M)=H4Si2(11)(+M)                   4.590e+14 0.000     0.000
     LOW/ 5.960e+38 -6.320    4.165    /
     TROE/ 3.614e+00 223       356       1.67e+03 /
 
-! Reaction index: Chemkin #16; RMG #23
+! Reaction index: Chemkin #21; RMG #23
 ! Library reaction: DolletSi2H4
 ! Flux pairs: SiH2(5), H2(9); SiH2(5), Si2H2(18); 
 SiH2(5)+SiH2(5)(+M)=Si2H2(18)+H2(9)(+M)             5.160e+10 0.407     -0.392   
@@ -336,243 +308,94 @@ SiH2(5)+SiH2(5)(+M)=Si2H2(18)+H2(9)(+M)             5.160e+10 0.407     -0.392
     LOW/ 2.800e+13 0.039     0.032    /
     TROE/ -3.829e-01 460       316       343      /
 
-! Reaction index: Chemkin #17; RMG #29
+! Reaction index: Chemkin #22; RMG #29
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH4(3), H6Si3(2); Si2H2(18), H6Si3(2); 
 ! Exact match found for rate rule (Si-Si-H;SiH4)
 ! Multiplied by reaction path degeneracy 8
 SiH4(3)+Si2H2(18)=H6Si3(2)                          4.800e+10 0.000     -9.100   
 
-! Reaction index: Chemkin #18; RMG #31
+! Reaction index: Chemkin #23; RMG #31
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H2(9), SiH3SiH(6); Si2H2(18), SiH3SiH(6); 
 ! Exact match found for rate rule (Si-Si-H;H_H)
 ! Multiplied by reaction path degeneracy 4
 Si2H2(18)+H2(9)=SiH3SiH(6)                          1.520e+13 0.000     0.800    
 
-! Reaction index: Chemkin #19; RMG #37
+! Reaction index: Chemkin #24; RMG #37
 ! Template reaction: Silylene_to_Silene
 ! Flux pairs: Si2H2(18), SiH2Si(15); 
 ! Estimated using template (SiRSiH) for rate rule (SiHSiH)
 ! Multiplied by reaction path degeneracy 2
 Si2H2(18)=SiH2Si(15)                                1.580e+07 0.000     1.269    
 
-! Reaction index: Chemkin #20; RMG #42
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H6Si3(25), H6Si3(20); 
-! Matched reaction 4 H3SiSiSiH3 <=> SiH3Si2H4 in Silylene_to_Silene/training
-H6Si3(25)=H6Si3(20)                                 5.010e+12 0.000     4.700    
-
-! Reaction index: Chemkin #21; RMG #43
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H6Si3(20); H4Si3(26), H6Si3(20); 
-! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 2
-H2(9)+H4Si3(26)=H6Si3(20)                           7.600e+12 0.000     0.800    
-
-! Reaction index: Chemkin #22; RMG #52
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(26); H2Si3(28), H4Si3(26); 
-! Exact match found for rate rule (Si2S;H_H)
-! Multiplied by reaction path degeneracy 2
-H2(9)+H2Si3(28)=H4Si3(26)                           2.100e+06 1.970     -0.454   
-
-! Reaction index: Chemkin #23; RMG #27
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H6Si3(2); H4Si3(21), H6Si3(2); 
-! Exact match found for rate rule (Si-Si-Si;H_H)
-! Multiplied by reaction path degeneracy 2
-H4Si3(21)+H2(9)=H6Si3(2)                            2.400e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #24; RMG #45
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H6Si3(25); H4Si3(21), H6Si3(25); 
-! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 2
-H4Si3(21)+H2(9)=H6Si3(25)                           7.600e+12 0.000     0.800    
-
-! Reaction index: Chemkin #25; RMG #47
-! Template reaction: Silylene_Insertion
-! Flux pairs: SiH2(5), H4Si3(21); Si2H2(18), H4Si3(21); 
-! Estimated using an average for rate rule (SiH2;Si_H)
-! Multiplied by reaction path degeneracy 2
-SiH2(5)+Si2H2(18)=H4Si3(21)                         4.626e+11 0.000     -9.392   
-
-! Reaction index: Chemkin #26; RMG #50
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H4Si3(21), H4Si3(26); 
-! Exact match found for rate rule (SiSiSiH3)
-! Multiplied by reaction path degeneracy 3
-H4Si3(21)=H4Si3(26)                                 2.505e+12 0.000     4.700    
-
-! Reaction index: Chemkin #27; RMG #6
-! Library reaction: Silicon_Giunta_1990
-! Flux pairs: Si3H8(10), Si2H6(4); Si3H8(10), SiH2(5); 
-Si3H8(10)=Si2H6(4)+SiH2(5)                          2.600e+19 -1.000    55.500   
-
-! Reaction index: Chemkin #28; RMG #7
-! Library reaction: Silicon_Giunta_1990
-! Flux pairs: Si3H8(10), SiH4(3); Si3H8(10), SiH3SiH(6); 
-Si3H8(10)=SiH4(3)+SiH3SiH(6)                        4.800e+14 0.000     49.200   
-
-! Reaction index: Chemkin #29; RMG #34
-! Template reaction: Silylene_Insertion
-! Flux pairs: H6Si3(2), Si3H8(10); H2(9), Si3H8(10); 
-! Matched reaction 13 Si2H5SiH + H2 <=> Si3H8-1 in Silylene_Insertion/training
-H6Si3(2)+H2(9)=Si3H8(10)                            6.020e+12 0.000     2.100    
-
-! Reaction index: Chemkin #30; RMG #48
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), Si3H8(10); H6Si3(25), Si3H8(10); 
-! Matched reaction 14 H3SiSiSiH3 + H2 <=> Si3H8-1 in Silylene_Insertion/training
-H2(9)+H6Si3(25)=Si3H8(10)                           1.200e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #31; RMG #32
+! Reaction index: Chemkin #25; RMG #32
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: H6Si3(2), H8Si4(8); SiH2(5), H8Si4(8); 
 ! Exact match found for rate rule (SiH2;SiH3_Si)
 ! Multiplied by reaction path degeneracy 3
 H6Si3(2)+SiH2(5)=H8Si4(8)                           9.300e+13 0.000     -0.454   
 
-! Reaction index: Chemkin #32; RMG #33
+! Reaction index: Chemkin #26; RMG #33
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: SiH3SiH(6), H8Si4(8); SiH3SiH(6), H8Si4(8); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 3
 SiH3SiH(6)+SiH3SiH(6)=H8Si4(8)                      1.800e+10 0.000     -9.100   
 
-! Reaction index: Chemkin #33; RMG #46
+! Reaction index: Chemkin #27; RMG #47
 ! Template reaction: Silylene_Insertion
 ! Flux pairs: Si2H6(4), H8Si4(8); Si2H2(18), H8Si4(8); 
 ! Estimated using template (Si-Si-H;SiH3_R) for rate rule (Si-Si-H;SiH3_Si)
 ! Multiplied by reaction path degeneracy 12
 Si2H6(4)+Si2H2(18)=H8Si4(8)                         7.200e+10 0.000     -9.100   
 
-! Reaction index: Chemkin #34; RMG #2
+! Reaction index: Chemkin #28; RMG #2
 ! Library reaction: Silicon
 ! Flux pairs: cSi4H8(7), H8Si4(8); 
 cSi4H8(7)=H8Si4(8)                                  1.047e+14 0.000     38.600   
 
-! Reaction index: Chemkin #35; RMG #25
+! Reaction index: Chemkin #29; RMG #44
 ! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), cSi3H6(1); H4Si3(19), cSi3H6(1); 
-! Exact match found for rate rule (Si-Si-Si;H_H)
-! Multiplied by reaction path degeneracy 2
-H4Si3(19)+H2(9)=cSi3H6(1)                           2.400e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #36; RMG #60
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(19); H2Si3(32), H4Si3(19); 
-! Exact match found for rate rule (Si-Si-Si;H_H)
-! Multiplied by reaction path degeneracy 4
-H2(9)+H2Si3(32)=H4Si3(19)                           4.800e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #37; RMG #62
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H2Si3(32); Si3(34), H2Si3(32); 
-! Exact match found for rate rule (Si-Si-Si;H_H)
-! Multiplied by reaction path degeneracy 6
-H2(9)+Si3(34)=H2Si3(32)                             7.200e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #38; RMG #61
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H2Si3(32), H2Si3(33); 
-! Estimated using template (SiRSiH) for rate rule (SiSiSiH)
-! Multiplied by reaction path degeneracy 4
-H2Si3(32)=H2Si3(33)                                 3.160e+07 0.000     1.269    
-
-! Reaction index: Chemkin #39; RMG #59
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H4Si3(19), H4Si3(31); 
-! Estimated using template (SiRSiH) for rate rule (SiSiSiH)
-! Multiplied by reaction path degeneracy 4
-H4Si3(19)=H4Si3(31)                                 3.160e+07 0.000     1.269    
-
-! Reaction index: Chemkin #40; RMG #64
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(31); H2Si3(33), H4Si3(31); 
-! Exact match found for rate rule (Si-Si-Si;H_H)
-! Multiplied by reaction path degeneracy 2
-H2(9)+H2Si3(33)=H4Si3(31)                           2.400e+13 0.000     -0.500   
-
-! Reaction index: Chemkin #41; RMG #28
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H6Si3(2); H4Si3(22), H6Si3(2); 
+! Flux pairs: H2(9), H6Si3(20); H4Si3(26), H6Si3(20); 
 ! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 4
-H4Si3(22)+H2(9)=H6Si3(2)                            1.520e+13 0.000     0.800    
-
-! Reaction index: Chemkin #42; RMG #51
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H4Si3(22), H4Si3(26); 
-! Exact match found for rate rule (SiHSiH2)
-! Multiplied by reaction path degeneracy 4
-H4Si3(22)=H4Si3(26)                                 4.000e+12 0.000     8.100    
-
-! Reaction index: Chemkin #43; RMG #58
-! Template reaction: Silylene_Insertion
-! Flux pairs: SiH4(3), H8Si4(8); H4Si3(22), H8Si4(8); 
-! Exact match found for rate rule (Si-Si-H;SiH4)
-! Multiplied by reaction path degeneracy 8
-SiH4(3)+H4Si3(22)=H8Si4(8)                          4.800e+10 0.000     -9.100   
-
-! Reaction index: Chemkin #44; RMG #40
-! Template reaction: Silylene_Insertion
-! Flux pairs: SiH2(5), H4Si3(24); SiH2Si(15), H4Si3(24); 
-! Estimated using an average for rate rule (SiH2;Si_H)
 ! Multiplied by reaction path degeneracy 2
-! Ea raised from -39.3 to 59.8 kJ/mol to match endothermicity of reaction.
-SiH2(5)+SiH2Si(15)=H4Si3(24)                        4.626e+11 0.000     14.300   
+H2(9)+H4Si3(26)=H6Si3(20)                           7.600e+12 0.000     0.800    
 
-! Reaction index: Chemkin #45; RMG #41
+! Reaction index: Chemkin #30; RMG #53
 ! Template reaction: Silylene_Insertion
-! Flux pairs: SiH4(3), H4Si3(24); Si2(23), H4Si3(24); 
-! Estimated using template (Si2S;Si_H) for rate rule (Si2S;SiH4)
-! Multiplied by reaction path degeneracy 8
-! Ea raised from -1.9 to 208.1 kJ/mol to match endothermicity of reaction.
-SiH4(3)+Si2(23)=H4Si3(24)                           1.488e+15 0.000     49.742   
-
-! Reaction index: Chemkin #46; RMG #44
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H6Si3(20); H4Si3(24), H6Si3(20); 
+! Flux pairs: H2(9), H4Si3(26); H2Si3(28), H4Si3(26); 
 ! Exact match found for rate rule (Si2S;H_H)
 ! Multiplied by reaction path degeneracy 2
-H2(9)+H4Si3(24)=H6Si3(20)                           2.100e+06 1.970     -0.454   
+H2(9)+H2Si3(28)=H4Si3(26)                           2.100e+06 1.970     -0.454   
 
-! Reaction index: Chemkin #47; RMG #55
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H4Si3(21), H4Si3(24); 
-! Estimated using template (SiRSiH) for rate rule (SiSiSiH)
-H4Si3(21)=H4Si3(24)                                 7.900e+06 0.000     43.460   
-
-! Reaction index: Chemkin #48; RMG #57
+! Reaction index: Chemkin #31; RMG #27
 ! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(24); H2Si3(28), H4Si3(24); 
-! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 2
-! Ea raised from 90.4 to 95.1 kJ/mol to match endothermicity of reaction.
-H2(9)+H2Si3(28)=H4Si3(24)                           7.600e+12 0.000     22.720   
-
-! Reaction index: Chemkin #49; RMG #54
-! Template reaction: Silylene_to_Silene
-! Flux pairs: H2Si3(30), H2Si3(28); 
-! Estimated using template (SiRSiH) for rate rule (SiSiSiH)
-! Multiplied by reaction path degeneracy 2
-H2Si3(30)=H2Si3(28)                                 1.580e+07 0.000     1.269    
-
-! Reaction index: Chemkin #50; RMG #56
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(21); H2Si3(30), H4Si3(21); 
-! Exact match found for rate rule (Si-Si-H;H_H)
-! Multiplied by reaction path degeneracy 4
-H2(9)+H2Si3(30)=H4Si3(21)                           1.520e+13 0.000     0.800    
-
-! Reaction index: Chemkin #51; RMG #65
-! Template reaction: Silylene_Insertion
-! Flux pairs: H2(9), H4Si3(22); H2Si3(30), H4Si3(22); 
+! Flux pairs: H2(9), H6Si3(2); H4Si3(21), H6Si3(2); 
 ! Exact match found for rate rule (Si-Si-Si;H_H)
 ! Multiplied by reaction path degeneracy 2
-H2(9)+H2Si3(30)=H4Si3(22)                           2.400e+13 0.000     -0.500   
+H4Si3(21)+H2(9)=H6Si3(2)                            2.400e+13 0.000     -0.500   
+
+! Reaction index: Chemkin #32; RMG #46
+! Template reaction: Silylene_Insertion
+! Flux pairs: H2(9), H6Si3(25); H4Si3(21), H6Si3(25); 
+! Exact match found for rate rule (Si-Si-H;H_H)
+! Multiplied by reaction path degeneracy 2
+H4Si3(21)+H2(9)=H6Si3(25)                           7.600e+12 0.000     0.800    
+
+! Reaction index: Chemkin #33; RMG #48
+! Template reaction: Silylene_Insertion
+! Flux pairs: SiH2(5), H4Si3(21); Si2H2(18), H4Si3(21); 
+! Estimated using an average for rate rule (SiH2;Si_H)
+! Multiplied by reaction path degeneracy 2
+SiH2(5)+Si2H2(18)=H4Si3(21)                         4.626e+11 0.000     -9.392   
+
+! Reaction index: Chemkin #34; RMG #51
+! Template reaction: Silylene_to_Silene
+! Flux pairs: H4Si3(21), H4Si3(26); 
+! Exact match found for rate rule (SiSiSiH3)
+! Multiplied by reaction path degeneracy 3
+H4Si3(21)=H4Si3(26)                                 2.505e+12 0.000     4.700    
 
 END
 
