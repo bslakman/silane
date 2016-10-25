@@ -163,7 +163,7 @@ options(
 
 generatedSpeciesConstraints(
     allowed = ['reaction libraries'],
-    maximumSiliconAtoms=3
+    maximumSiliconAtoms=4
 )
 
 
