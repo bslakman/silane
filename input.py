@@ -143,6 +143,32 @@ simpleReactor(
     terminationTime=(1e6, 's')
 )
 
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "SiH4": 0.0025,
+	"Ar": 0.9975,
+    },
+    terminationConversion={
+        'SiH4': 0.99,
+    },
+    terminationTime=(1e6, 's')
+)
+
+simpleReactor(
+    temperature=(873,'K'),
+    pressure=(39000,'Pa'),
+    initialMoleFractions={
+        "SiH4": 0.05,
+	"Ar": 0.95,
+    },
+    terminationConversion={
+        'SiH4': 0.99,
+    },
+    terminationTime=(1e6, 's')
+)
+
 
 simulator(
     atol=1e-24,
