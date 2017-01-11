@@ -164,9 +164,9 @@ simpleReactor(
 	"Ar": 0.95,
     },
     terminationConversion={
-        'SiH4': 0.90,
+        'SiH4': 0.70,
     },
-    terminationTime=(1e6, 's')
+    terminationTime=(1e5, 's')
 )
 
 
